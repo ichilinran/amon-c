@@ -43,16 +43,63 @@ int main(void)
 ```c
 #include <stdio.h>
 
-int calculate(int a, int b)
+int main(void)
 {
-    return (a + b) * (a - b) / b;
+    int prices[5] = {120, 350, 80, 400, 250};
+    int total = 0;
+    int i = 0;
+
+    while (i < 5)
+    {
+        total += prices[i];
+        i++;
+    }
+
+    printf("%d\n", total);
+
+    return 0;
+}
+```
+
+### 支位
+
+```text
+#ﾌｸﾒﾙ 〈ﾋｮｳｼﾞｭﾝ_ﾆｭｳｼｭﾂﾘｮｸ.ｻｷﾖﾐ〉
+
+ｾｲｽｳ ﾆﾃ ﾈｶﾞｲﾏｼﾃﾊ(ｳｹﾄﾙﾉﾊ ﾑﾅｼ ﾅﾘ)
+｛
+    ｾｲｽｳ prices[5] = {120, 350, 80, 400, 250} ﾅﾘ;
+    ｾｲｽｳ total = 0 ﾅﾘ;
+    ｾｲｽｳ i = 0 ﾅﾘ;
+
+    (i < 5) ﾉｱｲﾀﾞ
+    ｛
+        total += prices[i] ﾅﾘ;
+        i++ ﾅﾘ;
+    ｝
+
+    ｱﾗﾜｽﾉﾊ("%d\n" ﾃﾞ, total ｦ) ﾅﾘ;
+
+    ｶｴｽﾉﾊ 0 ﾅﾘ;
+    ﾃﾞﾊ
+｝
+```
+
+### Ｃ
+
+```c
+#include <stdio.h>
+
+int average(int a, int b)
+{
+    return (a + b) / 2;
 }
 
 int main(void)
 {
-    int x = 12;
-    int y = 4;
-    int result = calculate(x, y);
+    int x = 70;
+    int y = 90;
+    int result = average(x, y);
 
     printf("%d\n", result);
 
@@ -65,16 +112,16 @@ int main(void)
 ```text
 #ﾌｸﾒﾙ 〈ﾋｮｳｼﾞｭﾝ_ﾆｭｳｼｭﾂﾘｮｸ.ｻｷﾖﾐ〉
 
-ｾｲｽｳ ﾆﾃ calculate(ｳｹﾄﾙﾉﾊ ｾｲｽｳ a, ｾｲｽｳ b ﾅﾘ)
+ｾｲｽｳ ﾆﾃ average(ｳｹﾄﾙﾉﾊ ｾｲｽｳ a, ｾｲｽｳ b ﾅﾘ)
 ｛
-    ｶｴｽﾉﾊ (a + b) * (a - b) / b ﾅﾘ;
+    ｶｴｽﾉﾊ (a + b) / 2 ﾅﾘ;
 ｝
 
 ｾｲｽｳ ﾆﾃ ﾈｶﾞｲﾏｼﾃﾊ(ｳｹﾄﾙﾉﾊ ﾑﾅｼ ﾅﾘ)
 ｛
-    ｾｲｽｳ x = 12 ﾅﾘ;
-    ｾｲｽｳ y = 4 ﾅﾘ;
-    ｾｲｽｳ result = calculate(x, y) ﾅﾘ;
+    ｾｲｽｳ x = 70 ﾅﾘ;
+    ｾｲｽｳ y = 90 ﾅﾘ;
+    ｾｲｽｳ result = average(x, y) ﾅﾘ;
 
     ｱﾗﾜｽﾉﾊ("%d\n" ﾃﾞ, result ｦ) ﾅﾘ;
 
@@ -90,18 +137,25 @@ int main(void)
 
 int main(void)
 {
-    int values[5] = {3, 8, 2, 10, 5};
-    int max = values[0];
-
-    for (int i = 1; i < 5; i++)
+    for (int i = 1; i <= 15; i++)
     {
-        if (values[i] > max)
+        if (i % 15 == 0)
         {
-            max = values[i];
+            printf("FizzBuzz\n");
+        }
+        else if (i % 3 == 0)
+        {
+            printf("Fizz\n");
+        }
+        else if (i % 5 == 0)
+        {
+            printf("Buzz\n");
+        }
+        else
+        {
+            printf("%d\n", i);
         }
     }
-
-    printf("%d\n", max);
 
     return 0;
 }
@@ -114,18 +168,86 @@ int main(void)
 
 ｾｲｽｳ ﾆﾃ ﾈｶﾞｲﾏｼﾃﾊ(ｳｹﾄﾙﾉﾊ ﾑﾅｼ ﾅﾘ)
 ｛
-    ｾｲｽｳ values[5] = {3, 8, 2, 10, 5} ﾅﾘ;
-    ｾｲｽｳ max = values[0] ﾅﾘ;
-
-    ｸﾘｶｴｽﾉﾊ (ｾｲｽｳ i = 1 ｶﾞ; i < 5 ﾉｱｲﾀﾞ; ﾂﾄﾞ i++ ﾅﾘ)
+    ｸﾘｶｴｽﾉﾊ (ｾｲｽｳ i = 1 ｶﾞ; i <= 15 ﾉｱｲﾀﾞ; ﾂﾄﾞ i++ ﾅﾘ)
     ｛
-        ﾓｼ (values[i] > max) ﾅﾗﾊﾞ
+        ﾓｼ (i % 15 == 0) ﾅﾗﾊﾞ
         ｛
-            max = values[i] ﾅﾘ;
+            ｱﾗﾜｽﾉﾊ("FizzBuzz\n" ﾃﾞ) ﾅﾘ;
+        ｝
+        ﾅｲｼﾊ (i % 3 == 0) ﾅﾗﾊﾞ
+        ｛
+            ｱﾗﾜｽﾉﾊ("Fizz\n" ﾃﾞ) ﾅﾘ;
+        ｝
+        ﾅｲｼﾊ (i % 5 == 0) ﾅﾗﾊﾞ
+        ｛
+            ｱﾗﾜｽﾉﾊ("Buzz\n" ﾃﾞ) ﾅﾘ;
+        ｝
+        ﾅｲｼﾊ
+        ｛
+            ｱﾗﾜｽﾉﾊ("%d\n" ﾃﾞ, i ｦ) ﾅﾘ;
         ｝
     ｝
 
-    ｱﾗﾜｽﾉﾊ("%d\n" ﾃﾞ, max ｦ) ﾅﾘ;
+    ｶｴｽﾉﾊ 0 ﾅﾘ;
+    ﾃﾞﾊ
+｝
+```
+
+### Ｃ
+
+```c
+#include <stdio.h>
+
+struct Point
+{
+    int x;
+    int y;
+};
+
+void move(struct Point *p, int dx, int dy)
+{
+    p->x += dx;
+    p->y += dy;
+}
+
+int main(void)
+{
+    struct Point pos = {1, 2};
+
+    move(&pos, 3, 4);
+
+    printf("%d\n", pos.x);
+    printf("%d\n", pos.y);
+
+    return 0;
+}
+```
+
+### 支位
+
+```text
+#ﾌｸﾒﾙ 〈ﾋｮｳｼﾞｭﾝ_ﾆｭｳｼｭﾂﾘｮｸ.ｻｷﾖﾐ〉
+
+ｺｳｿﾞｳﾀｲ Point
+{
+    ｾｲｽｳ x ﾅﾘ;
+    ｾｲｽｳ y ﾅﾘ;
+} ﾅﾘ;
+
+ﾑﾅｼ ﾆﾃ move(ｳｹﾄﾙﾉﾊ ｺｳｿﾞｳﾀｲ Point *p, ｾｲｽｳ dx, ｾｲｽｳ dy ﾅﾘ)
+｛
+    p->x += dx ﾅﾘ;
+    p->y += dy ﾅﾘ;
+｝
+
+ｾｲｽｳ ﾆﾃ ﾈｶﾞｲﾏｼﾃﾊ(ｳｹﾄﾙﾉﾊ ﾑﾅｼ ﾅﾘ)
+｛
+    ｺｳｿﾞｳﾀｲ Point pos = {1, 2} ﾅﾘ;
+
+    move(&pos, 3, 4) ﾅﾘ;
+
+    ｱﾗﾜｽﾉﾊ("%d\n" ﾃﾞ, pos.x ｦ) ﾅﾘ;
+    ｱﾗﾜｽﾉﾊ("%d\n" ﾃﾞ, pos.y ｦ) ﾅﾘ;
 
     ｶｴｽﾉﾊ 0 ﾅﾘ;
     ﾃﾞﾊ
