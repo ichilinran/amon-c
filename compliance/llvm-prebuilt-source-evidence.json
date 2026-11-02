@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/TheComputerM/libclang-wasm",
+  "checkedDate": "2026-11-02",
+  "tag": "v0",
+  "resolvedCommit": "ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453",
+  "buildScriptURL": "https://raw.githubusercontent.com/TheComputerM/libclang-wasm/ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453/build-llvm.sh",
+  "buildScriptSha256": "828e3ab1b1c8da7b4d1186d538175a7b880e83ea8593b5b2e5c1001ea9c5b0f0",
+  "defaultLLVMCommit": "3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff",
+  "status": "Original Wasm relink reproduced byte-for-byte. Only Path.cpp.o rebuilt from unmodified pinned upstream source; other prebuilt members retained. Provider modification is absent from current candidate; not a full LLVM source build.",
+  "linkReproduction": "compliance/wasm-link-reproduction.json",
+  "pathReplacement": "compliance/path-replacement.json"
+}

@@ -1,0 +1,25 @@
+{
+  "source": {
+    "url": "https://github.com/yuru7/udev-gothic/releases/download/v2.2.0/UDEVGothic_v2.2.0.zip",
+    "sha256": "c104c171f6ed8922ca52d74cd915a271e427f1e884e51431aae71d99e8b3b47b",
+    "member": "UDEVGothic_v2.2.0/UDEVGothic-Regular.ttf",
+    "tag": "v2.2.0",
+    "commit": "ca8d6f0a66a3ce39e1e5a6cab27a214d0990630d"
+  },
+  "family": "Amon-C Code",
+  "ranges": [
+    "U+0020-007E",
+    "U+00A0-00FF",
+    "U+2010-205E",
+    "U+3000-303F",
+    "U+3040-30FF",
+    "U+FF01-FF60",
+    "U+FF61-FF9F"
+  ],
+  "output": "fonts/amon-c-code-subset.woff2",
+  "outputSha256": "9e931e74ee984b0d4777056c4706ceb163bf93d7781d2d3d23b8f256d9498cf5",
+  "outputBytes": 73296,
+  "glyphs": 1129,
+  "license": "SIL Open Font License 1.1; see LICENSES/fonts/",
+  "reservedFontName": "UDEV Gothic (not used by this Modified Version)"
+}

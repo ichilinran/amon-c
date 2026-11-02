@@ -1,0 +1,7 @@
+{
+  "sha256": "2231bc6d97378823341ba7898165a6ab21c6a3edf9286c981e0ea3411d46ca99",
+  "expected": "2231bc6d97378823341ba7898165a6ab21c6a3edf9286c981e0ea3411d46ca99",
+  "matchesShippedWasm": true,
+  "compilerVersion": "emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.64-git (a1fe3902bf73a3802eae0357d273d0e37ea79898)\nCopyright (C) 2014 the Emscripten authors (see AUTHORS.txt)\nThis is free and open source software under the MIT license.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "scope": "Original Wasm relink reproduced byte-for-byte. Replaced only Path.cpp.o using unmodified upstream LLVM 18.1.8 source, relinked the extractor and remaining original archives. Not a full LLVM source rebuild."
+}

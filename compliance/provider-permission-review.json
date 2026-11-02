@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "repository": "https://github.com/TheComputerM/libclang-wasm",
+  "commit": "ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453",
+  "filesExamined": 7,
+  "independentPermissionStatementFound": false,
+  "scope": "Every blob in the pinned Git tree examined; no root license or independent grant found. This is not a statement that upstream LLVM is unlicensed.",
+  "rows": [
+    {
+      "path": ".github/workflows/build.yml",
+      "sourceURL": "https://raw.githubusercontent.com/TheComputerM/libclang-wasm/ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453/.github/workflows/build.yml",
+      "sha256": "6a43b97c58af2629673a65f5b00e7b5a7d4344e17fb94f2794dcf65cc030b3ed",
+      "licenseRelatedLines": [
+        "    permissions:"
+      ]
+    },
+    {
+      "path": ".gitignore",
+      "sourceURL": "https://raw.githubusercontent.com/TheComputerM/libclang-wasm/ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453/.gitignore",
+      "sha256": "18e34c66c26f353d4aa6b9d9de6c1e313c7f6d8f0857af6e7c59b6de14b70be7",
+      "licenseRelatedLines": []
+    },
+    {
+      "path": "README.md",
+      "sourceURL": "https://raw.githubusercontent.com/TheComputerM/libclang-wasm/ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453/README.md",
+      "sha256": "531a699eb303b8d99f617a8b8ddbdb77b64558fd394d81c71bf116939a2922d6",
+      "licenseRelatedLines": []
+    },
+    {
+      "path": "build-libclang.sh",
+      "sourceURL": "https://raw.githubusercontent.com/TheComputerM/libclang-wasm/ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453/build-libclang.sh",
+      "sha256": "ff40a1c4af3602d23128767ba0701085ae6de55f75b8e0befbdaefc747964ff1",
+      "licenseRelatedLines": []
+    },
+    {
+      "path": "build-llvm.sh",
+      "sourceURL": "https://raw.githubusercontent.com/TheComputerM/libclang-wasm/ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453/build-llvm.sh",
+      "sha256": "828e3ab1b1c8da7b4d1186d538175a7b880e83ea8593b5b2e5c1001ea9c5b0f0",
+      "licenseRelatedLines": []
+    },
+    {
+      "path": "exports.txt",
+      "sourceURL": "https://raw.githubusercontent.com/TheComputerM/libclang-wasm/ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453/exports.txt",
+      "sha256": "cfafe9bbf5f9d79652da504026ace1d96ae2a5ad793d9acc14cf0bbec9c62a72",
+      "licenseRelatedLines": []
+    },
+    {
+      "path": "llvm-project.patch",
+      "sourceURL": "https://raw.githubusercontent.com/TheComputerM/libclang-wasm/ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453/llvm-project.patch",
+      "sha256": "e7cbc5159fec8c6edb41251fb1be7919ed7400210908c1c5d2768a8cab62bb2d",
+      "licenseRelatedLines": []
+    }
+  ]
+}

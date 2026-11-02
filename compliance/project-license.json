@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "adopted": true,
+  "date": "2026-11-01",
+  "spdx": "MIT",
+  "copyright": "Copyright (c) 2026 Amon-C contributors",
+  "rightsholderLabelBasis": "Project contributor attribution; avoids assuming a public personal name or corporate identity. Does not replace individual notices or establish ownership of third-party contributions.",
+  "licenseFile": "LICENSE",
+  "licenseSha256": "0cd692aafce28b1868cdbf5868b627cac07b8296e740093678b53c69dcd6b36f",
+  "scopeFile": "LICENSE-SCOPE.md",
+  "scopeSha256": "05b6041539bacc912f715c2b7e632fb0fad1a15d54500284154f5cf2d314c8a3",
+  "sourceURL": "https://opensource.org/license/mit",
+  "packageMetadataScope": "Original project contributions only; not all dependencies, headers or generated assets",
+  "thirdPartyTermsUnchanged": true,
+  "publicReleaseCleared": false,
+  "scopeUpdated": "2026-11-03",
+  "scopeChange": "Copyright holder label renamed from \"Shi contributors\" to \"Amon-C contributors\" before first publication (project name: 支位 / Amon-C; repository slug amon-c). Added one row for the OFL-1.1 code display font (fonts/amon-c-code-subset.woff2), which stays outside MIT. MIT terms and project-owned scope are otherwise unchanged."
+}
