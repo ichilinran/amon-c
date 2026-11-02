@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "version": "0.22",
-  "publicReleaseCleared": false,
+  "publicReleaseCleared": true,
   "completed": [
     "Inventory of 1991 frozen SDK source texts; 108 core texts verified as identical subset",
     "1964 host headers match current host bytes; ownership resolved to 15 packages with no unowned files",
@@ -25,14 +25,10 @@
     "Independently reproduced replacement object, support archive, final Wasm and JavaScript glue with shipped reproduction scripts",
     "95 related tests, five README examples, 4232 existing display comparisons and 3624 independent old/new Wasm display comparisons passed",
     "v0.22 display update: layout, C-line numbers on the 支位 pane, and the OFL-1.1 code font \"Amon-C Code\" (renamed subset of UDEV Gothic; notices in LICENSES/fonts/). Translation, Wasm and SDK unchanged.",
-    "Project copyright label set to \"Amon-C contributors\" before first publication; MIT terms unchanged."
+    "Project copyright label set to \"Amon-C contributors\" before first publication; MIT terms unchanged.",
+    "Published the v0.22 pages bundle on GitHub Pages (pages-only); deployed site checked on iPhone Safari."
   ],
-  "open": [
-    {
-      "id": "public-bundle",
-      "item": "Candidate code, display and Chromium UI checks recorded for v0.22. Actual deployment, real-device (iPhone/Android/iPad, Safari) verification and native-Clang comparisons remain unperformed."
-    }
-  ],
+  "open": [],
   "closed": [
     {
       "id": "llvm-binary",
@@ -47,5 +43,21 @@
     "pages": "Publish the generated pages/ bundle on GitHub Pages from the gh-pages branch of ichilinran/amon-c.",
     "source": "Do not publish github/ (source, tests, tools, development records) for now; keep it as the private master. The pages bundle itself contains the runtime JavaScript, license texts and notices.",
     "mainBranch": "README.md, RULES.md, VOCABULARY.md and LICENSE (MIT, Amon-C contributors)."
-  }
+  },
+  "published": {
+    "date": "2026-11-03",
+    "url": "https://ichilinran.github.io/amon-c/",
+    "repository": "https://github.com/ichilinran/amon-c",
+    "scope": "Pages-only: gh-pages holds the v0.22 pages bundle; main holds README, RULES, VOCABULARY, LIMITATIONS (public edition) and LICENSE. The github/ source is not published.",
+    "checks": [
+      "Pages build and deployment succeeded",
+      "Deployed site opened and translated on iPhone (Safari), including copy over HTTPS, fonts, license page and multi-file sample",
+      "Chromium UI checks (20 items) on the identical bundle"
+    ]
+  },
+  "notVerified": [
+    "Android and iPad real devices",
+    "Native-Clang comparison",
+    "Full npm test including native-Clang tests"
+  ]
 }
