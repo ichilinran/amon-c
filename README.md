@@ -6,7 +6,7 @@
 
 「支位」では、C言語を変換することができます。  
 → https://ichilinran.github.io/amon-c/  
-詳しい規則の内容は、[[RULES.md](…)](https://github.com/ichilinran/amon-c/blob/main/RULES.md)に記載しています。
+詳しい規則の内容は、[RULES.md](https://github.com/ichilinran/amon-c/blob/main/RULES.md)に記載しています。
 
 
 
