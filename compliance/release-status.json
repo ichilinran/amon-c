@@ -1,63 +1,19 @@
 {
   "schema": 1,
-  "version": "0.22",
-  "publicReleaseCleared": true,
-  "completed": [
-    "Inventory of 1991 frozen SDK source texts; 108 core texts verified as identical subset",
-    "1964 host headers match current host bytes; ownership resolved to 15 packages with no unowned files",
-    "Collected matching package copyright notices and GNU/Apache license texts",
-    "Preserved existing LLVM, Emscripten, runtime and legacy Tree-sitter license texts",
-    "Recovered all 1991 header sources with matching SHA-256",
-    "Verified official libc6-dev 2.39-0ubuntu8.6 archive and all 477 attributed header hashes; its copyright also contains the old 2.23 heading",
-    "Generated GitHub and Pages candidates from the selected file list; exact file/hash/link checks and standalone regeneration verified in step 2",
-    "Preserved all 1964 host header texts and original individual notices; built per-file SDK notice coverage with all 22 common-license references locally resolved",
-    "Added 16 supplemental license texts including Linux-syscall-note, Linux-OpenIB and GCC Runtime Library Exception 3.1",
-    "Explained all 26 resource headers against pinned LLVM sources: 18 exact, 8 existing adaptations with full patch and prominent modification notes",
-    "Verified prebuilt LLVM archive SHA-256, catalogued 139 archives and preserved 11 additional named notice texts; Path.cpp.o linkage and replacement are recorded in path-replacement.json (v0.21)",
-    "Excluded legacy Tree-sitter application/vendor from current GitHub and Pages candidates",
-    "Adopted MIT for original project contributions; added root LICENSE, explicit LICENSE-SCOPE.md, project attribution, package metadata and matching notice/documentation links to both candidates",
-    "Reviewed frozen SDK source redistribution terms/individual notices and package-default scope for all 1991 texts; added JFFS2-specific LICENCE and a supporting collection of 1204 notice blocks",
-    "Reproduced all 12 rpcsvc-proto headers byte-for-byte from v1.4.2 input sources with rpcgen 1.4.2",
-    "Recompiled extractor and relinked recorded prebuilt archives with Emscripten 3.1.64; all 26760081 bytes match shipped Wasm; recorded 44 archives / 865 objects selected at linker stage",
-    "Added conservative source notice collections for 8115 LLVM/Clang source files and 3592 Emscripten runtime candidate source files",
-    "Reproduced v0.20 Wasm with Emscripten 3.1.64 byte-for-byte before replacement",
-    "Rebuilt only Path.cpp.o from unmodified pinned upstream LLVM 18.1.8; verified all 146 support members and unchanged remaining archives",
-    "Independently reproduced replacement object, support archive, final Wasm and JavaScript glue with shipped reproduction scripts",
-    "95 related tests, five README examples, 4232 existing display comparisons and 3624 independent old/new Wasm display comparisons passed",
-    "v0.22 display update: layout, C-line numbers on the 支位 pane, and the OFL-1.1 code font \"Amon-C Code\" (renamed subset of UDEV Gothic; notices in LICENSES/fonts/). Translation, Wasm and SDK unchanged.",
-    "Project copyright label set to \"Amon-C contributors\" before first publication; MIT terms unchanged.",
-    "Published the v0.22 pages bundle on GitHub Pages (pages-only); deployed site checked on iPhone Safari."
-  ],
-  "open": [],
-  "closed": [
+  "publicReleaseCleared": false,
+  "open": [
     {
-      "id": "llvm-binary",
-      "previousItem": "Byte-identical Wasm relink and selected archive/object inventory verified. Remaining: clarify redistribution terms for provider-specific Path.inc modification, or remove reliance on it through a controlled source build. Upstream LLVM license is not in doubt merely because provider repo lacks a root license.",
-      "resolution": "Removed dependency on provider-specific Path.inc modification by replacing Path.cpp.o with unmodified upstream source. Original LLVM and runtime license conditions retained. Technical dependency removal, not a general legal or public-release approval.",
-      "evidence": "compliance/path-replacement.json",
-      "date": "2026-11-02"
+      "id": "candidate-verification",
+      "item": "This generated candidate is not deployed. Publication and device verification are separate steps."
     }
   ],
-  "publicationScope": {
-    "decided": "2026-11-03",
-    "pages": "Publish the generated pages/ bundle on GitHub Pages from the gh-pages branch of ichilinran/amon-c.",
-    "source": "Do not publish github/ (source, tests, tools, development records) for now; keep it as the private master. The pages bundle itself contains the runtime JavaScript, license texts and notices.",
-    "mainBranch": "README.md, RULES.md, VOCABULARY.md and LICENSE (MIT, Amon-C contributors)."
+  "candidate": {
+    "published": false
   },
-  "published": {
-    "date": "2026-11-03",
-    "url": "https://ichilinran.github.io/amon-c/",
-    "repository": "https://github.com/ichilinran/amon-c",
-    "scope": "Pages-only: gh-pages holds the v0.22 pages bundle; main holds README, RULES, VOCABULARY, LIMITATIONS (public edition) and LICENSE. The github/ source is not published.",
-    "checks": [
-      "Pages build and deployment succeeded",
-      "Deployed site opened and translated on iPhone (Safari), including copy over HTTPS, fonts, license page and multi-file sample",
-      "Chromium UI checks (20 items) on the identical bundle"
-    ]
-  },
-  "notVerified": [
-    "Android and iPad real devices",
-    "Native-Clang comparison",
-    "Full npm test including native-Clang tests"
+  "evidence": [
+    "compliance/sdk-file-terms-review.json",
+    "compliance/wasm-link-reproduction.json",
+    "compliance/path-replacement.json",
+    "compliance/project-license.json"
   ]
 }

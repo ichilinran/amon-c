@@ -1,6 +1,6 @@
 # 第三者ソフトウェアの表示
 
-2026-11-02、支位v0.21のGitHub用・Pages用候補に対応します。自作部分のMIT、SDKと実行用部品の各条件を保持しています。提供元変更に依存していたLLVMの1部品を未変更の上流ソースから差し替えました。[案内ページ](licenses.html)と[確認状況](compliance/release-status.json)を参照してください。
+GitHub用ソースとPages用配信物に対応する第三者表示です。自作部分のMIT、SDKと実行用部品の各条件を保持しています。提供元変更に依存していたLLVMの1部品を未変更の上流ソースから差し替えました。[案内ページ](licenses.html)と[確認状況](compliance/release-status.json)を参照してください。
 
 | 部品 | 本文・出所 | 状況 |
 |---|---|---|
@@ -15,7 +15,7 @@
 
 ## 対象とSDKソース
 
-GitHub用候補は取得器・検査・必要な参照データを含み、Pages用候補は実行用モジュール・Wasm・SDK・画面用サンプルと表示資料を含みます。旧Tree-sitterアプリ本体とvendorは、この2つの候補には含まれません。開発履歴の保管用一式にある旧部品の表示は、そちらに保持しています。
+GitHub用候補は取得器・検査・必要な参照データを含み、Pages用候補は実行用モジュール・Wasm・SDK・画面用サンプルと表示資料を含みます。各候補のファイル集合は選定表で確認できます。
 
 SDKのgzipには各ヘッダのソース本文と元の表示を格納しています。完全SDKは1,991本文で、C標準ヘッダ以外のLinux・C++・OpenSSL・curl等も含みます。ヘッダ本文の配布条件と、Wasmへリンクする部品の条件は分けて確認します。
 
@@ -38,14 +38,14 @@ python3 extract-sdk.py sdk.json.gz ./recovered-sdk
 - Linux：<https://www.kernel.org/doc/html/latest/process/license-rules.html>
 - 既成ライブラリ提供元：<https://github.com/TheComputerM/libclang-wasm>
 
-## 今回の表示整備（③）
+## 表示と出所の対応
 
 - [追加を含む全ライセンス本文](LICENSES/INDEX.md)：Linux-syscall-note、Linux-OpenIB、GCC例外等を補いました。各ファイルの原文と選択的条件は維持しています。
 - [SDK本文別の対応](compliance/sdk-notice-coverage.json)：1,991本文の出所、元のSPDX表現、パッケージ表示、共通本文への参照22件。文字列抽出は正式なファイル別のライセンス確定ではありません。
 - [Clangのソース照合](compliance/resource-header-source-check.json)と[変更差分](compliance/patches/clang-resource-guards.patch)：LLVM commit `3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff` を比較基準とし、18本文は同一、8本文は非モジュール向けガード等の既存変更です。同一内容が複数の版にあるため、歴史的な取得タグまでは断定しません。原著作権表示は保持し、8本文に変更注記を追加しました。
 - [LLVMアーカイブの調査](compliance/llvm-archive-review.json)：使用記録にあるアーカイブのSHA-256は一致し、LLVM 18.1.8の構成情報を確認。139静的ライブラリの存在は、配布Wasmに全139件がリンクされたとの証明ではありません。
 
-SDKの既存整備では8本文にコメントを追加しました。v0.21ではSDKと翻訳処理を変えず、Wasmの対象部品と構築・表示資料を更新しています。提供元の変更への依存除去と、公開前の全体検証・実際の公開環境の確認は区別します。
+SDKのClang由来8本文には変更注記があります。WasmのPath部品は未変更の上流ソースから構築したものです。提供元の変更への依存除去と、公開前の全体検証・実際の公開環境の確認は区別します。
 
 ## 支位の自作部分
 

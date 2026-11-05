@@ -8,9 +8,9 @@
 
 | 種類 | 主な場所 |
 |---|---|
-| UI、翻訳処理、助詞・案内語の規則、辞書・訳語データ | `index.html`, `ui.js`, `core/`, `reference/dist/` の自作モジュール、`wasm/worker.js` |
+| UI、翻訳処理、助詞・案内語の規則、辞書・訳語データ | `index.html`, `src/` の自作モジュール |
 | 解析情報の取得器、互換用コード、準備・生成スクリプト | `reference/next/frontend.cpp`, `reference/next/sdk-compat/complex.h`, `reference/next/prepare.py`, `wasm/build.sh`, `wasm/package-sdk.py`, `tools/` |
-| 自作の検査コード・入力例、過去版の自作比較モジュール | `tests/`, `examples/`, `reference/next/cases/acceptance/`, `reference/baseline-v05/`, `reference/baseline-v06/`, `reference/baseline-v07/` |
+| 自作の検査コード・入力例 | `tests/`, `examples/`, `reference/next/cases/acceptance/` |
 | 説明・設定・調査資料の自作部分 | README、案内HTML、`docs/`, `release/`, `compliance/`, `coverage/`, `package.json`、資料一覧など |
 
 既存の第三者コードやライセンス文を引用・収録した部分は、その元の条件を保持します。調査JSONや解析結果に含まれる第三者ヘッダの内容も、プロジェクト独自の内容として再指定しません。
@@ -29,13 +29,13 @@
 
 `package.json` の `license: "MIT"` はプロジェクト独自部分のライセンスです。同梱する全依存物・SDK・生成物をMITへ再指定するものではありません。
 
-利用者が入力・読み込みするCコードや保存データの権利は、それぞれの権利者に帰属します。このLICENSEの追加で、その入力に利用許諾を与えたり、第三者の権利を取得したりするものではありません。
+利用者が入力・読み込みするCコードや保存データの権利は、それぞれの権利者に帰属します。このLICENSEは、その入力に利用許諾を与えたり、第三者の権利を取得したりするものではありません。
 
 ## 配布時に保持する表示
 
 MITの対象を再配布する際は、その本文の条件に従い著作権表示と許諾表示を保持してください。第三者部分にはその個別条件も適用されます。対応する資料の入口は [第三者表示](THIRD_PARTY_NOTICES.md) と [案内ページ](licenses.html) です。
 
-第三者条件の調査と自作部分のMIT採用は別の作業です。今回の採用によって未解決の配布条件を完了扱いにしません。状況は [公開前の確認記録](compliance/release-status.json) を参照してください。
+第三者条件の調査と自作部分のMIT採用は別の作業です。MITの適用によって未解決の配布条件を完了扱いにはしません。状況は [公開前の確認記録](compliance/release-status.json) を参照してください。
 
 ## English scope
 
