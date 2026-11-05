@@ -1,0 +1,12 @@
+{
+  "url": "https://snapshot.ubuntu.com/ubuntu/20251001T000000Z/pool/main/g/glibc/libc6-dev_2.39-0ubuntu8.6_amd64.deb",
+  "archiveSha256": "a595353fc0dfb52872e5a61b09513ca928ea5be74b888883fda9696b7549f3ab",
+  "archiveBytes": 2124546,
+  "package": "libc6-dev",
+  "version": "2.39-0ubuntu8.6",
+  "matchedFrozenHeaders": 477,
+  "unmatchedFrozenHeaders": [],
+  "copyrightSha256": "d3c95b56fa33e28b57860580f0baf4e4f4de2a268a2b80f1d031a5191bade265",
+  "copyrightMatchesPreviouslyBundled": true,
+  "finding": "Official package copyright also says version 2.23; stale heading alone is not evidence that the notice was taken from the wrong package."
+}

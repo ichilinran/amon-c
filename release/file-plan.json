@@ -1,0 +1,3265 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": ".gitignore",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 219,
+      "sha256": "1bd9842b9f46cc934a7c3d6dc1bd43658646c2f0f104b56dc51f5c15f487539c",
+      "generated": false
+    },
+    {
+      "path": ".nojekyll",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "generated": false
+    },
+    {
+      "path": "LICENSE",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1076,
+      "sha256": "0cd692aafce28b1868cdbf5868b627cac07b8296e740093678b53c69dcd6b36f",
+      "generated": false
+    },
+    {
+      "path": "LICENSE-SCOPE.md",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4860,
+      "sha256": "586f43a4d4e6ef93fe80aa5d27238497a35da5ff8e851985b9f943c4ece32ef0",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/Apache-2.0.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/EMSCRIPTEN-RUNTIME-NOTICES.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 797948,
+      "sha256": "75777f8ad764008697152eee5788c057aa3510c429ac7f6bf7f163d33376c006",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/GPL-2.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/GPL-3.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/INDEX.md",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4015,
+      "sha256": "8b0c59c425f2ac6d7d0cbd12115c4a06534a7ac2f7c683c44636f4dc3feda3e6",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/LGPL-2.1.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 26530,
+      "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/LGPL-3.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 7652,
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/LLVM-SOURCE-NOTICES.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 6487733,
+      "sha256": "e75888481db9a3843b1ba299329f213dd31eb560e00914db22d18c04d43c2fb5",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/README.md",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1721,
+      "sha256": "33fc6691ef9d1e3abe29247d9a469dd8ff47b87a889e2023f108639a389d97b9",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/SDK-HEADER-NOTICES.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1355274,
+      "sha256": "da43bf5353d4121adcffd7683369d9c7e59a376b3b2d3a634517ee12926059d3",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/fonts/BIZ-UDGothic-OFL.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4408,
+      "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/fonts/JetBrains-Mono-OFL.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4399,
+      "sha256": "30f0c136e3c88e422d0791acd97238870f9054a9729bc34cf2ff0d4ed8cac4ad",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/fonts/UDEV-Gothic-LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4647,
+      "sha256": "3e04c747c9c9535224f6163a290caf022877759db5183a00aef6134d3f5643f0",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/dialog-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4482,
+      "sha256": "ae541b00060e4cfb2b138df63aab555f0b75e6e8352a1b75580a69c2b8dec282",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/iproute2-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2691,
+      "sha256": "9c04a38e34fdd8df2b2f3c91e490049dfbd1cd1372eb3eb746cfc3c5e2c77730",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/libc6-dev-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 26462,
+      "sha256": "d3c95b56fa33e28b57860580f0baf4e4f4de2a268a2b80f1d031a5191bade265",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/libcrypt-dev-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 6010,
+      "sha256": "5a5e7ca0e9f3f9679977e3a3e9ede45ad92885a3297ea78e766979f9866c5a16",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/libcurl4-openssl-dev-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 21749,
+      "sha256": "a7c131b21e6e73b3b085a7d9f1637b68f5f92b832cc6f462e0c978fbe7841ccb",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/libexpat1-dev-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1756,
+      "sha256": "60919fe1a156395ff14511bb6ff79756c50ade2fff59ac60c9bae1d8a7fe6292",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/libpcre2-dev-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 6626,
+      "sha256": "030511beb4d9d620ad09914c369c36ec0528dcf301d1923cc643c948ee7c6a38",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/libssl-dev-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2543,
+      "sha256": "6a7da622fe0637a334d2a8fc470852d2ffb77d9a2b2f930f854e32a41ad6ef35",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/libstdc++-13-dev-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 69100,
+      "sha256": "08c6f3dee4c19aa1e57eb7d4ad45829b2e99656313bd07fa0922e2553f500be5",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/linux-libc-dev-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1292,
+      "sha256": "4ab34baa23c94237ffef144c80348b982d2d8e814c46b3a6a3538a706ef26114",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/make-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2093,
+      "sha256": "16deb73e706ec72758ce5e079a80d1aab17f3834449da9b718c4a4b60eb1f6ec",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/python3-pil-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2615,
+      "sha256": "4cb4800c9da6fd4fa8bed9002c486d2b67cfb3d65a38dac0bdc90b7dd3826115",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/rpcsvc-proto-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 9336,
+      "sha256": "e4ad18547554bdcb4e5290c2bf562d4c891748524b38740509c14a2a3f7f5418",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/sudo-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 13475,
+      "sha256": "1ed1b41eae332d4b7e6c71c339bab7e5482e1970a665025ca442c8afc4d7ae4f",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/host-packages/zlib1g-dev-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2927,
+      "sha256": "9e5b96d63773a5d177ba264254390f792be07e41748ebd94730981c6cac31cc6",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-prebuilt-Support-LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 303,
+      "sha256": "54cbc326a78b9400065bfc5830a57fdcdaf808286d4ac35d8a9e324aa77b7241",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/clang/LICENSE.TXT",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 15140,
+      "sha256": "ebcd9bbf783a73d05c53ba4d586b8d5813dcdf3bbec50265860ccc885e606f47",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/clang/tools/clang-format-vs/ClangFormat/license.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 15104,
+      "sha256": "3a39bb490f4e22550ba351ecfe3357f51a6bcd3d2ad20830b7216152bb0fe45a",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/llvm/LICENSE.TXT",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 15141,
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/llvm/include/llvm/Support/LICENSE.TXT",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 303,
+      "sha256": "54cbc326a78b9400065bfc5830a57fdcdaf808286d4ac35d8a9e324aa77b7241",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/llvm/lib/Support/BLAKE3/LICENSE",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 18691,
+      "sha256": "6a94bedb8b707ed97f6e310d0d015ab14e0683ffa0a612b02958581b9cc9fc0e",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/llvm/test/YAMLParser/LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1058,
+      "sha256": "d0d8b09800a45cd982e9568fc7669d9c1a4c330e275a821bbe24d54366d16fe9",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/llvm/utils/lit/LICENSE.TXT",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 15141,
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/third-party/benchmark/LICENSE",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/third-party/unittest/googlemock/LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1475,
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/llvm-source/third-party/unittest/googletest/LICENSE.TXT",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1475,
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/Artistic.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 6111,
+      "sha256": "b7fd9b73ea99602016a326e0b62e6646060d18febdd065ceca8bb482208c3d88",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/BSD-2-Clause.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1641,
+      "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/BSD-3-Clause.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1845,
+      "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/CDDL-1.0.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 19511,
+      "sha256": "490abf7869e4638fbb43df99a20e5683224617a6bf9ffd06971cb02b153e53c1",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/GCC-exception-3.1.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 3324,
+      "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/GFDL-1.2.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 20432,
+      "sha256": "d8e94ae5fdb5433fcae2961aeb1a8cf17174d6f4a0465d24bf37dd8a038bd439",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/GFDL-1.3.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 22955,
+      "sha256": "110535522396708cea37c72a802c5e7e81391139f5f7985631c93ef242b206a4",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/GPL-1.0.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 13022,
+      "sha256": "79270bf7a89e1c6bee5d578f920f330b61db2ff3b800cf095a1cc5cb34367ccd",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/GPL-1.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 12632,
+      "sha256": "d77d235e41d54594865151f4751e835c5a82322b0e87ace266567c3391a4b912",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/GPL.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/ISC.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1046,
+      "sha256": "cbdf535b99a9f4cb208c5495c6dd9a1f84104d83c03f8f0d98ee7a0c43805388",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/LGPL-2.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 25381,
+      "sha256": "681e386e44a19d7d0674b4320272c90e66b6610b741e7e6305f8219c42e85366",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/LGPL.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 7652,
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/Linux-OpenIB.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1317,
+      "sha256": "8ae20d34c2a74c85ae2760dd0034baf18e44bee3289b9b3a4fe46768b4ea2cd6",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/Linux-syscall-note.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1258,
+      "sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/MIT.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1372,
+      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/curl-COPYING.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1088,
+      "sha256": "b1d7feb949ea5023552029fbe0bf5db4f23c2f85e9b8e51e18536f0ecbf9c524",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/gcc-COPYING3.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/kernel-COPYING.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 496,
+      "sha256": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+      "generated": false
+    },
+    {
+      "path": "LICENSES/supplemental/kernel-jffs2-LICENCE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1413,
+      "sha256": "bf3c94946e93bf3def3106f0f5ef7e6ed86f82406edacaca1a20d445c6b00ffb",
+      "generated": false
+    },
+    {
+      "path": "LIMITATIONS.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 11435,
+      "sha256": "48147be7fbe39fbfddf9a5d5a21ebf0df1eb2fb0c7c2f6a1cb1f0ee28235d52b",
+      "generated": false
+    },
+    {
+      "path": "PUBLICATION.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1533,
+      "sha256": "3e5db7b79482cf6478e4f62d3ca6d63f0cd83e94ee90265081a1770abf32efb3",
+      "generated": false
+    },
+    {
+      "path": "README.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 7100,
+      "sha256": "e8c1dd4e9c1c1e4c96ad07e02b0d215583e544402b7039042f39367f2c6679d9",
+      "generated": false
+    },
+    {
+      "path": "RULES.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 30339,
+      "sha256": "4b3c54e30e8ed071031fa9f9459089793e649c71f94aec1dffc21403c0a40178",
+      "generated": false
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 7010,
+      "sha256": "f4c8f8e60e108c0d80cfeeaf31c611fee43f1710527fdce47b2f782462b9cf8e",
+      "generated": false
+    },
+    {
+      "path": "VOCABULARY.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 128341,
+      "sha256": "4f6ca934739d53722678fda4aef50110e47626ae838f9df0daf7cea88c0cc315",
+      "generated": false
+    },
+    {
+      "path": "compliance/RELEASE-REVIEW.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1901,
+      "sha256": "981db571b372be3c70ee4efdc3968d5d8da750e9e21b3029ee38f65dcd3c2069",
+      "generated": false
+    },
+    {
+      "path": "compliance/SDK-SOURCE-REVIEW.md",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 3394,
+      "sha256": "3fa3b7a9f57ca56c902fc7e976b21d39cd91abeb7c52a47fbe5af8e154dc675f",
+      "generated": false
+    },
+    {
+      "path": "compliance/WASM-REVIEW.md",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2813,
+      "sha256": "067eb430591d8316af3b3652c6ceb5e7f5af9549f07e98b7a96c761fac83bc12",
+      "generated": false
+    },
+    {
+      "path": "compliance/emscripten-runtime-notice-coverage.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 664855,
+      "sha256": "7b4971a17a890219c6f77fef067a30ae6750aa558241bfec5692c47e4fb4e925",
+      "generated": false
+    },
+    {
+      "path": "compliance/font-subset.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 826,
+      "sha256": "9affcb85e0c6496362ad6a4a0ce30dc499a01566b16af271ced0deecabe708b1",
+      "generated": false
+    },
+    {
+      "path": "compliance/glibc-package-verification.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 643,
+      "sha256": "0c3fa7ab2bee7b7be60e8a7eb44addb6c73482ec21a63e10e34816e6caae2b21",
+      "generated": false
+    },
+    {
+      "path": "compliance/host-package-evidence.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 414239,
+      "sha256": "b91486a55f78aed72b09dfbeee821dbd7c595a7c844ac58e96ffe253d3535b30",
+      "generated": false
+    },
+    {
+      "path": "compliance/llvm-archive-review.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 16958,
+      "sha256": "da320c96e3c19c80db0060703b0f40a32b5b41f32af457cbbb5d6c22e5d3af54",
+      "generated": false
+    },
+    {
+      "path": "compliance/llvm-prebuilt-source-evidence.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 841,
+      "sha256": "7e9122fb9ffa21143eda9af666e9370b7e8e6b8ba308c5aacb55db2d5a50843b",
+      "generated": false
+    },
+    {
+      "path": "compliance/llvm-source-notice-coverage.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1482497,
+      "sha256": "79e5c0648270f83348bd9c5e07393041b2136bfb0ca350d676278a2e42923b84",
+      "generated": false
+    },
+    {
+      "path": "compliance/patches/clang-resource-guards.patch",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 7739,
+      "sha256": "5bb961119c4e343d9899b7056ec7b635bc03bbe4d6f18121fb68aefead01e131",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 38899,
+      "sha256": "8f123dff474e643b05cbfc4c2ef51dd39912fe2a0d9d520461b0065d22a963e7",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/Path.cpp",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 39790,
+      "sha256": "b16d3f232dced59e3271068125bd694b5703f2dc4e8ba5185ce5f0e641d489f9",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/Path.cpp.o",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 69258,
+      "sha256": "660c7a458e1aa2a8074f1c385190a83d8c6e03574372fd772b97b5e7e05e02e7",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/Path.inc",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 47995,
+      "sha256": "cacbee7d34dbb9d6c5bb61076af7e2d5a8ae46427bf8cfb6f6d51d41a9e06532",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/abi-breaking.h",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2512,
+      "sha256": "fcaa542287b23ff01a183c6604392c84ffc1181d6307c8a97d2be4bcb968078f",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/baseline-reproduction.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 700,
+      "sha256": "abb390fe27eed1847dd00f88f3d06d8c531e753b7963c80c6875801a93f42f0a",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/config.h",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 9246,
+      "sha256": "b9c65649d3c0f1907b2102137030263d809340c7b1735ed0a23b30d80e088671",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/configure-command.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1246,
+      "sha256": "85db2af60b29059a662a23d9d46e60600957431e898809be3064152e265bb6cb",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/link-command.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 16009,
+      "sha256": "5307847a4c8362fed7caf76b0e5ec8efdac0d598b4731f057b48b11ee6c69ca1",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/llvm-config.h",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 6279,
+      "sha256": "0196eb7dd425c1ca3b5e4813d0b5cfe4e83f9014ef855f26e8ba7d332507fae4",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/path-compile-command.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2095,
+      "sha256": "3964adfa875170f306d2b6f12a2266e8d50d776f2711924a719dca2da5c09561",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/path-reproduction.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 604,
+      "sha256": "4838ab3e59d207614ba338ed54fc7f1ac0573e903cccc34b2b7a5b458902cc13",
+      "generated": false
+    },
+    {
+      "path": "compliance/path-replacement/wasm-reproduction.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 780,
+      "sha256": "1a96d76b3f87b83704611fed2cc6698146351254f67960ae15b0875ea2e7a6bf",
+      "generated": false
+    },
+    {
+      "path": "compliance/project-license.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 823,
+      "sha256": "76d121226a12831ee9beb806f8fa18cf6d3fa9f68cef7480ae7b1686d8a710d6",
+      "generated": false
+    },
+    {
+      "path": "compliance/provider-permission-review.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2533,
+      "sha256": "f77ab9724bbe83a65a1a7895fa50cde3e8cd6acbc3c284b0a00f4c4d7df00c9b",
+      "generated": false
+    },
+    {
+      "path": "compliance/release-status.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 467,
+      "sha256": "7c250825bb9b21040a220dc8fbea6ed5865eed8703cfc7d92bb8d96acbebe5d8",
+      "generated": false
+    },
+    {
+      "path": "compliance/resource-header-source-check.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 18035,
+      "sha256": "15b56166cc27aa7155bae991659a6ce8980ae5c6304190b0546a1f2e573adcf1",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-generated-source-check.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 5145,
+      "sha256": "14a12a8b579c0bd0a60f8bc958743d0ca30f30fc3d4b76d852034628e3c48615",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/bootparam_prot.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 3120,
+      "sha256": "c958c2b79de41c49b6882ed13cbc12e4bc8e02807724662bdf035d5091dced59",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/key_prot.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 6568,
+      "sha256": "21864bcfa4a8445e1935b5780dd60712df9487566ab77fb5b4ece5d3c7c82e77",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/klm_prot.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 3741,
+      "sha256": "6a5a9ebd4b28d907ea980ee7a238cd6e52e336e00a2dda114e283a8cf2bd4171",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/mount.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4665,
+      "sha256": "77dccac297807146a3166f9ccba99d700f4d08bd10c21c78d12017ee1f977e2f",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/nfs_prot.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 7986,
+      "sha256": "fdabfe13a4a6b90c4c3c9295104a75c4972b30bbb42619db5ab07e83f3aa5495",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/nlm_prot.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4990,
+      "sha256": "b3d84f13c32a59931a605ef1e0e35a3382ba6eb5b158433bb452fde735258f71",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/rex.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 7422,
+      "sha256": "27480c528ef5523346bf9cc7188bcb49021641ec1b62edcd99fdd1a7dcecd513",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/rquota.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1568,
+      "sha256": "00329835b00905d12c245386c757a45f15f518f035d7f46c27edccbdc7a52210",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/rstat.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4001,
+      "sha256": "95cb9b39cfa7fc42259d03187915e075f2fbc49ad3dd34739a3c1ab33bdf5813",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/rusers.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 5866,
+      "sha256": "576ed2fc60768920bbe421d1c36e2ad59b4159f07a1f892c3c0ad754bb635f49",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/sm_inter.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 3752,
+      "sha256": "40f0a30f26c9f2932a389d33e58a6236f6e68ba5215c7cdaf21350225b4c8910",
+      "generated": false
+    },
+    {
+      "path": "compliance/rpc-sources/spray.x",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2543,
+      "sha256": "70a2e7b3fb14921e4715bc5262e3c41d458279d92e657cfdfff551cbb709f7d4",
+      "generated": false
+    },
+    {
+      "path": "compliance/sdk-comment-change-verification.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 233,
+      "sha256": "4b8359d83065867c05d32ff9c8616ccce2ef7ebb6d17703aaf1d103f9e3df12b",
+      "generated": false
+    },
+    {
+      "path": "compliance/sdk-file-terms-review.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2029501,
+      "sha256": "9b89774a28ea1f1fc52ab11d4fc61e18a80e48193b2bf7a414835e1b811245ad",
+      "generated": false
+    },
+    {
+      "path": "compliance/sdk-inventory.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 878411,
+      "sha256": "2acda4b966cf63251dbc2cd6020e59b398425eb1f5f5b84e775d5f5ff5ce49f4",
+      "generated": false
+    },
+    {
+      "path": "compliance/sdk-notice-coverage.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1141545,
+      "sha256": "18c597b99be68e82f40fa478d7d77a236e964e5667c222a9464ffa9891af4997",
+      "generated": false
+    },
+    {
+      "path": "compliance/supplemental-license-texts.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 4487,
+      "sha256": "66aedb1c50f75bab5fcaab87f7c00d52163664b7b1bfe5a8c454e82afd91fca2",
+      "generated": false
+    },
+    {
+      "path": "compliance/upstream-license-checks.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1951,
+      "sha256": "64882ff8c7e28ee12c4adfc79f67f90182d660e57d5223374fcd8f9f21826bfd",
+      "generated": false
+    },
+    {
+      "path": "compliance/validation-v011.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 449,
+      "sha256": "4951a34270effe718d155aceaa9c4ac311235338112ae4b42785c356ee25c93c",
+      "generated": false
+    },
+    {
+      "path": "compliance/wasm-link-map-v020.txt.gz",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2001520,
+      "sha256": "4b48f54210c676c645d67c610cff482e30ade7f3d99ba7f0d48676ee5aafd6ef",
+      "generated": false
+    },
+    {
+      "path": "compliance/wasm-link-map.txt.gz",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 2033897,
+      "sha256": "676ec4ede733c4ee68b7e2a8312e256a76722869e532a7840593b00dd418c442",
+      "generated": false
+    },
+    {
+      "path": "compliance/wasm-link-reproduction-v020.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 97223,
+      "sha256": "50fc4ecc83bcfea25b110e5f14910b2c1306d5464c1266ef0da03cdeb6c9eae0",
+      "generated": false
+    },
+    {
+      "path": "compliance/wasm-link-reproduction.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 97065,
+      "sha256": "f55d316814c7f584daae207bbb5a23c97a8abdc5a483298afbbd17083a787f02",
+      "generated": false
+    },
+    {
+      "path": "coverage/probe-classification.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 87992,
+      "sha256": "5e7d83e9e39e64fc4a0c234570d94db32a947fcc8353421612080f646cc78c5d",
+      "generated": false
+    },
+    {
+      "path": "coverage/replay-index.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 293,
+      "sha256": "2fc214c57eb2e1927372324cc7c07696cb8dfd975005c55048af7016fce6ba8e",
+      "generated": false
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3536,
+      "sha256": "049543139e43d8fa47685b84b4092043d1f4987ed3c40f67d9fe8922a695b815",
+      "generated": false
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 8015,
+      "sha256": "350a8b2319f66d4070969432c7dc998d0aaa57758d2b99fcdbf60588fa72e5ba",
+      "generated": false
+    },
+    {
+      "path": "docs/TESTING.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2773,
+      "sha256": "7f1fff443436f7e269348e5fe0d17e5237adc2d285e40299de203faef58065d5",
+      "generated": false
+    },
+    {
+      "path": "docs/WASM-V021.md",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 3896,
+      "sha256": "bf0c0502e5068089ded1ff020eaff73354616d3469ae1b49ac1df167cd10ce70",
+      "generated": false
+    },
+    {
+      "path": "docs/design/READING-POLICIES.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3861,
+      "sha256": "0963dfd7f170c4c006603f5f9085f47b78c9299a08c6ce4c130af86077e40217",
+      "generated": false
+    },
+    {
+      "path": "docs/design/SAVED-DATA.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3668,
+      "sha256": "93b8a205a0c7c7719a33c3b8972c08faee38e07b8ef0abc450d86b3feed7b199",
+      "generated": false
+    },
+    {
+      "path": "examples/analysis/hello.analysis.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 14196,
+      "sha256": "8bc1110796eab3472636d9dc5da5e967ddc083235dd8b0dc4a920cc30163d7e2",
+      "generated": false
+    },
+    {
+      "path": "examples/analysis/project-21.analysis.json",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 5552569,
+      "sha256": "e362b7ea70a9617a1aa3f8357af4a125d7c32e904a563ba25465f86400faac47",
+      "generated": false
+    },
+    {
+      "path": "examples/analysis/review-v010-report.analysis.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 18861185,
+      "sha256": "e931ce15d558e2faa3f90a0ac37550cd0e7f08729075bb66d03e402d7abd7818",
+      "generated": false
+    },
+    {
+      "path": "examples/analysis/review-v010-small.analysis.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 7500874,
+      "sha256": "e752259600cc86d61847d5f306f50d579faf61add436e57d9cbcd5bf2a3e18a7",
+      "generated": false
+    },
+    {
+      "path": "examples/boundary-cases.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 154220,
+      "sha256": "bfefdb008a9757828f83c65930e02aa660a6afbc3eaaeb5ad17cbe6189995245",
+      "generated": false
+    },
+    {
+      "path": "examples/catalog-probes.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 235491,
+      "sha256": "978bc9cfcfa584cfc0320d7147a736d9534e6561acd61c37daac5391e07155f4",
+      "generated": false
+    },
+    {
+      "path": "examples/project-acceptance.json",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 2724,
+      "sha256": "a81de0d14a47bd0780236ff58ee9644cc9a7afb1db2007404be8c5504864809b",
+      "generated": false
+    },
+    {
+      "path": "examples/replay/project-21.analysis.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2824,
+      "sha256": "838dd0f57ef7faadf889a0b73a391e179245eb6f3f1ff6857188f5572af287ba",
+      "generated": false
+    },
+    {
+      "path": "examples/replay/review-v010-report.analysis.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 6294,
+      "sha256": "7fe2fe0849e23be89c4ffe9baf767ea45512047d88ff2f93d522e1d3370fc48d",
+      "generated": false
+    },
+    {
+      "path": "examples/replay/review-v010-small.analysis.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 5611,
+      "sha256": "b2e31bb0d11aff751d670eeaef8a28c509fed876660d974dbbbd429726afc6df",
+      "generated": false
+    },
+    {
+      "path": "fonts/amon-c-code-subset.woff2",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 73296,
+      "sha256": "9e931e74ee984b0d4777056c4706ceb163bf93d7781d2d3d23b8f256d9498cf5",
+      "generated": false
+    },
+    {
+      "path": "index.html",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 13344,
+      "sha256": "85caf535c2a7c4c49e5a340223592172e15f2c3851c6f3a15f0b2f848dcb6821",
+      "generated": false
+    },
+    {
+      "path": "licenses.html",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 8625,
+      "sha256": "0c0295bc04e3cee76419be2f9cff5b1d33f5b675a99ec2d2e4fe611b8664ee31",
+      "generated": false
+    },
+    {
+      "path": "ogp.png",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 75113,
+      "sha256": "10fdcebcb4fc02a626846df262c8e51dc9dbdd4b67520f77f29f953a2ae49e17",
+      "generated": false
+    },
+    {
+      "path": "package.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2937,
+      "sha256": "42d80f33b284723edb2fc42dcc7f42e34492d8a0766a941e3bc5fb0f4d14b0a4",
+      "generated": false
+    },
+    {
+      "path": "reference/next/cases/acceptance/main.c",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 445,
+      "sha256": "a232cbccad78a40ef5ad023fe733797f6c14e936e2ed1e54e936d01fbeef6d89",
+      "generated": false
+    },
+    {
+      "path": "reference/next/cases/acceptance/model.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 646,
+      "sha256": "251455a014c3e416725ba0605e8d1f45d9e59fffc681a4e43507dbb6db2069a7",
+      "generated": false
+    },
+    {
+      "path": "reference/next/cases/acceptance/project.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 363,
+      "sha256": "d79e9863eac465d868595ed5f3274ac9673b5f8d0cf39beda902819557b82f7c",
+      "generated": false
+    },
+    {
+      "path": "reference/next/cases/acceptance/slot.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 71,
+      "sha256": "0ae9e26c18b34e6f7277c6c51ff4723c50de51495cddc9309280aea5fc24f01f",
+      "generated": false
+    },
+    {
+      "path": "reference/next/cases/acceptance/worker.c",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1017,
+      "sha256": "e4ce4e26a13173e100945fadcac6d1afb67e9a9f1ab590ee0a4c54ead606890d",
+      "generated": false
+    },
+    {
+      "path": "reference/next/frontend.cpp",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 30033,
+      "sha256": "150987ae3ef01b3b851b238375c062f216a32bfb0bf7834da52ac63a67480459",
+      "generated": false
+    },
+    {
+      "path": "reference/next/native_view.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 13690,
+      "sha256": "10fed2a87921ef27008118462104d453b5e547e00e7d434ffc4f8df6c64cc807",
+      "generated": false
+    },
+    {
+      "path": "reference/next/prepare.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3113,
+      "sha256": "d65bd68fa64782e6a2d4f3ace301dac3f4fb4566e4ccd4784ae3e7ef39fbd273",
+      "generated": false
+    },
+    {
+      "path": "reference/next/sdk-compat/complex.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 820,
+      "sha256": "fb8d894826bca273c5a63cf532bc7d6af683422d9e5cd825965f700ff7362097",
+      "generated": false
+    },
+    {
+      "path": "reference/next/toolchain-packages.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2241,
+      "sha256": "eb68f09b6ca3cafdbee5f9395c77d6c32d5bc5e51efaa347bc32b162f5d57bde",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 15141,
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stdarg___gnuc_va_list.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 467,
+      "sha256": "feca975bfdfb254d17458a8e3d51f8ad6d9bdc9fd6287727f0f8b2fb81fcb0b0",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stdarg___va_copy.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 445,
+      "sha256": "f0a8d3c963338173f2d57b2cbc209dde38c90536107b15eb0cf78166d4caee1f",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stdarg_va_arg.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 793,
+      "sha256": "db0cca3b7768cf07807553fb88ea74e00cba4503e08a5f5504989fb3cc3e4cf1",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stdarg_va_copy.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 451,
+      "sha256": "bb195f56cb08d4cee6a60bd9f62f34466e8ac4f89f6fed043b044cb2f7ead010",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stdarg_va_list.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 448,
+      "sha256": "81c3055f7033e26e7f53705653bc9d69b5202f25c2692e03b3a4f77ff44a7d76",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_max_align_t.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 857,
+      "sha256": "3c1e4de47f4f06b35e2c5890d670052e84f716760505ff51b022fc8b21a9400f",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_null.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1131,
+      "sha256": "4d6c43a6a8839c52389ad7cf7aa0a0a97cc9323c4d9c382e7b2c6883cfe0e10d",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_nullptr_t.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 964,
+      "sha256": "21976ef7f93688126e3f07068a77c18f33afb78ee5531572385a7103f24893be",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_offsetof.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 712,
+      "sha256": "d2b88c1f08c3752847409c320641c7ca727665f55eae5fda45785b871fbf2a04",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_ptrdiff_t.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 723,
+      "sha256": "a381ed1272360047501280e108b802e40c55cb752e4d417c2d3ea1cdc67ceeff",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_rsize_t.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 714,
+      "sha256": "68f15529b74ec2f205e6ff9bb34ff6eea6a7857b03509a070e1932ecb02b079b",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_size_t.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 711,
+      "sha256": "98426b0c2b6d03fd79580b0a2fb138e8b63787ba860f3b86a093d43aacaf55fd",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_unreachable.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 750,
+      "sha256": "7342db41010f8c8bdd91033c0d1552fda15027c5e1a5a9a115edfabbc43b785b",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_wchar_t.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 857,
+      "sha256": "49f3f1a508e93afc17d319608e935e4842ff7b2844d807ce277407629cbe022e",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/__stddef_wint_t.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 443,
+      "sha256": "f2ededa38c5454397242aceaefa65b42b292a1b3cc258e7ca6e216f146e51f0d",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/float.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 5767,
+      "sha256": "7503eae108f6828e729e91044ff231ce3a8198d0bbc7b67f0a8d9b4ec69e1fe8",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/iso646.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 656,
+      "sha256": "174b578786a20e17b3371283d05dc956ab7bfe87a9f092fd21370bb8430dfa05",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/limits.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3540,
+      "sha256": "de837ee8c890eb2f23b2e7b8753a62648dbeaa3d93c1c936a0fe93177a1943fa",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/stdalign.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 756,
+      "sha256": "0375392ce44c0bce9d2dda696b0b2e7129e2e58233e002f532d010c9ac02d27b",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/stdarg.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3058,
+      "sha256": "b47104b4497b3906f3a2784d547fbe4f01f47f8df80d2288cbba3e8153bbd2f8",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/stdatomic.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 8341,
+      "sha256": "4e4de7f617643a9f6e49c678866c05266b3d8d4145eb653066f1ca3f6e49b0be",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/stdbool.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1062,
+      "sha256": "a50ba3d832c0bb4faa973612a8c9114a7aa128a2e0a7753b32488860cfa1753d",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/stddef.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4727,
+      "sha256": "23b9e2c5d397e05164b24bb46466bf14d951b8caec2d8e1a67a95b14f9a38625",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/stdint.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 30946,
+      "sha256": "7ce5540d5fb6e8da9760928e76cbdd5ebef329d701ad598d30d8e6f9d5d78b34",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/stdnoreturn.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1197,
+      "sha256": "8eb35f092aaf7aa8586313c465f134be93a7560c2370362ba549f3c9bc8b9b27",
+      "generated": false
+    },
+    {
+      "path": "reference/tools/clang18-headers/tgmath.h",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 30389,
+      "sha256": "7aa69dc82ec404a51295498cc4cb07d0441e5dcd891819247c14ccb3f9745e3b",
+      "generated": false
+    },
+    {
+      "path": "release/README.md",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1673,
+      "sha256": "086015d2fa8f5b79224118d2c29d8ce9b647017c830550ca8939c472bbd395bf",
+      "generated": false
+    },
+    {
+      "path": "release/file-plan-summary.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": null,
+      "sha256": null,
+      "generated": true
+    },
+    {
+      "path": "release/file-plan-verification.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": null,
+      "sha256": null,
+      "generated": true
+    },
+    {
+      "path": "release/file-plan.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": null,
+      "sha256": null,
+      "generated": true
+    },
+    {
+      "path": "release/file-policy.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 6403,
+      "sha256": "cd8801ebfa872702e73571abe0b11ec67558ed9f79c7f349e1999be5a1b7ef1d",
+      "generated": false
+    },
+    {
+      "path": "release/runtime-graph.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": null,
+      "sha256": null,
+      "generated": true
+    },
+    {
+      "path": "src/analysis/declaration-syntax.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 4764,
+      "sha256": "c3d7d677f6f74616665c2dc07641ebfd0e38e6910a97f221f8f3dd78517e44fb",
+      "generated": false
+    },
+    {
+      "path": "src/analysis/literal-facts.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 1306,
+      "sha256": "7b94a0de63aa0f024b9b9725fabd9dd45c3e2c5fec2939a1487b5e5f3d2c90ff",
+      "generated": false
+    },
+    {
+      "path": "src/analysis/projection.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 13360,
+      "sha256": "be9ab0567aefe7991d4682ed70a61c5e65b5e1adf6e43b6ac54419379d87fe2d",
+      "generated": false
+    },
+    {
+      "path": "src/compat/analysis-document.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2618,
+      "sha256": "7fe013f0e0aeda4ae8bea8fd8fb85e2fcfc596ee1a8c42c5afc50bb02a4079be",
+      "generated": false
+    },
+    {
+      "path": "src/compat/learning-save.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2088,
+      "sha256": "48790156d62ddc6711f13ccf43ea1c2d365276bb9b61b991dce3570df89ae7b0",
+      "generated": false
+    },
+    {
+      "path": "src/compat/legacy-v1.js",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 5713,
+      "sha256": "4ac800ec0b612cca1b968b4b279b074d3384c131ae738dfdcd78937ab21ec29d",
+      "generated": false
+    },
+    {
+      "path": "src/compat/legacy-vocabulary.js",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 28298,
+      "sha256": "1f22823277576259199b8506a88e9226f63a1cf42daf2c6b347636cd417c20e2",
+      "generated": false
+    },
+    {
+      "path": "src/compat/lexical.js",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 7097,
+      "sha256": "f3b9d041df5dba822630cbc8424d58c2192a2628af2c31588e2d3814c3b1ab19",
+      "generated": false
+    },
+    {
+      "path": "src/compat/project-save.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 1164,
+      "sha256": "a299d95af4391f666fed0b0547046b986c3b0229e9566b2f138ed9b88e3679ae",
+      "generated": false
+    },
+    {
+      "path": "src/compat/vocabulary-v10.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 89746,
+      "sha256": "23c58e3e8fcb1dfd89631b69bca3a3b2ab4f95941d92fbc23ab3866044fe5ed9",
+      "generated": false
+    },
+    {
+      "path": "src/compat/vocabulary-v11.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 95865,
+      "sha256": "2abbed214bc0aa59611245e66d5200808432788aeb5cf3c7c305727d202f1dd0",
+      "generated": false
+    },
+    {
+      "path": "src/compat/word-settings.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 856,
+      "sha256": "116199491307fd817959e1a93e94dd315695a447405cf46135688303d7baf63b",
+      "generated": false
+    },
+    {
+      "path": "src/index.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 453,
+      "sha256": "ecc366a71958dafdf3e4fdfc0fec3e9deb4405d565aba74590b6d21b8caed687",
+      "generated": false
+    },
+    {
+      "path": "src/project/analysis-format.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 6578,
+      "sha256": "25c698eb3fff346dee9145cbccc2b28aa8b7690c05c3e6cdead152cd4716241f",
+      "generated": false
+    },
+    {
+      "path": "src/project/filenames.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 196,
+      "sha256": "4fea8556e0f0749d54ed829fd698177016655e27bccd878e170026dae10657bb",
+      "generated": false
+    },
+    {
+      "path": "src/project/import.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 3245,
+      "sha256": "ae35d20bed090282d2e789baa675b4b43efb618e9f05f57638f3d710b05ecb00",
+      "generated": false
+    },
+    {
+      "path": "src/project/input.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 3835,
+      "sha256": "723035a60352cb73365cfb8c54c84086007daccd17fc3c41c1913830b1112e44",
+      "generated": false
+    },
+    {
+      "path": "src/project/project-analysis.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 15472,
+      "sha256": "c82e320ec374c287ae0a97a099143128b8f32d24d40b4c375328a81763afed93",
+      "generated": false
+    },
+    {
+      "path": "src/project/project-view.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2698,
+      "sha256": "e3f9ef75d8f7cb236c757f776ee58de14aaa2d92ae99c1fdd14a1bf77193d4da",
+      "generated": false
+    },
+    {
+      "path": "src/project/project.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 584,
+      "sha256": "d62d9e4d8f4a34f0c3d5ecbf01714ebd655bb71ac8f7b0e7764b90d6f44312d2",
+      "generated": false
+    },
+    {
+      "path": "src/project/surfaces.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2959,
+      "sha256": "d7fdb4608a8a47e142adc73f3421b94b1f7a024932b6fc2cbe6ed088188cb95d",
+      "generated": false
+    },
+    {
+      "path": "src/runtime/limits.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 503,
+      "sha256": "5c0be643c837f2aa8ebc8e7fec632f6342ca48067475f0e02744d7fecaecefff",
+      "generated": false
+    },
+    {
+      "path": "src/runtime/resource-budget.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 3168,
+      "sha256": "e44120dfd6377f73eb70216ddb603c8215e0c2d11fe935466075e325c7eb9871",
+      "generated": false
+    },
+    {
+      "path": "src/runtime/resources.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2562,
+      "sha256": "9cfc427c01f3620a727c75ceeef2526b35bc51ec91d1cc82f1aef66bbdd32a95",
+      "generated": false
+    },
+    {
+      "path": "src/runtime/wasm-runtime.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2714,
+      "sha256": "d2c6f20bffbb1f4a9895b964cf94cac74cf3c6458f5d9c83c5676bc04eca0a49",
+      "generated": false
+    },
+    {
+      "path": "src/runtime/worker.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 1550,
+      "sha256": "543ac82f8d5cd6bf50b119f8425a94032a76ae041dffab4dedd423607ce59ecc",
+      "generated": false
+    },
+    {
+      "path": "src/shared/hash.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2246,
+      "sha256": "e6e962eb19ee442262e1e59af54e986da66e063f1761f56bdb26a7e6c7bca474",
+      "generated": false
+    },
+    {
+      "path": "src/translation/c17-tokens.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 1594,
+      "sha256": "2291cd7af430663125d8673e61434c59958b0d46ce1fbd3e3ebc00307d7b783e",
+      "generated": false
+    },
+    {
+      "path": "src/translation/declaration-compat.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2358,
+      "sha256": "2e340e0c33c7883e0147db7aa00415179db61bd995c7ee28b28ef0bc0186ec58",
+      "generated": false
+    },
+    {
+      "path": "src/translation/declaration-layout.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2967,
+      "sha256": "4a6d77e557ae0543d109879bd42cc021664f2a0b972338ba95a8581f666e67c4",
+      "generated": false
+    },
+    {
+      "path": "src/translation/declaration-plan.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 8019,
+      "sha256": "6ce6f27c2a23253481d19fb0d828c3e18bbab7e70d8cddae1eb6291939df396a",
+      "generated": false
+    },
+    {
+      "path": "src/translation/declaration-validation.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 3492,
+      "sha256": "e4af4c0107da360b8a926969920de1c154658fd05b5dbaa24834feb14914cd85",
+      "generated": false
+    },
+    {
+      "path": "src/translation/edit-plan.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 5179,
+      "sha256": "3092fd3de79642ab0cccc9732f662fb0fae84118c1431cb371fcc29f7cde23ae",
+      "generated": false
+    },
+    {
+      "path": "src/translation/format-literal.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 1247,
+      "sha256": "bcb19626044271456447d01cc149559bc4983c3e4a84224306ab2fb6cb9e9c22",
+      "generated": false
+    },
+    {
+      "path": "src/translation/lexical.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 5994,
+      "sha256": "a4af442b5806d3bb0e26cc6aa4e019e22ddc502260c15680eb33821caf3a0240",
+      "generated": false
+    },
+    {
+      "path": "src/translation/macro-generic-reader.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 3313,
+      "sha256": "557fe2b290d83a50f6da4deae79b82c6a4ad91aaa6e21c16f20f9c8f3b0200ed",
+      "generated": false
+    },
+    {
+      "path": "src/translation/macro-unary-reader.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 5611,
+      "sha256": "e075f0632f4a9995e2cdb7c0e6529df41d42aa7d88eb978bb42068052c382758",
+      "generated": false
+    },
+    {
+      "path": "src/translation/main-ending.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 984,
+      "sha256": "bba56aafa54284ec3714c9fa354e440338259f852bbbd72a2ed757a4155b6090",
+      "generated": false
+    },
+    {
+      "path": "src/translation/native-reader.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 24440,
+      "sha256": "f718eb81cf5897be40fc772ce7c33a18a53452e697ece8f17554b5f3c91811c3",
+      "generated": false
+    },
+    {
+      "path": "src/translation/predefined-reader.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2872,
+      "sha256": "63af201df52a1fe84f7c6c55cfe658398253050a652af628a603d7a48f2b8187",
+      "generated": false
+    },
+    {
+      "path": "src/translation/preprocessing-context.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2062,
+      "sha256": "3db2b386a113325ab5e50f45960aad921a079fae530434a2a5f8a616b0a718ae",
+      "generated": false
+    },
+    {
+      "path": "src/translation/preprocessor-reader.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 5727,
+      "sha256": "db2b4c0d30e1fdd2f73dcf1c7c5320c62dc3e03f9a2a6bdb4a4e10659f905dff",
+      "generated": false
+    },
+    {
+      "path": "src/translation/reading-reasons.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 6833,
+      "sha256": "911c974eb072a0f84cb9d537d507a2cc2e080b6806f744edddfae8b522bc0a58",
+      "generated": false
+    },
+    {
+      "path": "src/translation/source-coordinates.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2020,
+      "sha256": "ee1d19516bb2f39ae4431b71cebcf94e583dbd42572dbec3658a0150ebf13720",
+      "generated": false
+    },
+    {
+      "path": "src/translation/source-index.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 3304,
+      "sha256": "2f9110e66b173641ed7d66cbdc6a9e1a0f4a1d9c1c991d5b9ccd8a6cd6e867b5",
+      "generated": false
+    },
+    {
+      "path": "src/translation/standard-macro-policy.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 1458,
+      "sha256": "b353b991ee82bc3a3cd147f23ee49fc108aa7cdcf61e35989f16159703f037f7",
+      "generated": false
+    },
+    {
+      "path": "src/translation/standard-reader.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 11723,
+      "sha256": "1032370aff9a7abbdbbd9262a3e7f724292580d170db85b7908a8b38857492f4",
+      "generated": false
+    },
+    {
+      "path": "src/translation/usage-profiles.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 169734,
+      "sha256": "131cfcb3b5eccd1b613d1ee8d244219cf1fed682f83d5698522f82ab46ea264c",
+      "generated": false
+    },
+    {
+      "path": "src/translation/usage-reading.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 10514,
+      "sha256": "c15ee441fde786764ec51438deb3796be6921994c9587fee77f89bb22f6dae51",
+      "generated": false
+    },
+    {
+      "path": "src/translator.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 4378,
+      "sha256": "802b2a6920ef31fcb49478da5e36d028fb955cb229a4cccd5667425e0176410f",
+      "generated": false
+    },
+    {
+      "path": "src/ui/main.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 11546,
+      "sha256": "1f8998adf0dea97c1e8319d5d0eaa7c0f93f6929f408f0e8879bd0a530fa42b8",
+      "generated": false
+    },
+    {
+      "path": "src/ui/view.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 10068,
+      "sha256": "ecc6e97116525f88d9a00e846c85f209118082b13259f18932cf055f11de45af",
+      "generated": false
+    },
+    {
+      "path": "src/vocabulary/reading-config.js",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 222,
+      "sha256": "377e342d88bc4234ab534cecef9946585a0c66f1a45736c5521fe3cfbe30074c",
+      "generated": false
+    },
+    {
+      "path": "src/vocabulary/settings.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 3046,
+      "sha256": "72fac3b9468ff5ad3384c430a3ecc2c204d0c64bbf4f555a814888d53a091b97",
+      "generated": false
+    },
+    {
+      "path": "src/vocabulary/standard-catalog.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 1500,
+      "sha256": "df034f72e2ffa08c9d7e05e8ac3cabe5bbcd02280174e26e6509f96ae7cc1f9c",
+      "generated": false
+    },
+    {
+      "path": "src/vocabulary/standard-extra.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 64005,
+      "sha256": "0a9cd78ef650dc41402e362a6ed27d82014e310373be23e06e93e9da863a077d",
+      "generated": false
+    },
+    {
+      "path": "src/vocabulary/vocabulary-current.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 96748,
+      "sha256": "731f724dbcb80654b7258c5450555d2cfea831a71ad3d123405e6c376d2d2711",
+      "generated": false
+    },
+    {
+      "path": "tests/analysis-boundaries.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 7526,
+      "sha256": "14afb54f8bb63d2a6c540e125cc83efc203989b85ac86bbb822402f1470a7b20",
+      "generated": false
+    },
+    {
+      "path": "tests/analysis-integrity.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 8584,
+      "sha256": "7f84b74b1700573a64b96e01f95bf28aafb968c8c32ae2e3f1efa300b70ca678",
+      "generated": false
+    },
+    {
+      "path": "tests/argument-roles.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 7229,
+      "sha256": "55b7e644408acd2fcfbf48f99cf7f675b5c99bceb941bd7b50afb1ebfc19f56e",
+      "generated": false
+    },
+    {
+      "path": "tests/cases.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1342,
+      "sha256": "931bafc10de5257d9ab564336dd53451de307feb1103479a1ae12d8fd8f25984",
+      "generated": false
+    },
+    {
+      "path": "tests/compat-boundaries.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4029,
+      "sha256": "4bb34b8b6b0df4802d0b7054f767b048d9ae2e94459f17f1a313379c3601acf1",
+      "generated": false
+    },
+    {
+      "path": "tests/declarations.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4925,
+      "sha256": "9206b91c3a1d2ab5565d89039fb31bd8f69e4eeb69e6cc5b5b1e2f610d6b3d9e",
+      "generated": false
+    },
+    {
+      "path": "tests/edit-plan.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 5430,
+      "sha256": "961a2f3d63edae97d54245adf20943079651bd8557162718d89a035929dd4621",
+      "generated": false
+    },
+    {
+      "path": "tests/fixtures/documentation-examples.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 5312,
+      "sha256": "7a1057973481b9065491383eff8dd2595e928b2e5adce1dbc0aa6613d2728356",
+      "generated": false
+    },
+    {
+      "path": "tests/fixtures/legacy-reading-document.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 201045,
+      "sha256": "2fb1122f23501679ad564fb5867d4c335de6b91a6f6b6d431a9cdf4aeb9beff1",
+      "generated": false
+    },
+    {
+      "path": "tests/fixtures/projection-expectations.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 9843300,
+      "sha256": "4ed78e38752d5469e18283936f11cffd22e1397e0d7f7e9acb7aa8e69196f1e7",
+      "generated": false
+    },
+    {
+      "path": "tests/fixtures/publication-metadata.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 916,
+      "sha256": "1e32c6e0f50c207672c502b37e2007ff70d12dc557aaa24ff217d10787117411",
+      "generated": false
+    },
+    {
+      "path": "tests/fixtures/settings-expectations.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 160018,
+      "sha256": "8c14e29cb3916505011790adb2f849b5634840696a626093d1338aeee82e5fb4",
+      "generated": false
+    },
+    {
+      "path": "tests/fixtures/settings-migration.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 18991,
+      "sha256": "3884e7bbeebcf4bafabcd68c79c5ff5bf8a95a56f2fdda4f12f089e20d9a31fe",
+      "generated": false
+    },
+    {
+      "path": "tests/fixtures/standard-calls.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 95936,
+      "sha256": "3a4a87375a99af52a470e630f0a2c7cc887d20422f9e0c83a7adf319b9c21b65",
+      "generated": false
+    },
+    {
+      "path": "tests/fixtures/statement-exceptions.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 10736,
+      "sha256": "8984a73dca96ae4b1957428c515f8b84bd654f9da491f9f35563a88798801597",
+      "generated": false
+    },
+    {
+      "path": "tests/hash.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 622,
+      "sha256": "b3e5aea0b90514e325d791fdc4e98a42ba383ad2fa3c5aafe12ea16244833b4e",
+      "generated": false
+    },
+    {
+      "path": "tests/import.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2820,
+      "sha256": "4095e04fe82c5f5a47110f04e43818777f818b4748fd9ca1be4ac3e84aaed5cf",
+      "generated": false
+    },
+    {
+      "path": "tests/layout-policy.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 8000,
+      "sha256": "8a12915b29762dda9606004441cefe97ad4fa1c2844f2c4008fe52dd914517cd",
+      "generated": false
+    },
+    {
+      "path": "tests/line-numbers.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3053,
+      "sha256": "417356120037f456a769a78cf0175d1ee07d7f580e57cdbe54bd6cceabf2d99d",
+      "generated": false
+    },
+    {
+      "path": "tests/module-layout.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2988,
+      "sha256": "6cbf1aec60a4474ab4b0fe3fb4bf7b8ff8f9841ec90a185b0a27ef0e815a7f33",
+      "generated": false
+    },
+    {
+      "path": "tests/native-projection.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4813,
+      "sha256": "b0cf03e326e6c60f27c77cc3fac30974e5c4a1f6f805ce478e77106842db8301",
+      "generated": false
+    },
+    {
+      "path": "tests/native-runtime.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1885,
+      "sha256": "daddb92ecc3ecce3aa18f552eb125b458f90512f9429bce7e4356ec3e455fea9",
+      "generated": false
+    },
+    {
+      "path": "tests/oracle.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 550,
+      "sha256": "85b245fcc3d820aec24c6f9e7cdc19c86bcbbb4fbb61a76eaf6717084d31fa08",
+      "generated": false
+    },
+    {
+      "path": "tests/policy-data.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 980,
+      "sha256": "249a281d2502d48bdeb8f38af6c1cf96dbce9c5201168137f97c23252cbd651b",
+      "generated": false
+    },
+    {
+      "path": "tests/portable-acceptance.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4652,
+      "sha256": "3d9cfb07d3b4b68e940d5e6e62927f1c5a33789b20f90e767507592f64e0868a",
+      "generated": false
+    },
+    {
+      "path": "tests/project.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4743,
+      "sha256": "bf9a97ee94c680c0a44100fadb2912d33e827a0e2e38d38dff170a7f6c283ce5",
+      "generated": false
+    },
+    {
+      "path": "tests/public-source.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1842,
+      "sha256": "be246e1f75c820345f071689305f2fee5618d912eb1fc3b20ef07aad7357052e",
+      "generated": false
+    },
+    {
+      "path": "tests/publication-policy.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 5716,
+      "sha256": "9c17a588fc51edf5a584bc5563a3da0cecf866b53f6e36adfc1fd3a9f3d560d8",
+      "generated": false
+    },
+    {
+      "path": "tests/reading-expectations.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4353,
+      "sha256": "2a21af9f13c809fe8c935e4213a3891fbd372bb44701eb1ba9ae3d6a983a566b",
+      "generated": false
+    },
+    {
+      "path": "tests/replay.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2146,
+      "sha256": "13795a3430e97a0ac418b2d9b61abbc30f09b60e45b44f970b2328aa208c0698",
+      "generated": false
+    },
+    {
+      "path": "tests/resource-budget.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 5534,
+      "sha256": "7393f35feaf87b086fa9b22a99e8c9748ecc2a3182d4496b3eb3708c8be38d08",
+      "generated": false
+    },
+    {
+      "path": "tests/resources.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2495,
+      "sha256": "0c341fc9559d2c84e19c9077b118e2061a9bdd05d89f407563b09bac8ca5bf5e",
+      "generated": false
+    },
+    {
+      "path": "tests/settings-compatibility.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4562,
+      "sha256": "0057394cda5b738be8cb2348f471908b1a8a007f7335c54c92638fde4ee6c6ea",
+      "generated": false
+    },
+    {
+      "path": "tests/source-index.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 7039,
+      "sha256": "71d995b13b2c7d86f2c603e23cf15aae9dcbeea327f6921fe4c1c781c0b73055",
+      "generated": false
+    },
+    {
+      "path": "tests/surfaces.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1283,
+      "sha256": "184fffe2ac5ef5e819118cef320d127344fe9d24831721d41d59e36bbc1f3630",
+      "generated": false
+    },
+    {
+      "path": "tests/translation-policy.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 14748,
+      "sha256": "518ee126f900569af6a31ab2182123dcf7f0031021c3d204f4c9206f2443ac81",
+      "generated": false
+    },
+    {
+      "path": "tests/vocabulary-statements.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2008,
+      "sha256": "81ab7e0c9a8e9d2e1260b6e284b70ffbbcfe925a52c2a26ed7c747c31d62c5e6",
+      "generated": false
+    },
+    {
+      "path": "tests/wasm.test.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2162,
+      "sha256": "20af0091755b885b995aedcded856905ea1be5b93d3e48ba5d0852547ac80c4e",
+      "generated": false
+    },
+    {
+      "path": "tools/build-main-docs.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2019,
+      "sha256": "78d79ae35b4e4779403a10c06a16760be4fd72824e47d625ec1a97d44db05a4c",
+      "generated": false
+    },
+    {
+      "path": "tools/build-public.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4654,
+      "sha256": "0326b0c85b5701de568abcefc01c16a978ca6bba59bb2a15948b43935f1815ea",
+      "generated": false
+    },
+    {
+      "path": "tools/capture-sdk-package-evidence.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2803,
+      "sha256": "1ddc34ef80520fe9d2e2c99af0564a4dc329d2494d63545b3d3af9cb6950931b",
+      "generated": false
+    },
+    {
+      "path": "tools/check-boundaries.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4086,
+      "sha256": "5ba6c3b6b0369f8fda3b82bf7a59f6ebc318e9ad5b9850b8b770dd2e2d2da7c5",
+      "generated": false
+    },
+    {
+      "path": "tools/check-catalog-coverage.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 6220,
+      "sha256": "49124e38219cd7a1c8465a5f3a6b3214ecbc1d0d8d874bb1ec6858540440af41",
+      "generated": false
+    },
+    {
+      "path": "tools/check-distribution.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 9358,
+      "sha256": "e032b473ad96d9118faa40d6f9426fb22631ecfd342b24305adc6be5d222a3b7",
+      "generated": false
+    },
+    {
+      "path": "tools/check-public-build.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2473,
+      "sha256": "46b474f2d0238b9df20a6f4b829a88e02403c11751bcc4db51e0530de94e1a17",
+      "generated": false
+    },
+    {
+      "path": "tools/check-readme-examples.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1656,
+      "sha256": "8735144413662ff6e3857f8e416ba32018e5960814393ceaa7561a2b908e52ed",
+      "generated": false
+    },
+    {
+      "path": "tools/check-sdk-source-review.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1687,
+      "sha256": "a35cfb543280f69eff0a0a65b527841c50c58435772a5d8c443be56359d4aecd",
+      "generated": false
+    },
+    {
+      "path": "tools/check-wasm-replacement.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3084,
+      "sha256": "d89870d0b3e6edddd3982a6107b96a30ca08e7f098fced4c6710153a073f1c7d",
+      "generated": false
+    },
+    {
+      "path": "tools/classify-probes.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 733,
+      "sha256": "387af972256652960d6fd6db87deaab1d22998c2104e58b7922bf28a111e76b0",
+      "generated": false
+    },
+    {
+      "path": "tools/collect-license-supplements.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2036,
+      "sha256": "fd647c1848ab90208b1a93c7d5e973108739c64b08dbe516d43e52ee1a62187f",
+      "generated": false
+    },
+    {
+      "path": "tools/extract-replay.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1415,
+      "sha256": "091c5db4664e02e9e05131ad578460c9d454fc709a48863aedce117217353e77",
+      "generated": false
+    },
+    {
+      "path": "tools/extract-sdk.py",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 918,
+      "sha256": "cbc1729aa306c502d8049046e7c543df1737fe2a6fa3901a3459b094736801c8",
+      "generated": false
+    },
+    {
+      "path": "tools/generate-probes.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3886,
+      "sha256": "b744b88b2a728b4fec530d8634e9b03f04ba050629fc0fb56940bab45c07cfbf",
+      "generated": false
+    },
+    {
+      "path": "tools/inventory-distribution.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2238,
+      "sha256": "47b8f0dc186bd0c1366b92503b158252042004c11252fb3d201629196c330989",
+      "generated": false
+    },
+    {
+      "path": "tools/measure-limits.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2962,
+      "sha256": "59dca3ff7fd0169f8591a7cb86fdcfeaf4c4055bac8aabc00c7a89f5dfb1e652",
+      "generated": false
+    },
+    {
+      "path": "tools/measure-runtime.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1705,
+      "sha256": "b92a8dbac446b399aa8f132325d238de2520cd0f4b4fbedf1b41272b93a9787c",
+      "generated": false
+    },
+    {
+      "path": "tools/package-core-sdk.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1836,
+      "sha256": "109098805ce9ab46115ee6ba07d89d3bc101ad13b41e05b3e050e824f7ec5b37",
+      "generated": false
+    },
+    {
+      "path": "tools/plan-public-files.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 7251,
+      "sha256": "52b0b943f6c2fe31d76994e697085aa90626bc6fbcd1a5a21f2959320cb7ba87",
+      "generated": false
+    },
+    {
+      "path": "tools/public-build-lib.mjs",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2078,
+      "sha256": "1b03e537f46ac89634218a54a848bcf2f5bf1b06b6692673f726f0444bbc341d",
+      "generated": false
+    },
+    {
+      "path": "tools/review-resource-headers.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1261,
+      "sha256": "347603e55381319f2ea7b38b4d4680e94b728659d0eb395c7eeccf60b2d4c665",
+      "generated": false
+    },
+    {
+      "path": "tools/review-sdk-notices.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2574,
+      "sha256": "71d632e570649684f62b851d9cf9b085146e6bf730f2994e1a3174e7bad30f09",
+      "generated": false
+    },
+    {
+      "path": "tools/subset-font.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 3694,
+      "sha256": "cb956d1922ddec8311437cde35c795d66844b0e81648fa2ea47b0419723248a1",
+      "generated": false
+    },
+    {
+      "path": "wasm/build-provenance.json",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 792,
+      "sha256": "a7e4c607d1a6b3055620b45ea9c01b94a175c1eed759f60339a0fc254382b24e",
+      "generated": false
+    },
+    {
+      "path": "wasm/build.sh",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 743,
+      "sha256": "bfddfd9f159ce49cd4c840251699bea286dfbe40044eb694731c1b5cc9cb3eb9",
+      "generated": false
+    },
+    {
+      "path": "wasm/core-sdk-report.json",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 164,
+      "sha256": "cba74122c8677b21bd652f8b83f2c504136ee4196ba7580aa79e8e445c1e244f",
+      "generated": false
+    },
+    {
+      "path": "wasm/licenses/LLVM-LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 15141,
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+      "generated": false
+    },
+    {
+      "path": "wasm/licenses/compiler-rt-LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 16708,
+      "sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+      "generated": false
+    },
+    {
+      "path": "wasm/licenses/emscripten-LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 5093,
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+      "generated": false
+    },
+    {
+      "path": "wasm/licenses/glibc-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 26462,
+      "sha256": "d3c95b56fa33e28b57860580f0baf4e4f4de2a268a2b80f1d031a5191bade265",
+      "generated": false
+    },
+    {
+      "path": "wasm/licenses/libcxx-LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 16703,
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "generated": false
+    },
+    {
+      "path": "wasm/licenses/libcxxabi-LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 16706,
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "generated": false
+    },
+    {
+      "path": "wasm/licenses/linux-headers-copyright.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 1292,
+      "sha256": "4ab34baa23c94237ffef144c80348b982d2d8e814c46b3a6a3538a706ef26114",
+      "generated": false
+    },
+    {
+      "path": "wasm/licenses/musl-LICENSE.txt",
+      "github": true,
+      "pages": true,
+      "role": "distribution-metadata",
+      "reason": "Third-party notices, license texts and provenance accessible with the distributed runtime.",
+      "bytes": 6204,
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+      "generated": false
+    },
+    {
+      "path": "wasm/out/sdk-core.json.gz",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 114983,
+      "sha256": "b95d9b350f87a40d5cc9959200a76b0f863427382e1d445744f8e7fff68eb08c",
+      "generated": false
+    },
+    {
+      "path": "wasm/out/sdk-index.json",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 85771,
+      "sha256": "2e8c577ddd4baa3b7ba3420ebc53e188af03f385310aaacd3f6161019906d512",
+      "generated": false
+    },
+    {
+      "path": "wasm/out/sdk.json.gz",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 3759718,
+      "sha256": "b67632a2593191970c9fa9ea86690235b1b4ed9e03163f5b8033b800df640171",
+      "generated": false
+    },
+    {
+      "path": "wasm/out/shi-clang.mjs",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 78014,
+      "sha256": "25d3de2e0b3dfdd1368bce6846dd9c5c8fcf2ee255001ac33e613427c2d15fad",
+      "generated": false
+    },
+    {
+      "path": "wasm/out/shi-clang.wasm",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 26759957,
+      "sha256": "2231bc6d97378823341ba7898165a6ab21c6a3edf9286c981e0ea3411d46ca99",
+      "generated": false
+    },
+    {
+      "path": "wasm/out/shi-clang.wasm.gz",
+      "github": true,
+      "pages": true,
+      "role": "runtime-asset",
+      "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
+      "bytes": 7850441,
+      "sha256": "ae50e9cad250f6b705935599965156192821124a162731b296caa0ae5334bf75",
+      "generated": false
+    },
+    {
+      "path": "wasm/package-sdk.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 1171,
+      "sha256": "0a9e6d6e2c6fb7f6998118f7b7ec9d50b66803913c7d045536f80c2ce663c498",
+      "generated": false
+    },
+    {
+      "path": "wasm/rebuild-path.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 4386,
+      "sha256": "52214535f3968894058581344d063874fbfbea84157b22f0109e2a62e45a4c30",
+      "generated": false
+    },
+    {
+      "path": "wasm/reproduce-link.py",
+      "github": true,
+      "pages": false,
+      "role": "development-support",
+      "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
+      "bytes": 2638,
+      "sha256": "d2d2894b249344b75eb3ca9da63b5264095cb57aa0dc1b53e3e25a5732ad029a",
+      "generated": false
+    }
+  ]
+}

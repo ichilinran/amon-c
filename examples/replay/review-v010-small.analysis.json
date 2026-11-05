@@ -1,0 +1,78 @@
+{
+  "files": {
+    "01-math.c": "#include <math.h>\nvoid mathematics(double x, double n, double a, double b, double c, double d) {\n    double power = pow(x, sqrt(n));\n    double rounded = round(sqrt(x));\n    double difference = fdim(a + b, c * d);\n    int exponent;\n    double fraction = frexp(x, &exponent);\n    (void)power; (void)rounded; (void)difference; (void)fraction;\n}\n",
+    "02-format.c": "#include <stdio.h>\n#include <stdarg.h>\nvoid formatted(FILE *fp, int width, int precision, double value, const char *fmt) {\n    int written = 0; int count = 0; char field[8];\n    printf(\"%*.*f%n\", width, precision, value, &written);\n    scanf(\"%*d%7[^,]%n\", field, &count);\n    fprintf(fp, \"%d\", count);\n    printf(fmt, count);\n}\nvoid forwarded(const char *fmt, ...) {\n    va_list args;\n    va_start(args, fmt);\n    vprintf(fmt, args);\n    va_end(args);\n}\n",
+    "03-memory.c": "#include <string.h>\n#include <wchar.h>\nvoid memory(char *dst, char *src, size_t offset, size_t count, size_t size,\n            wchar_t *wide_dst, const wchar_t *wide_src) {\n    memcpy(dst + offset, src++, count * size); /* preserve exactly once */\n    memmove(dst, src, count);\n    wmemcpy(wide_dst, wide_src, count);\n    int ordering = strcmp(dst, src);\n    (void)ordering;\n}\n",
+    "04-null.c": "#include <time.h>\n#include <stdio.h>\n#include <wchar.h>\nvoid requests(const char **src, size_t count, mbstate_t *state, wchar_t *out) {\n    time_t now = time(NULL);\n    fflush(NULL);\n    size_t required = mbsrtowcs(NULL, src, count, state);\n    size_t reset = mbrtowc(out, NULL, count, state);\n    (void)now; (void)required; (void)reset;\n}\n",
+    "05-shadow.c": "#include <stdio.h>\n#include <math.h>\nvoid local(int (*printf)(const char *, ...), double (*pow)(double, double)) {\n    printf(\"%d\", 1);\n    double value = pow(2.0, 3.0);\n    (void)value;\n}\nvoid standard(void) {\n    printf(\"%d\", 1);\n    double value = pow(2.0, 3.0);\n    (void)value;\n}\n",
+    "06-types-callbacks.c": "#include <stddef.h>\n#include <stdarg.h>\n#include <stdlib.h>\nstruct Pair { int first; long second; };\ntypedef unsigned long Count;\nstatic void cleanup(void) { }\nstatic int compare(const void *a, const void *b) {\n    return (*(const int *)a > *(const int *)b) - (*(const int *)a < *(const int *)b);\n}\nvoid layout(int *array, size_t count, int marker, ...) {\n    size_t offset = offsetof(struct Pair, second);\n    va_list args;\n    va_start(args, marker);\n    Count item = va_arg(args, Count);\n    va_end(args);\n    qsort(array, count, sizeof *array, compare);\n    atexit(cleanup);\n    (void)offset; (void)item;\n}\n",
+    "07-endings.c": "#include <stdio.h>\n#include <stdlib.h>\nint endings(int c) {\n    getchar();\n    c = getchar();\n    int saved = getchar();\n    c += getchar();\n    c = 1 + getchar();\n    if (saved < 0) abort();\n    return getchar();\n}\n",
+    "08-macros.c": "#include <math.h>\n#include <assert.h>\n#include <setjmp.h>\n#define WRAP(value) (value)\nstatic jmp_buf environment;\nvoid macros(double x) {\n    double outer = WRAP(pow(x, 2));\n    double inner = sqrt(WRAP(pow(x, 2)));\n    assert(pow(x, 2) >= 0);\n    if (setjmp(environment) == 0) longjmp(environment, 1);\n    (void)outer; (void)inner;\n}\n",
+    "09-format-fragments.c": "#include <inttypes.h>\n#include <stdio.h>\n#define USER_FORMAT \"%d\"\nvoid fragments(int32_t value, int width) {\n    printf(\"%*\" PRId32 \"\\n\", width, value);\n    printf(\"%\" /* split format */ \"d\", (int)value);\n    printf(USER_FORMAT, (int)value);\n}\n",
+    "10-special-syntax.c": "#include <stddef.h>\n#include <stdalign.h>\n#include <assert.h>\n#include <stdint.h>\nalignas(16) int aligned;\n_Alignas(16) int keyword_aligned;\nstatic_assert(alignof(int) > 0, \"alignment\");\n_Static_assert(sizeof(int) > 0, \"size\");\nuint64_t fixed(void) { return UINT64_C(123); }\nsize_t nested(void) { return sizeof alignof(int); }\n",
+    "11-encoding-effects.c": "#include <stdio.h>\n#include <string.h>\nvoid text_and_effects(char *dst, char *src, int i) {\n    /* 日本😀：原文位置と副作用を保つ */\n    printf(\"目盛 %d\\n\", i++);\n    printf(\"\\045d\", i);\n    int count = 0;\n    printf(\"%d\\0%n\", i, &count);\n    memcpy(dst, src++, (size_t)(i * 2));\n}\n",
+    "12-user-null.c": "#include <time.h>\n#include <stdio.h>\n#undef NULL\nstatic time_t storage;\n#define NULL (&storage)\nvoid user_request(void) {\n    time_t result = time(NULL);\n    printf(\"%ld\", (long)result);\n}\n"
+  },
+  "translationUnits": [
+    {
+      "source": "01-math.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "02-format.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "03-memory.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "04-null.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "05-shadow.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "06-types-callbacks.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "07-endings.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "08-macros.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "09-format-fragments.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "10-special-syntax.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "11-encoding-effects.c",
+      "args": [],
+      "directory": "."
+    },
+    {
+      "source": "12-user-null.c",
+      "args": [],
+      "directory": "."
+    }
+  ]
+}

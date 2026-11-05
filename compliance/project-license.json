@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "adopted": true,
+  "date": "2026-11-01",
+  "spdx": "MIT",
+  "copyright": "Copyright (c) 2026 Amon-C contributors",
+  "rightsholderLabelBasis": "Project contributor attribution; avoids assuming a public personal name or corporate identity. Does not replace individual notices or establish ownership of third-party contributions.",
+  "licenseFile": "LICENSE",
+  "licenseSha256": "0cd692aafce28b1868cdbf5868b627cac07b8296e740093678b53c69dcd6b36f",
+  "scopeFile": "LICENSE-SCOPE.md",
+  "scopeSha256": "586f43a4d4e6ef93fe80aa5d27238497a35da5ff8e851985b9f943c4ece32ef0",
+  "sourceURL": "https://opensource.org/license/mit",
+  "packageMetadataScope": "Original project contributions only; not all dependencies, headers or generated assets",
+  "thirdPartyTermsUnchanged": true,
+  "publicReleaseCleared": false
+}

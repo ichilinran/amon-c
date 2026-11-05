@@ -1,0 +1,965 @@
+{
+  "schema": 1,
+  "version": "0.21",
+  "date": "2026-11-02",
+  "upstreamCommit": "3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff",
+  "sourceArchiveURL": "https://codeload.github.com/llvm/llvm-project/tar.gz/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff",
+  "sourceArchiveSha256": "c1e2b4dc569b9acde8a6aca6fa4f53c1979d7122d37f465c60a63f5d00c021fe",
+  "emscripten": "3.1.64",
+  "emscriptenArchiveSha256": "c39de24beca60fd580f6dff0eca0e275016042a30234588b19eda82397e299f3",
+  "sourceModified": false,
+  "providerPatchApplied": false,
+  "mode": "Unmodified upstream dladdr branch; no independent replacement branch required",
+  "originalSupportSha256": "abae58f722770470f33331fc5f995b6921d58c79102ce776c580879a1d87dede",
+  "replacementSupportSha256": "7dd58e1cb2fb33c4475bb83690f3b2986f2228868bdbd6ba941028c1fa029b51",
+  "originalObjectSha256": "db951bda283cdb51113548f08aedb17c0fae52efc44463188a014a3b105f1e2b",
+  "replacementObjectSha256": "660c7a458e1aa2a8074f1c385190a83d8c6e03574372fd772b97b5e7e05e02e7",
+  "archiveMemberCount": 146,
+  "changedMembers": [
+    "Path.cpp.o"
+  ],
+  "members": [
+    {
+      "member": "blake3.c.o",
+      "before": "6fe79a94690048e473d3daa2da07065d8cf891032270ad3e2b81fe59be87bede",
+      "after": "6fe79a94690048e473d3daa2da07065d8cf891032270ad3e2b81fe59be87bede",
+      "changed": false
+    },
+    {
+      "member": "blake3_dispatch.c.o",
+      "before": "ba81d96d305c056b860f91100615669bf64496d5253ae7760c90cd4a625fde13",
+      "after": "ba81d96d305c056b860f91100615669bf64496d5253ae7760c90cd4a625fde13",
+      "changed": false
+    },
+    {
+      "member": "blake3_portable.c.o",
+      "before": "fe6eac6977891353ee6efc15929ddd8650e1a861cb9a755032a2c0213f0c678e",
+      "after": "fe6eac6977891353ee6efc15929ddd8650e1a861cb9a755032a2c0213f0c678e",
+      "changed": false
+    },
+    {
+      "member": "blake3_neon.c.o",
+      "before": "f4013737778f9b2fabec4b3b7cd1de72832a0f5efcef3df1176ebaa887b3074a",
+      "after": "f4013737778f9b2fabec4b3b7cd1de72832a0f5efcef3df1176ebaa887b3074a",
+      "changed": false
+    },
+    {
+      "member": "ABIBreak.cpp.o",
+      "before": "aeec66774ae748f5463092433e72a2f83348050575bdecec650345defa31c734",
+      "after": "aeec66774ae748f5463092433e72a2f83348050575bdecec650345defa31c734",
+      "changed": false
+    },
+    {
+      "member": "AMDGPUMetadata.cpp.o",
+      "before": "79afce7306ec25df6293c74cb1b22123624473235cc140ed5c1ce7bb65143224",
+      "after": "79afce7306ec25df6293c74cb1b22123624473235cc140ed5c1ce7bb65143224",
+      "changed": false
+    },
+    {
+      "member": "APFixedPoint.cpp.o",
+      "before": "d0cef22816d8c1df6fa4a9a53171e3746c2f1632904a7a107a077641bf10c034",
+      "after": "d0cef22816d8c1df6fa4a9a53171e3746c2f1632904a7a107a077641bf10c034",
+      "changed": false
+    },
+    {
+      "member": "APFloat.cpp.o",
+      "before": "42570f6d3cd636d9e561ba2152a4f39c04345f4e3c934c09c639dda5e81ec074",
+      "after": "42570f6d3cd636d9e561ba2152a4f39c04345f4e3c934c09c639dda5e81ec074",
+      "changed": false
+    },
+    {
+      "member": "APInt.cpp.o",
+      "before": "d077db6cbf2ee90718ba3beeeb8d855948a8b4ae357cd27db85297ac6dabd752",
+      "after": "d077db6cbf2ee90718ba3beeeb8d855948a8b4ae357cd27db85297ac6dabd752",
+      "changed": false
+    },
+    {
+      "member": "APSInt.cpp.o",
+      "before": "9435ac31bf1386b0725f44e3a0b550c982ab12441a82787572e9b66a2aa15e6c",
+      "after": "9435ac31bf1386b0725f44e3a0b550c982ab12441a82787572e9b66a2aa15e6c",
+      "changed": false
+    },
+    {
+      "member": "ARMBuildAttrs.cpp.o",
+      "before": "6626c63d9985d4d28745eea91855b223c7f1f90e85fea373c16092db6a49e5e1",
+      "after": "6626c63d9985d4d28745eea91855b223c7f1f90e85fea373c16092db6a49e5e1",
+      "changed": false
+    },
+    {
+      "member": "ARMAttributeParser.cpp.o",
+      "before": "2d5c4afafeefe0a787bd525169baa1941ff66cc03e22e2b3a652b0b10eccfad7",
+      "after": "2d5c4afafeefe0a787bd525169baa1941ff66cc03e22e2b3a652b0b10eccfad7",
+      "changed": false
+    },
+    {
+      "member": "ARMWinEH.cpp.o",
+      "before": "db4d2b49ad97cdb27a49ac5e866b1f932e053c2bb67d777e72475962554a4eb6",
+      "after": "db4d2b49ad97cdb27a49ac5e866b1f932e053c2bb67d777e72475962554a4eb6",
+      "changed": false
+    },
+    {
+      "member": "Allocator.cpp.o",
+      "before": "e458c4badf080e77a88d3056650b4448622ece628c43e64e1e94af84ba80a2b3",
+      "after": "e458c4badf080e77a88d3056650b4448622ece628c43e64e1e94af84ba80a2b3",
+      "changed": false
+    },
+    {
+      "member": "AutoConvert.cpp.o",
+      "before": "f4013737778f9b2fabec4b3b7cd1de72832a0f5efcef3df1176ebaa887b3074a",
+      "after": "f4013737778f9b2fabec4b3b7cd1de72832a0f5efcef3df1176ebaa887b3074a",
+      "changed": false
+    },
+    {
+      "member": "Base64.cpp.o",
+      "before": "1fff00873af00f0b3bc3ce9c9110f763e1efaa773210826cd1dac551890f2c14",
+      "after": "1fff00873af00f0b3bc3ce9c9110f763e1efaa773210826cd1dac551890f2c14",
+      "changed": false
+    },
+    {
+      "member": "BalancedPartitioning.cpp.o",
+      "before": "8d18587c3bed63c5de16ed53cc50195794b673ca3ebc438dcaaf1b11839f595a",
+      "after": "8d18587c3bed63c5de16ed53cc50195794b673ca3ebc438dcaaf1b11839f595a",
+      "changed": false
+    },
+    {
+      "member": "BinaryStreamError.cpp.o",
+      "before": "078fb7ae47979efb10aea700b61c5540400385f1deaf00a2f1bc1cabfb26714e",
+      "after": "078fb7ae47979efb10aea700b61c5540400385f1deaf00a2f1bc1cabfb26714e",
+      "changed": false
+    },
+    {
+      "member": "BinaryStreamReader.cpp.o",
+      "before": "c766bdb9370e86a4740f131a1a9edbcd68e3313a8c79c0ba1e65a8c87ff266de",
+      "after": "c766bdb9370e86a4740f131a1a9edbcd68e3313a8c79c0ba1e65a8c87ff266de",
+      "changed": false
+    },
+    {
+      "member": "BinaryStreamRef.cpp.o",
+      "before": "3c7481eb44cccad3d7857c77185ebeb26f86ed440c6eace0bad688767ec55f86",
+      "after": "3c7481eb44cccad3d7857c77185ebeb26f86ed440c6eace0bad688767ec55f86",
+      "changed": false
+    },
+    {
+      "member": "BinaryStreamWriter.cpp.o",
+      "before": "bc26e4af5bc3c72e870b5cac29c86a8ea1033def6bf0d5f79037b830b04548e8",
+      "after": "bc26e4af5bc3c72e870b5cac29c86a8ea1033def6bf0d5f79037b830b04548e8",
+      "changed": false
+    },
+    {
+      "member": "BlockFrequency.cpp.o",
+      "before": "5545be0e56105d206e8b1ca2e5d82165277fae2b1cd57d4e2954296130f26570",
+      "after": "5545be0e56105d206e8b1ca2e5d82165277fae2b1cd57d4e2954296130f26570",
+      "changed": false
+    },
+    {
+      "member": "BranchProbability.cpp.o",
+      "before": "f5ba0322a9940cb76e34b558c60c6fb90d191296513cec6bee6e84f504b09b60",
+      "after": "f5ba0322a9940cb76e34b558c60c6fb90d191296513cec6bee6e84f504b09b60",
+      "changed": false
+    },
+    {
+      "member": "BuryPointer.cpp.o",
+      "before": "7e7a18ed537ca83c2e297159c867e4f132a0f86e027660adee334d608864aac7",
+      "after": "7e7a18ed537ca83c2e297159c867e4f132a0f86e027660adee334d608864aac7",
+      "changed": false
+    },
+    {
+      "member": "CachePruning.cpp.o",
+      "before": "2fb9a13644ec8957030a77edd2926558f7984072845c2b2913f6b779c1204fa1",
+      "after": "2fb9a13644ec8957030a77edd2926558f7984072845c2b2913f6b779c1204fa1",
+      "changed": false
+    },
+    {
+      "member": "Caching.cpp.o",
+      "before": "ba625bc3b20ede6da223a2543adadf1a67c9b37738dcf671623664a467620318",
+      "after": "ba625bc3b20ede6da223a2543adadf1a67c9b37738dcf671623664a467620318",
+      "changed": false
+    },
+    {
+      "member": "circular_raw_ostream.cpp.o",
+      "before": "ff7eef4c042a4ce525d9444fb3b4b8ad1b9742518ed9abb56da628138e59acca",
+      "after": "ff7eef4c042a4ce525d9444fb3b4b8ad1b9742518ed9abb56da628138e59acca",
+      "changed": false
+    },
+    {
+      "member": "Chrono.cpp.o",
+      "before": "dcd71bafc470b12355008fa6b5f27e3f4ef3426f762dec76c398561698193367",
+      "after": "dcd71bafc470b12355008fa6b5f27e3f4ef3426f762dec76c398561698193367",
+      "changed": false
+    },
+    {
+      "member": "COM.cpp.o",
+      "before": "f1e51f1fb66ee7360037155b5c6a2e8b1077d8a64cc7bde974b58b096d2b658d",
+      "after": "f1e51f1fb66ee7360037155b5c6a2e8b1077d8a64cc7bde974b58b096d2b658d",
+      "changed": false
+    },
+    {
+      "member": "CodeGenCoverage.cpp.o",
+      "before": "bcb4c0d54a873db1ae70a384b426c79ca6a71511d7fbfd96781452edeedd03ff",
+      "after": "bcb4c0d54a873db1ae70a384b426c79ca6a71511d7fbfd96781452edeedd03ff",
+      "changed": false
+    },
+    {
+      "member": "CommandLine.cpp.o",
+      "before": "a5008448f2d94a2389299b12f25e49c7dde38a27f0cdc2de7e61682572c627db",
+      "after": "a5008448f2d94a2389299b12f25e49c7dde38a27f0cdc2de7e61682572c627db",
+      "changed": false
+    },
+    {
+      "member": "Compression.cpp.o",
+      "before": "d3282f17c5ff58e2b90e48429efc3affd9296a2b5fd57733de0d685e0eba5fa3",
+      "after": "d3282f17c5ff58e2b90e48429efc3affd9296a2b5fd57733de0d685e0eba5fa3",
+      "changed": false
+    },
+    {
+      "member": "CRC.cpp.o",
+      "before": "3f159e400a8d2a8924ea7d18ae3e534c2f038642851dad38a34f406e25a51466",
+      "after": "3f159e400a8d2a8924ea7d18ae3e534c2f038642851dad38a34f406e25a51466",
+      "changed": false
+    },
+    {
+      "member": "ConvertUTF.cpp.o",
+      "before": "da737fe6d24a1670c35ea6d19626b6ff62b31e73caed93084d1a90c7b5ec7c92",
+      "after": "da737fe6d24a1670c35ea6d19626b6ff62b31e73caed93084d1a90c7b5ec7c92",
+      "changed": false
+    },
+    {
+      "member": "ConvertEBCDIC.cpp.o",
+      "before": "34d27e574f9c9907930a9ac376861ac2a789179f84218c3d1f96c52ec6692c7e",
+      "after": "34d27e574f9c9907930a9ac376861ac2a789179f84218c3d1f96c52ec6692c7e",
+      "changed": false
+    },
+    {
+      "member": "ConvertUTFWrapper.cpp.o",
+      "before": "bca5445aca4860ec8f38484230daeef0384519bebb840f05a4a8b76a4860e861",
+      "after": "bca5445aca4860ec8f38484230daeef0384519bebb840f05a4a8b76a4860e861",
+      "changed": false
+    },
+    {
+      "member": "CrashRecoveryContext.cpp.o",
+      "before": "a8746b151f30932e7e130c885193f6b42a5dfc256ffc085f0776bc71bdcdb469",
+      "after": "a8746b151f30932e7e130c885193f6b42a5dfc256ffc085f0776bc71bdcdb469",
+      "changed": false
+    },
+    {
+      "member": "CSKYAttributes.cpp.o",
+      "before": "a162903135775dd21b436e0f5776dfc8e69b94a30feb05011fa13cd8be4d10d2",
+      "after": "a162903135775dd21b436e0f5776dfc8e69b94a30feb05011fa13cd8be4d10d2",
+      "changed": false
+    },
+    {
+      "member": "CSKYAttributeParser.cpp.o",
+      "before": "4404b3e067aac3aa99227a012c789808e1b5a0ca578cced2f967bf363a35cf10",
+      "after": "4404b3e067aac3aa99227a012c789808e1b5a0ca578cced2f967bf363a35cf10",
+      "changed": false
+    },
+    {
+      "member": "DataExtractor.cpp.o",
+      "before": "839e4aaceba24bb24465de883c25ffdb95d4a37375eff2adb0bb3f6ca81a3b2d",
+      "after": "839e4aaceba24bb24465de883c25ffdb95d4a37375eff2adb0bb3f6ca81a3b2d",
+      "changed": false
+    },
+    {
+      "member": "Debug.cpp.o",
+      "before": "d31b57e3bc286c417b6e36987402525090ca9d9f336cb5e969e2b1b19a6b503d",
+      "after": "d31b57e3bc286c417b6e36987402525090ca9d9f336cb5e969e2b1b19a6b503d",
+      "changed": false
+    },
+    {
+      "member": "DebugCounter.cpp.o",
+      "before": "2bbd9634058df9e35da1113c0e917e46fdcb659a9425825b8ce7697794e0aa02",
+      "after": "2bbd9634058df9e35da1113c0e917e46fdcb659a9425825b8ce7697794e0aa02",
+      "changed": false
+    },
+    {
+      "member": "DeltaAlgorithm.cpp.o",
+      "before": "01bc8ebbd179258f9d4f928cc096a4398f606eb721e1b16fa04ca68d2e24d980",
+      "after": "01bc8ebbd179258f9d4f928cc096a4398f606eb721e1b16fa04ca68d2e24d980",
+      "changed": false
+    },
+    {
+      "member": "DivisionByConstantInfo.cpp.o",
+      "before": "f73ee95bb6fdebaf725b375201c251de5c185cd38df215daea264418e5c74c91",
+      "after": "f73ee95bb6fdebaf725b375201c251de5c185cd38df215daea264418e5c74c91",
+      "changed": false
+    },
+    {
+      "member": "DAGDeltaAlgorithm.cpp.o",
+      "before": "d49474e1be6f3012c73a8a4f6df583a679b2376c66811c254dd470ce2aecbb74",
+      "after": "d49474e1be6f3012c73a8a4f6df583a679b2376c66811c254dd470ce2aecbb74",
+      "changed": false
+    },
+    {
+      "member": "DJB.cpp.o",
+      "before": "ef2fcb8b57181f767bec82f617807b6acc751f4e1c85561798f82ee0204c93db",
+      "after": "ef2fcb8b57181f767bec82f617807b6acc751f4e1c85561798f82ee0204c93db",
+      "changed": false
+    },
+    {
+      "member": "ELFAttributeParser.cpp.o",
+      "before": "5e0c70aab2a7836340a96052ebcf4295b6f37012a92e386e063d6ce9a3edad54",
+      "after": "5e0c70aab2a7836340a96052ebcf4295b6f37012a92e386e063d6ce9a3edad54",
+      "changed": false
+    },
+    {
+      "member": "ELFAttributes.cpp.o",
+      "before": "00dc01d5ac06d2d99e5adb387b5af897f2a2f270d3c223a88e22d3181a13afcc",
+      "after": "00dc01d5ac06d2d99e5adb387b5af897f2a2f270d3c223a88e22d3181a13afcc",
+      "changed": false
+    },
+    {
+      "member": "Error.cpp.o",
+      "before": "319159d85ed7f4a1df0b4c832f7f03d44bd802cf00f436a9fbafd1fc17e7b270",
+      "after": "319159d85ed7f4a1df0b4c832f7f03d44bd802cf00f436a9fbafd1fc17e7b270",
+      "changed": false
+    },
+    {
+      "member": "ErrorHandling.cpp.o",
+      "before": "b937be9e9bf23fe0776238c8a5aa87d8ab4a859066ebdac9c2e40af84e289337",
+      "after": "b937be9e9bf23fe0776238c8a5aa87d8ab4a859066ebdac9c2e40af84e289337",
+      "changed": false
+    },
+    {
+      "member": "ExtensibleRTTI.cpp.o",
+      "before": "f0963c342645a28db48fb61d32ec0107fe72f5c945b9cfe706537c4339d56ea4",
+      "after": "f0963c342645a28db48fb61d32ec0107fe72f5c945b9cfe706537c4339d56ea4",
+      "changed": false
+    },
+    {
+      "member": "FileCollector.cpp.o",
+      "before": "3de292e271ab28505ef7ba3856068bb8250ffb2074e6c37e9ad996107ccec750",
+      "after": "3de292e271ab28505ef7ba3856068bb8250ffb2074e6c37e9ad996107ccec750",
+      "changed": false
+    },
+    {
+      "member": "FileUtilities.cpp.o",
+      "before": "b99ce83510781c38c9932ae289eed2b1ee5698e804be76c4aa52111e827815c3",
+      "after": "b99ce83510781c38c9932ae289eed2b1ee5698e804be76c4aa52111e827815c3",
+      "changed": false
+    },
+    {
+      "member": "FileOutputBuffer.cpp.o",
+      "before": "a11fe2e2bf2b9ab252f7e68d6c2ec627c61b080dacbaf95b51fec938e780aab3",
+      "after": "a11fe2e2bf2b9ab252f7e68d6c2ec627c61b080dacbaf95b51fec938e780aab3",
+      "changed": false
+    },
+    {
+      "member": "FloatingPointMode.cpp.o",
+      "before": "acf9c57975b8ee4d5376d873c637eaa8aa463b38d84f401228d0202bb113f2ce",
+      "after": "acf9c57975b8ee4d5376d873c637eaa8aa463b38d84f401228d0202bb113f2ce",
+      "changed": false
+    },
+    {
+      "member": "FoldingSet.cpp.o",
+      "before": "b920d27720a20366c2931cb0e36b432c7e5e0ac10555d8f90e733cf0cc002f16",
+      "after": "b920d27720a20366c2931cb0e36b432c7e5e0ac10555d8f90e733cf0cc002f16",
+      "changed": false
+    },
+    {
+      "member": "FormattedStream.cpp.o",
+      "before": "a774c9a479af54a8494bb129a6a3b2b2c7cadfdaa5cc0014d3f568f51bfc88eb",
+      "after": "a774c9a479af54a8494bb129a6a3b2b2c7cadfdaa5cc0014d3f568f51bfc88eb",
+      "changed": false
+    },
+    {
+      "member": "FormatVariadic.cpp.o",
+      "before": "ab60968147f8bb224f121b792e358caadc07a59bd472914104c147e786e0dd45",
+      "after": "ab60968147f8bb224f121b792e358caadc07a59bd472914104c147e786e0dd45",
+      "changed": false
+    },
+    {
+      "member": "GlobPattern.cpp.o",
+      "before": "891c27759a44c8eac48816f31475569b29f8baf243795aed0e35d758ca79cea4",
+      "after": "891c27759a44c8eac48816f31475569b29f8baf243795aed0e35d758ca79cea4",
+      "changed": false
+    },
+    {
+      "member": "GraphWriter.cpp.o",
+      "before": "c092122f3f421428e9b7a832b90f8f9d0ee0e0ba3a5401735b6fa330a3bc3041",
+      "after": "c092122f3f421428e9b7a832b90f8f9d0ee0e0ba3a5401735b6fa330a3bc3041",
+      "changed": false
+    },
+    {
+      "member": "Hashing.cpp.o",
+      "before": "952235b283e02746dc363a365ce1d2702243bfbc256ff99df533a85f44c79b49",
+      "after": "952235b283e02746dc363a365ce1d2702243bfbc256ff99df533a85f44c79b49",
+      "changed": false
+    },
+    {
+      "member": "InitLLVM.cpp.o",
+      "before": "02be761b1627dc173d7d7f28347fed394635f276e1f4b8358020943eaf2f6f80",
+      "after": "02be761b1627dc173d7d7f28347fed394635f276e1f4b8358020943eaf2f6f80",
+      "changed": false
+    },
+    {
+      "member": "InstructionCost.cpp.o",
+      "before": "0aff22765db098f8893496d3771236de75734a8a3a608ff1ee5e34983491619d",
+      "after": "0aff22765db098f8893496d3771236de75734a8a3a608ff1ee5e34983491619d",
+      "changed": false
+    },
+    {
+      "member": "IntEqClasses.cpp.o",
+      "before": "f6494b76d5d4db846cc8f959477ff250f7a249f8441081299678e635607df908",
+      "after": "f6494b76d5d4db846cc8f959477ff250f7a249f8441081299678e635607df908",
+      "changed": false
+    },
+    {
+      "member": "IntervalMap.cpp.o",
+      "before": "493243c7ddbef16a9cc3388138566d2d392e920063a5e3341a1b47d9a881422f",
+      "after": "493243c7ddbef16a9cc3388138566d2d392e920063a5e3341a1b47d9a881422f",
+      "changed": false
+    },
+    {
+      "member": "JSON.cpp.o",
+      "before": "466716229ac3dfcb6ed880c24f90152231039fabd44da2c12ba95bb1c46f0efb",
+      "after": "466716229ac3dfcb6ed880c24f90152231039fabd44da2c12ba95bb1c46f0efb",
+      "changed": false
+    },
+    {
+      "member": "KnownBits.cpp.o",
+      "before": "5e1f8cfd923924cdc5f6a65042640b6e8d355d036003c8b1f0f1a88d3ab54b50",
+      "after": "5e1f8cfd923924cdc5f6a65042640b6e8d355d036003c8b1f0f1a88d3ab54b50",
+      "changed": false
+    },
+    {
+      "member": "LEB128.cpp.o",
+      "before": "92af096c04e891fe6b811a2a136d4dc9903d85f4c6c0568e8230878234f73751",
+      "after": "92af096c04e891fe6b811a2a136d4dc9903d85f4c6c0568e8230878234f73751",
+      "changed": false
+    },
+    {
+      "member": "LineIterator.cpp.o",
+      "before": "8bd9779958ee972ee53dfc7d377864e4de20a76eacbc5fc493e6c208830c5d75",
+      "after": "8bd9779958ee972ee53dfc7d377864e4de20a76eacbc5fc493e6c208830c5d75",
+      "changed": false
+    },
+    {
+      "member": "Locale.cpp.o",
+      "before": "29a17564357ff80cb305f15893e2e2a2a265793ab85ee4908be92cad7c19c120",
+      "after": "29a17564357ff80cb305f15893e2e2a2a265793ab85ee4908be92cad7c19c120",
+      "changed": false
+    },
+    {
+      "member": "LockFileManager.cpp.o",
+      "before": "515d526327aa7c5701bae532aabde4d00b57bf69b1946136194e10fb6a56bc4a",
+      "after": "515d526327aa7c5701bae532aabde4d00b57bf69b1946136194e10fb6a56bc4a",
+      "changed": false
+    },
+    {
+      "member": "ManagedStatic.cpp.o",
+      "before": "4c9ffb10de9acf54f779da3a82f609a2acdf13cd0b5251f6c841028db3b20245",
+      "after": "4c9ffb10de9acf54f779da3a82f609a2acdf13cd0b5251f6c841028db3b20245",
+      "changed": false
+    },
+    {
+      "member": "MathExtras.cpp.o",
+      "before": "d0cdeb6d73362ee004e96fa0c00c58843e17ff64aba1ea9f691df54a3c824d84",
+      "after": "d0cdeb6d73362ee004e96fa0c00c58843e17ff64aba1ea9f691df54a3c824d84",
+      "changed": false
+    },
+    {
+      "member": "MemAlloc.cpp.o",
+      "before": "475e30d8a5be95bde193170ab99f6b3003352580fd2dae4d2c1872f0db0ed7a0",
+      "after": "475e30d8a5be95bde193170ab99f6b3003352580fd2dae4d2c1872f0db0ed7a0",
+      "changed": false
+    },
+    {
+      "member": "MemoryBuffer.cpp.o",
+      "before": "0f9f8e0e2574a8ca611a0dd1bd748a0671499ea59dd035e307d963bd79292cba",
+      "after": "0f9f8e0e2574a8ca611a0dd1bd748a0671499ea59dd035e307d963bd79292cba",
+      "changed": false
+    },
+    {
+      "member": "MemoryBufferRef.cpp.o",
+      "before": "edf2a9dfe5b91e6323161b839574d120ce5950de785e105de032699487ecab4e",
+      "after": "edf2a9dfe5b91e6323161b839574d120ce5950de785e105de032699487ecab4e",
+      "changed": false
+    },
+    {
+      "member": "MD5.cpp.o",
+      "before": "95446605876ccf60c94cd493dafee85c74880fb9278d04dae730c9ad4232ac33",
+      "after": "95446605876ccf60c94cd493dafee85c74880fb9278d04dae730c9ad4232ac33",
+      "changed": false
+    },
+    {
+      "member": "MSP430Attributes.cpp.o",
+      "before": "dd59bdb5e5f246320893adec7357d5d13387b2920b3a49facec9ba82833eb90e",
+      "after": "dd59bdb5e5f246320893adec7357d5d13387b2920b3a49facec9ba82833eb90e",
+      "changed": false
+    },
+    {
+      "member": "MSP430AttributeParser.cpp.o",
+      "before": "93d23c5d242b6ff4e395e8a43f0a8c499940a8ef9f29d6b684df4d808630aaae",
+      "after": "93d23c5d242b6ff4e395e8a43f0a8c499940a8ef9f29d6b684df4d808630aaae",
+      "changed": false
+    },
+    {
+      "member": "NativeFormatting.cpp.o",
+      "before": "d2dbd47d2d5590bf18c1b0032fd6b942c4cff9796f5885fbfbcbb924c098aa9f",
+      "after": "d2dbd47d2d5590bf18c1b0032fd6b942c4cff9796f5885fbfbcbb924c098aa9f",
+      "changed": false
+    },
+    {
+      "member": "OptimizedStructLayout.cpp.o",
+      "before": "83302f0c3a4f5ca959ef4bbc69ee894af57c92647efa8f873a079fe0f4ad0abb",
+      "after": "83302f0c3a4f5ca959ef4bbc69ee894af57c92647efa8f873a079fe0f4ad0abb",
+      "changed": false
+    },
+    {
+      "member": "Optional.cpp.o",
+      "before": "30e11ada78f00b66fbb871490e063afb19b1218d1f725de60882d16915e937b7",
+      "after": "30e11ada78f00b66fbb871490e063afb19b1218d1f725de60882d16915e937b7",
+      "changed": false
+    },
+    {
+      "member": "PGOOptions.cpp.o",
+      "before": "7599f81c283abb2cc17e38207af1877c21e84918f9cd0a9d9fcaf0e9e7aba39a",
+      "after": "7599f81c283abb2cc17e38207af1877c21e84918f9cd0a9d9fcaf0e9e7aba39a",
+      "changed": false
+    },
+    {
+      "member": "Parallel.cpp.o",
+      "before": "3de4f5248ad438b8fd28c365cc9f5e15382c22f44c079b4617b46e3778e73ce1",
+      "after": "3de4f5248ad438b8fd28c365cc9f5e15382c22f44c079b4617b46e3778e73ce1",
+      "changed": false
+    },
+    {
+      "member": "PluginLoader.cpp.o",
+      "before": "5998323c5e451a409c2227e131ddd7c6506a4432bcb7de2c29912dee40faf729",
+      "after": "5998323c5e451a409c2227e131ddd7c6506a4432bcb7de2c29912dee40faf729",
+      "changed": false
+    },
+    {
+      "member": "PrettyStackTrace.cpp.o",
+      "before": "359c63fafb86459fb6bbe62bc41f5e91732b832f6e0b1e84b82de5527ec3509a",
+      "after": "359c63fafb86459fb6bbe62bc41f5e91732b832f6e0b1e84b82de5527ec3509a",
+      "changed": false
+    },
+    {
+      "member": "RandomNumberGenerator.cpp.o",
+      "before": "7992e9c2e4ce640efe1c2f303c9d959c6a80bf1bb29803b68807015b38fbee69",
+      "after": "7992e9c2e4ce640efe1c2f303c9d959c6a80bf1bb29803b68807015b38fbee69",
+      "changed": false
+    },
+    {
+      "member": "Regex.cpp.o",
+      "before": "3e0586b4f602fdfcd5f58d0d5317d44b50b0557a5d3721852c3cbdc438081438",
+      "after": "3e0586b4f602fdfcd5f58d0d5317d44b50b0557a5d3721852c3cbdc438081438",
+      "changed": false
+    },
+    {
+      "member": "RISCVAttributes.cpp.o",
+      "before": "fab55494a5fb0ddc5e2ea1cce971093dd8ea5637b278d747c8e9bd77afcab1dd",
+      "after": "fab55494a5fb0ddc5e2ea1cce971093dd8ea5637b278d747c8e9bd77afcab1dd",
+      "changed": false
+    },
+    {
+      "member": "RISCVAttributeParser.cpp.o",
+      "before": "899c7693b1b306227c8cb355d6c16d527bbd33fc789d36d02557b7d4d2bc7432",
+      "after": "899c7693b1b306227c8cb355d6c16d527bbd33fc789d36d02557b7d4d2bc7432",
+      "changed": false
+    },
+    {
+      "member": "RISCVISAInfo.cpp.o",
+      "before": "e0952cf2e1b9d2b1997220699f2c4b816bfea6ccc4217b29c657f3671ee2e954",
+      "after": "e0952cf2e1b9d2b1997220699f2c4b816bfea6ccc4217b29c657f3671ee2e954",
+      "changed": false
+    },
+    {
+      "member": "ScaledNumber.cpp.o",
+      "before": "7fc3c4cb83fa5b6116d9cee7e623772add10ba87bb6839a21bf70fcaed1888cd",
+      "after": "7fc3c4cb83fa5b6116d9cee7e623772add10ba87bb6839a21bf70fcaed1888cd",
+      "changed": false
+    },
+    {
+      "member": "ScopedPrinter.cpp.o",
+      "before": "47370b6f8b3c0305aa1a532b4cebe2912d00ea4ac0b9b00ee2e32ab66bc10267",
+      "after": "47370b6f8b3c0305aa1a532b4cebe2912d00ea4ac0b9b00ee2e32ab66bc10267",
+      "changed": false
+    },
+    {
+      "member": "SHA1.cpp.o",
+      "before": "90c58f2b10d43ba6177697df8ed12c343da33b420e3780834b04a9dac5e53a2a",
+      "after": "90c58f2b10d43ba6177697df8ed12c343da33b420e3780834b04a9dac5e53a2a",
+      "changed": false
+    },
+    {
+      "member": "SHA256.cpp.o",
+      "before": "32c5ba4774cd3a4d22f227bc97a0d7058c4e10f6229f1edc2dd11aec7573081e",
+      "after": "32c5ba4774cd3a4d22f227bc97a0d7058c4e10f6229f1edc2dd11aec7573081e",
+      "changed": false
+    },
+    {
+      "member": "Signposts.cpp.o",
+      "before": "ce358eb2b118c3050aa96924f9050b78a68fdb6e340412e9b288bff0b7c5694a",
+      "after": "ce358eb2b118c3050aa96924f9050b78a68fdb6e340412e9b288bff0b7c5694a",
+      "changed": false
+    },
+    {
+      "member": "SmallPtrSet.cpp.o",
+      "before": "f58f17f73f8a01ac4eb1d56eb042c9d47aec9f49e5779571c918e2a96c5f2f66",
+      "after": "f58f17f73f8a01ac4eb1d56eb042c9d47aec9f49e5779571c918e2a96c5f2f66",
+      "changed": false
+    },
+    {
+      "member": "SmallVector.cpp.o",
+      "before": "dd37fb853ea5b224812cb43557952d75d974955d8479c31be90f3529291a370a",
+      "after": "dd37fb853ea5b224812cb43557952d75d974955d8479c31be90f3529291a370a",
+      "changed": false
+    },
+    {
+      "member": "SourceMgr.cpp.o",
+      "before": "c4770aa18c6728d35a4c108210197a96def66a164667f8da79eef79e8ae1a0b2",
+      "after": "c4770aa18c6728d35a4c108210197a96def66a164667f8da79eef79e8ae1a0b2",
+      "changed": false
+    },
+    {
+      "member": "SpecialCaseList.cpp.o",
+      "before": "38067b91413a750569ae85829b1c38dd215ece957440e4a72295e79643b574ad",
+      "after": "38067b91413a750569ae85829b1c38dd215ece957440e4a72295e79643b574ad",
+      "changed": false
+    },
+    {
+      "member": "Statistic.cpp.o",
+      "before": "27e675d75b3061edb504b27665e7d963adb7e061775192cd3b8f0a1078d9967a",
+      "after": "27e675d75b3061edb504b27665e7d963adb7e061775192cd3b8f0a1078d9967a",
+      "changed": false
+    },
+    {
+      "member": "StringExtras.cpp.o",
+      "before": "21709ff885a818df49f65802ee45ae30467bb70e9475d65c5f88827b7a987069",
+      "after": "21709ff885a818df49f65802ee45ae30467bb70e9475d65c5f88827b7a987069",
+      "changed": false
+    },
+    {
+      "member": "StringMap.cpp.o",
+      "before": "8ceb90d908b75688430cd317b648671324576e85e4efaa2d5feb8abb547fc62d",
+      "after": "8ceb90d908b75688430cd317b648671324576e85e4efaa2d5feb8abb547fc62d",
+      "changed": false
+    },
+    {
+      "member": "StringSaver.cpp.o",
+      "before": "fa7282057a7185634cd96f35eaafa5fc7a6a082e9badd992924b414380a17156",
+      "after": "fa7282057a7185634cd96f35eaafa5fc7a6a082e9badd992924b414380a17156",
+      "changed": false
+    },
+    {
+      "member": "StringRef.cpp.o",
+      "before": "dd371ecbf47dd9a9dd4ed149b2bcf57ff0b610a90385fff43d2807a226072724",
+      "after": "dd371ecbf47dd9a9dd4ed149b2bcf57ff0b610a90385fff43d2807a226072724",
+      "changed": false
+    },
+    {
+      "member": "SuffixTreeNode.cpp.o",
+      "before": "891b23b0fee9022cf5520858b59ccef91b0b122940d9f918f37b8cdc8774de87",
+      "after": "891b23b0fee9022cf5520858b59ccef91b0b122940d9f918f37b8cdc8774de87",
+      "changed": false
+    },
+    {
+      "member": "SuffixTree.cpp.o",
+      "before": "58577c537930ddb7b5fc6553c36903b389fdb01b6eab1ac7c6ec1d68eebd88f2",
+      "after": "58577c537930ddb7b5fc6553c36903b389fdb01b6eab1ac7c6ec1d68eebd88f2",
+      "changed": false
+    },
+    {
+      "member": "SystemUtils.cpp.o",
+      "before": "0850b6e2eaff7c69d0585977331d1949dffa0de96a5b89097e09d589826fc2ce",
+      "after": "0850b6e2eaff7c69d0585977331d1949dffa0de96a5b89097e09d589826fc2ce",
+      "changed": false
+    },
+    {
+      "member": "TarWriter.cpp.o",
+      "before": "f66583d1b6ef130aeca723a4527869fc84847b7f96366ff88e916a535d52a3a8",
+      "after": "f66583d1b6ef130aeca723a4527869fc84847b7f96366ff88e916a535d52a3a8",
+      "changed": false
+    },
+    {
+      "member": "ThreadPool.cpp.o",
+      "before": "4c1f2219d99f1dc40557dd9f3e5d7f040381721437c355418c2983a02460ce44",
+      "after": "4c1f2219d99f1dc40557dd9f3e5d7f040381721437c355418c2983a02460ce44",
+      "changed": false
+    },
+    {
+      "member": "TimeProfiler.cpp.o",
+      "before": "473e4da06b065f67b607e293a7c0d21cfab40db422c61de3807f2ce73be30d83",
+      "after": "473e4da06b065f67b607e293a7c0d21cfab40db422c61de3807f2ce73be30d83",
+      "changed": false
+    },
+    {
+      "member": "Timer.cpp.o",
+      "before": "4f1c1e6f8a4cfaf57dd0560a713b5862018b47ea61418bd3dd2699f1bc4510f9",
+      "after": "4f1c1e6f8a4cfaf57dd0560a713b5862018b47ea61418bd3dd2699f1bc4510f9",
+      "changed": false
+    },
+    {
+      "member": "ToolOutputFile.cpp.o",
+      "before": "d314380ff623fce2d534f9294f41f0e147ed8bcbf7af093d38506d7957ed0082",
+      "after": "d314380ff623fce2d534f9294f41f0e147ed8bcbf7af093d38506d7957ed0082",
+      "changed": false
+    },
+    {
+      "member": "Twine.cpp.o",
+      "before": "74799a487118e15772c0c32cd36bdb662753e67d04ec1bc7acc16dfe2e365cda",
+      "after": "74799a487118e15772c0c32cd36bdb662753e67d04ec1bc7acc16dfe2e365cda",
+      "changed": false
+    },
+    {
+      "member": "TypeSize.cpp.o",
+      "before": "68d25b2bb3f56eb72da5b95695e43b74a521b5c0d9fe5f8fbb56478ade25dfdc",
+      "after": "68d25b2bb3f56eb72da5b95695e43b74a521b5c0d9fe5f8fbb56478ade25dfdc",
+      "changed": false
+    },
+    {
+      "member": "Unicode.cpp.o",
+      "before": "3f927af1700a887f9695b8b718dae8cd7db6ea79814a9fb2f5002d6880db9046",
+      "after": "3f927af1700a887f9695b8b718dae8cd7db6ea79814a9fb2f5002d6880db9046",
+      "changed": false
+    },
+    {
+      "member": "UnicodeCaseFold.cpp.o",
+      "before": "8df9705655e564d7343ccd949346290a706a3dbf3845685853c1b361c3504b16",
+      "after": "8df9705655e564d7343ccd949346290a706a3dbf3845685853c1b361c3504b16",
+      "changed": false
+    },
+    {
+      "member": "UnicodeNameToCodepoint.cpp.o",
+      "before": "8bf77287f66b8204683ad312071283ec99b1fb9b73b185b673bce59d529b715b",
+      "after": "8bf77287f66b8204683ad312071283ec99b1fb9b73b185b673bce59d529b715b",
+      "changed": false
+    },
+    {
+      "member": "UnicodeNameToCodepointGenerated.cpp.o",
+      "before": "36d335dce4d87e8d085e819d405dc4ba6c93de4faee49b265cdbe6e3067c1f02",
+      "after": "36d335dce4d87e8d085e819d405dc4ba6c93de4faee49b265cdbe6e3067c1f02",
+      "changed": false
+    },
+    {
+      "member": "VersionTuple.cpp.o",
+      "before": "2c1015b5bafa1eded0798142c5e17a90033c992145075d1c165fcc400ffb17a5",
+      "after": "2c1015b5bafa1eded0798142c5e17a90033c992145075d1c165fcc400ffb17a5",
+      "changed": false
+    },
+    {
+      "member": "VirtualFileSystem.cpp.o",
+      "before": "3924f69a34daa86124100c7788d780340e72542be103e9969cad2a1b444fc1a6",
+      "after": "3924f69a34daa86124100c7788d780340e72542be103e9969cad2a1b444fc1a6",
+      "changed": false
+    },
+    {
+      "member": "WithColor.cpp.o",
+      "before": "daecc43e0b61b43cd2bff924a2686d82050bc68151febbd83df54b48751201f7",
+      "after": "daecc43e0b61b43cd2bff924a2686d82050bc68151febbd83df54b48751201f7",
+      "changed": false
+    },
+    {
+      "member": "YAMLParser.cpp.o",
+      "before": "0d5cf29e429a5506dcb55aec4d7cc4fd3f399002ebf3e077a34510cf9e63fc37",
+      "after": "0d5cf29e429a5506dcb55aec4d7cc4fd3f399002ebf3e077a34510cf9e63fc37",
+      "changed": false
+    },
+    {
+      "member": "YAMLTraits.cpp.o",
+      "before": "5be4de12adb1b30011833363ef4b81c36c5c5136d5a875d0a5ac106dc02bdeae",
+      "after": "5be4de12adb1b30011833363ef4b81c36c5c5136d5a875d0a5ac106dc02bdeae",
+      "changed": false
+    },
+    {
+      "member": "raw_os_ostream.cpp.o",
+      "before": "b0da83610082a5828e293aa5279726e6bfdeffbee4e3ef818b9a199f71c35052",
+      "after": "b0da83610082a5828e293aa5279726e6bfdeffbee4e3ef818b9a199f71c35052",
+      "changed": false
+    },
+    {
+      "member": "raw_ostream.cpp.o",
+      "before": "3f9c44147a8f05939be97408730aab42103ce90e88902c815ebe96a9ee2cd6fe",
+      "after": "3f9c44147a8f05939be97408730aab42103ce90e88902c815ebe96a9ee2cd6fe",
+      "changed": false
+    },
+    {
+      "member": "raw_socket_stream.cpp.o",
+      "before": "12f166b9752deb8fd02ad6c4334e202e46a12b5edbbff9be11323870aca89f02",
+      "after": "12f166b9752deb8fd02ad6c4334e202e46a12b5edbbff9be11323870aca89f02",
+      "changed": false
+    },
+    {
+      "member": "regcomp.c.o",
+      "before": "201d01da5a3163694c69a3cd488cd53120285d37a07e70b01df47232d2925525",
+      "after": "201d01da5a3163694c69a3cd488cd53120285d37a07e70b01df47232d2925525",
+      "changed": false
+    },
+    {
+      "member": "regerror.c.o",
+      "before": "3406fdf765f79d9e633d15999dadcd59b472e4e46b95437d6706e9003aa15c29",
+      "after": "3406fdf765f79d9e633d15999dadcd59b472e4e46b95437d6706e9003aa15c29",
+      "changed": false
+    },
+    {
+      "member": "regexec.c.o",
+      "before": "14242de8322c7ef8fea963e4beeff494f603d11c0538235848609a9daeaa0f14",
+      "after": "14242de8322c7ef8fea963e4beeff494f603d11c0538235848609a9daeaa0f14",
+      "changed": false
+    },
+    {
+      "member": "regfree.c.o",
+      "before": "6d27ccaa16c58fddb1ffe1f08ad4da8a0f6d3a63ca9e5ada8e1fb451edb53a29",
+      "after": "6d27ccaa16c58fddb1ffe1f08ad4da8a0f6d3a63ca9e5ada8e1fb451edb53a29",
+      "changed": false
+    },
+    {
+      "member": "regstrlcpy.c.o",
+      "before": "822745839cf98b6a5715fdf674101a99dba6f0310ed7be6ecceb5cafdc368000",
+      "after": "822745839cf98b6a5715fdf674101a99dba6f0310ed7be6ecceb5cafdc368000",
+      "changed": false
+    },
+    {
+      "member": "xxhash.cpp.o",
+      "before": "21595f88e0abfe1d9be0c23ec3bd71e37962ff1ef6423b416efcfa64b44d99f7",
+      "after": "21595f88e0abfe1d9be0c23ec3bd71e37962ff1ef6423b416efcfa64b44d99f7",
+      "changed": false
+    },
+    {
+      "member": "Z3Solver.cpp.o",
+      "before": "fe39e4babda0a0b9fc23443937183ff5996929ae6b6782fe5dacf02afa1a3544",
+      "after": "fe39e4babda0a0b9fc23443937183ff5996929ae6b6782fe5dacf02afa1a3544",
+      "changed": false
+    },
+    {
+      "member": "Atomic.cpp.o",
+      "before": "3bc6ec63ae7d7680423c59e43e2c3fe9f1fe331c9d84f2e4868daa54cc8e2046",
+      "after": "3bc6ec63ae7d7680423c59e43e2c3fe9f1fe331c9d84f2e4868daa54cc8e2046",
+      "changed": false
+    },
+    {
+      "member": "DynamicLibrary.cpp.o",
+      "before": "b480011ff44d3a4ec33cdfaaba3b55ea201d0ef2263560e1d6c96788a037ea61",
+      "after": "b480011ff44d3a4ec33cdfaaba3b55ea201d0ef2263560e1d6c96788a037ea61",
+      "changed": false
+    },
+    {
+      "member": "Errno.cpp.o",
+      "before": "5c0a8fed4d6ffe7253813adfc4b9f7d05333c1500a2ce42cff35c1798f016e43",
+      "after": "5c0a8fed4d6ffe7253813adfc4b9f7d05333c1500a2ce42cff35c1798f016e43",
+      "changed": false
+    },
+    {
+      "member": "Memory.cpp.o",
+      "before": "eb74498adc5a12c696dac17c6204bda5d909a8ec8df5b002170d1f36f5c04fdf",
+      "after": "eb74498adc5a12c696dac17c6204bda5d909a8ec8df5b002170d1f36f5c04fdf",
+      "changed": false
+    },
+    {
+      "member": "Path.cpp.o",
+      "before": "db951bda283cdb51113548f08aedb17c0fae52efc44463188a014a3b105f1e2b",
+      "after": "660c7a458e1aa2a8074f1c385190a83d8c6e03574372fd772b97b5e7e05e02e7",
+      "changed": true
+    },
+    {
+      "member": "Process.cpp.o",
+      "before": "ca61fde8cb64b2a9192d15a0084cc49c2e8d25d7c1054612d43c96b81de6c3af",
+      "after": "ca61fde8cb64b2a9192d15a0084cc49c2e8d25d7c1054612d43c96b81de6c3af",
+      "changed": false
+    },
+    {
+      "member": "Program.cpp.o",
+      "before": "4f649174cf84e80b51fa0841324fe724cc3f3586325e51e26dc365a49592c215",
+      "after": "4f649174cf84e80b51fa0841324fe724cc3f3586325e51e26dc365a49592c215",
+      "changed": false
+    },
+    {
+      "member": "RWMutex.cpp.o",
+      "before": "ee36958cb59fe44bce88efe42a57a9fa99e9d5d1debfaf8291728038faa262e3",
+      "after": "ee36958cb59fe44bce88efe42a57a9fa99e9d5d1debfaf8291728038faa262e3",
+      "changed": false
+    },
+    {
+      "member": "Signals.cpp.o",
+      "before": "bc221dd3809a5ee442654ec147e5c4566ed324715c63a7368af8c17d4a72e604",
+      "after": "bc221dd3809a5ee442654ec147e5c4566ed324715c63a7368af8c17d4a72e604",
+      "changed": false
+    },
+    {
+      "member": "Threading.cpp.o",
+      "before": "619f57e4a777055578249bb3624653401e244b6910fed3c28a713a64d23ccd4a",
+      "after": "619f57e4a777055578249bb3624653401e244b6910fed3c28a713a64d23ccd4a",
+      "changed": false
+    },
+    {
+      "member": "Valgrind.cpp.o",
+      "before": "a4e3787f647e6d27a2804e21be4b753e7f74a0449af5183b2e4ec0146ab15be0",
+      "after": "a4e3787f647e6d27a2804e21be4b753e7f74a0449af5183b2e4ec0146ab15be0",
+      "changed": false
+    },
+    {
+      "member": "Watchdog.cpp.o",
+      "before": "7f1092cfde4869ce1f0c0ad68b875c834b43e8d098ecefdc3478a2bc05b4d522",
+      "after": "7f1092cfde4869ce1f0c0ad68b875c834b43e8d098ecefdc3478a2bc05b4d522",
+      "changed": false
+    }
+  ],
+  "files": [
+    {
+      "path": "compliance/path-replacement/Path.cpp",
+      "sha256": "b16d3f232dced59e3271068125bd694b5703f2dc4e8ba5185ce5f0e641d489f9"
+    },
+    {
+      "path": "compliance/path-replacement/Path.cpp.o",
+      "sha256": "660c7a458e1aa2a8074f1c385190a83d8c6e03574372fd772b97b5e7e05e02e7"
+    },
+    {
+      "path": "compliance/path-replacement/Path.inc",
+      "sha256": "cacbee7d34dbb9d6c5bb61076af7e2d5a8ae46427bf8cfb6f6d51d41a9e06532"
+    },
+    {
+      "path": "compliance/path-replacement/abi-breaking.h",
+      "sha256": "fcaa542287b23ff01a183c6604392c84ffc1181d6307c8a97d2be4bcb968078f"
+    },
+    {
+      "path": "compliance/path-replacement/baseline-reproduction.json",
+      "sha256": "abb390fe27eed1847dd00f88f3d06d8c531e753b7963c80c6875801a93f42f0a"
+    },
+    {
+      "path": "compliance/path-replacement/config.h",
+      "sha256": "b9c65649d3c0f1907b2102137030263d809340c7b1735ed0a23b30d80e088671"
+    },
+    {
+      "path": "compliance/path-replacement/configure-command.json",
+      "sha256": "85db2af60b29059a662a23d9d46e60600957431e898809be3064152e265bb6cb"
+    },
+    {
+      "path": "compliance/path-replacement/link-command.json",
+      "sha256": "5307847a4c8362fed7caf76b0e5ec8efdac0d598b4731f057b48b11ee6c69ca1"
+    },
+    {
+      "path": "compliance/path-replacement/llvm-config.h",
+      "sha256": "0196eb7dd425c1ca3b5e4813d0b5cfe4e83f9014ef855f26e8ba7d332507fae4"
+    },
+    {
+      "path": "compliance/path-replacement/path-compile-command.json",
+      "sha256": "3964adfa875170f306d2b6f12a2266e8d50d776f2711924a719dca2da5c09561"
+    },
+    {
+      "path": "compliance/path-replacement/path-reproduction.json",
+      "sha256": "4838ab3e59d207614ba338ed54fc7f1ac0573e903cccc34b2b7a5b458902cc13"
+    },
+    {
+      "path": "compliance/path-replacement/wasm-reproduction.json",
+      "sha256": "1a96d76b3f87b83704611fed2cc6698146351254f67960ae15b0875ea2e7a6bf"
+    }
+  ],
+  "abiConfigurationMatchesPrebuilt": true,
+  "upstreamSources": [
+    {
+      "upstreamPath": "llvm/lib/Support/Path.cpp",
+      "path": "compliance/path-replacement/Path.cpp",
+      "sha256": "b16d3f232dced59e3271068125bd694b5703f2dc4e8ba5185ce5f0e641d489f9",
+      "sourceURL": "https://raw.githubusercontent.com/llvm/llvm-project/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/llvm/lib/Support/Path.cpp"
+    },
+    {
+      "upstreamPath": "llvm/lib/Support/Unix/Path.inc",
+      "path": "compliance/path-replacement/Path.inc",
+      "sha256": "cacbee7d34dbb9d6c5bb61076af7e2d5a8ae46427bf8cfb6f6d51d41a9e06532",
+      "sourceURL": "https://raw.githubusercontent.com/llvm/llvm-project/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/llvm/lib/Support/Unix/Path.inc"
+    }
+  ],
+  "generatedGlueReproducedByteIdentically": true
+}

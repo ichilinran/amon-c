@@ -1,0 +1,8 @@
+{
+  "fullHeaders": 1991,
+  "coreHeaders": 108,
+  "coreGzipBytes": 114983,
+  "wasmGzipBytes": 7850441,
+  "wasmRawBytes": 26759957,
+  "fullFallbackPreserved": true
+}

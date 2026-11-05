@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "stage": "public-source",
+  "roots": [
+    "src/ui/main.js",
+    "src/runtime/worker.js",
+    "src/index.js"
+  ],
+  "decision": "Select current source, functional checks and fixed compiler evidence. Candidate generation does not publish files.",
+  "pagesAssets": [
+    "index.html",
+    "examples/project-acceptance.json",
+    "examples/analysis/project-21.analysis.json",
+    "wasm/out/shi-clang.wasm.gz",
+    "wasm/out/sdk-core.json.gz",
+    "wasm/out/sdk-index.json",
+    "wasm/out/sdk.json.gz",
+    "licenses.html",
+    ".nojekyll",
+    "fonts/amon-c-code-subset.woff2",
+    "ogp.png"
+  ],
+  "pagesMetadataFiles": [
+    "THIRD_PARTY_NOTICES.md",
+    "wasm/build-provenance.json",
+    "reference/tools/clang18-headers/LICENSE.txt",
+    "compliance/sdk-inventory.json",
+    "compliance/host-package-evidence.json",
+    "compliance/upstream-license-checks.json",
+    "compliance/glibc-package-verification.json",
+    "compliance/llvm-prebuilt-source-evidence.json",
+    "tools/extract-sdk.py",
+    "compliance/release-status.json",
+    "compliance/resource-header-source-check.json",
+    "compliance/patches/clang-resource-guards.patch",
+    "compliance/sdk-notice-coverage.json",
+    "compliance/supplemental-license-texts.json",
+    "compliance/llvm-archive-review.json",
+    "compliance/sdk-comment-change-verification.json",
+    "LICENSE",
+    "LICENSE-SCOPE.md",
+    "compliance/project-license.json",
+    "compliance/sdk-file-terms-review.json",
+    "compliance/rpc-generated-source-check.json",
+    "compliance/SDK-SOURCE-REVIEW.md",
+    "compliance/WASM-REVIEW.md",
+    "compliance/wasm-link-reproduction.json",
+    "compliance/wasm-link-map.txt.gz",
+    "compliance/llvm-source-notice-coverage.json",
+    "compliance/emscripten-runtime-notice-coverage.json",
+    "compliance/provider-permission-review.json",
+    "compliance/path-replacement.json",
+    "compliance/wasm-link-reproduction-v020.json",
+    "docs/WASM-V021.md",
+    "compliance/wasm-link-map-v020.txt.gz",
+    "compliance/font-subset.json"
+  ],
+  "pagesMetadataPrefixes": [
+    "LICENSES/",
+    "wasm/licenses/",
+    "compliance/rpc-sources/",
+    "compliance/path-replacement/"
+  ],
+  "githubFiles": [
+    "README.md",
+    "package.json",
+    "reference/next/frontend.cpp",
+    "reference/next/prepare.py",
+    "reference/next/toolchain-packages.json",
+    "reference/next/native_view.py",
+    "examples/analysis/hello.analysis.json",
+    "examples/analysis/review-v010-small.analysis.json",
+    "examples/analysis/review-v010-report.analysis.json",
+    "coverage/replay-index.json",
+    "coverage/probe-classification.json",
+    "wasm/out/shi-clang.wasm",
+    "wasm/build.sh",
+    "wasm/package-sdk.py",
+    "wasm/core-sdk-report.json",
+    ".gitignore",
+    "docs/DEVELOPMENT.md",
+    "wasm/reproduce-link.py",
+    "RULES.md",
+    "VOCABULARY.md",
+    "LIMITATIONS.md",
+    "PUBLICATION.md",
+    "wasm/rebuild-path.py",
+    "docs/WASM-V021.md",
+    "docs/design/READING-POLICIES.md",
+    "docs/ARCHITECTURE.md",
+    "src/vocabulary/reading-config.js",
+    "docs/design/SAVED-DATA.md",
+    "docs/TESTING.md"
+  ],
+  "githubPrefixes": [
+    "tests/",
+    "tools/",
+    "examples/",
+    "reference/tools/clang18-headers/",
+    "reference/next/sdk-compat/",
+    "reference/next/cases/acceptance/",
+    "release/",
+    "compliance/",
+    "src/compat/"
+  ],
+  "githubExcludedFiles": [
+    "tools/extract-boundaries.py",
+    "compliance/capture-packages.log",
+    "compliance/check-distribution.log",
+    "compliance/check-distribution-release.log"
+  ],
+  "githubExcludedReason": "Historical collector or execution log; its current input, checker or evidence JSON is selected separately.",
+  "generatedFiles": [
+    "release/file-plan.json",
+    "release/runtime-graph.json",
+    "release/file-plan-summary.json",
+    "release/file-plan-verification.json"
+  ],
+  "requiredBeforeRelease": [
+    {
+      "path": "LICENSE",
+      "targets": [
+        "github",
+        "pages"
+      ],
+      "purpose": "Adopt the agreed MIT license for project-owned material and specify rightsholder/scope"
+    },
+    {
+      "path": "licenses.html",
+      "targets": [
+        "github",
+        "pages"
+      ],
+      "purpose": "Provide a readable notice entry point and links, including SDK source recovery instructions"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "targets": [
+        "github"
+      ],
+      "purpose": "Document public checkout, checks, build and generated directories"
+    },
+    {
+      "path": ".nojekyll",
+      "targets": [
+        "pages"
+      ],
+      "purpose": "Preserve static paths when deploying the generated Pages directory"
+    }
+  ],
+  "manualAssetEdges": [
+    {
+      "from": "index.html",
+      "to": "src/ui/main.js",
+      "kind": "module script"
+    },
+    {
+      "from": "src/ui/main.js",
+      "to": "src/runtime/worker.js",
+      "kind": "module worker"
+    },
+    {
+      "from": "src/ui/main.js",
+      "to": "examples/project-acceptance.json",
+      "kind": "sample fetch"
+    },
+    {
+      "from": "src/ui/main.js",
+      "to": "examples/analysis/project-21.analysis.json",
+      "kind": "legacy-data sample fetch"
+    },
+    {
+      "from": "src/runtime/resources.js",
+      "to": "wasm/out/shi-clang.wasm.gz",
+      "kind": "compressed Wasm"
+    },
+    {
+      "from": "src/runtime/resources.js",
+      "to": "wasm/out/sdk-core.json.gz",
+      "kind": "initial SDK"
+    },
+    {
+      "from": "src/runtime/resources.js",
+      "to": "wasm/out/sdk-index.json",
+      "kind": "SDK lookup"
+    },
+    {
+      "from": "src/runtime/resources.js",
+      "to": "wasm/out/sdk.json.gz",
+      "kind": "full SDK fallback"
+    },
+    {
+      "from": "index.html",
+      "to": "fonts/amon-c-code-subset.woff2",
+      "kind": "code display font (OFL-1.1 subset, renamed)"
+    },
+    {
+      "from": "index.html",
+      "to": "ogp.png",
+      "kind": "Open Graph preview image"
+    }
+  ],
+  "baselineRoots": [],
+  "hashExcludedFiles": [
+    "manifest.json"
+  ],
+  "requiredEditsBeforeBuild": [],
+  "licenseDecision": {
+    "projectOwned": "MIT adopted for original project contributions under Copyright (c) 2026 Amon-C contributors; see LICENSE-SCOPE.md. Third-party terms retained.",
+    "thirdParty": "Retain original terms; no relicensing by this selection"
+  },
+  "scanExcludedDirectories": [
+    "build"
+  ],
+  "includeHiddenFiles": [
+    ".gitignore",
+    ".nojekyll"
+  ]
+}

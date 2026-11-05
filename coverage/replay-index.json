@@ -1,0 +1,17 @@
+[
+  {
+    "fixture": "project-21.analysis.json",
+    "contexts": 4,
+    "inputFiles": 4
+  },
+  {
+    "fixture": "review-v010-report.analysis.json",
+    "contexts": 8,
+    "inputFiles": 7
+  },
+  {
+    "fixture": "review-v010-small.analysis.json",
+    "contexts": 12,
+    "inputFiles": 12
+  }
+]

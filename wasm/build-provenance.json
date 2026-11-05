@@ -1,0 +1,13 @@
+{
+  "clang": "18.1.8",
+  "llvmCommit": "3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff",
+  "librarySource": "https://github.com/TheComputerM/libclang-wasm/releases/download/v0/llvm-build.tar.gz",
+  "libraryArchiveSha256": "edae62978ba5ebe2975b26b7e4a61d7b1fe2883735b05e5decacdfb922dfccef",
+  "prebuiltLibrariesEmscripten": "3.1.61",
+  "extractorBuildEmscripten": "3.1.64",
+  "extractorSourceSha256": "150987ae3ef01b3b851b238375c062f216a32bfb0bf7834da52ac63a67480459",
+  "wasmSha256": "2231bc6d97378823341ba7898165a6ab21c6a3edf9286c981e0ea3411d46ca99",
+  "pathReplacement": "compliance/path-replacement.json",
+  "pathObjectBuildEmscripten": "3.1.64",
+  "prebuiltLibrariesScope": "All original libraries retained except libLLVMSupport.a/Path.cpp.o; replaced from unmodified pinned upstream source"
+}

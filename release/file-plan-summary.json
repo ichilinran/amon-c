@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "stage": 1,
+  "generatedFilesHashPolicy": "Generated inventory documents and the enclosing archive manifest have null bytes/hash to avoid self-reference.",
+  "runtimeModules": 54,
+  "baselineModules": 0,
+  "relativeRuntimeEdges": 114,
+  "selectedSupportImportEdges": 304,
+  "github": {
+    "files": 326,
+    "existingBytes": 103508124
+  },
+  "pages": {
+    "files": 189,
+    "existingBytes": 38925206
+  },
+  "archiveOnly": {
+    "files": 0
+  },
+  "existingFiles": 322,
+  "futureRequirements": [
+    {
+      "path": "LICENSE",
+      "targets": [
+        "github",
+        "pages"
+      ],
+      "purpose": "Adopt the agreed MIT license for project-owned material and specify rightsholder/scope"
+    },
+    {
+      "path": "licenses.html",
+      "targets": [
+        "github",
+        "pages"
+      ],
+      "purpose": "Provide a readable notice entry point and links, including SDK source recovery instructions"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "targets": [
+        "github"
+      ],
+      "purpose": "Document public checkout, checks, build and generated directories"
+    },
+    {
+      "path": ".nojekyll",
+      "targets": [
+        "pages"
+      ],
+      "purpose": "Preserve static paths when deploying the generated Pages directory"
+    }
+  ],
+  "translationOrRuntimeModified": false,
+  "buildPerformed": false,
+  "publicReleaseCleared": false
+}

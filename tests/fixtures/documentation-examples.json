@@ -1,0 +1,92 @@
+[
+  {
+    "id": "getchar-groups",
+    "input": "getchar();\nc = getchar();\nc = ((getchar()));",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\nint c;\ngetchar();\nc = getchar();\nc = ((getchar()));\n}\n",
+    "expected": "ﾓｼﾞｦﾄﾙ();\nc = ﾓｼﾞｦﾄﾙ();\nc = ((ﾓｼﾞｦﾄﾙ()));"
+  },
+  {
+    "id": "getchar-return",
+    "input": "int c = getchar();\nreturn getchar();",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\n\nint c = getchar();\nreturn getchar();\n}\n",
+    "expected": "ｾｲｽｳ c = ﾓｼﾞｦﾄﾙ() ﾅﾘ;\nｶｴｽﾉﾊ ﾓｼﾞｦﾄﾙ() ﾅﾘ;"
+  },
+  {
+    "id": "content-file",
+    "input": "fprintf(fp, \"Hello\");",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\nFILE *fp=stdout;\nfprintf(fp, \"Hello\");\n}\n",
+    "expected": "ﾌｧｲﾙﾆ_ｱﾗﾜｽﾉﾊ(fp ﾆ, \"Hello\" ｦ) ﾅﾘ;"
+  },
+  {
+    "id": "content",
+    "input": "printf(\"Hello World\\n\");",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\n\nprintf(\"Hello World\\n\");\n}\n",
+    "expected": "ｱﾗﾜｽﾉﾊ(\"Hello World\\n\") ﾅﾘ;"
+  },
+  {
+    "id": "format",
+    "input": "printf(\"%d\\n\", n);",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\nint n=1;\nprintf(\"%d\\n\", n);\n}\n",
+    "expected": "ｱﾗﾜｽﾉﾊ(\"%d\\n\" ﾃﾞ, n ｦ) ﾅﾘ;"
+  },
+  {
+    "id": "unknown",
+    "input": "printf(fmt, n);\nscanf(fmt, &n);",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\nchar *fmt=\"%d\";int n=1;\nprintf(fmt, n);\nscanf(fmt, &n);\n}\n",
+    "expected": "ｱﾗﾜｽﾉﾊ(fmt, n) ﾅﾘ;\nﾖﾐﾄﾙﾉﾊ(fmt, &n) ﾅﾘ;"
+  },
+  {
+    "id": "copy-nested",
+    "input": "puts(strcpy(buf, \"Hello\"));",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\nchar buf[20];\nputs(strcpy(buf, \"Hello\"));\n}\n",
+    "expected": "ﾓｼﾞﾚﾂｦ_ｵｸﾉﾊ(ﾓｼﾞﾚﾂｦ_ｳﾂｽﾉﾊ(buf ﾆ, \"Hello\" ｶﾗ)) ﾅﾘ;"
+  },
+  {
+    "id": "noun-nested",
+    "input": "y = floor(sqrt(x));",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\ndouble x=1,y;\ny = floor(sqrt(x));\n}\n",
+    "expected": "y = ｼﾀﾎｳｺｳﾃﾞ_ｾｲｽｳﾆ_ﾏﾙﾒﾙﾉﾊ(ﾍｲﾎｳｺﾝ(x) ｦ) ﾅﾘ;"
+  },
+  {
+    "id": "power",
+    "input": "y = pow(x, sqrt(n));",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\ndouble x=1,n=2,y;\ny = pow(x, sqrt(n));\n}\n",
+    "expected": "y = ﾍﾞｷｼﾞｮｳ(x ﾉ, ﾍｲﾎｳｺﾝ(n) ｼﾞｮｳ) ﾅﾘ;"
+  },
+  {
+    "id": "fgets",
+    "input": "fgets(buf, 100, stdin);",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\nchar buf[100];\nfgets(buf, 100, stdin);\n}\n",
+    "expected": "ﾌｧｲﾙｶﾗ_ﾓｼﾞﾚﾂｦ_ﾄﾙﾉﾊ(buf ﾆ, 100 ﾉﾖｳﾘｮｳﾃﾞ, ﾋｮｳｼﾞｭﾝﾉ_ﾖﾐｺﾐﾓﾄ ｶﾗ) ﾅﾘ;"
+  },
+  {
+    "id": "decl-inline",
+    "input": "int a,b;",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\n\nint a,b;\n}\n",
+    "expected": "ｾｲｽｳ a ﾅﾘ; ｾｲｽｳ b ﾅﾘ;"
+  },
+  {
+    "id": "decl-lines",
+    "input": "int a,\n    b;",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint sample(void){\n\nint a,\n    b;\n}\n",
+    "expected": "ｾｲｽｳ a ﾅﾘ;\nｾｲｽｳ b ﾅﾘ;"
+  },
+  {
+    "id": "main-inline",
+    "input": "int main(void) { return 0; }",
+    "source": "#include <stdio.h>\n#include <wchar.h>\n#include <math.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) { return 0; }\n",
+    "expected": "ｾｲｽｳ ﾆﾃ ﾈｶﾞｲﾏｼﾃﾊ(ｳｹﾄﾙﾉﾊ ﾑﾅｼ ﾅﾘ) { ｶｴｽﾉﾊ 0 ﾅﾘ; } ﾃﾞﾊ"
+  },
+  {
+    "id": "close",
+    "input": "fclose(fp);",
+    "source": "#include <stdio.h>\nint sample(void){\nFILE *fp=stdout;\nfclose(fp);\n}\n",
+    "expected": "ﾌｧｲﾙｦ_ﾄｼﾞﾙﾉﾊ(fp ｦ) ﾅﾘ;"
+  },
+  {
+    "id": "main-multiline",
+    "input": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"Hello World\\n\");\n    return 0;\n}",
+    "source": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"Hello World\\n\");\n    return 0;\n}\n",
+    "expected": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ﾆｭｳｼｭﾂﾘｮｸ.ｻｷﾖﾐ>\n\nｾｲｽｳ ﾆﾃ ﾈｶﾞｲﾏｼﾃﾊ(ｳｹﾄﾙﾉﾊ ﾑﾅｼ ﾅﾘ)\n{\n    ｱﾗﾜｽﾉﾊ(\"Hello World\\n\") ﾅﾘ;\n    ｶｴｽﾉﾊ 0 ﾅﾘ; ﾃﾞﾊ\n}"
+  }
+]

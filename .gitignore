@@ -1,0 +1,11 @@
+build/
+.openai/
+__pycache__/
+native-environment/
+coverage/*.json
+!coverage/replay-index.json
+!coverage/probe-classification.json
+coverage/*.log
+comparison-counts.json
+wasm/measurements.json
+wasm/project-comparison.json

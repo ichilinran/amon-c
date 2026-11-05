@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="C言語を日本語で">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="支位（Amon-C）">
+<meta property="og:title" content="支位（Amon-C）">
+<meta property="og:description" content="C言語を日本語で読めるようにする">
+<meta property="og:url" content="https://ichilinran.github.io/amon-c/">
+<meta property="og:image" content="https://ichilinran.github.io/amon-c/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<title>支位（Amon-C）</title>
+<style>
+@font-face{font-family:"Amon-C Code";src:url("./fonts/amon-c-code-subset.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+:root{
+  --bg:#000;--panel:#0b0c0e;--line:#24272c;--line-strong:#363a41;--text:#e8e8e8;--muted:#9aa1a9;
+  --accent:#1565d8;--accent-text:#fff;
+  --c-type:#3cc8ff;--c-control:#ff5fae;--c-function:#f3e35b;--c-number:#ffa24a;--c-string:#7fe08a;
+  --c-comment:#8b949e;--c-pre:#d08cff;--guide:#ffffff;
+  --mono:"Amon-C Code","BIZ UDGothic","BIZ UDゴシック","Noto Sans Mono CJK JP","Source Han Code JP","Osaka-Mono","MS Gothic","Menlo","Consolas",monospace;
+  --code-size:15px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text)}
+body{font:15px/1.6 system-ui,-apple-system,"Hiragino Sans","Noto Sans JP","Yu Gothic UI",sans-serif;min-height:100vh;display:flex;flex-direction:column}
+button,select,textarea,input{font:inherit;color:inherit}
+button{background:transparent;border:1px solid var(--line-strong);border-radius:6px;padding:8px 14px;cursor:pointer}
+button:hover:not(:disabled){border-color:#5b616a;background:#15171a}
+button:disabled{opacity:.45;cursor:default}
+button:focus-visible,select:focus-visible,summary:focus-visible,.lexeme:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+select{background:#111316;border:1px solid var(--line-strong);border-radius:6px;padding:6px 8px;max-width:100%}
+a{color:#7fb6ff}
+/* header & toolbar */
+header{display:flex;align-items:center;gap:12px;padding:12px 20px;border-bottom:1px solid var(--line)}
+header h1{margin:0;font-size:22px;letter-spacing:.04em}
+header .tag{color:var(--muted);font-size:13px}
+header .spacer,.toolbar .spacer{flex:1}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--line)}
+#translate{background:var(--accent);border-color:var(--accent);color:var(--accent-text);font-weight:600;padding:8px 26px}
+#translate:hover:not(:disabled){background:#2a78ea}
+details.menu{position:relative}
+details.menu>summary{list-style:none;border:1px solid var(--line-strong);border-radius:6px;padding:8px 14px;cursor:pointer;user-select:none}
+details.menu>summary::-webkit-details-marker{display:none}
+details.menu>summary::after{content:" ▾";color:var(--muted)}
+details.menu[open]>summary{background:#15171a}
+.menu-list{position:absolute;z-index:20;top:calc(100% + 6px);left:0;min-width:230px;background:#101215;border:1px solid var(--line-strong);border-radius:8px;padding:6px;display:flex;flex-direction:column;gap:2px;box-shadow:0 10px 30px #000a}
+.menu-list.right{left:auto;right:0}
+.menu-list button{border:0;text-align:left;border-radius:5px;padding:9px 12px}
+.settings>summary{font-size:20px;line-height:1;padding:6px 10px}
+details.menu.settings>summary::after{content:none}
+.settings .menu-list{width:min(360px,calc(100vw - 32px));padding:14px;gap:10px}
+.settings label{display:block;color:var(--muted);font-size:13px}
+.settings select,.settings textarea{width:100%;margin-top:4px}
+.settings textarea{background:#0d0f12;border:1px solid var(--line-strong);border-radius:6px;padding:8px;height:80px;font-family:var(--mono);font-size:13px}
+.settings .check{display:flex;gap:8px;align-items:center;color:var(--text);font-size:14px}
+.settings .row{display:flex;gap:8px;align-items:end}
+.settings .row>div{flex:1}
+/* panes */
+main{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:0}
+.pane{display:flex;flex-direction:column;min-width:0;min-height:0;border-bottom:1px solid var(--line)}
+.pane+.pane{border-left:1px solid var(--line)}
+.pane-head{display:flex;align-items:center;gap:10px;padding:10px 20px;border-bottom:1px solid var(--line);min-height:52px}
+.pane-head h2{margin:0;font-size:20px;min-width:2.2em}
+.pane-head select{font-size:13px;flex:0 1 auto;min-width:0}
+.pane-head .copy{border:0;color:var(--muted);padding:6px 4px;margin-left:auto}
+.pane-body{position:relative;flex:1;min-height:0}
+.code{font-family:var(--mono);font-size:var(--code-size);line-height:1.75;tab-size:4;font-variant-ligatures:none}
+/* C editor: textarea over a highlighted copy */
+.editor{position:absolute;inset:0;overflow:hidden;display:flex}
+.gutter{flex:0 0 auto;width:3.4em;padding:14px 10px 14px 0;text-align:right;color:#6b737d;white-space:pre;user-select:none;will-change:transform}
+.editor-view{position:relative;flex:1;min-width:0;overflow:hidden}
+.editor-highlight,.editor textarea{margin:0;padding:14px 16px 14px 14px;white-space:pre;overflow-wrap:normal}
+.editor-highlight{position:absolute;inset:0 auto auto 0;min-width:100%;pointer-events:none;will-change:transform}
+.editor textarea{position:absolute;inset:0;width:100%;height:100%;resize:none;border:0;outline:0;background:transparent;color:transparent;caret-color:#fff;overflow:auto}
+.editor textarea::selection{background:#2a4a7a;color:transparent}
+.editor textarea[readonly]{caret-color:transparent}
+/* 支位 output */
+#output{position:absolute;inset:0;margin:0;overflow:auto;padding:14px 20px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:calc(var(--code-size) + 1px)}
+#output:empty::before{content:"「翻訳」を押すと、ここに支位が表示されます。";color:var(--muted);font-family:system-ui,sans-serif;font-size:14px}
+#output.numbered{padding-left:calc(3.4em + 14px)}
+.ln{display:inline-block;width:0;user-select:none}
+.ln::before{content:attr(data-n);display:inline-block;width:3.4em;margin-left:calc(-3.4em - 14px);padding-right:10px;text-align:right;color:#6b737d;font-size:var(--code-size)}
+.lexeme{cursor:pointer;border-radius:2px}
+.lexeme:hover{background:#1c2a3e}
+.c-type{color:var(--c-type)}.c-control{color:var(--c-control)}.c-function{color:var(--c-function)}
+.c-number{color:var(--c-number)}.c-string{color:var(--c-string)}.c-comment{color:var(--c-comment)}.c-pre{color:var(--c-pre)}
+.s-guide{color:var(--guide)}
+/* status & details */
+.statusbar{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;padding:10px 20px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px}
+#status{flex:1;min-width:240px;overflow-wrap:anywhere}
+.extra{padding:4px 20px 28px}
+.extra details{border-bottom:1px solid var(--line);padding:6px 0}
+.extra summary{cursor:pointer;padding:6px 0;color:var(--muted)}
+.extra pre{white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--mono);font-size:13px;line-height:1.7;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px;max-height:320px;overflow:auto}
+.extra button{margin:3px;font-size:13px;padding:6px 10px;text-align:left}
+#links,#origins{display:flex;flex-wrap:wrap;gap:6px}
+mark{background:#ffd54a;color:#000;border-radius:2px}
+footer{padding:12px 20px 24px;color:var(--muted);font-size:13px;display:flex;gap:16px;flex-wrap:wrap}
+/* スマホ：C と 支位 のタブ切替 */
+.tabs{display:none}
+@media (max-width:899px){
+  .tabs{display:flex;position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 14px;gap:6px}
+  .tabs button{flex:1;padding:8px 0;border-radius:8px;border:1px solid var(--line-strong)}
+  .tabs button[aria-selected="true"]{background:#1d2a3d;border-color:#3b5a85;color:#fff;font-weight:600}
+  main[data-tab] .pane{display:none}
+  main[data-tab="c"] #pane-c,main[data-tab="shi"] #pane-shi{display:flex}
+  main[data-tab="c"] #pane-c .pane-body{height:calc(100vh - 230px)}
+}
+[hidden]{display:none!important}
+/* desktop: fixed-height side-by-side panes */
+@media (min-width:900px){
+  main{height:calc(100vh - 230px);min-height:420px}
+}
+/* narrow screens: stacked panes, the page scrolls */
+@media (max-width:899px){
+  header,.toolbar,.pane-head,.statusbar,.extra,footer{padding-left:14px;padding-right:14px}
+  main{grid-template-columns:1fr}
+  .pane+.pane{border-left:0}
+  #pane-c .pane-body{height:46vh;min-height:260px;flex:none}
+  #pane-shi .pane-body{position:static}
+  #output{position:static;overflow:visible;padding:14px}
+  .gutter{width:2.6em;padding-right:8px}
+  #output.numbered{padding-left:calc(2.6em + 12px)}
+  .ln::before{width:2.6em;margin-left:calc(-2.6em - 12px);padding-right:8px}
+  .editor{--code-size:16px}  /* 16px avoids iOS zoom on focus; gutter, highlight and textarea share it */
+  .toolbar{flex-wrap:nowrap;gap:8px}
+  .toolbar button,details.menu>summary{padding:8px 10px}
+  #translate{padding:8px 16px}
+  #cancel:disabled{display:none}
+  header .tag{display:none}
+}
+</style>
+
+<header>
+  <h1>支位</h1><span class="tag">ブラウザ解析の技術試作</span>
+  <span class="spacer"></span>
+  <details class="menu settings">
+    <summary aria-label="設定と解析条件" title="設定と解析条件">⚙</summary>
+    <div class="menu-list right">
+      <label class="check"><input type="checkbox" id="annotations" checked>助詞・案内語を表示する</label>
+      <div class="row">
+        <div><label for="contexts">解析する組合せ</label><select id="contexts"></select></div>
+        <button id="add-context" type="button">追加</button>
+      </div>
+      <div><label for="entry">翻訳するCファイル</label><select id="entry"></select></div>
+      <div><label for="args">解析条件（1行に1つ。例：-DUSE_DOUBLE=1、-Iinclude）</label><textarea id="args" spellcheck="false"></textarea></div>
+    </div>
+  </details>
+</header>
+
+<div class="toolbar">
+  <details class="menu">
+    <summary>ファイル</summary>
+    <div class="menu-list">
+      <button id="import-files" type="button">C・ヘッダを追加</button>
+      <button id="import-folder" type="button">フォルダを追加</button>
+      <button id="load" type="button">保存・解析データを開く</button>
+      <button id="save" type="button">保存</button>
+    </div>
+  </details>
+  <details class="menu">
+    <summary>サンプル</summary>
+    <div class="menu-list">
+      <button id="sample" type="button">複数ファイルの例を開く</button>
+      <button id="legacy-sample" type="button">旧解析の例を開く</button>
+    </div>
+  </details>
+  <button id="reanalyse" type="button" hidden>入力を編集して再解析</button>
+  <span class="spacer"></span>
+  <button id="cancel" type="button" disabled>中止</button>
+  <button id="translate" type="button">翻訳</button>
+</div>
+<input id="files" type="file" accept=".c,.h" multiple hidden>
+<input id="folder" type="file" webkitdirectory multiple hidden>
+<input id="saved" type="file" accept=".json" hidden>
+
+<nav id="tabs" class="tabs" aria-label="表示の切替">
+  <button type="button" data-tab="c">C</button><button type="button" data-tab="shi">支位</button>
+</nav>
+<main>
+  <section class="pane" id="pane-c" aria-label="C17コード">
+    <div class="pane-head">
+      <h2>C</h2>
+      <select id="filechoice" aria-label="編集するファイル"></select>
+      <button class="copy" id="copy-c" type="button">コピー</button>
+    </div>
+    <div class="pane-body">
+      <div class="editor code">
+        <div class="gutter" aria-hidden="true">1</div>
+        <div class="editor-view">
+          <pre class="editor-highlight code" aria-hidden="true"></pre>
+          <textarea id="source" class="code" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="C17コード"></textarea>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pane" id="pane-shi" aria-label="支位">
+    <div class="pane-head">
+      <h2>支位</h2>
+      <select id="views" disabled aria-label="表示するファイル・読込み回・展開"></select>
+      <button class="copy" id="copy-shi" type="button">コピー</button>
+    </div>
+    <div class="pane-body"><pre id="output" class="code" aria-live="polite"></pre></div>
+  </section>
+</main>
+
+<div class="statusbar"><span>C17</span><span id="status" role="status">試作版。正式な公開版ではありません。</span></div>
+
+<div class="extra">
+  <details id="source-details"><summary>対応する原文と位置</summary><pre id="source-view"></pre><div id="links"></div><div id="origins"></div></details>
+  <details><summary>マクロの呼出し・定義・引数</summary><div id="macros"></div></details>
+  <details><summary>表示を保留した理由</summary><div id="reasons"></div></details>
+</div>
+<footer><span>解析はブラウザ内で行います。初回は解析器と標準ヘッダを読み込みます。</span><a href="./licenses.html">ライセンス・第三者ソフトウェアの表示</a></footer>
+<script type="module" src="./src/ui/main.js"></script>
+</html>

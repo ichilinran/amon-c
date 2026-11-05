@@ -1,0 +1,665 @@
+{
+  "schema": 1,
+  "sourceArchive": {
+    "url": "https://github.com/llvm/llvm-project/archive/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff.tar.gz",
+    "sha256": "c1e2b4dc569b9acde8a6aca6fa4f53c1979d7122d37f465c60a63f5d00c021fe"
+  },
+  "prebuiltArchive": {
+    "url": "https://github.com/TheComputerM/libclang-wasm/releases/download/v0/llvm-build.tar.gz",
+    "sha256": "edae62978ba5ebe2975b26b7e4a61d7b1fe2883735b05e5decacdfb922dfccef"
+  },
+  "archives": [
+    {
+      "path": "./lib/libclangInterpreter.a",
+      "bytes": 236020
+    },
+    {
+      "path": "./lib/libLLVMFileCheck.a",
+      "bytes": 199478
+    },
+    {
+      "path": "./lib/libclangFrontendTool.a",
+      "bytes": 15542
+    },
+    {
+      "path": "./lib/libclangCodeGen.a",
+      "bytes": 11530048
+    },
+    {
+      "path": "./lib/libclangIndexSerialization.a",
+      "bytes": 11032
+    },
+    {
+      "path": "./lib/libclangTooling.a",
+      "bytes": 429344
+    },
+    {
+      "path": "./lib/libLLVMScalarOpts.a",
+      "bytes": 5582340
+    },
+    {
+      "path": "./lib/libLLVMTextAPI.a",
+      "bytes": 483840
+    },
+    {
+      "path": "./lib/libLLVMTransformUtils.a",
+      "bytes": 3892202
+    },
+    {
+      "path": "./lib/libclangFormat.a",
+      "bytes": 1284938
+    },
+    {
+      "path": "./lib/libclangRewriteFrontend.a",
+      "bytes": 751418
+    },
+    {
+      "path": "./lib/libLLVMInstCombine.a",
+      "bytes": 2335372
+    },
+    {
+      "path": "./lib/libLLVMOrcTargetProcess.a",
+      "bytes": 209744
+    },
+    {
+      "path": "./lib/libclangExtractAPI.a",
+      "bytes": 1875630
+    },
+    {
+      "path": "./lib/libLLVMCFIVerify.a",
+      "bytes": 102238
+    },
+    {
+      "path": "./lib/libLLVMRuntimeDyld.a",
+      "bytes": 703860
+    },
+    {
+      "path": "./lib/libLLVMExecutionEngine.a",
+      "bytes": 144578
+    },
+    {
+      "path": "./lib/libLLVMCodeGenTypes.a",
+      "bytes": 10264
+    },
+    {
+      "path": "./lib/libclangSupport.a",
+      "bytes": 50122
+    },
+    {
+      "path": "./lib/libLLVMObjCARCOpts.a",
+      "bytes": 181332
+    },
+    {
+      "path": "./lib/libLLVMDiff.a",
+      "bytes": 69760
+    },
+    {
+      "path": "./lib/libLLVMLinker.a",
+      "bytes": 147644
+    },
+    {
+      "path": "./lib/libLLVMTableGen.a",
+      "bytes": 633266
+    },
+    {
+      "path": "./lib/libLLVMIRReader.a",
+      "bytes": 22106
+    },
+    {
+      "path": "./lib/libclangAnalysis.a",
+      "bytes": 3166300
+    },
+    {
+      "path": "./lib/libLLVMExtensions.a",
+      "bytes": 804
+    },
+    {
+      "path": "./lib/libLLVMBitReader.a",
+      "bytes": 657976
+    },
+    {
+      "path": "./lib/libLLVMBitWriter.a",
+      "bytes": 391964
+    },
+    {
+      "path": "./lib/libLLVMOption.a",
+      "bytes": 90674
+    },
+    {
+      "path": "./lib/libclangEdit.a",
+      "bytes": 72010
+    },
+    {
+      "path": "./lib/libclangHandleLLVM.a",
+      "bytes": 109542
+    },
+    {
+      "path": "./lib/libLLVMDWARFLinkerParallel.a",
+      "bytes": 742128
+    },
+    {
+      "path": "./lib/libLLVMDWARFLinkerClassic.a",
+      "bytes": 328998
+    },
+    {
+      "path": "./lib/libLLVMAsmParser.a",
+      "bytes": 637700
+    },
+    {
+      "path": "./lib/libclangSema.a",
+      "bytes": 22666032
+    },
+    {
+      "path": "./lib/libclangDependencyScanning.a",
+      "bytes": 343040
+    },
+    {
+      "path": "./lib/libLLVMDebugInfoGSYM.a",
+      "bytes": 266768
+    },
+    {
+      "path": "./lib/libclangToolingInclusionsStdlib.a",
+      "bytes": 467186
+    },
+    {
+      "path": "./lib/libLLVMDemangle.a",
+      "bytes": 395184
+    },
+    {
+      "path": "./lib/libLLVMDebugInfoDWARF.a",
+      "bytes": 1261394
+    },
+    {
+      "path": "./lib/libLLVMTextAPIBinaryReader.a",
+      "bytes": 49834
+    },
+    {
+      "path": "./lib/libclangToolingRefactoring.a",
+      "bytes": 1843678
+    },
+    {
+      "path": "./lib/libLLVMJITLink.a",
+      "bytes": 1983152
+    },
+    {
+      "path": "./lib/libLLVMObjectYAML.a",
+      "bytes": 3145462
+    },
+    {
+      "path": "./lib/libclangTransformer.a",
+      "bytes": 322746
+    },
+    {
+      "path": "./lib/libLLVMInstrumentation.a",
+      "bytes": 2165884
+    },
+    {
+      "path": "./lib/libLLVMFrontendOpenMP.a",
+      "bytes": 736730
+    },
+    {
+      "path": "./lib/libLLVMTarget.a",
+      "bytes": 56740
+    },
+    {
+      "path": "./lib/libLLVMInterpreter.a",
+      "bytes": 200404
+    },
+    {
+      "path": "./lib/libclangToolingSyntax.a",
+      "bytes": 408050
+    },
+    {
+      "path": "./lib/libclangParse.a",
+      "bytes": 1802244
+    },
+    {
+      "path": "./lib/libLLVMLibDriver.a",
+      "bytes": 45424
+    },
+    {
+      "path": "./lib/libLLVMGlobalISel.a",
+      "bytes": 1883616
+    },
+    {
+      "path": "./lib/libLLVMDebuginfod.a",
+      "bytes": 112514
+    },
+    {
+      "path": "./lib/libLLVMFrontendOffloading.a",
+      "bytes": 39656
+    },
+    {
+      "path": "./lib/libLLVMDebugInfoLogicalView.a",
+      "bytes": 1496866
+    },
+    {
+      "path": "./lib/libLLVMLineEditor.a",
+      "bytes": 7644
+    },
+    {
+      "path": "./lib/libLLVMMIRParser.a",
+      "bytes": 373560
+    },
+    {
+      "path": "./lib/libLLVMObject.a",
+      "bytes": 2388990
+    },
+    {
+      "path": "./lib/libclangDriver.a",
+      "bytes": 5145832
+    },
+    {
+      "path": "./lib/libLLVMOrcDebugging.a",
+      "bytes": 140298
+    },
+    {
+      "path": "./lib/libLLVMMCJIT.a",
+      "bytes": 50092
+    },
+    {
+      "path": "./lib/libLLVMPasses.a",
+      "bytes": 5022182
+    },
+    {
+      "path": "./lib/libLLVMSymbolize.a",
+      "bytes": 259848
+    },
+    {
+      "path": "./lib/libclangIndex.a",
+      "bytes": 720042
+    },
+    {
+      "path": "./lib/libLLVMVectorize.a",
+      "bytes": 2714866
+    },
+    {
+      "path": "./lib/libLLVMExegesis.a",
+      "bytes": 540990
+    },
+    {
+      "path": "./lib/libLLVMTableGenCommon.a",
+      "bytes": 296322
+    },
+    {
+      "path": "./lib/libLLVMLTO.a",
+      "bytes": 783706
+    },
+    {
+      "path": "./lib/libLLVMCoroutines.a",
+      "bytes": 407812
+    },
+    {
+      "path": "./lib/libLLVMBinaryFormat.a",
+      "bytes": 252690
+    },
+    {
+      "path": "./lib/libLLVMObjCopy.a",
+      "bytes": 947972
+    },
+    {
+      "path": "./lib/libLLVMCFGuard.a",
+      "bytes": 20740
+    },
+    {
+      "path": "./lib/libLLVMBitstreamReader.a",
+      "bytes": 33934
+    },
+    {
+      "path": "./lib/libclangDirectoryWatcher.a",
+      "bytes": 11196
+    },
+    {
+      "path": "./lib/libclangAnalysisFlowSensitiveModels.a",
+      "bytes": 593580
+    },
+    {
+      "path": "./lib/libLLVMWebAssemblyDisassembler.a",
+      "bytes": 17206
+    },
+    {
+      "path": "./lib/libclangToolingCore.a",
+      "bytes": 83934
+    },
+    {
+      "path": "./lib/libLLVMRemarks.a",
+      "bytes": 243076
+    },
+    {
+      "path": "./lib/libLLVMDebugInfoPDB.a",
+      "bytes": 1597098
+    },
+    {
+      "path": "./lib/libLLVMFuzzerCLI.a",
+      "bytes": 20106
+    },
+    {
+      "path": "./lib/libLLVMWebAssemblyInfo.a",
+      "bytes": 11434
+    },
+    {
+      "path": "./lib/libLLVMMCDisassembler.a",
+      "bytes": 25788
+    },
+    {
+      "path": "./lib/libLLVMSelectionDAG.a",
+      "bytes": 4937062
+    },
+    {
+      "path": "./lib/libclangToolingInclusions.a",
+      "bytes": 56650
+    },
+    {
+      "path": "./lib/libclangBasic.a",
+      "bytes": 8105454
+    },
+    {
+      "path": "./lib/libLLVMCore.a",
+      "bytes": 6687866
+    },
+    {
+      "path": "./lib/libLLVMWebAssemblyDesc.a",
+      "bytes": 228038
+    },
+    {
+      "path": "./lib/libLLVMSupport.a",
+      "bytes": 2848060
+    },
+    {
+      "path": "./lib/libclangASTMatchers.a",
+      "bytes": 973648
+    },
+    {
+      "path": "./lib/libclangRewrite.a",
+      "bytes": 67226
+    },
+    {
+      "path": "./lib/libclangARCMigrate.a",
+      "bytes": 6974466
+    },
+    {
+      "path": "./lib/libLLVMDebugInfoMSF.a",
+      "bytes": 82836
+    },
+    {
+      "path": "./lib/libclangAST.a",
+      "bytes": 14677980
+    },
+    {
+      "path": "./lib/libLLVMOrcJIT.a",
+      "bytes": 3205850
+    },
+    {
+      "path": "./lib/libLLVMWindowsDriver.a",
+      "bytes": 18534
+    },
+    {
+      "path": "./lib/libclangSerialization.a",
+      "bytes": 2955272
+    },
+    {
+      "path": "./lib/libclangDynamicASTMatchers.a",
+      "bytes": 4447412
+    },
+    {
+      "path": "./lib/libclangCrossTU.a",
+      "bytes": 81422
+    },
+    {
+      "path": "./lib/libLLVMMC.a",
+      "bytes": 1553384
+    },
+    {
+      "path": "./lib/libLLVMTableGenGlobalISel.a",
+      "bytes": 103154
+    },
+    {
+      "path": "./lib/libLLVMFrontendOpenACC.a",
+      "bytes": 11540
+    },
+    {
+      "path": "./lib/libclang.a",
+      "bytes": 1275256
+    },
+    {
+      "path": "./lib/libLLVMFrontendDriver.a",
+      "bytes": 1346
+    },
+    {
+      "path": "./lib/libclangLex.a",
+      "bytes": 1327994
+    },
+    {
+      "path": "./lib/libclangFrontend.a",
+      "bytes": 3299990
+    },
+    {
+      "path": "./lib/libLLVMDlltoolDriver.a",
+      "bytes": 18450
+    },
+    {
+      "path": "./lib/libLLVMWebAssemblyUtils.a",
+      "bytes": 2900
+    },
+    {
+      "path": "./lib/libLLVMCodeGen.a",
+      "bytes": 12514438
+    },
+    {
+      "path": "./lib/libLLVMCoverage.a",
+      "bytes": 387020
+    },
+    {
+      "path": "./lib/libLLVMTargetParser.a",
+      "bytes": 333592
+    },
+    {
+      "path": "./lib/libLLVMDebugInfoCodeView.a",
+      "bytes": 1130202
+    },
+    {
+      "path": "./lib/libclangStaticAnalyzerFrontend.a",
+      "bytes": 768430
+    },
+    {
+      "path": "./lib/libLLVMOrcShared.a",
+      "bytes": 54792
+    },
+    {
+      "path": "./lib/libLLVMDWP.a",
+      "bytes": 69128
+    },
+    {
+      "path": "./lib/libclangToolingASTDiff.a",
+      "bytes": 287032
+    },
+    {
+      "path": "./lib/libLLVMProfileData.a",
+      "bytes": 1576896
+    },
+    {
+      "path": "./lib/libLLVMipo.a",
+      "bytes": 5670850
+    },
+    {
+      "path": "./lib/libclangAnalysisFlowSensitive.a",
+      "bytes": 686682
+    },
+    {
+      "path": "./lib/libLLVMAsmPrinter.a",
+      "bytes": 1469264
+    },
+    {
+      "path": "./lib/libLLVMMCParser.a",
+      "bytes": 769326
+    },
+    {
+      "path": "./lib/libLLVMMCA.a",
+      "bytes": 218558
+    },
+    {
+      "path": "./lib/libclangStaticAnalyzerCheckers.a",
+      "bytes": 9663638
+    },
+    {
+      "path": "./lib/libclangAPINotes.a",
+      "bytes": 604822
+    },
+    {
+      "path": "./lib/libclangHandleCXX.a",
+      "bytes": 14458
+    },
+    {
+      "path": "./lib/libLLVMWindowsManifest.a",
+      "bytes": 6746
+    },
+    {
+      "path": "./lib/libLLVMDebugInfoBTF.a",
+      "bytes": 68034
+    },
+    {
+      "path": "./lib/libLLVMFuzzMutate.a",
+      "bytes": 296676
+    },
+    {
+      "path": "./lib/libLLVMHipStdPar.a",
+      "bytes": 22554
+    },
+    {
+      "path": "./lib/libLLVMInterfaceStub.a",
+      "bytes": 191528
+    },
+    {
+      "path": "./lib/libLLVMFrontendHLSL.a",
+      "bytes": 3732
+    },
+    {
+      "path": "./lib/libLLVMWebAssemblyCodeGen.a",
+      "bytes": 1493204
+    },
+    {
+      "path": "./lib/libLLVMWebAssemblyAsmParser.a",
+      "bytes": 112832
+    },
+    {
+      "path": "./lib/libLLVMXRay.a",
+      "bytes": 248904
+    },
+    {
+      "path": "./lib/libLLVMAnalysis.a",
+      "bytes": 7188558
+    },
+    {
+      "path": "./lib/libLLVMIRPrinter.a",
+      "bytes": 7050
+    },
+    {
+      "path": "./lib/libLLVMDWARFLinker.a",
+      "bytes": 4716
+    },
+    {
+      "path": "./lib/libclangStaticAnalyzerCore.a",
+      "bytes": 3284220
+    },
+    {
+      "path": "./lib/libLLVMAggressiveInstCombine.a",
+      "bytes": 93212
+    }
+  ],
+  "cmakeEvidence": [
+    "set(LLVM_VERSION_MAJOR 18)",
+    "set(LLVM_VERSION_MINOR 1)",
+    "set(LLVM_VERSION_PATCH 8)",
+    "set(LLVM_VERSION_SUFFIX )",
+    "set(LLVM_PACKAGE_VERSION 18.1.8)",
+    "set(LLVM_ENABLE_LIBEDIT 0)",
+    "if(LLVM_ENABLE_LIBEDIT)",
+    "set(LLVM_ENABLE_TERMINFO OFF)",
+    "if(LLVM_ENABLE_TERMINFO)",
+    "set(LLVM_ENABLE_ZLIB 0)",
+    "if(LLVM_ENABLE_ZLIB)",
+    "set(LLVM_ENABLE_ZSTD 0)",
+    "if(LLVM_ENABLE_ZSTD)",
+    "set(LLVM_ENABLE_LIBXML2 OFF)",
+    "if(LLVM_ENABLE_LIBXML2)",
+    "set(LLVM_ENABLE_CURL OFF)",
+    "if(LLVM_ENABLE_CURL)"
+  ],
+  "noticeTexts": [
+    {
+      "upstreamPath": "clang/LICENSE.TXT",
+      "path": "LICENSES/llvm-source/clang/LICENSE.TXT",
+      "sha256": "ebcd9bbf783a73d05c53ba4d586b8d5813dcdf3bbec50265860ccc885e606f47",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/clang/LICENSE.TXT"
+    },
+    {
+      "upstreamPath": "clang/tools/clang-format-vs/ClangFormat/license.txt",
+      "path": "LICENSES/llvm-source/clang/tools/clang-format-vs/ClangFormat/license.txt",
+      "sha256": "3a39bb490f4e22550ba351ecfe3357f51a6bcd3d2ad20830b7216152bb0fe45a",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/clang/tools/clang-format-vs/ClangFormat/license.txt"
+    },
+    {
+      "upstreamPath": "llvm/LICENSE.TXT",
+      "path": "LICENSES/llvm-source/llvm/LICENSE.TXT",
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/llvm/LICENSE.TXT"
+    },
+    {
+      "upstreamPath": "llvm/include/llvm/Support/LICENSE.TXT",
+      "path": "LICENSES/llvm-source/llvm/include/llvm/Support/LICENSE.TXT",
+      "sha256": "54cbc326a78b9400065bfc5830a57fdcdaf808286d4ac35d8a9e324aa77b7241",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/llvm/include/llvm/Support/LICENSE.TXT"
+    },
+    {
+      "upstreamPath": "llvm/lib/Support/BLAKE3/LICENSE",
+      "path": "LICENSES/llvm-source/llvm/lib/Support/BLAKE3/LICENSE",
+      "sha256": "6a94bedb8b707ed97f6e310d0d015ab14e0683ffa0a612b02958581b9cc9fc0e",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/llvm/lib/Support/BLAKE3/LICENSE"
+    },
+    {
+      "upstreamPath": "llvm/test/YAMLParser/LICENSE.txt",
+      "path": "LICENSES/llvm-source/llvm/test/YAMLParser/LICENSE.txt",
+      "sha256": "d0d8b09800a45cd982e9568fc7669d9c1a4c330e275a821bbe24d54366d16fe9",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/llvm/test/YAMLParser/LICENSE.txt"
+    },
+    {
+      "upstreamPath": "llvm/utils/lit/LICENSE.TXT",
+      "path": "LICENSES/llvm-source/llvm/utils/lit/LICENSE.TXT",
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/llvm/utils/lit/LICENSE.TXT"
+    },
+    {
+      "upstreamPath": "third-party/benchmark/LICENSE",
+      "path": "LICENSES/llvm-source/third-party/benchmark/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/third-party/benchmark/LICENSE"
+    },
+    {
+      "upstreamPath": "third-party/unittest/googlemock/LICENSE.txt",
+      "path": "LICENSES/llvm-source/third-party/unittest/googlemock/LICENSE.txt",
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/third-party/unittest/googlemock/LICENSE.txt"
+    },
+    {
+      "upstreamPath": "third-party/unittest/googletest/LICENSE.TXT",
+      "path": "LICENSES/llvm-source/third-party/unittest/googletest/LICENSE.TXT",
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "sourceURL": "https://github.com/llvm/llvm-project/blob/3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff/third-party/unittest/googletest/LICENSE.TXT"
+    },
+    {
+      "archivePath": "./include/llvm/Support/LICENSE.TXT",
+      "path": "LICENSES/llvm-prebuilt-Support-LICENSE.txt",
+      "sha256": "54cbc326a78b9400065bfc5830a57fdcdaf808286d4ac35d8a9e324aa77b7241"
+    }
+  ],
+  "limitations": [
+    "139 archives describe the original prebuilt inputs. The current wasm-link-reproduction.json records 44 archives / 866 objects before final optimization; Path.cpp.o alone was replaced and libc.a(dladdr.o) was added at link time.",
+    "Named LICENSE texts are supplemented by per-file comment notice collections. Their declared scan scope and limitations remain documented.",
+    "Only Path.cpp.o was rebuilt from unmodified upstream LLVM source. The remaining archives retain the original prebuilt provenance. The provider-specific Path.inc modification is not included in the current candidate. This is not a full LLVM source rebuild or overall release approval."
+  ],
+  "cleared": false,
+  "linkReproduction": "compliance/wasm-link-reproduction.json",
+  "status": "Provider Path modification dependency removed by replacing the single affected archive member; see path-replacement.json.",
+  "providerModificationDependencyRemoved": true,
+  "pathReplacement": "compliance/path-replacement.json"
+}

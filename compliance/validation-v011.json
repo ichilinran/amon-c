@@ -1,0 +1,17 @@
+{
+  "version": "0.11",
+  "productionAndPriorThirdPartyFilesUnchangedFromV010": true,
+  "sdkSourcesRestoredAndHashChecked": 1991,
+  "coreSubsetVerified": 108,
+  "hostHeaderMatches": 1964,
+  "hostPackages": 15,
+  "officialGlibcHeaderMatches": 477,
+  "upstreamLicenseTextMatches": 6,
+  "distributionEvidenceCheck": "passed",
+  "publicReleaseGate": {
+    "exitCode": 2,
+    "expected": true,
+    "cleared": false
+  },
+  "fullRuntimeTestsRerun": false
+}

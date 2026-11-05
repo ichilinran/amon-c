@@ -1,0 +1,26 @@
+{
+  "translationUnits": [
+    {
+      "source": "main.c",
+      "args": []
+    },
+    {
+      "source": "main.c",
+      "args": [
+        "-DUSE_DOUBLE=1",
+        "-DNDEBUG"
+      ]
+    },
+    {
+      "source": "worker.c",
+      "args": []
+    },
+    {
+      "source": "worker.c",
+      "args": [
+        "-DUSE_DOUBLE=1",
+        "-DNDEBUG"
+      ]
+    }
+  ]
+}

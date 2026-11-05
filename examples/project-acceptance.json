@@ -1,0 +1,32 @@
+{
+  "translationUnits": [
+    {
+      "source": "main.c",
+      "args": []
+    },
+    {
+      "source": "main.c",
+      "args": [
+        "-DUSE_DOUBLE=1",
+        "-DNDEBUG"
+      ]
+    },
+    {
+      "source": "worker.c",
+      "args": []
+    },
+    {
+      "source": "worker.c",
+      "args": [
+        "-DUSE_DOUBLE=1",
+        "-DNDEBUG"
+      ]
+    }
+  ],
+  "files": {
+    "slot.h": "// 再読込みする作業域😀\nSLOT_TYPE scratch = SLOT_INITIAL;\n",
+    "worker.c": "#include \"model.h\"\n#include <stdatomic.h>\n#include <complex.h>\n#include <math.h>\n#include <assert.h>\nstatic atomic_uint calls;\nValue identity(Value printf) { return printf; }\nValue compute(const struct Item *items, size_t count, Transform action) {\n    Value total = 0;\n    CREATE_SLOT(work,Value,0);\n    {\n#define SLOT_TYPE int\n#define SLOT_INITIAL 1\n#include \"slot.h\"\n        work_slot += scratch;\n#undef SLOT_TYPE\n#undef SLOT_INITIAL\n    }\n    {\n#define SLOT_TYPE Value\n#define SLOT_INITIAL 2\n#include \"slot.h\"\n        work_slot += scratch;\n#undef SLOT_TYPE\n#undef SLOT_INITIAL\n    }\n    for(size_t i=0; i<count; ++i) total += action(items[i].value);\n    for(EMPTY;EMPTY;EMPTY) break;\n    double complex z = CMPLX(1,2);\n    work_slot += (Value)creal(z);\n    atomic_fetch_add_explicit(&calls,1,memory_order_relaxed);\n    assert(sizeof(Value)>0);\n#if defined(USE_DOUBLE)\n    total += (Value)0.5;\n#else\n    total += 1;\n#endif\n    if(total<0) GO(finish);\n    work_slot = 0;\nfinish_end:\n    return total + work_slot;\n}\n",
+    "main.c": "#include \"model.h\"\n#include <stdio.h>\n#include <assert.h>\n// 支位の確認😀：利用者の名前と表示用の文字列は保持する。\nint main(void) {\n    struct Item items[] = {{1,2},{2,3}};\n    int 日本語 = 7;\n    Value total = compute(items, sizeof(items)/sizeof(items[0]), identity);\n    assert(sizeof(Value)>0);\n    printf(\"支位😀 %s %d\\n\", TEXT(JOIN(sample,_name)), 日本語);\n    if(total < 0) return 1;\n    return 0;\n}\n",
+    "model.h": "#ifndef APP_MODEL_H\n#define APP_MODEL_H\n#include <stddef.h>\n#include <stdbool.h>\n#if defined(USE_DOUBLE)\ntypedef double Value;\n#else\ntypedef int Value;\n#endif\nstruct Item { int code; Value value; };\ntypedef Value (*Transform)(Value);\nValue compute(const struct Item *items, size_t count, Transform action);\nValue identity(Value printf);\n_Static_assert(sizeof(Value) >= sizeof(int), \"Value width\");\n#define JOIN_INNER(a,b) a ## b\n#define JOIN(a,b) JOIN_INNER(a,b)\n#define TEXT_INNER(x) #x\n#define TEXT(x) TEXT_INNER(x)\n#define CREATE_SLOT(name,type,value) type JOIN(name,_slot) = (value)\n#define EMPTY\n#define GO(name) goto JOIN(name,_end)\n#endif\n"
+  }
+}

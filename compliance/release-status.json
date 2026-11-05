@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "publicReleaseCleared": false,
+  "open": [
+    {
+      "id": "candidate-verification",
+      "item": "This generated candidate is not deployed. Publication and device verification are separate steps."
+    }
+  ],
+  "candidate": {
+    "published": false
+  },
+  "evidence": [
+    "compliance/sdk-file-terms-review.json",
+    "compliance/wasm-link-reproduction.json",
+    "compliance/path-replacement.json",
+    "compliance/project-license.json"
+  ]
+}

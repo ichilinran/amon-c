@@ -1,0 +1,263 @@
+{
+  "roots": [
+    "src/ui/main.js",
+    "src/runtime/worker.js",
+    "src/index.js"
+  ],
+  "modules": {
+    "src/analysis/declaration-syntax.js": [
+      "src/translation/declaration-validation.js"
+    ],
+    "src/analysis/literal-facts.js": [
+      "src/translation/format-literal.js"
+    ],
+    "src/analysis/projection.js": [
+      "src/shared/hash.js",
+      "src/runtime/limits.js",
+      "src/translation/source-coordinates.js",
+      "src/analysis/declaration-syntax.js",
+      "src/analysis/literal-facts.js"
+    ],
+    "src/compat/analysis-document.js": [
+      "src/analysis/projection.js",
+      "src/project/project-analysis.js",
+      "src/shared/hash.js"
+    ],
+    "src/compat/learning-save.js": [
+      "src/vocabulary/settings.js",
+      "src/compat/word-settings.js",
+      "src/project/input.js",
+      "src/project/filenames.js"
+    ],
+    "src/compat/project-save.js": [
+      "src/project/input.js",
+      "src/vocabulary/settings.js",
+      "src/compat/word-settings.js",
+      "src/shared/hash.js"
+    ],
+    "src/compat/vocabulary-v10.js": [],
+    "src/compat/vocabulary-v11.js": [],
+    "src/compat/word-settings.js": [
+      "src/vocabulary/settings.js",
+      "src/compat/vocabulary-v10.js",
+      "src/compat/vocabulary-v11.js"
+    ],
+    "src/index.js": [
+      "src/translator.js",
+      "src/runtime/wasm-runtime.js",
+      "src/runtime/resources.js",
+      "src/project/project.js",
+      "src/project/import.js"
+    ],
+    "src/project/analysis-format.js": [
+      "src/translation/declaration-validation.js",
+      "src/translation/edit-plan.js"
+    ],
+    "src/project/filenames.js": [],
+    "src/project/import.js": [
+      "src/project/project-view.js",
+      "src/vocabulary/settings.js",
+      "src/translation/native-reader.js",
+      "src/project/input.js",
+      "src/compat/project-save.js",
+      "src/project/surfaces.js",
+      "src/analysis/literal-facts.js",
+      "src/compat/analysis-document.js",
+      "src/compat/learning-save.js",
+      "src/project/filenames.js",
+      "src/compat/learning-save.js"
+    ],
+    "src/project/input.js": [
+      "src/vocabulary/settings.js"
+    ],
+    "src/project/project-analysis.js": [
+      "src/translation/source-coordinates.js",
+      "src/project/analysis-format.js"
+    ],
+    "src/project/project-view.js": [
+      "src/project/project-analysis.js"
+    ],
+    "src/project/project.js": [
+      "src/project/input.js",
+      "src/vocabulary/settings.js",
+      "src/shared/hash.js",
+      "src/project/input.js",
+      "src/compat/project-save.js"
+    ],
+    "src/project/surfaces.js": [
+      "src/project/project-analysis.js"
+    ],
+    "src/runtime/limits.js": [],
+    "src/runtime/resource-budget.js": [],
+    "src/runtime/resources.js": [
+      "src/runtime/resource-budget.js"
+    ],
+    "src/runtime/wasm-runtime.js": [
+      "src/runtime/resource-budget.js",
+      "src/project/project.js"
+    ],
+    "src/runtime/worker.js": [
+      "src/runtime/resource-budget.js",
+      "src/project/surfaces.js",
+      "src/index.js",
+      "wasm/out/shi-clang.mjs"
+    ],
+    "src/shared/hash.js": [],
+    "src/translation/c17-tokens.js": [],
+    "src/translation/declaration-compat.js": [],
+    "src/translation/declaration-layout.js": [
+      "src/translation/edit-plan.js"
+    ],
+    "src/translation/declaration-plan.js": [
+      "src/translation/declaration-compat.js",
+      "src/translation/source-index.js"
+    ],
+    "src/translation/declaration-validation.js": [
+      "src/translation/source-index.js"
+    ],
+    "src/translation/edit-plan.js": [],
+    "src/translation/format-literal.js": [],
+    "src/translation/lexical.js": [
+      "src/translation/c17-tokens.js",
+      "src/translation/c17-tokens.js"
+    ],
+    "src/translation/macro-generic-reader.js": [
+      "src/translation/edit-plan.js",
+      "src/translation/source-index.js",
+      "src/translation/preprocessing-context.js"
+    ],
+    "src/translation/macro-unary-reader.js": [
+      "src/translation/edit-plan.js",
+      "src/translation/source-index.js",
+      "src/translation/preprocessing-context.js"
+    ],
+    "src/translation/main-ending.js": [],
+    "src/translation/native-reader.js": [
+      "src/translation/edit-plan.js",
+      "src/translation/source-index.js",
+      "src/translation/usage-reading.js",
+      "src/translation/predefined-reader.js",
+      "src/vocabulary/standard-catalog.js",
+      "src/translation/reading-reasons.js",
+      "src/translation/standard-reader.js",
+      "src/translation/preprocessor-reader.js",
+      "src/translation/declaration-plan.js",
+      "src/translation/declaration-layout.js",
+      "src/translation/main-ending.js",
+      "src/vocabulary/settings.js",
+      "src/project/analysis-format.js"
+    ],
+    "src/translation/predefined-reader.js": [
+      "src/vocabulary/vocabulary-current.js",
+      "src/translation/edit-plan.js",
+      "src/translation/preprocessing-context.js"
+    ],
+    "src/translation/preprocessing-context.js": [
+      "src/translation/source-index.js"
+    ],
+    "src/translation/preprocessor-reader.js": [
+      "src/translation/edit-plan.js",
+      "src/translation/preprocessing-context.js",
+      "src/vocabulary/standard-catalog.js",
+      "src/translation/lexical.js"
+    ],
+    "src/translation/reading-reasons.js": [],
+    "src/translation/source-coordinates.js": [],
+    "src/translation/source-index.js": [],
+    "src/translation/standard-macro-policy.js": [],
+    "src/translation/standard-reader.js": [
+      "src/translation/edit-plan.js",
+      "src/translation/source-index.js",
+      "src/translation/preprocessing-context.js",
+      "src/translation/macro-generic-reader.js",
+      "src/translation/macro-unary-reader.js",
+      "src/vocabulary/standard-catalog.js",
+      "src/translation/standard-macro-policy.js"
+    ],
+    "src/translation/usage-profiles.js": [],
+    "src/translation/usage-reading.js": [
+      "src/translation/edit-plan.js",
+      "src/translation/source-index.js",
+      "src/translation/usage-profiles.js",
+      "src/translation/format-literal.js",
+      "src/translation/format-literal.js"
+    ],
+    "src/translator.js": [
+      "src/project/input.js",
+      "src/shared/hash.js",
+      "src/analysis/projection.js",
+      "src/runtime/limits.js",
+      "src/project/analysis-format.js",
+      "src/translation/native-reader.js"
+    ],
+    "src/ui/main.js": [
+      "src/index.js",
+      "src/ui/view.js"
+    ],
+    "src/ui/view.js": [],
+    "src/vocabulary/settings.js": [
+      "src/vocabulary/vocabulary-current.js",
+      "src/translation/predefined-reader.js",
+      "src/vocabulary/standard-catalog.js"
+    ],
+    "src/vocabulary/standard-catalog.js": [
+      "src/vocabulary/vocabulary-current.js",
+      "src/vocabulary/standard-extra.js"
+    ],
+    "src/vocabulary/standard-extra.js": [],
+    "src/vocabulary/vocabulary-current.js": [],
+    "wasm/out/shi-clang.mjs": []
+  },
+  "assetEdges": [
+    {
+      "from": "index.html",
+      "to": "src/ui/main.js",
+      "kind": "module script"
+    },
+    {
+      "from": "src/ui/main.js",
+      "to": "src/runtime/worker.js",
+      "kind": "module worker"
+    },
+    {
+      "from": "src/ui/main.js",
+      "to": "examples/project-acceptance.json",
+      "kind": "sample fetch"
+    },
+    {
+      "from": "src/ui/main.js",
+      "to": "examples/analysis/project-21.analysis.json",
+      "kind": "legacy-data sample fetch"
+    },
+    {
+      "from": "src/runtime/resources.js",
+      "to": "wasm/out/shi-clang.wasm.gz",
+      "kind": "compressed Wasm"
+    },
+    {
+      "from": "src/runtime/resources.js",
+      "to": "wasm/out/sdk-core.json.gz",
+      "kind": "initial SDK"
+    },
+    {
+      "from": "src/runtime/resources.js",
+      "to": "wasm/out/sdk-index.json",
+      "kind": "SDK lookup"
+    },
+    {
+      "from": "src/runtime/resources.js",
+      "to": "wasm/out/sdk.json.gz",
+      "kind": "full SDK fallback"
+    },
+    {
+      "from": "index.html",
+      "to": "fonts/amon-c-code-subset.woff2",
+      "kind": "code display font (OFL-1.1 subset, renamed)"
+    },
+    {
+      "from": "index.html",
+      "to": "ogp.png",
+      "kind": "Open Graph preview image"
+    }
+  ]
+}

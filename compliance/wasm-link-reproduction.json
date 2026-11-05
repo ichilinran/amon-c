@@ -1,0 +1,4243 @@
+{
+  "schema": 1,
+  "date": "2026-11-02",
+  "emscripten": "3.1.64",
+  "libraryArchiveSha256": "edae62978ba5ebe2975b26b7e4a61d7b1fe2883735b05e5decacdfb922dfccef",
+  "extractorSource": "reference/next/frontend.cpp",
+  "extractorSourceSha256": "150987ae3ef01b3b851b238375c062f216a32bfb0bf7834da52ac63a67480459",
+  "shippedWasmSha256": "2231bc6d97378823341ba7898165a6ab21c6a3edf9286c981e0ea3411d46ca99",
+  "reproducedWasmSha256": "2231bc6d97378823341ba7898165a6ab21c6a3edf9286c981e0ea3411d46ca99",
+  "wasmBytes": 26759957,
+  "byteIdentical": true,
+  "reproductionScope": "Original Wasm relink reproduced byte-for-byte. Replaced only Path.cpp.o using unmodified upstream LLVM 18.1.8 source, relinked the extractor and remaining original archives. Not a full LLVM source rebuild.",
+  "historicalHeaderPrefix": "/workspace/scratch/18ed11a2ffcd/wasm-toolchain/prebuilt",
+  "prefixMapReason": "Required to reproduce __FILE__ strings embedded by header assertions; without remapping, absolute include paths change data layout.",
+  "archiveInputs": [
+    {
+      "path": "lib/libLLVMAggressiveInstCombine.a",
+      "bytes": 93212,
+      "sha256": "e14ffb08d80420941dbab7b50cd27c25f5bdec90867da96b26dd4a56b0094a40"
+    },
+    {
+      "path": "lib/libLLVMAnalysis.a",
+      "bytes": 7188558,
+      "sha256": "e225c5080693e5cc324295a0886d9b79107e2b6d0e1b616b292481e9b8d04979"
+    },
+    {
+      "path": "lib/libLLVMAsmParser.a",
+      "bytes": 637700,
+      "sha256": "adb04ae758581349c6595edf5e21a0b4a793b42f9314ab391ce77fe211774f16"
+    },
+    {
+      "path": "lib/libLLVMAsmPrinter.a",
+      "bytes": 1469264,
+      "sha256": "2104eca652687d5dcb332482baa1a45fc9292e42faeaa21052b633b81acc2c96"
+    },
+    {
+      "path": "lib/libLLVMBinaryFormat.a",
+      "bytes": 252690,
+      "sha256": "8d70250e9f37c492053f202186ba0572f257c8839a05d9e03eff83aa6ea29567"
+    },
+    {
+      "path": "lib/libLLVMBitReader.a",
+      "bytes": 657976,
+      "sha256": "fbebb010f1d6d77e1b985ecc6abb045fa6a0b3df6741cbdc489b730a09826b30"
+    },
+    {
+      "path": "lib/libLLVMBitWriter.a",
+      "bytes": 391964,
+      "sha256": "15619ed2367959f511887a6d00b8be7b6c6588ac9d4ff4d1621436e644b9ed80"
+    },
+    {
+      "path": "lib/libLLVMBitstreamReader.a",
+      "bytes": 33934,
+      "sha256": "3294a8d4b3f0c18b84a933dadf5dadec46e5ebc73ff4e5a2af6866e77eb5793f"
+    },
+    {
+      "path": "lib/libLLVMCFGuard.a",
+      "bytes": 20740,
+      "sha256": "f0331e090f7bf84343d64da6c843cc5a095911984715f68c63a79bf19f35c4e2"
+    },
+    {
+      "path": "lib/libLLVMCFIVerify.a",
+      "bytes": 102238,
+      "sha256": "26115af96d5961edd7fcd72c6fbfe3753b1b7daffb984d1e0849ac80ba2319da"
+    },
+    {
+      "path": "lib/libLLVMCodeGen.a",
+      "bytes": 12514438,
+      "sha256": "1f3f9bd9696a222e1fa29d8cba9c3bd7b93229bda8821b286bbb66d757043334"
+    },
+    {
+      "path": "lib/libLLVMCodeGenTypes.a",
+      "bytes": 10264,
+      "sha256": "b888b64ad9e9ace5ab26181a264a0a9e1db9d690f39590708cc33b63069b20bd"
+    },
+    {
+      "path": "lib/libLLVMCore.a",
+      "bytes": 6687866,
+      "sha256": "1321ebb39f09358a682e582a8f4ea93c5a7ae790ce2e7555c3f3a76493704892"
+    },
+    {
+      "path": "lib/libLLVMCoroutines.a",
+      "bytes": 407812,
+      "sha256": "33befc34ede20e074d89a1767e8f628ad6315d7af6c909d558ddffb4c73037fb"
+    },
+    {
+      "path": "lib/libLLVMCoverage.a",
+      "bytes": 387020,
+      "sha256": "23055ae2038052672fcba0884d53fc814e7f3f1054c047b2cf45d4c22dc571c2"
+    },
+    {
+      "path": "lib/libLLVMDWARFLinker.a",
+      "bytes": 4716,
+      "sha256": "24547f5a82bd6f5b36c5db0b61230da20a311374df175eab199543dc9376add8"
+    },
+    {
+      "path": "lib/libLLVMDWARFLinkerClassic.a",
+      "bytes": 328998,
+      "sha256": "01c2b1380397b2e3ff8e1bd63a9a6e268799db8b8a1ac516cd926f7be91dedf4"
+    },
+    {
+      "path": "lib/libLLVMDWARFLinkerParallel.a",
+      "bytes": 742128,
+      "sha256": "28cd95659a6306333b04139685ccbf6b52932a98779b01a15577296c7d1bc7d5"
+    },
+    {
+      "path": "lib/libLLVMDWP.a",
+      "bytes": 69128,
+      "sha256": "6d3761aa777ec363a4e2396cc903958c288990152ada6a34051224f38bd3cc80"
+    },
+    {
+      "path": "lib/libLLVMDebugInfoBTF.a",
+      "bytes": 68034,
+      "sha256": "a98e4441ba0a0a92221cf032db2168c25c2c9fb6f4df96ca111b3b657475940e"
+    },
+    {
+      "path": "lib/libLLVMDebugInfoCodeView.a",
+      "bytes": 1130202,
+      "sha256": "73bc3aeb82832e1f00b7b973728f42bb41cca68cda95a4e70abff670e2c244a4"
+    },
+    {
+      "path": "lib/libLLVMDebugInfoDWARF.a",
+      "bytes": 1261394,
+      "sha256": "4a1ecfee6868918131a80757c680f207db19055b605b0aa40ea02c3e788bbf1d"
+    },
+    {
+      "path": "lib/libLLVMDebugInfoGSYM.a",
+      "bytes": 266768,
+      "sha256": "f992da700893ce09abe06526c5b2dedc5b5b62207c902df2eb9f7915012ab02c"
+    },
+    {
+      "path": "lib/libLLVMDebugInfoLogicalView.a",
+      "bytes": 1496866,
+      "sha256": "33b9105110a9bb7fae3f9cdf2be61b60fe8e5688b77992142d75ee68b0af2871"
+    },
+    {
+      "path": "lib/libLLVMDebugInfoMSF.a",
+      "bytes": 82836,
+      "sha256": "2d90a2d6da0bb09367bd0570980d4bc1f6243a0203572e0c376e993d2cda248c"
+    },
+    {
+      "path": "lib/libLLVMDebugInfoPDB.a",
+      "bytes": 1597098,
+      "sha256": "7aa26e35cdb51f53d260ee543927499275bab12a40b10caedf8dc714e1ccd5c6"
+    },
+    {
+      "path": "lib/libLLVMDebuginfod.a",
+      "bytes": 112514,
+      "sha256": "cc72589152443ddeab1dd77d2a816b76c683e3b4f5aa066700c6e74043010a79"
+    },
+    {
+      "path": "lib/libLLVMDemangle.a",
+      "bytes": 395184,
+      "sha256": "766fc938daa1ba08755a6e900492e776e983371856b560f4f62b935fed56255b"
+    },
+    {
+      "path": "lib/libLLVMDiff.a",
+      "bytes": 69760,
+      "sha256": "d17aeb7f0e4f44acc3d9aa8abf850e0f05141852bde327adf81c111db0b5ae9c"
+    },
+    {
+      "path": "lib/libLLVMDlltoolDriver.a",
+      "bytes": 18450,
+      "sha256": "7a116bdafb8154d4428317b693f498a28d705480d8fa54db62218c8845f9b4fd"
+    },
+    {
+      "path": "lib/libLLVMExecutionEngine.a",
+      "bytes": 144578,
+      "sha256": "76add5aea8eec60146ed8019323be5dbc50f687705b7dcc9712d35fb3c65b60d"
+    },
+    {
+      "path": "lib/libLLVMExegesis.a",
+      "bytes": 540990,
+      "sha256": "320b7fa207f30feb36d2ae712e9f64d4b0ff204c2f728fff3e0044229771018e"
+    },
+    {
+      "path": "lib/libLLVMExtensions.a",
+      "bytes": 804,
+      "sha256": "e49d9e3bef98966f2cc7c37a27fa45f69059cff76328d919910cc0c729333029"
+    },
+    {
+      "path": "lib/libLLVMFileCheck.a",
+      "bytes": 199478,
+      "sha256": "a18ba09aebe2e954d622ce6e0858be14db98f04df25a37075e977a9601034c80"
+    },
+    {
+      "path": "lib/libLLVMFrontendDriver.a",
+      "bytes": 1346,
+      "sha256": "099a52f6213c3830b481bc1461feaad08f73e6063578d01c0ba219de2f772d31"
+    },
+    {
+      "path": "lib/libLLVMFrontendHLSL.a",
+      "bytes": 3732,
+      "sha256": "5928b60fdad66e415d6af339bea5038e1cfce1130719f3d42853eb5a08a94418"
+    },
+    {
+      "path": "lib/libLLVMFrontendOffloading.a",
+      "bytes": 39656,
+      "sha256": "007ca370f5a8eb16e924514394384050b2c420510239187f2560571ecc1f6e34"
+    },
+    {
+      "path": "lib/libLLVMFrontendOpenACC.a",
+      "bytes": 11540,
+      "sha256": "efd9ab0046211606afb776d570ef40a5783e9225924d2be311c950460c106628"
+    },
+    {
+      "path": "lib/libLLVMFrontendOpenMP.a",
+      "bytes": 736730,
+      "sha256": "f16a1dd7e00b804d496a773cf614ce58c5ac12865a7e7ba15bd7f0f527b11f40"
+    },
+    {
+      "path": "lib/libLLVMFuzzMutate.a",
+      "bytes": 296676,
+      "sha256": "5a9653cf98295d7611501e77a2b750da806d997e5417b22eede7dc9725221cc6"
+    },
+    {
+      "path": "lib/libLLVMFuzzerCLI.a",
+      "bytes": 20106,
+      "sha256": "2d856d4d71ecb84d9523423e97742397e238b8befa33b2fcf155a3cdc708c8d4"
+    },
+    {
+      "path": "lib/libLLVMGlobalISel.a",
+      "bytes": 1883616,
+      "sha256": "512f438068d5fd35d074d0d5a50942c35a557184d777cd7120e4e42bd3c9df45"
+    },
+    {
+      "path": "lib/libLLVMHipStdPar.a",
+      "bytes": 22554,
+      "sha256": "96e495803f10a1b3bd10883c2eb707653fe8eb482ca0085587995d17b71e7105"
+    },
+    {
+      "path": "lib/libLLVMIRPrinter.a",
+      "bytes": 7050,
+      "sha256": "e43fb74e5466ba1c34258e3f72206d88144c2ea33c56264e84e64ff5255d1803"
+    },
+    {
+      "path": "lib/libLLVMIRReader.a",
+      "bytes": 22106,
+      "sha256": "1fb68a0b162b5ba5ce7f8d084edbe4214291a2adcee6a75b2f7224bcd06b038d"
+    },
+    {
+      "path": "lib/libLLVMInstCombine.a",
+      "bytes": 2335372,
+      "sha256": "fbdfd22fe2a4d44e236ca7e21296e856315280ff536983d92a4ce20085ce3721"
+    },
+    {
+      "path": "lib/libLLVMInstrumentation.a",
+      "bytes": 2165884,
+      "sha256": "76c00fea4a071612b266ccd67617ced8b4ec246b95e68fe34eb9e1f3b407e810"
+    },
+    {
+      "path": "lib/libLLVMInterfaceStub.a",
+      "bytes": 191528,
+      "sha256": "16554afa9702fe81204014db0d22b4e84706976c5bdb66a7ce41ca0134e6b9b1"
+    },
+    {
+      "path": "lib/libLLVMInterpreter.a",
+      "bytes": 200404,
+      "sha256": "f82235db55383dadb12d8e6bf018e88c51a06ccc9e25e0ca2bbaa915888e5af9"
+    },
+    {
+      "path": "lib/libLLVMJITLink.a",
+      "bytes": 1983152,
+      "sha256": "bd77afb846c5f8796799ea1abf9d74548110cf289267fd4444414e1635951898"
+    },
+    {
+      "path": "lib/libLLVMLTO.a",
+      "bytes": 783706,
+      "sha256": "c8b712987756cc5e5069841065b6bae121047633141581b422ef2ea8ff5f2de9"
+    },
+    {
+      "path": "lib/libLLVMLibDriver.a",
+      "bytes": 45424,
+      "sha256": "315ea2cbb7134a377e1d9d5577bb4c907c62d2382348a479a7be07cbdd79a784"
+    },
+    {
+      "path": "lib/libLLVMLineEditor.a",
+      "bytes": 7644,
+      "sha256": "d407e07a23100a85132938940f045d07a2426e4654a5526555a7cd699021f2b1"
+    },
+    {
+      "path": "lib/libLLVMLinker.a",
+      "bytes": 147644,
+      "sha256": "f2f97224f28d2cf00a183703a5bbb3eb205be3753f13c4d819a8c19bbbe6814f"
+    },
+    {
+      "path": "lib/libLLVMMC.a",
+      "bytes": 1553384,
+      "sha256": "f96a788389fb866d6eca5f91b98e78dcb8a60a090103ce69dce7abef6523cd31"
+    },
+    {
+      "path": "lib/libLLVMMCA.a",
+      "bytes": 218558,
+      "sha256": "5bd31efcaf3185b9df50cda0da4f4a6027f842c35c54a38e0232752f8ce52577"
+    },
+    {
+      "path": "lib/libLLVMMCDisassembler.a",
+      "bytes": 25788,
+      "sha256": "ccd2fe29c726779f95e2e8fe7b341b8f77442b5f61496db72d478a1eb9dc4472"
+    },
+    {
+      "path": "lib/libLLVMMCJIT.a",
+      "bytes": 50092,
+      "sha256": "5a74a1de965364f73b4d96151817e82d6dd8df9dba9eccfa9710c45d6fe61dfd"
+    },
+    {
+      "path": "lib/libLLVMMCParser.a",
+      "bytes": 769326,
+      "sha256": "27ed6233d3ae71c04ea707ffa612be446f86515e9c9caa455e03fbe0cc44ee1d"
+    },
+    {
+      "path": "lib/libLLVMMIRParser.a",
+      "bytes": 373560,
+      "sha256": "6e6f09f0ff3243d120370f6fe03e94e4d9a93d5d8aa735b5c7d97f02099fa2a6"
+    },
+    {
+      "path": "lib/libLLVMObjCARCOpts.a",
+      "bytes": 181332,
+      "sha256": "cee69789c15aee12aa6d375e1c4dfdd114d4e764aa93f9b40b292f91fac4f962"
+    },
+    {
+      "path": "lib/libLLVMObjCopy.a",
+      "bytes": 947972,
+      "sha256": "b6572226ce081c25c0173a4994b47fa2fbaa491da3445489d8d37ccc672f67d4"
+    },
+    {
+      "path": "lib/libLLVMObject.a",
+      "bytes": 2388990,
+      "sha256": "4dfc282a90384570e27e4d19f450e152d81fe4570c44216e28f7d63a10ec2677"
+    },
+    {
+      "path": "lib/libLLVMObjectYAML.a",
+      "bytes": 3145462,
+      "sha256": "42254f0b803b33bc11df3ab86339cd7f473865dd18f0ad9177144bb6b76400a1"
+    },
+    {
+      "path": "lib/libLLVMOption.a",
+      "bytes": 90674,
+      "sha256": "cde6d59722ea77d4fb26a6d18e6696db98e637d3fe9ddf65e0441055233a7403"
+    },
+    {
+      "path": "lib/libLLVMOrcDebugging.a",
+      "bytes": 140298,
+      "sha256": "eed4211478042844f2587c3ea509e73d2a0ad72ba77eefa9de1cd6e2ad70244b"
+    },
+    {
+      "path": "lib/libLLVMOrcJIT.a",
+      "bytes": 3205850,
+      "sha256": "70169a43b23fb68a9c77641cddb515e069a10c90562754ad0b7c1b3e244aae9c"
+    },
+    {
+      "path": "lib/libLLVMOrcShared.a",
+      "bytes": 54792,
+      "sha256": "c384d97cced28793644580ac886e0314a28bdcbfbdb65e22b5210441565af46d"
+    },
+    {
+      "path": "lib/libLLVMOrcTargetProcess.a",
+      "bytes": 209744,
+      "sha256": "3442fb7bac051a14a94caeb35f599152b5d7c4d1784e5cb718a9dd96f0b07537"
+    },
+    {
+      "path": "lib/libLLVMPasses.a",
+      "bytes": 5022182,
+      "sha256": "9554e1836a7b0204d00400184aa9f096841ac3f46dff804bec5324573437b39d"
+    },
+    {
+      "path": "lib/libLLVMProfileData.a",
+      "bytes": 1576896,
+      "sha256": "f2ae80b8db1041a9b671ab71e764d099182474129cedd9d64e98cdca9d8cbb5c"
+    },
+    {
+      "path": "lib/libLLVMRemarks.a",
+      "bytes": 243076,
+      "sha256": "398c6425c45f91abaebdf34d59c6f262d6185d62581284aa929541c6fae63f32"
+    },
+    {
+      "path": "lib/libLLVMRuntimeDyld.a",
+      "bytes": 703860,
+      "sha256": "816688fa104260f2b56159cf933f22226385bac16eb9f73b1e2414c5d4190f9e"
+    },
+    {
+      "path": "lib/libLLVMScalarOpts.a",
+      "bytes": 5582340,
+      "sha256": "a3c829f3361f37b0bd854515dfc38bd5ebed4035692ed4192867b64fe6006c63"
+    },
+    {
+      "path": "lib/libLLVMSelectionDAG.a",
+      "bytes": 4937062,
+      "sha256": "7ea8b94f0f5e9d910abc6b6d71669cb9104549b19a4c6e452103ee2afaf8da43"
+    },
+    {
+      "path": "lib/libLLVMSupport.a",
+      "bytes": 2848436,
+      "sha256": "7dd58e1cb2fb33c4475bb83690f3b2986f2228868bdbd6ba941028c1fa029b51"
+    },
+    {
+      "path": "lib/libLLVMSymbolize.a",
+      "bytes": 259848,
+      "sha256": "8864e75144bfbe3195994b3bb9c73675c854aa4195578c154e76f6e305eeb8a4"
+    },
+    {
+      "path": "lib/libLLVMTableGen.a",
+      "bytes": 633266,
+      "sha256": "d35b2320b41efc25b4ca6f6c29ea05e86bfebba4811785c216ed64ddf125fdf4"
+    },
+    {
+      "path": "lib/libLLVMTableGenCommon.a",
+      "bytes": 296322,
+      "sha256": "46dd25377497757ec74aa1522e92a8f12e9e936ea2c048c2405255ca5de2a578"
+    },
+    {
+      "path": "lib/libLLVMTableGenGlobalISel.a",
+      "bytes": 103154,
+      "sha256": "e85a55f396749b9d4e5eeb2fb131a0d185a89d32baaa0acea80783fd0d250a85"
+    },
+    {
+      "path": "lib/libLLVMTarget.a",
+      "bytes": 56740,
+      "sha256": "8cbaf271991573192e72f6303ca22875027d8f0f10cf220f14ae4eb6c050dc8a"
+    },
+    {
+      "path": "lib/libLLVMTargetParser.a",
+      "bytes": 333592,
+      "sha256": "521b55853d6de5929c651ae3b2f9f089aefb69a7c0b50f6aeb21596e119dc40b"
+    },
+    {
+      "path": "lib/libLLVMTextAPI.a",
+      "bytes": 483840,
+      "sha256": "c3cddd08bc3d720d9c322ece01d143493b0d7444c98da5d1832f4db0d8bfb63b"
+    },
+    {
+      "path": "lib/libLLVMTextAPIBinaryReader.a",
+      "bytes": 49834,
+      "sha256": "b4c386bb17a48dbfd6fbb1ca5273b3f1a3992ab21660540a32922780b94a663a"
+    },
+    {
+      "path": "lib/libLLVMTransformUtils.a",
+      "bytes": 3892202,
+      "sha256": "7d4359369699f7ed60b741e87e833786a391f3e52b9cb2c640aaa9586f5ce81e"
+    },
+    {
+      "path": "lib/libLLVMVectorize.a",
+      "bytes": 2714866,
+      "sha256": "21e301ad33e7f62eb0d0d5ec312bcdb4be84171ac7d0ef3ece90f12bd4b8db6b"
+    },
+    {
+      "path": "lib/libLLVMWebAssemblyAsmParser.a",
+      "bytes": 112832,
+      "sha256": "d58c7a919d14da2c30ef606bd9e64692a4029a314117ff1777b79d61ac12c22f"
+    },
+    {
+      "path": "lib/libLLVMWebAssemblyCodeGen.a",
+      "bytes": 1493204,
+      "sha256": "1bb62a0c0b8a40f738d2bfecf55fbf4a7d8adfabfd9c402834261760ecea6c22"
+    },
+    {
+      "path": "lib/libLLVMWebAssemblyDesc.a",
+      "bytes": 228038,
+      "sha256": "34e4ae830f660f81f5e3976f84f2a4d9cdbf0065ab98de2f2334d5651676bc62"
+    },
+    {
+      "path": "lib/libLLVMWebAssemblyDisassembler.a",
+      "bytes": 17206,
+      "sha256": "d41caebde59c007c965ddd2ad2ec78655ab0ecaadceb97b9e601b61b289aef2d"
+    },
+    {
+      "path": "lib/libLLVMWebAssemblyInfo.a",
+      "bytes": 11434,
+      "sha256": "eb10c352d9f95409168e2402b6f0795f4601bf77e6ae496bc6283a6ddbf33f91"
+    },
+    {
+      "path": "lib/libLLVMWebAssemblyUtils.a",
+      "bytes": 2900,
+      "sha256": "ea1df491ed19b45be7435c36db3a5597b438fb2d8984c8761a44e6b3f1565755"
+    },
+    {
+      "path": "lib/libLLVMWindowsDriver.a",
+      "bytes": 18534,
+      "sha256": "9d9c3f8faf92bcad52fdea53a90c96ea490713c53264885b66344e6b533b617e"
+    },
+    {
+      "path": "lib/libLLVMWindowsManifest.a",
+      "bytes": 6746,
+      "sha256": "354773762921b4d2f0b1f088e25673c65af37df356d32eff2ba55df22f39a7e6"
+    },
+    {
+      "path": "lib/libLLVMXRay.a",
+      "bytes": 248904,
+      "sha256": "c007edfa7e42db1da5a12bc0f29eea42776c4c6619fa2cdcbf1f3a046baf10e0"
+    },
+    {
+      "path": "lib/libLLVMipo.a",
+      "bytes": 5670850,
+      "sha256": "9f9f81963079ac56761921da1b3f3c2d1ffcc4068b0e660e9e797e6825a3cd4b"
+    },
+    {
+      "path": "lib/libclang.a",
+      "bytes": 1275256,
+      "sha256": "0b9193f53f061aeb7db36f166efe3ee479c003ee35c109ea405b6c1e45150449"
+    },
+    {
+      "path": "lib/libclangAPINotes.a",
+      "bytes": 604822,
+      "sha256": "f82b1eb6c9a25aebc744dd49119fd44260d625148cdd83f10c1842022f8de24c"
+    },
+    {
+      "path": "lib/libclangARCMigrate.a",
+      "bytes": 6974466,
+      "sha256": "c925afdb2e3803eb6c0852ce005e3d19934fc50a45d80600b53858af51c1c3ce"
+    },
+    {
+      "path": "lib/libclangAST.a",
+      "bytes": 14677980,
+      "sha256": "47b1171c7f6d92448a4e9ae2ad8f8206bc5212b8d6d0d3e473db3e63eb1e83fd"
+    },
+    {
+      "path": "lib/libclangASTMatchers.a",
+      "bytes": 973648,
+      "sha256": "272fa8bc65b3abeba95b9450ad93b67d8ca29d7212d9bc6360297d09f40c67c2"
+    },
+    {
+      "path": "lib/libclangAnalysis.a",
+      "bytes": 3166300,
+      "sha256": "88969e16287518115164bcadca96e4c88802a6ba12c387acde2962aeee34ec8f"
+    },
+    {
+      "path": "lib/libclangAnalysisFlowSensitive.a",
+      "bytes": 686682,
+      "sha256": "201aa3e5c0615fa8b8b25919e89b61361286dc3e4b1652b81049bda5e32e419b"
+    },
+    {
+      "path": "lib/libclangAnalysisFlowSensitiveModels.a",
+      "bytes": 593580,
+      "sha256": "04d2ee755f625d50c838096529b20285cfb4334d4098355903e0056977fd8c2b"
+    },
+    {
+      "path": "lib/libclangBasic.a",
+      "bytes": 8105454,
+      "sha256": "90c2e47ce98cae8e9f1e120d2845b31dcf33b29ab57c6007dfad19804aa5ba55"
+    },
+    {
+      "path": "lib/libclangCodeGen.a",
+      "bytes": 11530048,
+      "sha256": "6a2820e6f50c9540c86f102641d504bce5cda408fedbc1192de89a202e607273"
+    },
+    {
+      "path": "lib/libclangCrossTU.a",
+      "bytes": 81422,
+      "sha256": "8202868aba8bd3713a019251dea4fb321638975041f43567652cc9e717aee71c"
+    },
+    {
+      "path": "lib/libclangDependencyScanning.a",
+      "bytes": 343040,
+      "sha256": "cabc28037c5d82f7f5911a495befe8f438b3e34fc33a8f7d5397c816eb190ae3"
+    },
+    {
+      "path": "lib/libclangDirectoryWatcher.a",
+      "bytes": 11196,
+      "sha256": "86168f2065b357203a958f98142d3c763df1e5f2c6f2b3fd215fa7d6bf05f3ea"
+    },
+    {
+      "path": "lib/libclangDriver.a",
+      "bytes": 5145832,
+      "sha256": "e56f5036d0e81145153965dd623944ed081f69e8d0d5d00f402b729beb95bcf9"
+    },
+    {
+      "path": "lib/libclangDynamicASTMatchers.a",
+      "bytes": 4447412,
+      "sha256": "07c8e52750417930c8bf64bb925b72de15baace74b9e99f8f8d26659d3f432c3"
+    },
+    {
+      "path": "lib/libclangEdit.a",
+      "bytes": 72010,
+      "sha256": "cd736056cf7a7cf1c2da500a90efd7d1d8fcdb283791041b4165d09958a71d46"
+    },
+    {
+      "path": "lib/libclangExtractAPI.a",
+      "bytes": 1875630,
+      "sha256": "3bc26ecbe6efa6a89a598fa3350fc882f5a17be2c97a69055887249758cd4104"
+    },
+    {
+      "path": "lib/libclangFormat.a",
+      "bytes": 1284938,
+      "sha256": "deec8902936fb0f3569a012410c00b9dc047c70798cd5de1a6974b4e04c21352"
+    },
+    {
+      "path": "lib/libclangFrontend.a",
+      "bytes": 3299990,
+      "sha256": "2a9627d0663c137f91207156f2e27d104c35f6261b95afdedfb15f0b31180a62"
+    },
+    {
+      "path": "lib/libclangFrontendTool.a",
+      "bytes": 15542,
+      "sha256": "9fff37a53adc4a55b56945809ca3449c9441663d0b9c25da8f2040bcf97702e6"
+    },
+    {
+      "path": "lib/libclangHandleCXX.a",
+      "bytes": 14458,
+      "sha256": "85553d2a8587e575d2ff81556db2bb31b53d9e853fccbc513343136adec86493"
+    },
+    {
+      "path": "lib/libclangHandleLLVM.a",
+      "bytes": 109542,
+      "sha256": "f8463dd042b83b7e9918601c2d646802107f262bdef292f6142e0474032af871"
+    },
+    {
+      "path": "lib/libclangIndex.a",
+      "bytes": 720042,
+      "sha256": "ac39fd5f73e1f987e56853ac1ae8c5a961061ee62ab444f390981b3f83919907"
+    },
+    {
+      "path": "lib/libclangIndexSerialization.a",
+      "bytes": 11032,
+      "sha256": "4479b411b1564e94b6ec7867ee808e851f3e4d66decc0a4906cab68a7c54b1cf"
+    },
+    {
+      "path": "lib/libclangInterpreter.a",
+      "bytes": 236020,
+      "sha256": "b6e145cbda69d9926f7588e722a7c6fe6da6fe98f8bb9b7184855a8413660419"
+    },
+    {
+      "path": "lib/libclangLex.a",
+      "bytes": 1327994,
+      "sha256": "4350cefa087882ca532a0dae3c67588ac48ff0626e564818bee2331c14f00996"
+    },
+    {
+      "path": "lib/libclangParse.a",
+      "bytes": 1802244,
+      "sha256": "d74e5d57c9773798928af0026029d2690dde0563203661d815244fcaa19127c6"
+    },
+    {
+      "path": "lib/libclangRewrite.a",
+      "bytes": 67226,
+      "sha256": "702f3b28be6b8018532ac957a76d2c46d45eda8e0120f975d8c413c634f6197c"
+    },
+    {
+      "path": "lib/libclangRewriteFrontend.a",
+      "bytes": 751418,
+      "sha256": "cdc92e3689efc080a07c11b6a6f5582afcc7e9b1f809be4f8de53eab73e2cbab"
+    },
+    {
+      "path": "lib/libclangSema.a",
+      "bytes": 22666032,
+      "sha256": "229373e9d0beb55d5ee3707c2c250869dcc3623f8f0e0513ffae51d72e5643c4"
+    },
+    {
+      "path": "lib/libclangSerialization.a",
+      "bytes": 2955272,
+      "sha256": "105d53d132ad53ac96494829130f931860d739811a981c36b7989cc6bb80227d"
+    },
+    {
+      "path": "lib/libclangStaticAnalyzerCheckers.a",
+      "bytes": 9663638,
+      "sha256": "1d3dd1db0c2bb3da0ee293524d88250afb80b5d47997a5f34f7dd534d8db0fbe"
+    },
+    {
+      "path": "lib/libclangStaticAnalyzerCore.a",
+      "bytes": 3284220,
+      "sha256": "a5d392bb90f780dee3307146d37e0545ad63fdc74c0b97a35dad5f78553837c2"
+    },
+    {
+      "path": "lib/libclangStaticAnalyzerFrontend.a",
+      "bytes": 768430,
+      "sha256": "b0f712938e9b6fdfe6146124df21c679dbae9aed05a7969265da81ddae7c988c"
+    },
+    {
+      "path": "lib/libclangSupport.a",
+      "bytes": 50122,
+      "sha256": "7dcab32b427a59a8086b7e7ad03c7af2dd04f3b4445bc4e14c1b4c04a1b5fd05"
+    },
+    {
+      "path": "lib/libclangTooling.a",
+      "bytes": 429344,
+      "sha256": "a7df462185a14aac524937bcf6e0131565e39d5b2e2264b1e800c5f9991962dd"
+    },
+    {
+      "path": "lib/libclangToolingASTDiff.a",
+      "bytes": 287032,
+      "sha256": "ed6d377dfee59fe84c8e7ff06dcbd1cb22f34295729b83190f95d4314bf0c624"
+    },
+    {
+      "path": "lib/libclangToolingCore.a",
+      "bytes": 83934,
+      "sha256": "0cf04af23004bb4b87448f2128912c1d6cdb6fb0e2964a1a1ee376c34bcae567"
+    },
+    {
+      "path": "lib/libclangToolingInclusions.a",
+      "bytes": 56650,
+      "sha256": "2e52a108eb081aca1c466f09267485d9c40df6b5c78f19641e350ddd2bc62369"
+    },
+    {
+      "path": "lib/libclangToolingInclusionsStdlib.a",
+      "bytes": 467186,
+      "sha256": "ae5a06b49a94c04ebde62809977d6ba5d3a9099c595f9e4565b595f520af2e6d"
+    },
+    {
+      "path": "lib/libclangToolingRefactoring.a",
+      "bytes": 1843678,
+      "sha256": "b00b2aa902acc4db7614109ce1822de32821c8a42ea93d06991d0bb61c823054"
+    },
+    {
+      "path": "lib/libclangToolingSyntax.a",
+      "bytes": 408050,
+      "sha256": "e70e083367eb8d673a2e92960f3d1b118fa6a12ab2bb8d09ca3ba86668dff57e"
+    },
+    {
+      "path": "lib/libclangTransformer.a",
+      "bytes": 322746,
+      "sha256": "d04dda6d7091c6d96ed7f91a12e26edde46dbb496bf7392832ad82d64779faf6"
+    }
+  ],
+  "selectedArchiveCount": 44,
+  "selectedObjectCount": 866,
+  "selectedArchives": [
+    "libLLVMAnalysis.a",
+    "libLLVMAsmParser.a",
+    "libLLVMBinaryFormat.a",
+    "libLLVMBitReader.a",
+    "libLLVMBitstreamReader.a",
+    "libLLVMCore.a",
+    "libLLVMDebugInfoDWARF.a",
+    "libLLVMDemangle.a",
+    "libLLVMFrontendOpenMP.a",
+    "libLLVMMC.a",
+    "libLLVMMCParser.a",
+    "libLLVMObject.a",
+    "libLLVMOption.a",
+    "libLLVMProfileData.a",
+    "libLLVMRemarks.a",
+    "libLLVMScalarOpts.a",
+    "libLLVMSupport.a",
+    "libLLVMTargetParser.a",
+    "libLLVMTextAPI.a",
+    "libLLVMTransformUtils.a",
+    "libLLVMWindowsDriver.a",
+    "libbulkmemory.a",
+    "libc++-noexcept.a",
+    "libc++abi-noexcept.a",
+    "libc.a",
+    "libclangAPINotes.a",
+    "libclangAST.a",
+    "libclangASTMatchers.a",
+    "libclangAnalysis.a",
+    "libclangBasic.a",
+    "libclangDriver.a",
+    "libclangEdit.a",
+    "libclangFrontend.a",
+    "libclangIndex.a",
+    "libclangLex.a",
+    "libclangParse.a",
+    "libclangSema.a",
+    "libclangSerialization.a",
+    "libclangSupport.a",
+    "libclangTooling.a",
+    "libcompiler_rt.a",
+    "libdlmalloc.a",
+    "libnoexit.a",
+    "libstubs.a"
+  ],
+  "selectedObjects": [
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "BasicAliasAnalysis.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "BlockFrequencyInfo.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "BlockFrequencyInfoImpl.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "BranchProbabilityInfo.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "CFG.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "CaptureTracking.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "ConstantFolding.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "DependenceAnalysis.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "InstructionSimplify.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "LoopAccessAnalysis.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "MemorySSAUpdater.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "PHITransAddr.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "ScalarEvolution.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "TargetTransformInfo.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "ValueTracking.cpp.o"
+    },
+    {
+      "archive": "libLLVMAnalysis.a",
+      "member": "VectorUtils.cpp.o"
+    },
+    {
+      "archive": "libLLVMAsmParser.a",
+      "member": "LLParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMBinaryFormat.a",
+      "member": "Magic.cpp.o"
+    },
+    {
+      "archive": "libLLVMBinaryFormat.a",
+      "member": "Wasm.cpp.o"
+    },
+    {
+      "archive": "libLLVMBinaryFormat.a",
+      "member": "XCOFF.cpp.o"
+    },
+    {
+      "archive": "libLLVMBitReader.a",
+      "member": "BitcodeReader.cpp.o"
+    },
+    {
+      "archive": "libLLVMBitReader.a",
+      "member": "MetadataLoader.cpp.o"
+    },
+    {
+      "archive": "libLLVMBitstreamReader.a",
+      "member": "BitstreamReader.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "AsmWriter.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "Assumptions.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "Attributes.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "ConstantFold.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "ConstantRange.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "Constants.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "DataLayout.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "DiagnosticHandler.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "Function.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "GCStrategy.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "InlineAsm.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "Instruction.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "Mangler.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "Metadata.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "Module.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "OptBisect.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "PassInstrumentation.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "PrintPasses.cpp.o"
+    },
+    {
+      "archive": "libLLVMCore.a",
+      "member": "Value.cpp.o"
+    },
+    {
+      "archive": "libLLVMDebugInfoDWARF.a",
+      "member": "DWARFVerifier.cpp.o"
+    },
+    {
+      "archive": "libLLVMDemangle.a",
+      "member": "ItaniumDemangle.cpp.o"
+    },
+    {
+      "archive": "libLLVMFrontendOpenMP.a",
+      "member": "OMP.cpp.o"
+    },
+    {
+      "archive": "libLLVMFrontendOpenMP.a",
+      "member": "OMPContext.cpp.o"
+    },
+    {
+      "archive": "libLLVMFrontendOpenMP.a",
+      "member": "OMPIRBuilder.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCAssembler.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCCodeView.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCContext.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCDwarf.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCExpr.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCFragment.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCNullStreamer.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCObjectFileInfo.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCObjectStreamer.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCObjectWriter.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCPseudoProbe.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCRegisterInfo.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSection.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSectionCOFF.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSectionDXContainer.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSectionELF.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSectionMachO.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSectionWasm.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSectionXCOFF.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCStreamer.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSymbol.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSymbolELF.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCSymbolXCOFF.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "MCTargetOptions.cpp.o"
+    },
+    {
+      "archive": "libLLVMMC.a",
+      "member": "TargetRegistry.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "AsmLexer.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "AsmParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "COFFAsmParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "DarwinAsmParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "ELFAsmParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "GOFFAsmParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "MCAsmLexer.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "MCAsmParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "MCAsmParserExtension.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "MCTargetAsmParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "WasmAsmParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMMCParser.a",
+      "member": "XCOFFAsmParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "Binary.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "COFFObjectFile.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "ELF.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "ELFObjectFile.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "Error.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "MachOObjectFile.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "ModuleSymbolTable.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "ObjectFile.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "SymbolicFile.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "WasmObjectFile.cpp.o"
+    },
+    {
+      "archive": "libLLVMObject.a",
+      "member": "XCOFFObjectFile.cpp.o"
+    },
+    {
+      "archive": "libLLVMOption.a",
+      "member": "Arg.cpp.o"
+    },
+    {
+      "archive": "libLLVMOption.a",
+      "member": "ArgList.cpp.o"
+    },
+    {
+      "archive": "libLLVMOption.a",
+      "member": "OptTable.cpp.o"
+    },
+    {
+      "archive": "libLLVMOption.a",
+      "member": "Option.cpp.o"
+    },
+    {
+      "archive": "libLLVMProfileData.a",
+      "member": "InstrProf.cpp.o"
+    },
+    {
+      "archive": "libLLVMProfileData.a",
+      "member": "InstrProfCorrelator.cpp.o"
+    },
+    {
+      "archive": "libLLVMProfileData.a",
+      "member": "InstrProfReader.cpp.o"
+    },
+    {
+      "archive": "libLLVMProfileData.a",
+      "member": "ItaniumManglingCanonicalizer.cpp.o"
+    },
+    {
+      "archive": "libLLVMProfileData.a",
+      "member": "MemProf.cpp.o"
+    },
+    {
+      "archive": "libLLVMProfileData.a",
+      "member": "ProfileSummaryBuilder.cpp.o"
+    },
+    {
+      "archive": "libLLVMProfileData.a",
+      "member": "SampleProfReader.cpp.o"
+    },
+    {
+      "archive": "libLLVMProfileData.a",
+      "member": "SymbolRemappingReader.cpp.o"
+    },
+    {
+      "archive": "libLLVMRemarks.a",
+      "member": "BitstreamRemarkParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMRemarks.a",
+      "member": "BitstreamRemarkSerializer.cpp.o"
+    },
+    {
+      "archive": "libLLVMRemarks.a",
+      "member": "RemarkFormat.cpp.o"
+    },
+    {
+      "archive": "libLLVMRemarks.a",
+      "member": "RemarkParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMRemarks.a",
+      "member": "RemarkSerializer.cpp.o"
+    },
+    {
+      "archive": "libLLVMRemarks.a",
+      "member": "YAMLRemarkParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMRemarks.a",
+      "member": "YAMLRemarkSerializer.cpp.o"
+    },
+    {
+      "archive": "libLLVMScalarOpts.a",
+      "member": "LoopUnrollPass.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "APFixedPoint.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "APFloat.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "APInt.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "APSInt.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "ARMAttributeParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "ARMBuildAttrs.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Allocator.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "BranchProbability.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "BuryPointer.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "CRC.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "CommandLine.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Compression.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "ConvertUTF.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "ConvertUTFWrapper.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "CrashRecoveryContext.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "DataExtractor.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Debug.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "DebugCounter.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "ELFAttributeParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "ELFAttributes.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Errno.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Error.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "ErrorHandling.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "ExtensibleRTTI.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "FileCollector.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "FoldingSet.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "FormatVariadic.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "GlobPattern.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "GraphWriter.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Hashing.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "JSON.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "KnownBits.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "LineIterator.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Locale.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "LockFileManager.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "MD5.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "ManagedStatic.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "MemAlloc.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "MemoryBuffer.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "MemoryBufferRef.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "NativeFormatting.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Path.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "PrettyStackTrace.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Process.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Program.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "RISCVAttributeParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "RISCVAttributes.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "RISCVISAInfo.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "RandomNumberGenerator.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Regex.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "SHA1.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "SHA256.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Signals.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Signposts.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "SmallPtrSet.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "SmallVector.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "SourceMgr.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "SpecialCaseList.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Statistic.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "StringExtras.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "StringMap.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "StringRef.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "StringSaver.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Threading.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "TimeProfiler.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Timer.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Twine.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "Unicode.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "UnicodeNameToCodepoint.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "UnicodeNameToCodepointGenerated.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "VersionTuple.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "VirtualFileSystem.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "WithColor.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "YAMLParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "YAMLTraits.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "raw_ostream.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "raw_socket_stream.cpp.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "regcomp.c.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "regerror.c.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "regexec.c.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "regfree.c.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "regstrlcpy.c.o"
+    },
+    {
+      "archive": "libLLVMSupport.a",
+      "member": "xxhash.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "AArch64TargetParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "ARMTargetParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "ARMTargetParserCommon.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "CSKYTargetParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "Host.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "LoongArchTargetParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "RISCVTargetParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "SubtargetFeature.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "TargetParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "Triple.cpp.o"
+    },
+    {
+      "archive": "libLLVMTargetParser.a",
+      "member": "X86TargetParser.cpp.o"
+    },
+    {
+      "archive": "libLLVMTextAPI.a",
+      "member": "TextStubV5.cpp.o"
+    },
+    {
+      "archive": "libLLVMTransformUtils.a",
+      "member": "BasicBlockUtils.cpp.o"
+    },
+    {
+      "archive": "libLLVMTransformUtils.a",
+      "member": "Local.cpp.o"
+    },
+    {
+      "archive": "libLLVMTransformUtils.a",
+      "member": "LoopPeel.cpp.o"
+    },
+    {
+      "archive": "libLLVMWindowsDriver.a",
+      "member": "MSVCPaths.cpp.o"
+    },
+    {
+      "archive": "libbulkmemory.a",
+      "member": "emscripten_memcpy.o"
+    },
+    {
+      "archive": "libbulkmemory.a",
+      "member": "emscripten_memcpy_bulkmem.o"
+    },
+    {
+      "archive": "libbulkmemory.a",
+      "member": "emscripten_memset.o"
+    },
+    {
+      "archive": "libbulkmemory.a",
+      "member": "emscripten_memset_bulkmem.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "algorithm.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "call_once.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "chrono.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "condition_variable.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "error_category.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "exception.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "hash.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "ios.instantiations.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "ios.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "locale.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "memory.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "mutex.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "mutex_destructor.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "new.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "new_helpers.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "random.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "stdexcept.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "string.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "system_error.o"
+    },
+    {
+      "archive": "libc++-noexcept.a",
+      "member": "thread.o"
+    },
+    {
+      "archive": "libc++abi-noexcept.a",
+      "member": "abort_message.o"
+    },
+    {
+      "archive": "libc++abi-noexcept.a",
+      "member": "cxa_default_handlers.o"
+    },
+    {
+      "archive": "libc++abi-noexcept.a",
+      "member": "cxa_handlers.o"
+    },
+    {
+      "archive": "libc++abi-noexcept.a",
+      "member": "cxa_noexception.o"
+    },
+    {
+      "archive": "libc++abi-noexcept.a",
+      "member": "cxa_virtual.o"
+    },
+    {
+      "archive": "libc++abi-noexcept.a",
+      "member": "private_typeinfo.o"
+    },
+    {
+      "archive": "libc++abi-noexcept.a",
+      "member": "stdlib_exception.o"
+    },
+    {
+      "archive": "libc++abi-noexcept.a",
+      "member": "stdlib_stdexcept.o"
+    },
+    {
+      "archive": "libc++abi-noexcept.a",
+      "member": "stdlib_typeinfo.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "_Exit.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__ctype_get_mb_cur_max.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__ctype_tolower_loc.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__ctype_toupper_loc.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__environ.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__errno_location.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__fdopen.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__fmodeflags.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__fpclassifyl.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__lockfile.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__month_to_secs.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__overflow.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__stdio_close.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__stdio_read.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__stdio_seek.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__stdio_write.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__synccall.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__tm_to_secs.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__toread.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__towrite.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__tz.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__uflow.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "__year_to_secs.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "_exit.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "abort.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "access.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "alarm.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "aligned_alloc.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "asctime.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "asctime_r.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "atoi.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "c_locale.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "chdir.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "clock_nanosleep.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "close.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "closedir.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "copysignl.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "dladdr.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "dup2.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "emscripten_get_heap_size.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "emscripten_memmove.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "emscripten_mmap.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "emscripten_time.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "execv.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fabsl.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fclose.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fcntl.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fflush.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "floatscan.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fmodl.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fopen.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fprintf.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fputc.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fread.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "freelocale.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "frexp.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fseek.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fstat.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fstatat.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "ftell.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "fwrite.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "getcwd.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "getenv.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "gethostname.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "getpagesize.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "getpid.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "getrlimit.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "getrusage.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "getsid.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "getuid.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "gmtime.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "htons.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "internal.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "intscan.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "isalnum.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "isalpha.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "isatty.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "isdigit.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "isupper.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "isxdigit.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "kill.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "langinfo.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "ldexp.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "libc.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "library_pthread_stub.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "locale_map.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "localtime.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "lseek.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "lstat.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "mbrlen.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "mbrtowc.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "mbsinit.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "mbsnrtowcs.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "mbsrtowcs.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "mbtowc.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "memchr.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "memcmp.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "memrchr.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "mkdir.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "mktime.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "mmap.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "munmap.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "nanosleep.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "newlocale.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "ntohs.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "ofl.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "ofl_add.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "open.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "opendir.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "posix_madvise.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "posix_spawn_file_actions_adddup2.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "posix_spawn_file_actions_addopen.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "posix_spawn_file_actions_destroy.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "posix_spawn_file_actions_init.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "pread.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "pthread_self_stub.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "pthread_sigmask.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "qsort.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "qsort_nr.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "raise.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "rand.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "read.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "readdir.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "readlink.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "realpath.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "remove.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "rename.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sbrk.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "scalbn.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "scalbnl.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "setitimer.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "setrlimit.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "shgetc.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sigaction.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sigaddset.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sigandset.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sigdelset.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sigemptyset.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sigfillset.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sigismember.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sigorset.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sigprocmask.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "snprintf.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sscanf.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "stat.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "statvfs.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "stderr.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "stdout.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "stpcpy.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strchr.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strchrnul.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strcmp.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strcpy.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strcspn.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strdup.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strerror.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strerror_r.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strftime.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strlen.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strncmp.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strnlen.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strpbrk.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strrchr.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strsignal.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strstr.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strtod.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strtod_l.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "strtol.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "symlink.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "syscall_ret.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "sysconf.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "tolower.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "toupper.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "uname.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "unlink.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "uselocale.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "vasprintf.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "vfprintf.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "vfscanf.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "vsnprintf.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "vsscanf.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "wait.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "waitpid.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "wasi-helpers.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "wcrtomb.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "wcslen.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "wcsnrtombs.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "wctomb.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "wmemchr.o"
+    },
+    {
+      "archive": "libc.a",
+      "member": "write.o"
+    },
+    {
+      "archive": "libclangAPINotes.a",
+      "member": "APINotesManager.cpp.o"
+    },
+    {
+      "archive": "libclangAPINotes.a",
+      "member": "APINotesReader.cpp.o"
+    },
+    {
+      "archive": "libclangAPINotes.a",
+      "member": "APINotesWriter.cpp.o"
+    },
+    {
+      "archive": "libclangAPINotes.a",
+      "member": "APINotesYAMLCompiler.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "APValue.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ASTConcept.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ASTConsumer.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ASTContext.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ASTDiagnostic.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ASTDumper.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ASTStructuralEquivalence.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ASTTypeTraits.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "AttrImpl.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ByteCodeEmitter.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ByteCodeExprGen.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ByteCodeStmtGen.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "CXXInheritance.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Comment.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "CommentBriefParser.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "CommentCommandTraits.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "CommentLexer.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "CommentParser.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "CommentSema.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ComparisonCategories.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ComputeDependence.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Context.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Decl.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "DeclBase.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "DeclCXX.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "DeclFriend.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "DeclGroup.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "DeclObjC.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "DeclOpenMP.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "DeclPrinter.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "DeclTemplate.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "DeclarationName.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Descriptor.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "EvalEmitter.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "EvaluationResult.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Expr.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ExprCXX.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ExprClassification.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ExprConcepts.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ExprConstant.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ExprObjC.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ExternalASTSource.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Floating.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "FormatString.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Frame.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Function.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Interp.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "InterpBlock.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "InterpBuiltin.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "InterpFrame.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "InterpStack.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "InterpState.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ItaniumCXXABI.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ItaniumMangle.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "JSONNodeDumper.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Mangle.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "MicrosoftCXXABI.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "MicrosoftMangle.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "NSAPI.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "NestedNameSpecifier.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ODRDiagsEmitter.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ODRHash.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "OSLog.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "OpenMPClause.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ParentMap.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ParentMapContext.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Pointer.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "PrimType.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "PrintfFormatString.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Program.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "QualTypeNames.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Randstruct.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "RawCommentList.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Record.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "RecordLayout.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "RecordLayoutBuilder.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "ScanfFormatString.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "SelectorLocationsKind.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Source.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "State.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Stmt.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "StmtCXX.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "StmtIterator.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "StmtObjC.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "StmtOpenMP.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "StmtPrinter.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "StmtProfile.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "TemplateBase.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "TemplateName.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "TextNodeDumper.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "Type.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "TypeLoc.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "TypePrinter.cpp.o"
+    },
+    {
+      "archive": "libclangAST.a",
+      "member": "VTableBuilder.cpp.o"
+    },
+    {
+      "archive": "libclangASTMatchers.a",
+      "member": "ASTMatchFinder.cpp.o"
+    },
+    {
+      "archive": "libclangASTMatchers.a",
+      "member": "ASTMatchersInternal.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "AnalysisDeclContext.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "BodyFarm.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "CFG.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "CFGReachabilityAnalysis.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "CFGStmtMap.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "CalledOnceCheck.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "CocoaConventions.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "ConstructionContext.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "Consumed.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "ObjCNoReturn.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "PostOrderCFGView.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "ReachableCode.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "ThreadSafety.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "ThreadSafetyCommon.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "ThreadSafetyTIL.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "UninitializedValues.cpp.o"
+    },
+    {
+      "archive": "libclangAnalysis.a",
+      "member": "UnsafeBufferUsage.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "AArch64.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "AMDGPU.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "ARC.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "ARM.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "AVR.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Attributes.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "BPF.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Builtins.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "CLWarnings.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "CSKY.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "CharInfo.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "CodeGenOptions.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Cuda.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "DarwinSDKInfo.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Diagnostic.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "DiagnosticIDs.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "DirectX.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "ExpressionTraits.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "FileEntry.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "FileManager.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "FileSystemStatCache.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Hexagon.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "IdentifierTable.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Lanai.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "LangOptions.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "LangStandards.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Le64.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "LoongArch.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "M68k.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "MSP430.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "MakeSupport.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Mips.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Module.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "NVPTX.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "NoSanitizeList.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "OSTargets.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "ObjCRuntime.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "OpenCLOptions.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "OpenMPKinds.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "OperatorPrecedence.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "PNaCl.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "PPC.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "ParsedAttrInfo.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "ProfileList.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "RISCV.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "SPIR.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "SanitizerSpecialCaseList.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Sanitizers.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Sarif.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "SourceLocation.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "SourceManager.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "SourceMgrAdapter.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Sparc.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Stack.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "SystemZ.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "TCE.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "TargetID.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "TargetInfo.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Targets.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "TokenKinds.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "TypeTraits.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "VE.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Version.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "Warnings.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "WebAssembly.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "X86.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "XCore.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "XRayInstr.cpp.o"
+    },
+    {
+      "archive": "libclangBasic.a",
+      "member": "XRayLists.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "AArch64.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "AIX.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "AMDGPU.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "AMDGPUOpenMP.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "ARM.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "AVR.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Action.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "BareMetal.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "CSKY.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "CSKYToolChain.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Clang.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "CommonArgs.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Compilation.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "CrossWindows.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Cuda.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Darwin.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Distro.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "DragonFly.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Driver.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "DriverOptions.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Flang.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "FreeBSD.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Fuchsia.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Gnu.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "HIPAMD.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "HIPSPV.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "HIPUtility.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "HLSL.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Haiku.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Hexagon.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Hurd.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "InterfaceStubs.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Job.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Linux.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "LoongArch.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "M68k.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "MSP430.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "MSVC.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "MinGW.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Mips.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "MipsLinux.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Multilib.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "MultilibBuilder.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "NaCl.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "NetBSD.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "OHOS.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "OpenBSD.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "OptionUtils.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "PPC.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "PPCFreeBSD.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "PPCLinux.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "PS4CPU.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Phases.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "RISCV.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "RISCVToolchain.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "SPIRV.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "SanitizerArgs.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Solaris.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Sparc.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "SystemZ.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "TCE.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Tool.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "ToolChain.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "Types.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "VE.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "VEToolchain.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "WebAssembly.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "X86.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "XCore.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "XRayArgs.cpp.o"
+    },
+    {
+      "archive": "libclangDriver.a",
+      "member": "ZOS.cpp.o"
+    },
+    {
+      "archive": "libclangEdit.a",
+      "member": "Commit.cpp.o"
+    },
+    {
+      "archive": "libclangEdit.a",
+      "member": "EditedSource.cpp.o"
+    },
+    {
+      "archive": "libclangEdit.a",
+      "member": "RewriteObjCFoundationAPI.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "ASTUnit.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "ChainedDiagnosticConsumer.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "ChainedIncludesSource.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "CompilerInstance.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "CompilerInvocation.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "CreateInvocationFromCommandLine.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "DependencyFile.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "DependencyGraph.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "DiagnosticRenderer.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "FrontendAction.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "FrontendActions.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "FrontendOptions.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "HeaderIncludeGen.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "InitPreprocessor.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "LayoutOverrideSource.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "LogDiagnosticPrinter.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "ModuleDependencyCollector.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "MultiplexConsumer.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "PrecompiledPreamble.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "PrintPreprocessedOutput.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "SARIFDiagnostic.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "SARIFDiagnosticPrinter.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "SerializedDiagnosticPrinter.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "SerializedDiagnosticReader.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "TestModuleFileExtension.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "TextDiagnostic.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "TextDiagnosticBuffer.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "TextDiagnosticPrinter.cpp.o"
+    },
+    {
+      "archive": "libclangFrontend.a",
+      "member": "VerifyDiagnosticConsumer.cpp.o"
+    },
+    {
+      "archive": "libclangIndex.a",
+      "member": "USRGeneration.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "DependencyDirectivesScanner.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "HeaderMap.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "HeaderSearch.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "InitHeaderSearch.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "Lexer.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "LiteralSupport.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "MacroArgs.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "MacroInfo.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "ModuleMap.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "PPCaching.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "PPCallbacks.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "PPConditionalDirectiveRecord.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "PPDirectives.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "PPExpressions.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "PPLexerChange.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "PPMacroExpansion.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "Pragma.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "PreprocessingRecord.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "Preprocessor.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "PreprocessorLexer.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "ScratchBuffer.cpp.o"
+    },
+    {
+      "archive": "libclangLex.a",
+      "member": "TokenLexer.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseAST.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseCXXInlineMethods.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseDecl.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseDeclCXX.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseExpr.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseExprCXX.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseHLSL.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseInit.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseObjc.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseOpenACC.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseOpenMP.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParsePragma.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseStmt.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseStmtAsm.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseTemplate.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "ParseTentative.cpp.o"
+    },
+    {
+      "archive": "libclangParse.a",
+      "member": "Parser.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "AnalysisBasedWarnings.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "CodeCompleteConsumer.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "DeclSpec.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "DelayedDiagnostic.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "HLSLExternalSemaSource.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "IdentifierResolver.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "JumpDiagnostics.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "MultiplexExternalSemaSource.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "ParsedAttr.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "Scope.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "ScopeInfo.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "Sema.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaAccess.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaAttr.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaAvailability.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaCUDA.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaCXXScopeSpec.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaCast.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaChecking.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaCodeComplete.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaConcept.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaConsumer.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaCoroutine.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaDecl.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaDeclAttr.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaDeclCXX.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaDeclObjC.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaExceptionSpec.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaExpr.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaExprCXX.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaExprMember.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaExprObjC.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaFixItUtils.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaHLSL.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaInit.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaLambda.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaLookup.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaModule.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaObjCProperty.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaOpenMP.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaOverload.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaPseudoObject.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaRISCVVectorLookup.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaSYCL.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaStmt.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaStmtAsm.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaStmtAttr.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaTemplate.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaTemplateDeduction.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaTemplateInstantiate.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaTemplateInstantiateDecl.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaTemplateVariadic.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "SemaType.cpp.o"
+    },
+    {
+      "archive": "libclangSema.a",
+      "member": "TypeLocBuilder.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ASTCommon.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ASTReader.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ASTReaderDecl.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ASTReaderStmt.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ASTWriter.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ASTWriterDecl.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ASTWriterStmt.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "GeneratePCH.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "GlobalModuleIndex.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "InMemoryModuleCache.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ModuleFile.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ModuleFileExtension.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "ModuleManager.cpp.o"
+    },
+    {
+      "archive": "libclangSerialization.a",
+      "member": "PCHContainerOperations.cpp.o"
+    },
+    {
+      "archive": "libclangSupport.a",
+      "member": "RISCVVIntrinsicUtils.cpp.o"
+    },
+    {
+      "archive": "libclangTooling.a",
+      "member": "ArgumentsAdjusters.cpp.o"
+    },
+    {
+      "archive": "libclangTooling.a",
+      "member": "CompilationDatabase.cpp.o"
+    },
+    {
+      "archive": "libclangTooling.a",
+      "member": "ExpandResponseFilesCompilationDatabase.cpp.o"
+    },
+    {
+      "archive": "libclangTooling.a",
+      "member": "FileMatchTrie.cpp.o"
+    },
+    {
+      "archive": "libclangTooling.a",
+      "member": "GuessTargetAndModeCompilationDatabase.cpp.o"
+    },
+    {
+      "archive": "libclangTooling.a",
+      "member": "InterpolatingCompilationDatabase.cpp.o"
+    },
+    {
+      "archive": "libclangTooling.a",
+      "member": "JSONCompilationDatabase.cpp.o"
+    },
+    {
+      "archive": "libclangTooling.a",
+      "member": "Tooling.cpp.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "addtf3.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "ashlti3.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "comparetf2.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "divtf3.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "emscripten_exception_builtins.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "emscripten_setjmp.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "emscripten_tempret.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "extenddftf2.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "extendsftf2.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "floatsitf.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "floatunsitf.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "fp_mode.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "lshrti3.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "multf3.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "multi3.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "stack_ops.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "subtf3.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "trunctfdf2.o"
+    },
+    {
+      "archive": "libcompiler_rt.a",
+      "member": "trunctfsf2.o"
+    },
+    {
+      "archive": "libdlmalloc.a",
+      "member": "dlmalloc.o"
+    },
+    {
+      "archive": "libnoexit.a",
+      "member": "atexit_dummy.o"
+    },
+    {
+      "archive": "libstubs.a",
+      "member": "emscripten_libc_stubs.o"
+    },
+    {
+      "archive": "libstubs.a",
+      "member": "emscripten_syscall_stubs.o"
+    }
+  ],
+  "linkMap": "compliance/wasm-link-map.txt.gz",
+  "linkMapGzipSha256": "676ec4ede733c4ee68b7e2a8312e256a76722869e532a7840593b00dd418c442",
+  "rawLinkMapSha256": "d934e55221bcf922f9e0b1d376ac3d37a25f321736905aeb671dc47007c83bfd",
+  "mapStage": "wasm-ld output before Emscripten/Binaryen final optimization; optimization can remove additional code. Not every selected object is asserted to survive in the final binary.",
+  "providerPatch": {
+    "sourceURL": "https://raw.githubusercontent.com/TheComputerM/libclang-wasm/ccb782ba4f41d56ec55e8ec3de35fcf0c47e3453/llvm-project.patch",
+    "sha256": "e7cbc5159fec8c6edb41251fb1be7919ed7400210908c1c5d2768a8cab62bb2d",
+    "modifiedFile": "llvm/lib/Support/Unix/Path.inc",
+    "effect": "Adds an __EMSCRIPTEN__ branch returning a fixed /usr/lib/libclang.wasm executable path. Three added lines and one replaced conditional; not a Clang CMake patch.",
+    "independentPermissionStatementFound": false,
+    "includedInCurrentWasm": false,
+    "historicalOnly": true
+  },
+  "remaining": [],
+  "publicReleaseCleared": false,
+  "pathReplacement": "compliance/path-replacement.json",
+  "providerPathAbsent": true
+}

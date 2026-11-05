@@ -1,0 +1,85 @@
+{
+  "files": {
+    "main.c": "#include \"app.h\"\n#include <stdlib.h>\nint main(int argc, char **argv) {\n    FILE *input = argc > 1 ? fopen(argv[1], \"r\") : stdin;\n    if (input == NULL) { perror(\"input\"); return EXIT_FAILURE; }\n    Row *rows = NULL;\n    size_t count = 0;\n    if (load_rows(input, &rows, &count) != 0) {\n        if (input != stdin) fclose(input);\n        return EXIT_FAILURE;\n    }\n    if (input != stdin) fclose(input);\n    atexit(on_exit_report);\n    qsort(rows, count, sizeof *rows, compare_rows);\n    Summary summary = summarize(rows, count);\n    int status = write_report(stdout, rows, count, &summary);\n    free(rows);\n    return status == 0 ? EXIT_SUCCESS : EXIT_FAILURE;\n}\n",
+    "include/app.h": "#ifndef REPORT_APP_H\n#define REPORT_APP_H\n#include \"config.h\"\n#include <stddef.h>\n#include <stdio.h>\n#include <stdatomic.h>\ntypedef struct Row { int id; metric_t value; char label[32]; } Row;\ntypedef struct Summary { double average; double deviation; double rounded; } Summary;\nextern _Atomic size_t records_loaded;\nint load_rows(FILE *input, Row **output, size_t *count);\nint compare_rows(const void *a, const void *b);\nSummary summarize(const Row *rows, size_t count);\nint write_report(FILE *output, const Row *rows, size_t count, const Summary *summary);\nvoid on_exit_report(void);\n#endif\n",
+    "include/config.h": "#ifndef REPORT_CONFIG_H\r\n#define REPORT_CONFIG_H\r\n/* 日本😀：条件別の型と原文位置を確認 */\r\n#ifdef USE_DOUBLE\r\ntypedef double metric_t;\r\n#else\r\ntypedef float metric_t;\r\n#endif\r\n#ifndef APP_DIAGNOSTICS\r\n#define APP_DIAGNOSTICS 0\r\n#endif\r\n#endif\r\n",
+    "data.c": "#include \"app.h\"\n#include <stdlib.h>\n#include <string.h>\n#define SLOT_NAME parse_calls\n#include \"slot.h\"\n#undef SLOT_NAME\n#define SLOT_NAME parse_errors\n#include \"slot.h\"\n#undef SLOT_NAME\n_Atomic size_t records_loaded;\nint load_rows(FILE *input, Row **output, size_t *count) {\n    char line[128];\n    size_t used = 0, capacity = 4;\n    Row *rows = malloc(capacity * sizeof *rows);\n    if (rows == NULL) return -1;\n    while (fgets(line, sizeof line, input) != NULL) {\n        int id, consumed;\n        double raw;\n        char label[32];\n        ++parse_calls;\n        if (sscanf(line, \"%d,%lf,%31[^\\n]%n\", &id, &raw, label, &consumed) != 3) {\n            ++parse_errors; continue;\n        }\n        if (used == capacity) {\n            capacity *= 2;\n            Row *grown = realloc(rows, capacity * sizeof *rows);\n            if (grown == NULL) { free(rows); return -1; }\n            rows = grown;\n        }\n        rows[used].id = id;\n        rows[used].value = (metric_t)raw;\n        memcpy(rows[used].label, label, strlen(label) + 1);\n        ++used;\n        atomic_fetch_add_explicit(&records_loaded, 1, memory_order_relaxed);\n    }\n    *output = rows;\n    *count = used;\n    return 0;\n}\nint compare_rows(const void *a, const void *b) {\n    const Row *left = a, *right = b;\n    return (left->id > right->id) - (left->id < right->id);\n}\n",
+    "include/slot.h": "/* Re-included with a different name in the same translation unit. */\nstatic size_t SLOT_NAME;\n",
+    "stats.c": "#include \"app.h\"\n#include <math.h>\n#include <assert.h>\n#define MAGNITUDE(value) _Generic((value), float: fabsf, double: fabs)(value)\nSummary summarize(const Row *rows, size_t count) {\n    Summary summary = {0};\n    assert(count == 0 || rows != NULL);\n    double total = 0, squares = 0;\n    for (size_t i = 0; i < count; ++i) {\n        total += MAGNITUDE(rows[i].value);\n        squares += pow((double)rows[i].value, 2);\n    }\n    if (count == 0) return summary;\n    summary.average = total / count;\n    summary.deviation = sqrt(fmax(squares / count - pow(summary.average, 2), 0.0));\n    summary.rounded = round(summary.average);\n#if APP_DIAGNOSTICS\n    fprintf(stderr, \"average=%g\\n\", summary.average);\n#else\n    (void)summary.rounded;\n#endif\n    return summary;\n}\n",
+    "report.c": "#include \"app.h\"\n#include <stdarg.h>\n#include <time.h>\n#include <inttypes.h>\nstatic void message(FILE *stream, const char *format, ...) {\n    va_list args;\n    va_start(args, format);\n    vfprintf(stream, format, args);\n    va_end(args);\n}\nint write_report(FILE *output, const Row *rows, size_t count, const Summary *summary) {\n    int written = 0;\n    time_t now = time(NULL);\n    fprintf(output, \"%zu rows; mean=%.*f; deviation=%.3f%n\\n\",\n            count, 3, summary->average, summary->deviation, &written);\n    for (size_t i = 0; i < count; ++i) {\n        fprintf(output, \"%\" PRId32 \",%s\\n\", (int32_t)rows[i].id, rows[i].label);\n    }\n    message(output, \"offset=%zu; time=%ld\\n\", offsetof(Row, value), (long)now);\n    size_t loaded = atomic_load_explicit(&records_loaded, memory_order_relaxed);\n    return written >= 0 && loaded >= count ? 0 : -1;\n}\nvoid on_exit_report(void) { }\n"
+  },
+  "translationUnits": [
+    {
+      "source": "main.c",
+      "args": [
+        "-Iinclude",
+        "-DAPP_DIAGNOSTICS=1"
+      ],
+      "directory": "."
+    },
+    {
+      "source": "data.c",
+      "args": [
+        "-Iinclude",
+        "-DAPP_DIAGNOSTICS=1"
+      ],
+      "directory": "."
+    },
+    {
+      "source": "stats.c",
+      "args": [
+        "-Iinclude",
+        "-DAPP_DIAGNOSTICS=1"
+      ],
+      "directory": "."
+    },
+    {
+      "source": "report.c",
+      "args": [
+        "-Iinclude",
+        "-DAPP_DIAGNOSTICS=1"
+      ],
+      "directory": "."
+    },
+    {
+      "source": "main.c",
+      "args": [
+        "-Iinclude",
+        "-DUSE_DOUBLE=1",
+        "-DNDEBUG=1",
+        "-DAPP_DIAGNOSTICS=0"
+      ],
+      "directory": "."
+    },
+    {
+      "source": "data.c",
+      "args": [
+        "-Iinclude",
+        "-DUSE_DOUBLE=1",
+        "-DNDEBUG=1",
+        "-DAPP_DIAGNOSTICS=0"
+      ],
+      "directory": "."
+    },
+    {
+      "source": "stats.c",
+      "args": [
+        "-Iinclude",
+        "-DUSE_DOUBLE=1",
+        "-DNDEBUG=1",
+        "-DAPP_DIAGNOSTICS=0"
+      ],
+      "directory": "."
+    },
+    {
+      "source": "report.c",
+      "args": [
+        "-Iinclude",
+        "-DUSE_DOUBLE=1",
+        "-DNDEBUG=1",
+        "-DAPP_DIAGNOSTICS=0"
+      ],
+      "directory": "."
+    }
+  ]
+}

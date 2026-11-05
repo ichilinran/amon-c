@@ -1,0 +1,3637 @@
+[
+  {
+    "group": "assert-argument-fixtures",
+    "id": "active",
+    "source": "#include <assert.h>\n#include <stdint.h>\nvoid f(int x){assert((int32_t)x>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "math",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#include <tgmath.h>\nvoid f(double x){assert(isfinite(sqrt(pow(x,2))));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "atomic",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#include <stdatomic.h>\nvoid f(void){atomic_int x=1;assert(atomic_load_explicit(&x,memory_order_relaxed)>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "function",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#include <string.h>\nvoid f(const char *s){assert(strlen(s)>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "string-condition",
+    "source": "#include <assert.h>\n#include <stdint.h>\nvoid f(void){assert(\"int sizeof assert\");}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "constant",
+    "source": "#include <assert.h>\n#include <stdint.h>\nvoid f(void){assert(1);assert(0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "sizeof",
+    "source": "#include <assert.h>\n#include <stdint.h>\nvoid f(void){assert(sizeof(int)>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "local-type",
+    "source": "#include <assert.h>\n#include <stdint.h>\nvoid f(void){int int32_t=1;assert(int32_t>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "local-name",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#include <string.h>\nvoid f(int (*strlen)(const char *)){assert(strlen(\"x\")>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "outer-user",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#define WRAP(x) (x)\nvoid f(int x){WRAP(assert((int32_t)x));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "inner-user",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#include <string.h>\n#define WRAP(x) (x)\nvoid f(void){assert(WRAP((int)strlen(\"x\"))>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "stringize",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#include <string.h>\n#define TEXT(x) #x\nvoid f(void){assert(strlen(TEXT(sizeof(int)))>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "paste",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#define JOIN(a,b) a##b\nvoid f(void){int val=1;assert(JOIN(va,l));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "disabled",
+    "source": "#define NDEBUG\n#include <assert.h>\n#include <stdint.h>\n#include <tgmath.h>\nvoid f(void){assert((int32_t)sqrt(pow(4,2)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "disabled-invalid",
+    "source": "#define NDEBUG\n#include <assert.h>\n#include <stdint.h>\nvoid f(void){assert(if int not_a_declaration);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "disabled-zero",
+    "source": "#define NDEBUG 0\n#include <assert.h>\n#include <stdint.h>\nvoid f(void){assert((int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "defined-later",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#define NDEBUG\nvoid f(int x){assert((int32_t)x>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "undefined-later",
+    "source": "#define NDEBUG\n#include <assert.h>\n#include <stdint.h>\n#undef NDEBUG\nvoid f(void){assert(if int nonsense);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "reinclude",
+    "source": "#include <assert.h>\n#include <stdint.h>\nvoid f(int x){assert((int32_t)x);}\n#define NDEBUG\n#include <assert.h>\nvoid g(void){assert(if int nonsense);}\n#undef NDEBUG\n#include <assert.h>\nvoid h(int x){assert((int32_t)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "side-effect",
+    "source": "#include <assert.h>\n#include <stdint.h>\nvoid f(int x){assert(x++);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "literal",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#include <string.h>\nvoid f(void){assert(strlen(\"assert ) ( int\")>0);/* assert int */}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "unicode",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#include <string.h>\nvoid f(void){assert(strlen(\"目盛 ) (\")>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "spliced",
+    "source": "#include <assert.h>\n#include <stdint.h>\nvoid f(int x){assert((in\\\nt)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "redefined",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#undef assert\n#define assert(x) ((void)(x))\nvoid f(int x){assert((int32_t)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "inactive",
+    "source": "#include <assert.h>\n#include <stdint.h>\n#if 0\nvoid f(int x){assert((int32_t)x);}\n#else\nvoid f(int x){assert((int32_t)x);}\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "assert-argument-fixtures",
+    "id": "static-alias",
+    "source": "#include <assert.h>\n#include <stdint.h>\nstatic_assert((int32_t)1,\"sizeof int must hold\");\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "ATOMIC_VAR_INIT",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;atomic_int y=ATOMIC_VAR_INIT((int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_init",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;atomic_init(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_is_lock_free",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_is_lock_free((_Atomic(int)*)&x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "kill_dependency",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)kill_dependency((int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_thread_fence",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;atomic_thread_fence((memory_order)memory_order_seq_cst);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_signal_fence",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;atomic_signal_fence((memory_order)memory_order_acquire);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_flag_clear",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;atomic_flag_clear((atomic_flag*)&flag);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_flag_clear_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;atomic_flag_clear_explicit(&flag,(memory_order)memory_order_release);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_flag_test_and_set",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_flag_test_and_set((atomic_flag*)&flag);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_flag_test_and_set_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_flag_test_and_set_explicit(&flag,(memory_order)memory_order_acquire);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_load",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_load((_Atomic(int)*)&x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_load_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_load_explicit((_Atomic(int)*)&x,memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_store",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_store(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_store_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_store_explicit(&x,(int32_t)1,memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_exchange",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_exchange(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_exchange_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_exchange_explicit(&x,(int32_t)1,memory_order_acq_rel);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_add",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_add(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_add_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_add_explicit(&x,(int32_t)1,memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_sub",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_sub(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_sub_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_sub_explicit(&x,(int32_t)1,memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_or",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_or(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_or_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_or_explicit(&x,(int32_t)1,memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_xor",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_xor(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_xor_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_xor_explicit(&x,(int32_t)1,memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_and",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_and(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_fetch_and_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_fetch_and_explicit(&x,(int32_t)1,memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_compare_exchange_strong",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_compare_exchange_strong(&x,&expected,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_compare_exchange_strong_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_compare_exchange_strong_explicit(&x,&expected,(int32_t)1,memory_order_acq_rel,memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_compare_exchange_weak",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_compare_exchange_weak(&x,&expected,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic_compare_exchange_weak_explicit",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int expected=0;atomic_flag flag=ATOMIC_FLAG_INIT;(void)atomic_compare_exchange_weak_explicit(&x,&expected,(int32_t)1,memory_order_acq_rel,memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "nested",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0,y=1;atomic_store(&x,atomic_load_explicit(&y,memory_order_relaxed));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "math-inside",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#include <tgmath.h>\nvoid f(void){atomic_int x=0;atomic_init(&x,(int)sqrt(pow(4,2)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "atomic-inside-math",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#include <tgmath.h>\ndouble f(void){atomic_int x=4;return sqrt((double)atomic_load_explicit(&x,memory_order_relaxed));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "outer-user",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#define WRAP(x) (x)\nvoid f(void){atomic_int x=0;WRAP(atomic_init(&x,(int32_t)1));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "inner-user",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#include <string.h>\n#define WRAP(x) (x)\nvoid f(void){atomic_int x=0;atomic_store_explicit(&x,WRAP((int)strlen(\"x\")),memory_order_relaxed);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "stringize",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#include <string.h>\n#define TEXT(x) #x\nvoid f(void){atomic_int x=0;atomic_init(&x,(int)strlen(TEXT(atomic_load(&x))));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "paste",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#define JOIN(a,b) a##b\nvoid f(void){atomic_int x=0;int val=1;atomic_store(&x,JOIN(va,l));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "redefined",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#undef atomic_init\n#define atomic_init(p,v) (*(p)=(v))\nvoid f(void){atomic_int x=0;atomic_init(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "local-type",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int int32_t=1;atomic_store(&x,int32_t);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "local-name",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#include <string.h>\nvoid f(int (*strlen)(const char *)){atomic_int x=0;atomic_init(&x,strlen(\"x\"));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "held-operator",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;atomic_init(&x,(int)sizeof(int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "side-effect",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;int a=1;atomic_init(&x,a++);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "inactive",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#if 0\nvoid f(void){atomic_int x=0;atomic_init(&x,(int32_t)1);}\n#else\nvoid f(void){atomic_int x=0;atomic_init(&x,(int32_t)1);}\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "literal",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#include <stdlib.h>\nvoid f(void){atomic_int x=0;atomic_init(&x,atoi(\"atomic_init int32_t\"));/* atomic_init int32_t */}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "spliced",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;atomic_init(&x,(in\\\nt)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "builtin",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;atomic_init(&x,__LINE__);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "following",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;atomic_init(&x,1);int n=sizeof(int);(void)n;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "unicode",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#include <stdlib.h>\nvoid f(void){atomic_int x=0;atomic_init(&x,atoi(\"目盛 ) (\"));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "object-user",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\n#undef atomic_init\n#define atomic_init user_init\nvoid user_init(atomic_int *p,int v){*p=v;}\nvoid f(void){atomic_int x=0;atomic_init(&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "atomic-argument-fixtures",
+    "id": "comment",
+    "source": "#include <stdatomic.h>\n#include <stdint.h>\nvoid f(void){atomic_int x=0;atomic_init /* keep */ (&x,(int32_t)1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A01",
+    "source": "unsigned long int count = 3;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A02",
+    "source": "typedef int Count;\ntypedef Count Total;\nTotal total = 0;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A03",
+    "source": "typedef int Count;\nCount add(Count x, Count y);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A04",
+    "source": "typedef int T;\nint f(int T, int p) { T *p; return (T)+1; }\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A05",
+    "source": "typedef int T;\nint f(void) { int T = sizeof(T); return T; }\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A06",
+    "source": "typedef int N;\nint f(void) { int N[sizeof(N)]; return sizeof(N); }\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A07",
+    "source": "typedef int T;\nint f(void) { { int T=1; } T x=2; return x; }\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A08",
+    "source": "typedef int T;\nint f(void) { for(int T=0;T<1;T++){} T x=1; return x; }\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A09",
+    "source": "typedef int T;\nint f(int T);\nT value;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A10",
+    "source": "typedef int N;\nstruct N { int N; };\nint f(N x) { struct N obj={1}; goto N; N:return obj.N+x; }\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A11",
+    "source": "extern int x;\nint x;\nint y=0;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A12",
+    "source": "int x;\nconst int *p=&x;\nint *const q=&x;\nint *const *r=&q;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A13",
+    "source": "int *const *find(void);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A14",
+    "source": "int f(void){int *p=0, x=1;return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A15",
+    "source": "int f(void){const int a=1,b=2;return a+b;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A16",
+    "source": "int *items[3];\nint (*row)[3];\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A17",
+    "source": "void use(int n, int a[static const 3]);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A18",
+    "source": "void use(int n, int a[n]);\nvoid proto(int a[*]);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A19",
+    "source": "int (*fp)(void);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A20",
+    "source": "int run(int (*action)(void));\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A21",
+    "source": "typedef int (*Action)(void);\nint run(Action action);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A22",
+    "source": "int (*table[2])(void);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A23",
+    "source": "typedef int Action(void);\nAction run;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A24",
+    "source": "int (*select_action(void))(int);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A25",
+    "source": "int compare(const void *, const void *);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A26",
+    "source": "int log_values(int count, ...);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A27",
+    "source": "int unknown();\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A28",
+    "source": "struct S;\nstruct S { int x; };\nstruct S value={1};\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A29",
+    "source": "union U { int x; float y; };\nenum Color { RED, GREEN=2 };\nenum Color color=GREEN;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A30",
+    "source": "struct { int x; } a,b;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A31",
+    "source": "struct Bits { unsigned int flags:3; unsigned int :0; };\nstruct Buffer { int count; int data[]; };\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A32",
+    "source": "struct S { union { int x; float y; }; };\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A33",
+    "source": "struct S { int x; int y; };\nstruct S value={.y=2,.x=1};\nint items[4]={[2]=7};\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A34",
+    "source": "char message[]=\"Hello\\n\";\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A35",
+    "source": "_Thread_local static int count;\nint f(void) { register int x=1; auto int y=2; return x+y; }\nstatic inline int twice(int x) { return x*2; }\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A36",
+    "source": "_Atomic(int *) p;\nvoid use(int *restrict p);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A37",
+    "source": "_Alignas(16) int x;\n_Static_assert(sizeof(int)>0, \"positive\");\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A38",
+    "source": "double _Complex z;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A39",
+    "source": "int f(void){for(int i=0,j=1;i<j;i++){}return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A40",
+    "source": "/* 日本😀 */ int x /* xの名前 */ = 1;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A41",
+    "source": "int f(void)[3];\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "declaration-fixtures",
+    "id": "A42",
+    "source": "_Atomic(const int) x;\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "size-statement",
+    "source": "int f(void){sizeof(int); _Alignof(int); return sizeof(sizeof(int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "generic",
+    "source": "int f(int x){_Generic(x,int:1,default:2); return _Generic(x++,int:x,default:0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "compound",
+    "source": "struct S{int x;}; int f(void){struct S s=(struct S){.x=1}; ((struct S){.x=2}).x; return ((int[]){1,2})[1]+s.x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "anonymous",
+    "source": "int f(void){return ((struct {int x;}){.x=3}).x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "for-record",
+    "source": "int f(void){for(struct {int x;} s={0};s.x<1;s.x++){} return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "null-body",
+    "source": "void f(int x){;if(x);else;while(x);for(;;);do;while(x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "nested-if",
+    "source": "int f(int x,int y){if(x)if(y)x++;else x--;else y++;return x+y;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "nested-loop",
+    "source": "int f(int x){do do x--; while(x>2); while(x>0);return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "operator",
+    "source": "int f(int x,int y,int *p){x+=y; x=(x>0?x:y); x++,y--; *p=x*y;return (x,y)+*p;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "case-size",
+    "source": "int f(int x){switch(x){case sizeof(int):x++;break;default:goto finish;}finish:return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "calls",
+    "source": "int add(int x,int y); int f(int x){add(add(x,1),2);return add(x,(x,3));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "literal",
+    "source": "int f(void){\"if default sizeof\";'x';return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "cast",
+    "source": "typedef int T; int f(int x){(T)x; return (T)(x+1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "precedence",
+    "source": "int f(int x,int y){return x>0?x+y*2:y-1;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "labels",
+    "source": "int f(int x){start:x++;if(x<1)goto start;return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "assert-struct",
+    "source": "struct S{_Static_assert(sizeof(int)>0,\"int\");int x;};\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "for-0",
+    "source": "void f(int i){for(;;){break;}}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "for-1",
+    "source": "void f(int i){for(i=0;;){break;}}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "for-2",
+    "source": "void f(int i){for(;i<2;){break;}}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "for-3",
+    "source": "void f(int i){for(i=0;i<2;){break;}}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "for-4",
+    "source": "void f(int i){for(;;i++){break;}}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "for-5",
+    "source": "void f(int i){for(i=0;;i++){break;}}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "for-6",
+    "source": "void f(int i){for(;i<2;i++){break;}}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "expression-fixtures",
+    "id": "for-7",
+    "source": "void f(int i){for(i=0;i<2;i++){break;}}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "basic",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic(x,int:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "no-default",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic(x,int:4.0,double:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "default-first",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic(x,default:9.0,int:4.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "nested",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic(x,int:_Generic(x,int:4.0,default:9.0),default:16.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "control-comma",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic((x++,x),int:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "conditional",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic(x,int:x?4.0:9.0,default:16.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "compound",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic(x,int:(double[2]){4,9}[0],default:16.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "array-pointer",
+    "source": "#include <tgmath.h>\ndouble f(int (*p)[3]){return sqrt(_Generic(p,int (*)[3]:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "function-pointer",
+    "source": "#include <tgmath.h>\ndouble f(int (*p)(void)){return sqrt(_Generic(p,int (*)(void):4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "parameter-name",
+    "source": "#include <tgmath.h>\n#include <stddef.h>\ndouble f(int (*p)(int)){return sqrt(_Generic(p,int (*)(int size_t):4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "field-name",
+    "source": "#include <tgmath.h>\n#include <stddef.h>\ndouble f(int x){return sqrt(_Generic(x,struct{int size_t;}:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "bound-type",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\ndouble f(int32_t x){return sqrt(_Generic(x,int32_t:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "shadow-type",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\ndouble f(int x){typedef double int32_t;return sqrt(_Generic(x,int:4.0,int32_t:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "user-type",
+    "source": "#include <tgmath.h>\ntypedef int Count;double f(Count x){return sqrt(_Generic(x,Count:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "function-branches",
+    "source": "#include <tgmath.h>\n#include <string.h>\ndouble f(int x){return sqrt(_Generic(x,int:(double)strlen(\"x\"),default:(double)strlen(\"yy\")));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "math-branches",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic(x,int:pow(2,2),default:pow(3,2)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "assert",
+    "source": "#include <assert.h>\nvoid f(int x){assert(_Generic(x,int:1,default:0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "atomic",
+    "source": "#include <stdatomic.h>\nvoid f(int n){atomic_int x=0;atomic_init(&x,_Generic(n,int:1,default:0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "sizeof",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)sizeof _Generic(x,int:x,default:1));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "sizes-in-branches",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic(x,int:(double)sizeof x,default:(double)_Alignof(int)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "literal",
+    "source": "#include <tgmath.h>\n#include <string.h>\ndouble f(int x){return sqrt(_Generic(x,int:(double)strlen(\"_Generic default 目盛\"),default:4.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "comments",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Generic /*選択*/ (x, int:4.0, /*既定*/ default /*保持*/ :9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "local-name",
+    "source": "#include <tgmath.h>\n#include <string.h>\ndouble f(int x,int (*strlen)(const char *)){return sqrt(_Generic(x,int:(double)strlen(\"x\"),default:4.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "outer-user",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(int x){return WRAP(sqrt(_Generic(x,int:4.0,default:9.0)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "inner-user",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(int x){return sqrt(WRAP(_Generic(x,int:4.0,default:9.0)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "branch-user",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(int x){return sqrt(_Generic(x,int:WRAP(4.0),default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "disabled",
+    "source": "#define NDEBUG\n#include <assert.h>\nvoid f(int x){assert(_Generic(x,int:1,default:0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "default-macro",
+    "source": "#include <tgmath.h>\n#define default int\ndouble f(int x){return sqrt(_Generic(x,default:4.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "redefined",
+    "source": "#include <tgmath.h>\n#define _Generic(x,...) 4.0\ndouble f(int x){return sqrt(_Generic(x,int:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "spliced",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt(_Gen\\\neric(x,int:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "generic-argument-fixtures",
+    "id": "inactive",
+    "source": "#include <tgmath.h>\n#if 0\ndouble f(int x){return sqrt(_Generic(x,int:4.0,default:9.0));}\n#else\ndouble f(int x){return sqrt(_Generic(x,int:4.0,default:9.0));}\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "pointer-qualifiers",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\nvoid f(va_list a){(void)va_arg(a,const int *);(void)va_arg(a,int *const *);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "bound-standard-type",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\nvoid f(va_list a){(void)va_arg(a,size_t);(void)va_arg(a,struct tm);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "user-type-and-members",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\ntypedef int Count; struct size_t {int intmax_t;};\nvoid f(va_list a){(void)va_arg(a,Count);(void)offsetof(struct size_t,intmax_t);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "nested-parentheses",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\nstruct S{int x;};void f(va_list a){(void)va_arg((a),unsigned long int);(void)offsetof(struct S,x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "comments-unicode",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\nstruct S{int x;};void f(va_list a){(void)va_arg(a,/* 日本😀 */const int *);(void)offsetof(/* Pair */struct S,x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "type-macro",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\n#define TYPE const int *\nvoid f(va_list a){(void)va_arg(a,TYPE);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "outer-macro",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\n#define WRAP(x) (x)\nvoid f(va_list a){(void)WRAP(va_arg(a,int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "redefined-standard",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\n#undef va_arg\n#define va_arg(a,t) 7\nvoid f(va_list a){(void)va_arg(a,int);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "keyword-macro",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\n#define int long\nvoid f(va_list a){(void)va_arg(a,int);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "inactive",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\nvoid f(va_list a){\n#if 0\n(void)va_arg(a,int);\n#else\n(void)va_arg(a,int);\n#endif\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "value-argument",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\nstruct S{int x;};void f(va_list *a){(void)va_arg(*a,int);(void)offsetof(struct S,x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-type-fixtures",
+    "id": "continued-token",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <time.h>\nvoid f(va_list a){(void)va_arg(a,i\\\nnt);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "type",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)sizeof(int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "expression",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)sizeof(x+1));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "alignment-alias",
+    "source": "#include <assert.h>\n#include <stdalign.h>\nvoid f(void){assert(alignof(int)>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "alignment",
+    "source": "#include <assert.h>\nvoid f(void){assert(_Alignof(int)>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "array",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)sizeof(int[3]));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "pointer-type",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)sizeof(int (*)(void)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "nested",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)sizeof(sizeof(int)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "multiple",
+    "source": "#include <assert.h>\nvoid f(void){assert(sizeof(int)+_Alignof(int)>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "atomic",
+    "source": "#include <stdatomic.h>\nvoid f(void){atomic_int x=0;atomic_init(&x,(int)sizeof(int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "bound-type",
+    "source": "#include <tgmath.h>\n#include <stddef.h>\ndouble f(void){return sqrt((double)sizeof(size_t));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "user-type",
+    "source": "#include <tgmath.h>\ntypedef int Count;double f(void){return sqrt((double)sizeof(Count));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "comment",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)sizeof /*目盛*/ (int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "crlf",
+    "source": "#include <tgmath.h>\r\ndouble f(void){return sqrt((double)sizeof\r\n(int));}\r\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "string",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)sizeof(\"目盛 ) (\"));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "comma",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)sizeof((x++,x)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "vla",
+    "source": "#include <tgmath.h>\ndouble f(int n){int a[n];return sqrt((double)sizeof(a));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "outer-user",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(void){return WRAP(sqrt((double)sizeof(int)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "inner-user",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(int x){return sqrt((double)WRAP(sizeof(x)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "operand-user",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(int x){return sqrt((double)sizeof(WRAP(x)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "disabled",
+    "source": "#define NDEBUG\n#include <assert.h>\nvoid f(void){assert(sizeof(int)>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "postfix-macro-held",
+    "source": "#include <tgmath.h>\n#define INDEX [0]\ndouble f(void){int a[2];return sqrt((double)sizeof(a) INDEX);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "delimiter-macro-held",
+    "source": "#include <tgmath.h>\n#define OPEN (\n#define CLOSE )\ndouble f(int x){return sqrt((double)sizeof(OPEN x CLOSE));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "compound-held",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)sizeof(int){4});}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "subscript-held",
+    "source": "#include <tgmath.h>\ndouble f(void){int a[2];return sqrt((double)sizeof(a)[0]);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "call-held",
+    "source": "#include <tgmath.h>\nint g(void);double f(void){return sqrt((double)sizeof(g)());}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "postfix-held",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)sizeof(x)++);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "unparenthesized-held",
+    "source": "#include <tgmath.h>\ndouble f(int *p){return sqrt((double)sizeof *p);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "spliced",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)si\\\nzeof(int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "redefined",
+    "source": "#include <tgmath.h>\n#define sizeof(x) 4\ndouble f(void){return sqrt((double)sizeof(int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "inactive",
+    "source": "#include <tgmath.h>\n#if 0\ndouble f(void){return sqrt((double)sizeof(int));}\n#else\ndouble f(void){return sqrt((double)sizeof(int));}\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "macro-unary-fixtures",
+    "id": "following",
+    "source": "#include <tgmath.h>\ndouble f(void){double x=sqrt((double)sizeof(int));return x+sizeof(int);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "nested",
+    "source": "#include <tgmath.h>\ndouble f(double x){return sqrt(pow(x,2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "deep",
+    "source": "#include <tgmath.h>\ndouble f(double x){return sqrt(fabs(sin(pow(x,2))));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "cast",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "classification",
+    "source": "#include <tgmath.h>\nint f(double x){return isfinite(sqrt(x)) && isgreater(fabs(x),pow(x,2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "bound-function",
+    "source": "#include <tgmath.h>\n#include <string.h>\ndouble f(const char *s){return sqrt((double)strlen(s));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "bound-type",
+    "source": "#include <tgmath.h>\n#include <stddef.h>\ndouble f(int x){return sqrt((size_t)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "local-name",
+    "source": "#include <tgmath.h>\n#include <string.h>\ndouble f(int (*strlen)(const char *)){return sqrt((double)strlen(\"x\"));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "local-type",
+    "source": "#include <tgmath.h>\n#include <stddef.h>\ndouble f(int x){int size_t=x;return sqrt((double)size_t);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "outer-user",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(double x){return WRAP(sqrt(pow(x,2)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "inner-user",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(double x){return sqrt(WRAP(pow(x,2)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "stringize",
+    "source": "#include <tgmath.h>\n#include <stdlib.h>\n#define TEXT(x) #x\ndouble f(void){return sqrt(strtod(TEXT(pow(4,2)),0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "paste",
+    "source": "#include <tgmath.h>\n#define JOIN(a,b) a##b\ndouble f(double x){return sqrt(JOIN(po,w)(x,2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "redefined",
+    "source": "#include <tgmath.h>\n#undef pow\n#define pow(x,y) ((x)+(y))\ndouble f(double x){return sqrt(pow(x,2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "side-effect",
+    "source": "#include <tgmath.h>\ndouble f(double x){return sqrt(x++);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "literal",
+    "source": "#include <tgmath.h>\n#include <stdlib.h>\ndouble f(void){return sqrt(strtod(\"sqrt pow double\",0)); /* sqrt pow double */}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "held-operator",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)sizeof(int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "spliced",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((dou\\\nble)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "inactive",
+    "source": "#include <tgmath.h>\n#if 0\ndouble f(double x){return sqrt(pow(x,2));}\n#else\ndouble f(double x){return sqrt(pow(x,2));}\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "complex",
+    "source": "#include <tgmath.h>\ndouble complex f(double complex z){return sqrt(pow(z,2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "compound",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double){4});}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "keyword-macro",
+    "source": "#include <tgmath.h>\n#define double float\nfloat f(int x){return sqrt((double)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "math-argument-fixtures",
+    "id": "comma",
+    "source": "#include <tgmath.h>\ndouble f(double x){return sqrt((x++,pow(x,2)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "practical-fixtures",
+    "id": "array-summary",
+    "source": "#include <stddef.h>\n#include <stdio.h>\n\nint sum_positive(const int values[], size_t count)\n{\n    int total = 0;\n    for (size_t i = 0; i < count; i++) {\n        if (values[i] <= 0) continue;\n        total += values[i];\n    }\n    return total;\n}\n\nint main(void)\n{\n    int values[] = {3, -2, 7, 0, 5};\n    size_t count = sizeof(values) / sizeof(values[0]);\n    printf(\"sum=%d\\n\", sum_positive(values, count));\n    return 0;\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "practical-fixtures",
+    "id": "file-roundtrip",
+    "source": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void)\n{\n    FILE *file = tmpfile();\n    if (file == NULL) return EXIT_FAILURE;\n    if (fprintf(file, \"%d %d %d\\n\", 2, 4, 6) < 0) {\n        fclose(file);\n        return EXIT_FAILURE;\n    }\n    rewind(file);\n    int value = 0, total = 0;\n    while (fscanf(file, \"%d\", &value) == 1) {\n        total += value;\n    }\n    int failed = ferror(file);\n    if (fclose(file) != 0) failed = 1;\n    if (failed) return EXIT_FAILURE;\n    printf(\"total=%d\\n\", total);\n    return EXIT_SUCCESS;\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "practical-fixtures",
+    "id": "record-callback",
+    "source": "#include <stddef.h>\n#include <stdio.h>\n\ntypedef struct {\n    const char *name;\n    int score;\n} Item;\n\nint read_score(const Item *item)\n{\n    return item->score;\n}\n\nint sum_items(const Item items[], size_t count,\n              int (*read)(const Item *))\n{\n    int total = 0;\n    for (size_t i = 0; i < count; i++) {\n        total += read(&items[i]);\n    }\n    return total;\n}\n\nint main(void)\n{\n    Item items[] = {{\"A\", 4}, {\"B\", 9}};\n    size_t count = sizeof(items) / sizeof(items[0]);\n    printf(\"score=%d\\n\", sum_items(items, count, read_score));\n    return 0;\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "practical-fixtures",
+    "id": "string-normalize",
+    "source": "#include <ctype.h>\n#include <stdio.h>\n#include <string.h>\n\nvoid make_upper(char text[])\n{\n    for (size_t i = 0; text[i] != '\\0'; i++) {\n        text[i] = (char)toupper((unsigned char)text[i]);\n    }\n}\n\nint main(void)\n{\n    char text[32] = \"hello 123\";\n    make_upper(text);\n    printf(\"%s (%zu)\\n\", text, strlen(text));\n    return 0;\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "practical-fixtures",
+    "id": "variadic-layout",
+    "source": "#include <stdarg.h>\n#include <stddef.h>\n#include <stdio.h>\n\nstruct Pair {\n    int first;\n    int second;\n};\n\nint sum_arguments(int count, ...)\n{\n    va_list args;\n    va_start(args, count);\n    int total = 0;\n    for (int i = 0; i < count; i++) {\n        total += va_arg(args, int);\n    }\n    va_end(args);\n    return total;\n}\n\nint main(void)\n{\n    size_t offset = offsetof(struct Pair, second);\n    printf(\"sum=%d, layout=%d\\n\", sum_arguments(3, 2, 4, 6), offset > 0);\n    return 0;\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "names",
+    "source": "#include <stdio.h>\nint main(void){printf(\"%s %d %s %s %s\\n\",__FILE__,__LINE__,__DATE__,__TIME__,__func__);return __STDC__+__STDC_HOSTED__+(int)__STDC_VERSION__;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "command-line",
+    "source": "int f(void){return __STDC__;}\n",
+    "args": [
+      "-D__STDC__=7",
+      "-Wno-builtin-macro-redefined"
+    ],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "line",
+    "source": "#line 100 \"virtual.c\"\nint f(void){return __LINE__;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "outer",
+    "source": "#define WRAP(x) (x)\nint f(void){return WRAP(__LINE__);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "stringize",
+    "source": "#define TEXT(x) #x\nconst char *f(void){return TEXT(__LINE__);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "literal",
+    "source": "const char *f(void){return \"__FILE__ __LINE__ __func__\";}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "pragma",
+    "source": "#pragma STDC FENV_ACCESS ON\n#pragma STDC FP_CONTRACT OFF\n#pragma STDC CX_LIMITED_RANGE DEFAULT\nint x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "pragma-names",
+    "source": "#define STDC other\n#define ON OFF\n#pragma STDC FP_CONTRACT ON\nint x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "operator",
+    "source": "void f(void){_Pragma(\"STDC FP_CONTRACT OFF\");}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "conditional",
+    "source": "#if __STDC__\nint x=__STDC__;\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "predefined-fixtures",
+    "id": "inactive",
+    "source": "#if 0\nint x=__LINE__;\n#else\nint y=__LINE__;\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "basic",
+    "source": "#define TYPE int\nTYPE x=3;\n#undef TYPE\nint f(void){return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "empty",
+    "source": "#define MARK\n#define EMPTY()\nint f(void){EMPTY() return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "function-macro",
+    "source": "#define INC(x) ((x)+1)\nint f(int x){return INC(x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "variadic",
+    "source": "#define FIRST(x, ...) (x)\nint f(void){return FIRST(1,2);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "stringize",
+    "source": "#define TEXT(int) #int\nconst char *s=TEXT(hello);\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "pasting",
+    "source": "#define CAT(int,b) int##b\nint CAT(my,var)=1;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "keyword-pasting",
+    "source": "#define CAT() in##t\nCAT() x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "space",
+    "source": "#define A(x) ((x)+1)\n#define B (x)\n#define C/* space */(x)\nint x=1;\nint f(void){return A(1)+B+C;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "continuation",
+    "source": "#define SUM(x,y) \\\n ((x) + \\\n (y))\nint f(void){return SUM(1,2);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "conditional",
+    "source": "#define FEATURE 1\n#if defined(FEATURE) && FEATURE\nint x=1;\n#elif defined OTHER\nint x=2;\n#else\nint x=3;\n#endif\nint f(void){return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "ifdef",
+    "source": "#define FLAG\n#ifdef FLAG\n#ifndef OTHER\nint x;\n#endif\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "comment",
+    "source": "/* #define FAKE int */\n#/**/define TYPE /* type */ int\nTYPE x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "string-message",
+    "source": "#define MESSAGE \"int return #define\\n\"\nconst char *s=MESSAGE;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "headers",
+    "source": "#include <stdio.h>\n#include <math.h>\nint f(void){return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "local-header",
+    "source": "#include \"local.h\"\n#define TYPE int\nTYPE x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false,
+    "files": {
+      "input.c": "#include \"local.h\"\n#define TYPE int\nTYPE x;\n",
+      "local.h": "typedef int Local;\n"
+    },
+    "headerSource": "Existing tools/generate-preprocessor-fixtures.py"
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "macro-include",
+    "source": "#define HEADER \"local.h\"\n#include HEADER\nint f(void){return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false,
+    "files": {
+      "input.c": "#define HEADER \"local.h\"\n#include HEADER\nint f(void){return 0;}\n",
+      "local.h": "typedef int Local;\n"
+    },
+    "headerSource": "Existing tools/generate-preprocessor-fixtures.py"
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "keyword-shadow",
+    "source": "#define int long\n#define TYPE int\nTYPE x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "header-shadow",
+    "source": "#include \"keyword.h\"\n#define TYPE int\nTYPE x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false,
+    "files": {
+      "input.c": "#include \"keyword.h\"\n#define TYPE int\nTYPE x;\n",
+      "keyword.h": "#define int long\n"
+    },
+    "headerSource": "Existing tools/generate-preprocessor-fixtures.py"
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "line",
+    "source": "#line 200 \"shown.c\"\nint f(void){return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "pragma",
+    "source": "#pragma STDC FP_CONTRACT OFF\nint f(void){return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "pragma-operator",
+    "source": "_Pragma(\"STDC FP_CONTRACT OFF\")\nint f(void){return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "pragma-macro",
+    "source": "#define NOTE _Pragma(\"STDC FP_CONTRACT OFF\")\nNOTE\nint f(void){return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "null",
+    "source": "#\nint x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "digraph",
+    "source": "%:define TYPE int\nTYPE x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "trigraph",
+    "source": "??=define TYPE int\nTYPE x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "split-directive",
+    "source": "#de\\\nfine TYPE int\nTYPE x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "multiline-comment",
+    "source": "#define TYPE /* first\nsecond */ int\nTYPE x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "inactive",
+    "source": "#if 0\n#define TYPE int\nint not_compiled = ;\n#else\nint x;\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "error",
+    "source": "#error int return must stay text\nint x;\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "unknown",
+    "source": "#not_a_directive int return\nint x;\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "preprocessor-fixtures",
+    "id": "invalid-paste",
+    "source": "#define BAD(x) ##x\nint x;\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "distributed-return",
+    "source": "int increment(int x){return x+1;}\nint (*select_action(void))(int){return increment;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "untyped",
+    "source": "int unknown();\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "oldstyle",
+    "source": "int f(x) int x; {return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "spliced-return",
+    "source": "int main(void){re\\\nturn 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "spliced-type",
+    "source": "i\\\nnt f(void){return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "spliced-while",
+    "source": "int f(int x){whi\\\nle(x>0)x--;return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "spliced-sizeof",
+    "source": "int f(int x){return si\\\nzeof(x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "spliced-for",
+    "source": "int f(int x){fo\\\nr(;x>0;x--){}return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "spliced-else",
+    "source": "int f(int x){if(x>0)return 1;el\\\nse if(x<0)return -1;return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "spliced-do-condition",
+    "source": "int f(int x){do{x--;}whi\\\nle(x>0);return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "spliced-crlf",
+    "source": "int f(void){re\\\r\nturn 0;}\r\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "builtin-names",
+    "source": "#include <stdio.h>\nint main(void){printf(\"%s %d %s\\n\",__FILE__,__LINE__,__func__);return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "user-macro",
+    "source": "#define WRAP(x) (x)\nint f(int x){return WRAP(x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "redefined-builtin",
+    "source": "#undef __FILE__\n#define __FILE__ \"custom\"\nconst char *f(void){return __FILE__;}\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "nested-math",
+    "source": "#include <tgmath.h>\ndouble f(double x){return sqrt(pow(x,2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "invalid",
+    "source": "int f(void){return missing;}\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "imaginary",
+    "source": "double _Imaginary z;\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "missing-header",
+    "source": "#include \"does-not-exist.h\"\nint x;\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "inactive",
+    "source": "#if 0\nint hidden;\n#else\nint visible;\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "reason-fixtures",
+    "id": "unsplit",
+    "source": "struct {int x;} a,b;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C01",
+    "source": "#include <stddef.h>\nsize_t f(size_t n){size_t total=0;{typedef int size_t;size_t x=1;total+=x;}for(size_t i=0;i<n;i++)total+=i;return total;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C02",
+    "source": "#include <string.h>\n#include <stdlib.h>\nstruct malloc{int strlen;};int f(struct malloc v){goto strlen;strlen:return v.strlen+(int)strlen(\"x\");}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C03",
+    "source": "int (*pick(int (*a[2])(int)))(int){return a[0];}\nint run(int (*action)(int),int x){return action(x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C04",
+    "source": "int f(int *const *p,int *restrict q,const volatile int *r){return **p+*q+*r;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C05",
+    "source": "struct S{int x;};int f(void){struct S a=(struct S){.x=1},/* once */b=(struct S){.x=2};return a.x+b.x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C06",
+    "source": "#include <stddef.h>\nsize_t f(int *p){return sizeof *p *2+sizeof(sizeof(int))+_Alignof(int);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C07",
+    "source": "#include <ctype.h>\n#include <stdint.h>\ntypedef long Count;int f(int32_t x){return isalpha(_Generic(x,int32_t:65,Count:66,default:67));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C08",
+    "source": "int f(int x,int y){if(x)if(y)return 1;else return 2;else return 3;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C09",
+    "source": "int f(int x){for(;;){if(x)break;else continue;}while(x>0)x--;do;while(x);return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C10",
+    "source": "int f(int x){switch(x){case sizeof(char):goto end;default:break;}end:return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C11",
+    "source": "#include <ctype.h>\nint f(int c){return isalpha((unsigned char)c);}\n#undef isalpha\n#define isalpha(x) (x)\n#if 0\nint unused(void){return isalpha(sizeof(int));}\n#endif\nint g(int c){return isalpha((unsigned char)c);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "release-combination-fixtures",
+    "id": "C12",
+    "source": "/* 日本😀 */\nint f(int x){int あ=1;const char *text=\"if sizeof 日本\\n\";/* once */while(x)x--;ret\\\nurn text[0]+あ+\\u3042;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-cast",
+    "source": "#include <ctype.h>\n#include <string.h>\nint f(const char *p){return isalpha((unsigned char)strlen(p));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-size",
+    "source": "#include <ctype.h>\nint f(void){return isalpha(sizeof(int));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-generic",
+    "source": "#include <ctype.h>\n#include <stdint.h>\nint f(int32_t x){return isalpha(_Generic(x,int32_t:1,default:0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-nested",
+    "source": "#include <ctype.h>\nint f(int x){return isalpha(toupper((unsigned char)x));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-user-name",
+    "source": "#include <ctype.h>\n#include <string.h>\nint f(int (*strlen)(const char*)){return isalpha((unsigned char)strlen(\"a\"));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-user-type",
+    "source": "#include <ctype.h>\n#include <stddef.h>\nint f(void){typedef int size_t;return isalpha((size_t)65);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-user-macro",
+    "source": "#include <ctype.h>\n#define WRAP(x) (x)\nint f(int x){return isalpha(WRAP(sizeof(int)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-outer-user",
+    "source": "#include <ctype.h>\n#define WRAP(x) (x)\nint f(int x){return WRAP(isalpha((unsigned char)x));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-redefined",
+    "source": "#include <ctype.h>\n#undef isalpha\n#define isalpha(x) (x)\nint f(int x){return isalpha((unsigned char)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-stringize",
+    "source": "#include <ctype.h>\n#include <string.h>\n#define TEXT(x) #x\nint f(void){return isalpha((unsigned char)strlen(TEXT(sizeof(int))));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-paste",
+    "source": "#include <ctype.h>\n#define JOIN(a,b) a##b\nint f(void){return isalpha(JOIN(6,5));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-inactive",
+    "source": "#include <ctype.h>\n#if 0\nint f(void){return isalpha(sizeof(int));}\n#else\nint f(void){return isalpha(sizeof(int));}\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-splice",
+    "source": "#include <ctype.h>\nint f(int x){return isalpha((unsig\\\nned char)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-comment",
+    "source": "#include <ctype.h>\nint f(int x){return isalpha(/* 日本😀 */ (unsigned char)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "ctype-function",
+    "source": "#include <ctype.h>\nint f(int x){return (isalpha)((unsigned char)x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "setjmp",
+    "source": "#include <setjmp.h>\nint f(void){jmp_buf envs[1];if(setjmp(envs[sizeof(int)-sizeof(int)]))return 1;return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "va-copy",
+    "source": "#include <stdarg.h>\nvoid f(int n,...){va_list a,b[1];va_start(a,n);va_copy(b[sizeof(int)-sizeof(int)],a);va_end(b[sizeof(int)-sizeof(int)]);va_end(a);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "va-type-nested",
+    "source": "#include <stdarg.h>\n#include <ctype.h>\nint f(int n,...){va_list a;va_start(a,n);int x=isalpha(va_arg(a,int));va_end(a);return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "offset-nested",
+    "source": "#include <stddef.h>\n#include <ctype.h>\nstruct S{int x;};int f(void){return isalpha(offsetof(struct S,x));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "offset-member",
+    "source": "#include <stddef.h>\n#include <ctype.h>\nstruct S{int isalpha;};size_t f(void){return offsetof(struct S,isalpha);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "va-bool",
+    "source": "#include <stdarg.h>\n#include <stdbool.h>\nvoid f(int n,...){va_list a;va_start(a,n);(void)va_arg(a,bool*);va_end(a);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "integer-construction",
+    "source": "#include <stdint.h>\nuint64_t f(void){return UINT64_C(123);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "integer-user",
+    "source": "#include <stdint.h>\n#undef UINT64_C\n#define UINT64_C(x) x\nuint64_t f(void){return UINT64_C(123);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "stdio-values",
+    "source": "#include <stdio.h>\n#include <stddef.h>\nint f(FILE *p){return putc((int)sizeof(size_t),p)+getc(p);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "wide-cast",
+    "source": "#include <wctype.h>\n#include <wchar.h>\nint f(wint_t c){return iswalpha((wint_t)c);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "alias-size",
+    "source": "#include <stdalign.h>\n#include <stddef.h>\nalignas(sizeof(size_t)) int x;\nsize_t f(void){return alignof(int);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "alias-assert",
+    "source": "#include <assert.h>\n#include <stdalign.h>\nstatic_assert(sizeof(int)>=alignof(int),\"int sizeof alignof\");\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "va-value",
+    "source": "#include <stdarg.h>\nvoid f(int n,...){va_list a[1];va_start(a[0],n);(void)va_arg(a[sizeof(int)-sizeof(int)],int);va_end(a[0]);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "alignment-member",
+    "source": "struct S{_Alignas(16) int x;};\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "elif-skipped",
+    "source": "#if 1\nint x;\n#elif 1/0\nint ignored;\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-expression-fixtures",
+    "id": "qualified-generic",
+    "source": "int f(const int x){return _Generic(x,int:1,default:0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "allocation",
+    "source": "#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    char *p = malloc(8);\n    if (p == NULL) return EXIT_FAILURE;\n    memcpy(p, \"hi\", 3);\n    memmove(p + 1, p, 3);\n    free(p);\n    return EXIT_SUCCESS;\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "classification",
+    "source": "#include <ctype.h>\nint f(int c){int (*test)(int)=isdigit; if(isdigit(c))return toupper(c);return test(c);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "shadow",
+    "source": "#include <stdlib.h>\nvoid f(void *(*malloc)(size_t),void (*free)(void*)){void *p=malloc(4);free(p);}\nvoid g(void){void *p=malloc(4);free(p);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "shadow-type",
+    "source": "#include <stddef.h>\nint f(void){int size_t=1; return size_t;}\nsize_t g(size_t x){return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "member",
+    "source": "#include <string.h>\nstruct S{int strlen;}; int f(struct S s){return s.strlen+(int)strlen(\"hi\");}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "alias",
+    "source": "#include <stdlib.h>\nvoid *(*allocate)(size_t)=malloc; void *f(void){return allocate(4);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "ctype-function",
+    "source": "#include <ctype.h>\n#undef isdigit\nint f(int c){return (isdigit)(c);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "boolean",
+    "source": "#include <stdbool.h>\n#include <stdint.h>\nbool f(int32_t x){return x ? true : false;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "math",
+    "source": "#include <math.h>\ndouble f(double x){return sqrt(x)+pow(x,2)+fabs(x)+floor(x)+ceil(x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "stdio",
+    "source": "#include <stdio.h>\nint f(void){FILE *p=stdout; puts(\"int printf\\n\");return EOF+(p!=stdin)+(stderr!=NULL)+SEEK_SET+SEEK_CUR+SEEK_END;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "noreturn",
+    "source": "#include <stdnoreturn.h>\n#include <stdlib.h>\nnoreturn void f(void){abort();}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "thread-local",
+    "source": "#include <threads.h>\nthread_local int x;\nint f(void){return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "user-macro",
+    "source": "#include <stdlib.h>\n#define free(x) ((void)(x))\nvoid f(void *p){free(p);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "outer-macro",
+    "source": "#include <ctype.h>\n#define WRAP(x) (x)\nint f(int c){return WRAP(isdigit(c));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "inactive",
+    "source": "#include <stdlib.h>\n#if 0\nvoid f(void){free(malloc(4));}\n#else\nvoid f(void){free(malloc(4));}\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "user-header",
+    "source": "#include \"local.h\"\nint f(void){return strlen(4);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false,
+    "files": {
+      "input.c": "#include \"local.h\"\nint f(void){return strlen(4);}\n",
+      "local.h": "static inline int strlen(int x){return x;}\n"
+    },
+    "headerSource": "Existing tools/generate-standard-fixtures.py"
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "header-collision",
+    "source": "#include <math.h>\nint f(void){return sqrt(4);}\n",
+    "args": [
+      "-I."
+    ],
+    "legacyValid": true,
+    "requiresExternalHeader": false,
+    "files": {
+      "input.c": "#include <math.h>\nint f(void){return sqrt(4);}\n",
+      "math.h": "static inline int sqrt(int x){return x;}\n"
+    },
+    "headerSource": "Existing tools/generate-standard-fixtures.py"
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "without-header",
+    "source": "int f(int malloc){return malloc;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "unicode",
+    "source": "/* 日本😀 malloc free */\n#include <stdlib.h>\nvoid f(void){void *p=malloc(4);free(p);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "continued",
+    "source": "#include <stdlib.h>\nvoid f(void){void *p=mal\\\nloc(4);free(p);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "user-typedef",
+    "source": "#include <stddef.h>\ntypedef size_t Count; Count f(Count x){return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "type-combination",
+    "source": "#include <stdint.h>\nint32_t *f(int32_t (*action)(int32_t),int32_t *p){*p=action(*p);return p;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "assert",
+    "source": "#include <assert.h>\nint f(int x){assert(x>0);return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "assert-disabled",
+    "source": "#define NDEBUG\n#include <assert.h>\nvoid f(int x){assert(x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "atomic-type",
+    "source": "#include <stdatomic.h>\natomic_int x=ATOMIC_VAR_INIT(0); atomic_bool b; atomic_flag flag;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "atomic-sdk",
+    "source": "#include <stdatomic.h>\nint f(void){atomic_int x=0;return atomic_load(&x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "invalid",
+    "source": "#include <stdlib.h>\nint f(void){return missing;}\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "all-headers",
+    "source": "#include <assert.h>\n#include <complex.h>\n#include <ctype.h>\n#include <errno.h>\n#include <fenv.h>\n#include <float.h>\n#include <inttypes.h>\n#include <iso646.h>\n#include <limits.h>\n#include <locale.h>\n#include <math.h>\n#include <setjmp.h>\n#include <signal.h>\n#include <stdalign.h>\n#include <stdarg.h>\n#include <stdatomic.h>\n#include <stdbool.h>\n#include <stddef.h>\n#include <stdint.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <stdnoreturn.h>\n#include <string.h>\n#include <tgmath.h>\n#include <threads.h>\n#include <time.h>\n#include <uchar.h>\n#include <wchar.h>\n#include <wctype.h>\nint x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "supported-headers",
+    "source": "#include <assert.h>\n#include <complex.h>\n#include <ctype.h>\n#include <errno.h>\n#include <fenv.h>\n#include <float.h>\n#include <inttypes.h>\n#include <iso646.h>\n#include <limits.h>\n#include <locale.h>\n#include <math.h>\n#include <setjmp.h>\n#include <signal.h>\n#include <stdalign.h>\n#include <stdarg.h>\n#include <stdatomic.h>\n#include <stdbool.h>\n#include <stddef.h>\n#include <stdint.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <stdnoreturn.h>\n#include <string.h>\n#include <threads.h>\n#include <time.h>\n#include <uchar.h>\n#include <wchar.h>\n#include <wctype.h>\nint x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "type-multiple",
+    "source": "#include <stddef.h>\nsize_t a=1,b=2; size_t f(size_t x){for(size_t i=0;i<x;i++)a+=i;return a+b;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "catalog-functions-types",
+    "source": "#include <complex.h>\n#include <ctype.h>\n#include <fenv.h>\n#include <inttypes.h>\n#include <locale.h>\n#include <math.h>\n#include <setjmp.h>\n#include <signal.h>\n#include <stdarg.h>\n#include <stdatomic.h>\n#include <stddef.h>\n#include <stdint.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <threads.h>\n#include <time.h>\n#include <uchar.h>\n#include <wchar.h>\n#include <wctype.h>\nvoid references(void){(void)(&printf);(void)(&fprintf);(void)(&sprintf);(void)(&snprintf);(void)(&scanf);(void)(&fscanf);(void)(&sscanf);(void)(&puts);(void)(&fputs);(void)(&putchar);(void)(&getchar);(void)(&fopen);(void)(&fclose);(void)(&fread);(void)(&fwrite);(void)(&fflush);(void)(&fgetc);(void)(&fputc);(void)(&fgets);(void)(&feof);(void)(&ferror);(void)(&clearerr);(void)(&perror);(void)(&remove);(void)(&rename);(void)(&rewind);(void)(&fseek);(void)(&ftell);(void)(&tmpfile);(void)(&malloc);(void)(&calloc);(void)(&realloc);(void)(&free);(void)(&aligned_alloc);(void)(&atoi);(void)(&atol);(void)(&atoll);(void)(&atof);(void)(&strtol);(void)(&strtoul);(void)(&strtoll);(void)(&strtoull);(void)(&strtod);(void)(&strtof);(void)(&strtold);(void)(&abs);(void)(&labs);(void)(&llabs);(void)(&div);(void)(&ldiv);(void)(&lldiv);(void)(&rand);(void)(&srand);(void)(&qsort);(void)(&bsearch);(void)(&exit);(void)(&abort);(void)(&getenv);(void)(&atexit);(void)(&memcpy);(void)(&memmove);(void)(&memset);(void)(&memcmp);(void)(&memchr);(void)(&strlen);(void)(&strcpy);(void)(&strncpy);(void)(&strcat);(void)(&strncat);(void)(&strcmp);(void)(&strncmp);(void)(&strchr);(void)(&strrchr);(void)(&strstr);(void)(&strspn);(void)(&strcspn);(void)(&strpbrk);(void)(&strtok);(void)(&strerror);(void)(&isalnum);(void)(&isalpha);(void)(&isblank);(void)(&iscntrl);(void)(&isdigit);(void)(&isgraph);(void)(&islower);(void)(&isprint);(void)(&ispunct);(void)(&isspace);(void)(&isupper);(void)(&isxdigit);(void)(&tolower);(void)(&toupper);(void)(&sqrt);(void)(&sqrtf);(void)(&sqrtl);(void)(&cbrt);(void)(&cbrtf);(void)(&cbrtl);(void)(&pow);(void)(&powf);(void)(&powl);(void)(&fabs);(void)(&fabsf);(void)(&fabsl);(void)(&floor);(void)(&floorf);(void)(&floorl);(void)(&ceil);(void)(&ceilf);(void)(&ceill);(void)(&trunc);(void)(&truncf);(void)(&truncl);(void)(&round);(void)(&roundf);(void)(&roundl);(void)(&fmod);(void)(&fmodf);(void)(&fmodl);(void)(&sin);(void)(&sinf);(void)(&sinl);(void)(&cos);(void)(&cosf);(void)(&cosl);(void)(&tan);(void)(&tanf);(void)(&tanl);(void)(&exp);(void)(&expf);(void)(&expl);(void)(&log);(void)(&logf);(void)(&logl);(void)(&log10);(void)(&log10f);(void)(&log10l);(void)(&clock);(void)(&difftime);(void)(&mktime);(void)(&time);(void)(&timespec_get);(void)(&asctime);(void)(&ctime);(void)(&gmtime);(void)(&localtime);(void)(&strftime);(void)(&setlocale);(void)(&localeconv);(void)(&feclearexcept);(void)(&fegetexceptflag);(void)(&feraiseexcept);(void)(&fesetexceptflag);(void)(&fetestexcept);(void)(&fegetround);(void)(&fesetround);(void)(&fegetenv);(void)(&feholdexcept);(void)(&fesetenv);(void)(&feupdateenv);(void)(&acos);(void)(&acosf);(void)(&acosl);(void)(&asin);(void)(&asinf);(void)(&asinl);(void)(&atan);(void)(&atanf);(void)(&atanl);(void)(&atan2);(void)(&atan2f);(void)(&atan2l);(void)(&acosh);(void)(&acoshf);(void)(&acoshl);(void)(&asinh);(void)(&asinhf);(void)(&asinhl);(void)(&atanh);(void)(&atanhf);(void)(&atanhl);(void)(&cosh);(void)(&coshf);(void)(&coshl);(void)(&sinh);(void)(&sinhf);(void)(&sinhl);(void)(&tanh);(void)(&tanhf);(void)(&tanhl);(void)(&exp2);(void)(&exp2f);(void)(&exp2l);(void)(&expm1);(void)(&expm1f);(void)(&expm1l);(void)(&frexp);(void)(&frexpf);(void)(&frexpl);(void)(&ilogb);(void)(&ilogbf);(void)(&ilogbl);(void)(&ldexp);(void)(&ldexpf);(void)(&ldexpl);(void)(&log1p);(void)(&log1pf);(void)(&log1pl);(void)(&log2);(void)(&log2f);(void)(&log2l);(void)(&logb);(void)(&logbf);(void)(&logbl);(void)(&modf);(void)(&modff);(void)(&modfl);(void)(&scalbn);(void)(&scalbnf);(void)(&scalbnl);(void)(&scalbln);(void)(&scalblnf);(void)(&scalblnl);(void)(&hypot);(void)(&hypotf);(void)(&hypotl);(void)(&erf);(void)(&erff);(void)(&erfl);(void)(&erfc);(void)(&erfcf);(void)(&erfcl);(void)(&lgamma);(void)(&lgammaf);(void)(&lgammal);(void)(&tgamma);(void)(&tgammaf);(void)(&tgammal);(void)(&nearbyint);(void)(&nearbyintf);(void)(&nearbyintl);(void)(&rint);(void)(&rintf);(void)(&rintl);(void)(&lrint);(void)(&lrintf);(void)(&lrintl);(void)(&llrint);(void)(&llrintf);(void)(&llrintl);(void)(&lround);(void)(&lroundf);(void)(&lroundl);(void)(&llround);(void)(&llroundf);(void)(&llroundl);(void)(&remainder);(void)(&remainderf);(void)(&remainderl);(void)(&remquo);(void)(&remquof);(void)(&remquol);(void)(&copysign);(void)(&copysignf);(void)(&copysignl);(void)(&nan);(void)(&nanf);(void)(&nanl);(void)(&nextafter);(void)(&nextafterf);(void)(&nextafterl);(void)(&nexttoward);(void)(&nexttowardf);(void)(&nexttowardl);(void)(&fdim);(void)(&fdimf);(void)(&fdiml);(void)(&fmax);(void)(&fmaxf);(void)(&fmaxl);(void)(&fmin);(void)(&fminf);(void)(&fminl);(void)(&fma);(void)(&fmaf);(void)(&fmal);(void)(&cacos);(void)(&cacosf);(void)(&cacosl);(void)(&casin);(void)(&casinf);(void)(&casinl);(void)(&catan);(void)(&catanf);(void)(&catanl);(void)(&ccos);(void)(&ccosf);(void)(&ccosl);(void)(&csin);(void)(&csinf);(void)(&csinl);(void)(&ctan);(void)(&ctanf);(void)(&ctanl);(void)(&cacosh);(void)(&cacoshf);(void)(&cacoshl);(void)(&casinh);(void)(&casinhf);(void)(&casinhl);(void)(&catanh);(void)(&catanhf);(void)(&catanhl);(void)(&ccosh);(void)(&ccoshf);(void)(&ccoshl);(void)(&csinh);(void)(&csinhf);(void)(&csinhl);(void)(&ctanh);(void)(&ctanhf);(void)(&ctanhl);(void)(&cexp);(void)(&cexpf);(void)(&cexpl);(void)(&clog);(void)(&clogf);(void)(&clogl);(void)(&cabs);(void)(&cabsf);(void)(&cabsl);(void)(&cpow);(void)(&cpowf);(void)(&cpowl);(void)(&csqrt);(void)(&csqrtf);(void)(&csqrtl);(void)(&carg);(void)(&cargf);(void)(&cargl);(void)(&cimag);(void)(&cimagf);(void)(&cimagl);(void)(&conj);(void)(&conjf);(void)(&conjl);(void)(&cproj);(void)(&cprojf);(void)(&cprojl);(void)(&creal);(void)(&crealf);(void)(&creall);(void)(&mbrtoc16);(void)(&c16rtomb);(void)(&mbrtoc32);(void)(&c32rtomb);(void)(&fwide);(void)(&btowc);(void)(&wctob);(void)(&mbsinit);(void)(&mbrlen);(void)(&mbrtowc);(void)(&wcrtomb);(void)(&mbsrtowcs);(void)(&wcsrtombs);(void)(&wcsftime);(void)(&fgetwc);(void)(&fgetws);(void)(&fputwc);(void)(&fputws);(void)(&getwc);(void)(&getwchar);(void)(&putwc);(void)(&putwchar);(void)(&ungetwc);(void)(&wcslen);(void)(&wcscpy);(void)(&wcsncpy);(void)(&wcscat);(void)(&wcsncat);(void)(&wcscmp);(void)(&wcsncmp);(void)(&wcschr);(void)(&wcsrchr);(void)(&wcsstr);(void)(&wcsspn);(void)(&wcscspn);(void)(&wcspbrk);(void)(&wcstok);(void)(&wmemchr);(void)(&wmemcmp);(void)(&wmemcpy);(void)(&wmemmove);(void)(&wmemset);(void)(&fwprintf);(void)(&fwscanf);(void)(&wprintf);(void)(&wscanf);(void)(&swprintf);(void)(&swscanf);(void)(&wcstod);(void)(&wcstof);(void)(&wcstold);(void)(&wcstol);(void)(&wcstoll);(void)(&wcstoul);(void)(&wcstoull);(void)(&strcoll);(void)(&strxfrm);(void)(&wcscoll);(void)(&wcsxfrm);(void)(&vprintf);(void)(&vfprintf);(void)(&vsprintf);(void)(&vsnprintf);(void)(&vscanf);(void)(&vfscanf);(void)(&vsscanf);(void)(&vfwprintf);(void)(&vfwscanf);(void)(&vwprintf);(void)(&vwscanf);(void)(&vswprintf);(void)(&vswscanf);(void)(&iswctype);(void)(&towctrans);(void)(&wctrans);(void)(&wctype);(void)(&iswalnum);(void)(&iswalpha);(void)(&iswblank);(void)(&iswcntrl);(void)(&iswdigit);(void)(&iswgraph);(void)(&iswlower);(void)(&iswprint);(void)(&iswpunct);(void)(&iswspace);(void)(&iswupper);(void)(&iswxdigit);(void)(&towlower);(void)(&towupper);(void)(&call_once);(void)(&cnd_broadcast);(void)(&cnd_destroy);(void)(&cnd_init);(void)(&cnd_signal);(void)(&cnd_timedwait);(void)(&cnd_wait);(void)(&mtx_destroy);(void)(&mtx_init);(void)(&mtx_lock);(void)(&mtx_timedlock);(void)(&mtx_trylock);(void)(&mtx_unlock);(void)(&thrd_create);(void)(&thrd_current);(void)(&thrd_detach);(void)(&thrd_equal);(void)(&thrd_exit);(void)(&thrd_join);(void)(&thrd_sleep);(void)(&thrd_yield);(void)(&tss_create);(void)(&tss_delete);(void)(&tss_get);(void)(&tss_set);(void)(&longjmp);(void)(&signal);(void)(&raise);(void)(&_Exit);(void)(&quick_exit);(void)(&at_quick_exit);(void)(&system);(void)(&mblen);(void)(&mbtowc);(void)(&wctomb);(void)(&mbstowcs);(void)(&wcstombs);(void)(&freopen);(void)(&getc);(void)(&putc);(void)(&ungetc);(void)(&fgetpos);(void)(&fsetpos);(void)(&setbuf);(void)(&setvbuf);(void)(&tmpnam);(void)(&imaxabs);(void)(&imaxdiv);(void)(&strtoimax);(void)(&strtoumax);(void)(&wcstoimax);(void)(&wcstoumax);(void)(&atomic_thread_fence);(void)(&atomic_signal_fence);}\nsize_t value_size_t;\nptrdiff_t value_ptrdiff_t;\nmax_align_t value_max_align_t;\nFILE value_FILE;\nfpos_t value_fpos_t;\ntime_t value_time_t;\nclock_t value_clock_t;\nint8_t value_int8_t;\nuint8_t value_uint8_t;\nint_least8_t value_int_least8_t;\nuint_least8_t value_uint_least8_t;\nint_fast8_t value_int_fast8_t;\nuint_fast8_t value_uint_fast8_t;\nint16_t value_int16_t;\nuint16_t value_uint16_t;\nint_least16_t value_int_least16_t;\nuint_least16_t value_uint_least16_t;\nint_fast16_t value_int_fast16_t;\nuint_fast16_t value_uint_fast16_t;\nint32_t value_int32_t;\nuint32_t value_uint32_t;\nint_least32_t value_int_least32_t;\nuint_least32_t value_uint_least32_t;\nint_fast32_t value_int_fast32_t;\nuint_fast32_t value_uint_fast32_t;\nint64_t value_int64_t;\nuint64_t value_uint64_t;\nint_least64_t value_int_least64_t;\nuint_least64_t value_uint_least64_t;\nint_fast64_t value_int_fast64_t;\nuint_fast64_t value_uint_fast64_t;\nintptr_t value_intptr_t;\nuintptr_t value_uintptr_t;\nintmax_t value_intmax_t;\nuintmax_t value_uintmax_t;\natomic_int value_atomic_int;\natomic_bool value_atomic_bool;\natomic_flag value_atomic_flag;\nfenv_t value_fenv_t;\nfexcept_t value_fexcept_t;\nfloat_t value_float_t;\ndouble_t value_double_t;\nwchar_t value_wchar_t;\nwint_t value_wint_t;\nmbstate_t value_mbstate_t;\nchar16_t value_char16_t;\nchar32_t value_char32_t;\nwctrans_t value_wctrans_t;\nwctype_t value_wctype_t;\ncnd_t value_cnd_t;\nthrd_t value_thrd_t;\ntss_t value_tss_t;\nmtx_t value_mtx_t;\ntss_dtor_t value_tss_dtor_t;\nthrd_start_t value_thrd_start_t;\nonce_flag value_once_flag;\njmp_buf value_jmp_buf;\nsig_atomic_t value_sig_atomic_t;\ndiv_t value_div_t;\nldiv_t value_ldiv_t;\nlldiv_t value_lldiv_t;\nimaxdiv_t value_imaxdiv_t;\nva_list value_va_list;\nmemory_order value_memory_order;\natomic_char value_atomic_char;\natomic_schar value_atomic_schar;\natomic_uchar value_atomic_uchar;\natomic_short value_atomic_short;\natomic_ushort value_atomic_ushort;\natomic_uint value_atomic_uint;\natomic_long value_atomic_long;\natomic_ulong value_atomic_ulong;\natomic_llong value_atomic_llong;\natomic_ullong value_atomic_ullong;\natomic_char16_t value_atomic_char16_t;\natomic_char32_t value_atomic_char32_t;\natomic_wchar_t value_atomic_wchar_t;\natomic_size_t value_atomic_size_t;\natomic_ptrdiff_t value_atomic_ptrdiff_t;\natomic_int_least8_t value_atomic_int_least8_t;\natomic_uint_least8_t value_atomic_uint_least8_t;\natomic_int_fast8_t value_atomic_int_fast8_t;\natomic_uint_fast8_t value_atomic_uint_fast8_t;\natomic_int_least16_t value_atomic_int_least16_t;\natomic_uint_least16_t value_atomic_uint_least16_t;\natomic_int_fast16_t value_atomic_int_fast16_t;\natomic_uint_fast16_t value_atomic_uint_fast16_t;\natomic_int_least32_t value_atomic_int_least32_t;\natomic_uint_least32_t value_atomic_uint_least32_t;\natomic_int_fast32_t value_atomic_int_fast32_t;\natomic_uint_fast32_t value_atomic_uint_fast32_t;\natomic_int_least64_t value_atomic_int_least64_t;\natomic_uint_least64_t value_atomic_uint_least64_t;\natomic_int_fast64_t value_atomic_int_fast64_t;\natomic_uint_fast64_t value_atomic_uint_fast64_t;\natomic_intptr_t value_atomic_intptr_t;\natomic_uintptr_t value_atomic_uintptr_t;\natomic_intmax_t value_atomic_intmax_t;\natomic_uintmax_t value_atomic_uintmax_t;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "catalog-constants",
+    "source": "#include <complex.h>\n#include <errno.h>\n#include <fenv.h>\n#include <float.h>\n#include <inttypes.h>\n#include <limits.h>\n#include <locale.h>\n#include <math.h>\n#include <signal.h>\n#include <stdalign.h>\n#include <stdatomic.h>\n#include <stdbool.h>\n#include <stdint.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <threads.h>\n#include <time.h>\n#include <wchar.h>\nvoid constants(void){\n#ifdef NULL\n(void)(NULL);\n#endif\n#ifdef true\n(void)(true);\n#endif\n#ifdef false\n(void)(false);\n#endif\n#ifdef EOF\n(void)(EOF);\n#endif\n#ifdef stdin\n(void)(stdin);\n#endif\n#ifdef stdout\n(void)(stdout);\n#endif\n#ifdef stderr\n(void)(stderr);\n#endif\n#ifdef SEEK_SET\n(void)(SEEK_SET);\n#endif\n#ifdef SEEK_CUR\n(void)(SEEK_CUR);\n#endif\n#ifdef SEEK_END\n(void)(SEEK_END);\n#endif\n#ifdef EXIT_SUCCESS\n(void)(EXIT_SUCCESS);\n#endif\n#ifdef EXIT_FAILURE\n(void)(EXIT_FAILURE);\n#endif\n#ifdef RAND_MAX\n(void)(RAND_MAX);\n#endif\n#ifdef CHAR_BIT\n(void)(CHAR_BIT);\n#endif\n#ifdef INT_MIN\n(void)(INT_MIN);\n#endif\n#ifdef INT_MAX\n(void)(INT_MAX);\n#endif\n#ifdef UINT_MAX\n(void)(UINT_MAX);\n#endif\n#ifdef LONG_MIN\n(void)(LONG_MIN);\n#endif\n#ifdef LONG_MAX\n(void)(LONG_MAX);\n#endif\n#ifdef CLOCKS_PER_SEC\n(void)(CLOCKS_PER_SEC);\n#endif\n#ifdef TIME_UTC\n(void)(TIME_UTC);\n#endif\n#ifdef LC_ALL\n(void)(LC_ALL);\n#endif\n#ifdef LC_COLLATE\n(void)(LC_COLLATE);\n#endif\n#ifdef LC_CTYPE\n(void)(LC_CTYPE);\n#endif\n#ifdef LC_MONETARY\n(void)(LC_MONETARY);\n#endif\n#ifdef LC_NUMERIC\n(void)(LC_NUMERIC);\n#endif\n#ifdef LC_TIME\n(void)(LC_TIME);\n#endif\n#ifdef errno\n(void)(errno);\n#endif\n#ifdef EDOM\n(void)(EDOM);\n#endif\n#ifdef ERANGE\n(void)(ERANGE);\n#endif\n#ifdef EILSEQ\n(void)(EILSEQ);\n#endif\n#ifdef FE_DIVBYZERO\n(void)(FE_DIVBYZERO);\n#endif\n#ifdef FE_INEXACT\n(void)(FE_INEXACT);\n#endif\n#ifdef FE_INVALID\n(void)(FE_INVALID);\n#endif\n#ifdef FE_OVERFLOW\n(void)(FE_OVERFLOW);\n#endif\n#ifdef FE_UNDERFLOW\n(void)(FE_UNDERFLOW);\n#endif\n#ifdef FE_ALL_EXCEPT\n(void)(FE_ALL_EXCEPT);\n#endif\n#ifdef FE_DOWNWARD\n(void)(FE_DOWNWARD);\n#endif\n#ifdef FE_TONEAREST\n(void)(FE_TONEAREST);\n#endif\n#ifdef FE_TOWARDZERO\n(void)(FE_TOWARDZERO);\n#endif\n#ifdef FE_UPWARD\n(void)(FE_UPWARD);\n#endif\n#ifdef FE_DFL_ENV\n(void)(FE_DFL_ENV);\n#endif\n#ifdef HUGE_VAL\n(void)(HUGE_VAL);\n#endif\n#ifdef HUGE_VALF\n(void)(HUGE_VALF);\n#endif\n#ifdef HUGE_VALL\n(void)(HUGE_VALL);\n#endif\n#ifdef INFINITY\n(void)(INFINITY);\n#endif\n#ifdef NAN\n(void)(NAN);\n#endif\n#ifdef FP_INFINITE\n(void)(FP_INFINITE);\n#endif\n#ifdef FP_NAN\n(void)(FP_NAN);\n#endif\n#ifdef FP_NORMAL\n(void)(FP_NORMAL);\n#endif\n#ifdef FP_SUBNORMAL\n(void)(FP_SUBNORMAL);\n#endif\n#ifdef FP_ZERO\n(void)(FP_ZERO);\n#endif\n#ifdef FP_FAST_FMA\n(void)(FP_FAST_FMA);\n#endif\n#ifdef FP_FAST_FMAF\n(void)(FP_FAST_FMAF);\n#endif\n#ifdef FP_FAST_FMAL\n(void)(FP_FAST_FMAL);\n#endif\n#ifdef FP_ILOGB0\n(void)(FP_ILOGB0);\n#endif\n#ifdef FP_ILOGBNAN\n(void)(FP_ILOGBNAN);\n#endif\n#ifdef MATH_ERRNO\n(void)(MATH_ERRNO);\n#endif\n#ifdef MATH_ERREXCEPT\n(void)(MATH_ERREXCEPT);\n#endif\n#ifdef math_errhandling\n(void)(math_errhandling);\n#endif\n#ifdef _Complex_I\n(void)(_Complex_I);\n#endif\n#ifdef _Imaginary_I\n(void)(_Imaginary_I);\n#endif\n#ifdef I\n(void)(I);\n#endif\n#ifdef WEOF\n(void)(WEOF);\n#endif\n#ifdef TSS_DTOR_ITERATIONS\n(void)(TSS_DTOR_ITERATIONS);\n#endif\n#ifdef SIGABRT\n(void)(SIGABRT);\n#endif\n#ifdef SIGFPE\n(void)(SIGFPE);\n#endif\n#ifdef SIGILL\n(void)(SIGILL);\n#endif\n#ifdef SIGINT\n(void)(SIGINT);\n#endif\n#ifdef SIGSEGV\n(void)(SIGSEGV);\n#endif\n#ifdef SIGTERM\n(void)(SIGTERM);\n#endif\n#ifdef SIG_DFL\n(void)(SIG_DFL);\n#endif\n#ifdef SIG_ERR\n(void)(SIG_ERR);\n#endif\n#ifdef SIG_IGN\n(void)(SIG_IGN);\n#endif\n#ifdef __alignas_is_defined\n(void)(__alignas_is_defined);\n#endif\n#ifdef __alignof_is_defined\n(void)(__alignof_is_defined);\n#endif\n#ifdef __bool_true_false_are_defined\n(void)(__bool_true_false_are_defined);\n#endif\n#ifdef ATOMIC_BOOL_LOCK_FREE\n(void)(ATOMIC_BOOL_LOCK_FREE);\n#endif\n#ifdef ATOMIC_CHAR_LOCK_FREE\n(void)(ATOMIC_CHAR_LOCK_FREE);\n#endif\n#ifdef ATOMIC_CHAR16_T_LOCK_FREE\n(void)(ATOMIC_CHAR16_T_LOCK_FREE);\n#endif\n#ifdef ATOMIC_CHAR32_T_LOCK_FREE\n(void)(ATOMIC_CHAR32_T_LOCK_FREE);\n#endif\n#ifdef ATOMIC_WCHAR_T_LOCK_FREE\n(void)(ATOMIC_WCHAR_T_LOCK_FREE);\n#endif\n#ifdef ATOMIC_SHORT_LOCK_FREE\n(void)(ATOMIC_SHORT_LOCK_FREE);\n#endif\n#ifdef ATOMIC_INT_LOCK_FREE\n(void)(ATOMIC_INT_LOCK_FREE);\n#endif\n#ifdef ATOMIC_LONG_LOCK_FREE\n(void)(ATOMIC_LONG_LOCK_FREE);\n#endif\n#ifdef ATOMIC_LLONG_LOCK_FREE\n(void)(ATOMIC_LLONG_LOCK_FREE);\n#endif\n#ifdef ATOMIC_POINTER_LOCK_FREE\n(void)(ATOMIC_POINTER_LOCK_FREE);\n#endif\n#ifdef BUFSIZ\n(void)(BUFSIZ);\n#endif\n#ifdef FILENAME_MAX\n(void)(FILENAME_MAX);\n#endif\n#ifdef FOPEN_MAX\n(void)(FOPEN_MAX);\n#endif\n#ifdef L_tmpnam\n(void)(L_tmpnam);\n#endif\n#ifdef TMP_MAX\n(void)(TMP_MAX);\n#endif\n#ifdef _IOFBF\n(void)(_IOFBF);\n#endif\n#ifdef _IOLBF\n(void)(_IOLBF);\n#endif\n#ifdef _IONBF\n(void)(_IONBF);\n#endif\n#ifdef MB_CUR_MAX\n(void)(MB_CUR_MAX);\n#endif\n#ifdef MB_LEN_MAX\n(void)(MB_LEN_MAX);\n#endif\n#ifdef CHAR_MIN\n(void)(CHAR_MIN);\n#endif\n#ifdef CHAR_MAX\n(void)(CHAR_MAX);\n#endif\n#ifdef SCHAR_MIN\n(void)(SCHAR_MIN);\n#endif\n#ifdef SCHAR_MAX\n(void)(SCHAR_MAX);\n#endif\n#ifdef UCHAR_MAX\n(void)(UCHAR_MAX);\n#endif\n#ifdef SHRT_MIN\n(void)(SHRT_MIN);\n#endif\n#ifdef SHRT_MAX\n(void)(SHRT_MAX);\n#endif\n#ifdef USHRT_MAX\n(void)(USHRT_MAX);\n#endif\n#ifdef ULONG_MAX\n(void)(ULONG_MAX);\n#endif\n#ifdef LLONG_MIN\n(void)(LLONG_MIN);\n#endif\n#ifdef LLONG_MAX\n(void)(LLONG_MAX);\n#endif\n#ifdef ULLONG_MAX\n(void)(ULLONG_MAX);\n#endif\n#ifdef FLT_RADIX\n(void)(FLT_RADIX);\n#endif\n#ifdef FLT_ROUNDS\n(void)(FLT_ROUNDS);\n#endif\n#ifdef FLT_EVAL_METHOD\n(void)(FLT_EVAL_METHOD);\n#endif\n#ifdef DECIMAL_DIG\n(void)(DECIMAL_DIG);\n#endif\n#ifdef FLT_MANT_DIG\n(void)(FLT_MANT_DIG);\n#endif\n#ifdef FLT_DIG\n(void)(FLT_DIG);\n#endif\n#ifdef FLT_MIN_EXP\n(void)(FLT_MIN_EXP);\n#endif\n#ifdef FLT_MIN_10_EXP\n(void)(FLT_MIN_10_EXP);\n#endif\n#ifdef FLT_MAX_EXP\n(void)(FLT_MAX_EXP);\n#endif\n#ifdef FLT_MAX_10_EXP\n(void)(FLT_MAX_10_EXP);\n#endif\n#ifdef FLT_MAX\n(void)(FLT_MAX);\n#endif\n#ifdef FLT_EPSILON\n(void)(FLT_EPSILON);\n#endif\n#ifdef FLT_MIN\n(void)(FLT_MIN);\n#endif\n#ifdef FLT_TRUE_MIN\n(void)(FLT_TRUE_MIN);\n#endif\n#ifdef FLT_HAS_SUBNORM\n(void)(FLT_HAS_SUBNORM);\n#endif\n#ifdef FLT_DECIMAL_DIG\n(void)(FLT_DECIMAL_DIG);\n#endif\n#ifdef DBL_MANT_DIG\n(void)(DBL_MANT_DIG);\n#endif\n#ifdef DBL_DIG\n(void)(DBL_DIG);\n#endif\n#ifdef DBL_MIN_EXP\n(void)(DBL_MIN_EXP);\n#endif\n#ifdef DBL_MIN_10_EXP\n(void)(DBL_MIN_10_EXP);\n#endif\n#ifdef DBL_MAX_EXP\n(void)(DBL_MAX_EXP);\n#endif\n#ifdef DBL_MAX_10_EXP\n(void)(DBL_MAX_10_EXP);\n#endif\n#ifdef DBL_MAX\n(void)(DBL_MAX);\n#endif\n#ifdef DBL_EPSILON\n(void)(DBL_EPSILON);\n#endif\n#ifdef DBL_MIN\n(void)(DBL_MIN);\n#endif\n#ifdef DBL_TRUE_MIN\n(void)(DBL_TRUE_MIN);\n#endif\n#ifdef DBL_HAS_SUBNORM\n(void)(DBL_HAS_SUBNORM);\n#endif\n#ifdef DBL_DECIMAL_DIG\n(void)(DBL_DECIMAL_DIG);\n#endif\n#ifdef LDBL_MANT_DIG\n(void)(LDBL_MANT_DIG);\n#endif\n#ifdef LDBL_DIG\n(void)(LDBL_DIG);\n#endif\n#ifdef LDBL_MIN_EXP\n(void)(LDBL_MIN_EXP);\n#endif\n#ifdef LDBL_MIN_10_EXP\n(void)(LDBL_MIN_10_EXP);\n#endif\n#ifdef LDBL_MAX_EXP\n(void)(LDBL_MAX_EXP);\n#endif\n#ifdef LDBL_MAX_10_EXP\n(void)(LDBL_MAX_10_EXP);\n#endif\n#ifdef LDBL_MAX\n(void)(LDBL_MAX);\n#endif\n#ifdef LDBL_EPSILON\n(void)(LDBL_EPSILON);\n#endif\n#ifdef LDBL_MIN\n(void)(LDBL_MIN);\n#endif\n#ifdef LDBL_TRUE_MIN\n(void)(LDBL_TRUE_MIN);\n#endif\n#ifdef LDBL_HAS_SUBNORM\n(void)(LDBL_HAS_SUBNORM);\n#endif\n#ifdef LDBL_DECIMAL_DIG\n(void)(LDBL_DECIMAL_DIG);\n#endif\n#ifdef INT8_MIN\n(void)(INT8_MIN);\n#endif\n#ifdef INT8_MAX\n(void)(INT8_MAX);\n#endif\n#ifdef UINT8_MAX\n(void)(UINT8_MAX);\n#endif\n#ifdef INT_LEAST8_MIN\n(void)(INT_LEAST8_MIN);\n#endif\n#ifdef INT_LEAST8_MAX\n(void)(INT_LEAST8_MAX);\n#endif\n#ifdef UINT_LEAST8_MAX\n(void)(UINT_LEAST8_MAX);\n#endif\n#ifdef INT_FAST8_MIN\n(void)(INT_FAST8_MIN);\n#endif\n#ifdef INT_FAST8_MAX\n(void)(INT_FAST8_MAX);\n#endif\n#ifdef UINT_FAST8_MAX\n(void)(UINT_FAST8_MAX);\n#endif\n#ifdef INT16_MIN\n(void)(INT16_MIN);\n#endif\n#ifdef INT16_MAX\n(void)(INT16_MAX);\n#endif\n#ifdef UINT16_MAX\n(void)(UINT16_MAX);\n#endif\n#ifdef INT_LEAST16_MIN\n(void)(INT_LEAST16_MIN);\n#endif\n#ifdef INT_LEAST16_MAX\n(void)(INT_LEAST16_MAX);\n#endif\n#ifdef UINT_LEAST16_MAX\n(void)(UINT_LEAST16_MAX);\n#endif\n#ifdef INT_FAST16_MIN\n(void)(INT_FAST16_MIN);\n#endif\n#ifdef INT_FAST16_MAX\n(void)(INT_FAST16_MAX);\n#endif\n#ifdef UINT_FAST16_MAX\n(void)(UINT_FAST16_MAX);\n#endif\n#ifdef INT32_MIN\n(void)(INT32_MIN);\n#endif\n#ifdef INT32_MAX\n(void)(INT32_MAX);\n#endif\n#ifdef UINT32_MAX\n(void)(UINT32_MAX);\n#endif\n#ifdef INT_LEAST32_MIN\n(void)(INT_LEAST32_MIN);\n#endif\n#ifdef INT_LEAST32_MAX\n(void)(INT_LEAST32_MAX);\n#endif\n#ifdef UINT_LEAST32_MAX\n(void)(UINT_LEAST32_MAX);\n#endif\n#ifdef INT_FAST32_MIN\n(void)(INT_FAST32_MIN);\n#endif\n#ifdef INT_FAST32_MAX\n(void)(INT_FAST32_MAX);\n#endif\n#ifdef UINT_FAST32_MAX\n(void)(UINT_FAST32_MAX);\n#endif\n#ifdef INT64_MIN\n(void)(INT64_MIN);\n#endif\n#ifdef INT64_MAX\n(void)(INT64_MAX);\n#endif\n#ifdef UINT64_MAX\n(void)(UINT64_MAX);\n#endif\n#ifdef INT_LEAST64_MIN\n(void)(INT_LEAST64_MIN);\n#endif\n#ifdef INT_LEAST64_MAX\n(void)(INT_LEAST64_MAX);\n#endif\n#ifdef UINT_LEAST64_MAX\n(void)(UINT_LEAST64_MAX);\n#endif\n#ifdef INT_FAST64_MIN\n(void)(INT_FAST64_MIN);\n#endif\n#ifdef INT_FAST64_MAX\n(void)(INT_FAST64_MAX);\n#endif\n#ifdef UINT_FAST64_MAX\n(void)(UINT_FAST64_MAX);\n#endif\n#ifdef INTPTR_MIN\n(void)(INTPTR_MIN);\n#endif\n#ifdef INTPTR_MAX\n(void)(INTPTR_MAX);\n#endif\n#ifdef UINTPTR_MAX\n(void)(UINTPTR_MAX);\n#endif\n#ifdef INTMAX_MIN\n(void)(INTMAX_MIN);\n#endif\n#ifdef INTMAX_MAX\n(void)(INTMAX_MAX);\n#endif\n#ifdef UINTMAX_MAX\n(void)(UINTMAX_MAX);\n#endif\n#ifdef PTRDIFF_MIN\n(void)(PTRDIFF_MIN);\n#endif\n#ifdef PTRDIFF_MAX\n(void)(PTRDIFF_MAX);\n#endif\n#ifdef SIG_ATOMIC_MIN\n(void)(SIG_ATOMIC_MIN);\n#endif\n#ifdef SIG_ATOMIC_MAX\n(void)(SIG_ATOMIC_MAX);\n#endif\n#ifdef SIZE_MAX\n(void)(SIZE_MAX);\n#endif\n#ifdef WCHAR_MIN\n(void)(WCHAR_MIN);\n#endif\n#ifdef WCHAR_MAX\n(void)(WCHAR_MAX);\n#endif\n#ifdef WINT_MIN\n(void)(WINT_MIN);\n#endif\n#ifdef WINT_MAX\n(void)(WINT_MAX);\n#endif\n#ifdef PRId8\n(void)(PRId8);\n#endif\n#ifdef PRIdLEAST8\n(void)(PRIdLEAST8);\n#endif\n#ifdef PRIdFAST8\n(void)(PRIdFAST8);\n#endif\n#ifdef PRId16\n(void)(PRId16);\n#endif\n#ifdef PRIdLEAST16\n(void)(PRIdLEAST16);\n#endif\n#ifdef PRIdFAST16\n(void)(PRIdFAST16);\n#endif\n#ifdef PRId32\n(void)(PRId32);\n#endif\n#ifdef PRIdLEAST32\n(void)(PRIdLEAST32);\n#endif\n#ifdef PRIdFAST32\n(void)(PRIdFAST32);\n#endif\n#ifdef PRId64\n(void)(PRId64);\n#endif\n#ifdef PRIdLEAST64\n(void)(PRIdLEAST64);\n#endif\n#ifdef PRIdFAST64\n(void)(PRIdFAST64);\n#endif\n#ifdef PRIdMAX\n(void)(PRIdMAX);\n#endif\n#ifdef PRIdPTR\n(void)(PRIdPTR);\n#endif\n#ifdef PRIi8\n(void)(PRIi8);\n#endif\n#ifdef PRIiLEAST8\n(void)(PRIiLEAST8);\n#endif\n#ifdef PRIiFAST8\n(void)(PRIiFAST8);\n#endif\n#ifdef PRIi16\n(void)(PRIi16);\n#endif\n#ifdef PRIiLEAST16\n(void)(PRIiLEAST16);\n#endif\n#ifdef PRIiFAST16\n(void)(PRIiFAST16);\n#endif\n#ifdef PRIi32\n(void)(PRIi32);\n#endif\n#ifdef PRIiLEAST32\n(void)(PRIiLEAST32);\n#endif\n#ifdef PRIiFAST32\n(void)(PRIiFAST32);\n#endif\n#ifdef PRIi64\n(void)(PRIi64);\n#endif\n#ifdef PRIiLEAST64\n(void)(PRIiLEAST64);\n#endif\n#ifdef PRIiFAST64\n(void)(PRIiFAST64);\n#endif\n#ifdef PRIiMAX\n(void)(PRIiMAX);\n#endif\n#ifdef PRIiPTR\n(void)(PRIiPTR);\n#endif\n#ifdef PRIo8\n(void)(PRIo8);\n#endif\n#ifdef PRIoLEAST8\n(void)(PRIoLEAST8);\n#endif\n#ifdef PRIoFAST8\n(void)(PRIoFAST8);\n#endif\n#ifdef PRIo16\n(void)(PRIo16);\n#endif\n#ifdef PRIoLEAST16\n(void)(PRIoLEAST16);\n#endif\n#ifdef PRIoFAST16\n(void)(PRIoFAST16);\n#endif\n#ifdef PRIo32\n(void)(PRIo32);\n#endif\n#ifdef PRIoLEAST32\n(void)(PRIoLEAST32);\n#endif\n#ifdef PRIoFAST32\n(void)(PRIoFAST32);\n#endif\n#ifdef PRIo64\n(void)(PRIo64);\n#endif\n#ifdef PRIoLEAST64\n(void)(PRIoLEAST64);\n#endif\n#ifdef PRIoFAST64\n(void)(PRIoFAST64);\n#endif\n#ifdef PRIoMAX\n(void)(PRIoMAX);\n#endif\n#ifdef PRIoPTR\n(void)(PRIoPTR);\n#endif\n#ifdef PRIu8\n(void)(PRIu8);\n#endif\n#ifdef PRIuLEAST8\n(void)(PRIuLEAST8);\n#endif\n#ifdef PRIuFAST8\n(void)(PRIuFAST8);\n#endif\n#ifdef PRIu16\n(void)(PRIu16);\n#endif\n#ifdef PRIuLEAST16\n(void)(PRIuLEAST16);\n#endif\n#ifdef PRIuFAST16\n(void)(PRIuFAST16);\n#endif\n#ifdef PRIu32\n(void)(PRIu32);\n#endif\n#ifdef PRIuLEAST32\n(void)(PRIuLEAST32);\n#endif\n#ifdef PRIuFAST32\n(void)(PRIuFAST32);\n#endif\n#ifdef PRIu64\n(void)(PRIu64);\n#endif\n#ifdef PRIuLEAST64\n(void)(PRIuLEAST64);\n#endif\n#ifdef PRIuFAST64\n(void)(PRIuFAST64);\n#endif\n#ifdef PRIuMAX\n(void)(PRIuMAX);\n#endif\n#ifdef PRIuPTR\n(void)(PRIuPTR);\n#endif\n#ifdef PRIx8\n(void)(PRIx8);\n#endif\n#ifdef PRIxLEAST8\n(void)(PRIxLEAST8);\n#endif\n#ifdef PRIxFAST8\n(void)(PRIxFAST8);\n#endif\n#ifdef PRIx16\n(void)(PRIx16);\n#endif\n#ifdef PRIxLEAST16\n(void)(PRIxLEAST16);\n#endif\n#ifdef PRIxFAST16\n(void)(PRIxFAST16);\n#endif\n#ifdef PRIx32\n(void)(PRIx32);\n#endif\n#ifdef PRIxLEAST32\n(void)(PRIxLEAST32);\n#endif\n#ifdef PRIxFAST32\n(void)(PRIxFAST32);\n#endif\n#ifdef PRIx64\n(void)(PRIx64);\n#endif\n#ifdef PRIxLEAST64\n(void)(PRIxLEAST64);\n#endif\n#ifdef PRIxFAST64\n(void)(PRIxFAST64);\n#endif\n#ifdef PRIxMAX\n(void)(PRIxMAX);\n#endif\n#ifdef PRIxPTR\n(void)(PRIxPTR);\n#endif\n#ifdef PRIX8\n(void)(PRIX8);\n#endif\n#ifdef PRIXLEAST8\n(void)(PRIXLEAST8);\n#endif\n#ifdef PRIXFAST8\n(void)(PRIXFAST8);\n#endif\n#ifdef PRIX16\n(void)(PRIX16);\n#endif\n#ifdef PRIXLEAST16\n(void)(PRIXLEAST16);\n#endif\n#ifdef PRIXFAST16\n(void)(PRIXFAST16);\n#endif\n#ifdef PRIX32\n(void)(PRIX32);\n#endif\n#ifdef PRIXLEAST32\n(void)(PRIXLEAST32);\n#endif\n#ifdef PRIXFAST32\n(void)(PRIXFAST32);\n#endif\n#ifdef PRIX64\n(void)(PRIX64);\n#endif\n#ifdef PRIXLEAST64\n(void)(PRIXLEAST64);\n#endif\n#ifdef PRIXFAST64\n(void)(PRIXFAST64);\n#endif\n#ifdef PRIXMAX\n(void)(PRIXMAX);\n#endif\n#ifdef PRIXPTR\n(void)(PRIXPTR);\n#endif\n#ifdef SCNd8\n(void)(SCNd8);\n#endif\n#ifdef SCNdLEAST8\n(void)(SCNdLEAST8);\n#endif\n#ifdef SCNdFAST8\n(void)(SCNdFAST8);\n#endif\n#ifdef SCNd16\n(void)(SCNd16);\n#endif\n#ifdef SCNdLEAST16\n(void)(SCNdLEAST16);\n#endif\n#ifdef SCNdFAST16\n(void)(SCNdFAST16);\n#endif\n#ifdef SCNd32\n(void)(SCNd32);\n#endif\n#ifdef SCNdLEAST32\n(void)(SCNdLEAST32);\n#endif\n#ifdef SCNdFAST32\n(void)(SCNdFAST32);\n#endif\n#ifdef SCNd64\n(void)(SCNd64);\n#endif\n#ifdef SCNdLEAST64\n(void)(SCNdLEAST64);\n#endif\n#ifdef SCNdFAST64\n(void)(SCNdFAST64);\n#endif\n#ifdef SCNdMAX\n(void)(SCNdMAX);\n#endif\n#ifdef SCNdPTR\n(void)(SCNdPTR);\n#endif\n#ifdef SCNi8\n(void)(SCNi8);\n#endif\n#ifdef SCNiLEAST8\n(void)(SCNiLEAST8);\n#endif\n#ifdef SCNiFAST8\n(void)(SCNiFAST8);\n#endif\n#ifdef SCNi16\n(void)(SCNi16);\n#endif\n#ifdef SCNiLEAST16\n(void)(SCNiLEAST16);\n#endif\n#ifdef SCNiFAST16\n(void)(SCNiFAST16);\n#endif\n#ifdef SCNi32\n(void)(SCNi32);\n#endif\n#ifdef SCNiLEAST32\n(void)(SCNiLEAST32);\n#endif\n#ifdef SCNiFAST32\n(void)(SCNiFAST32);\n#endif\n#ifdef SCNi64\n(void)(SCNi64);\n#endif\n#ifdef SCNiLEAST64\n(void)(SCNiLEAST64);\n#endif\n#ifdef SCNiFAST64\n(void)(SCNiFAST64);\n#endif\n#ifdef SCNiMAX\n(void)(SCNiMAX);\n#endif\n#ifdef SCNiPTR\n(void)(SCNiPTR);\n#endif\n#ifdef SCNo8\n(void)(SCNo8);\n#endif\n#ifdef SCNoLEAST8\n(void)(SCNoLEAST8);\n#endif\n#ifdef SCNoFAST8\n(void)(SCNoFAST8);\n#endif\n#ifdef SCNo16\n(void)(SCNo16);\n#endif\n#ifdef SCNoLEAST16\n(void)(SCNoLEAST16);\n#endif\n#ifdef SCNoFAST16\n(void)(SCNoFAST16);\n#endif\n#ifdef SCNo32\n(void)(SCNo32);\n#endif\n#ifdef SCNoLEAST32\n(void)(SCNoLEAST32);\n#endif\n#ifdef SCNoFAST32\n(void)(SCNoFAST32);\n#endif\n#ifdef SCNo64\n(void)(SCNo64);\n#endif\n#ifdef SCNoLEAST64\n(void)(SCNoLEAST64);\n#endif\n#ifdef SCNoFAST64\n(void)(SCNoFAST64);\n#endif\n#ifdef SCNoMAX\n(void)(SCNoMAX);\n#endif\n#ifdef SCNoPTR\n(void)(SCNoPTR);\n#endif\n#ifdef SCNu8\n(void)(SCNu8);\n#endif\n#ifdef SCNuLEAST8\n(void)(SCNuLEAST8);\n#endif\n#ifdef SCNuFAST8\n(void)(SCNuFAST8);\n#endif\n#ifdef SCNu16\n(void)(SCNu16);\n#endif\n#ifdef SCNuLEAST16\n(void)(SCNuLEAST16);\n#endif\n#ifdef SCNuFAST16\n(void)(SCNuFAST16);\n#endif\n#ifdef SCNu32\n(void)(SCNu32);\n#endif\n#ifdef SCNuLEAST32\n(void)(SCNuLEAST32);\n#endif\n#ifdef SCNuFAST32\n(void)(SCNuFAST32);\n#endif\n#ifdef SCNu64\n(void)(SCNu64);\n#endif\n#ifdef SCNuLEAST64\n(void)(SCNuLEAST64);\n#endif\n#ifdef SCNuFAST64\n(void)(SCNuFAST64);\n#endif\n#ifdef SCNuMAX\n(void)(SCNuMAX);\n#endif\n#ifdef SCNuPTR\n(void)(SCNuPTR);\n#endif\n#ifdef SCNx8\n(void)(SCNx8);\n#endif\n#ifdef SCNxLEAST8\n(void)(SCNxLEAST8);\n#endif\n#ifdef SCNxFAST8\n(void)(SCNxFAST8);\n#endif\n#ifdef SCNx16\n(void)(SCNx16);\n#endif\n#ifdef SCNxLEAST16\n(void)(SCNxLEAST16);\n#endif\n#ifdef SCNxFAST16\n(void)(SCNxFAST16);\n#endif\n#ifdef SCNx32\n(void)(SCNx32);\n#endif\n#ifdef SCNxLEAST32\n(void)(SCNxLEAST32);\n#endif\n#ifdef SCNxFAST32\n(void)(SCNxFAST32);\n#endif\n#ifdef SCNx64\n(void)(SCNx64);\n#endif\n#ifdef SCNxLEAST64\n(void)(SCNxLEAST64);\n#endif\n#ifdef SCNxFAST64\n(void)(SCNxFAST64);\n#endif\n#ifdef SCNxMAX\n(void)(SCNxMAX);\n#endif\n#ifdef SCNxPTR\n(void)(SCNxPTR);\n#endif\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "time-members",
+    "source": "#include <time.h>\nint f(struct tm *p){struct timespec t; timespec_get(&t,TIME_UTC); return p->tm_year+p->tm_mon+p->tm_sec+(int)t.tv_nsec;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "member-shadow",
+    "source": "#include <time.h>\nstruct S {int tm_year;}; int f(struct S s,struct tm *p){return s.tm_year+p->tm_year;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "wide-characters",
+    "source": "#include <wchar.h>\n#include <wctype.h>\nint f(void){wchar_t text[]=L\"Hello\"; return (int)wcslen(text)+iswdigit(text[0]);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "complex-math",
+    "source": "#include <complex.h>\n#include <tgmath.h>\ndouble f(double complex z){double complex r=sqrt(z);return cabs(r)+creal(r);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "thread-enums",
+    "source": "#include <threads.h>\nint f(mtx_t *p){int r=mtx_init(p,mtx_plain); if(r==thrd_success)mtx_destroy(p); return r;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "atomic-operations",
+    "source": "#include <stdatomic.h>\nint f(void){atomic_int x=ATOMIC_VAR_INIT(0); atomic_init(&x,1); atomic_store(&x,2); atomic_fetch_add(&x,3); atomic_exchange(&x,4); return atomic_load(&x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "alignment-aliases",
+    "source": "#include <stdalign.h>\n#include <assert.h>\nalignas(16) int x; static_assert(alignof(int)>0,\"alignment\");\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "variadic",
+    "source": "#include <stdarg.h>\nint f(int n,...){va_list a,b; va_start(a,n); va_copy(b,a); int x=va_arg(b,int); va_end(b); va_end(a);return x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "jump",
+    "source": "#include <setjmp.h>\njmp_buf env; int f(void){if(setjmp(env)==0)longjmp(env,1);return 0;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "alternative-operators",
+    "source": "#include <iso646.h>\nint f(int x,int y){x and_eq y; x or_eq y; x xor_eq y; return not x or (x and y) or (x not_eq y) or (x bitand y) or (x bitor y) or (x xor y) or compl x;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "formatted-width",
+    "source": "#include <inttypes.h>\n#include <stdio.h>\nvoid f(int32_t x){printf(\"%\" PRId32 \"\\n\",x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "constant-construction",
+    "source": "#include <stdint.h>\nvoid f(void){(void)INT8_C(1);(void)UINT8_C(1);(void)INT16_C(1);(void)UINT16_C(1);(void)INT32_C(1);(void)UINT32_C(1);(void)INT64_C(1);(void)UINT64_C(1);(void)INTMAX_C(1);(void)UINTMAX_C(1);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "offsetof",
+    "source": "#include <stddef.h>\nstruct S{int x;double y;}; size_t f(void){return offsetof(struct S,y);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "local-standard-tag",
+    "source": "#include <time.h>\nint f(void){struct tm {int tm_year;}; struct tm t={1};return t.tm_year;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "enum-shadow",
+    "source": "#include <threads.h>\nint f(int thrd_success){return thrd_success;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "alignment-user-macro",
+    "source": "#include <stdalign.h>\n#undef alignof\n#define alignof(x) 8\nint f(void){return alignof(int);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "nested-standard-macro",
+    "source": "#include <tgmath.h>\ndouble f(double x){return sqrt(pow(x,2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "alignment-comment",
+    "source": "#include <stdalign.h>\nalignas /* keep */ (16) int x;\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "catalog-members",
+    "source": "#include <time.h>\n#include <locale.h>\n#include <stdlib.h>\n#include <inttypes.h>\nvoid f(void){struct tm tm_v={0};(void)tm_v.tm_sec;(void)tm_v.tm_min;(void)tm_v.tm_hour;(void)tm_v.tm_mday;(void)tm_v.tm_mon;(void)tm_v.tm_year;(void)tm_v.tm_wday;(void)tm_v.tm_yday;(void)tm_v.tm_isdst;struct timespec timespec_v={0};(void)timespec_v.tv_sec;(void)timespec_v.tv_nsec;struct lconv lconv_v={0};(void)lconv_v.decimal_point;(void)lconv_v.thousands_sep;(void)lconv_v.grouping;(void)lconv_v.int_curr_symbol;(void)lconv_v.currency_symbol;(void)lconv_v.mon_decimal_point;(void)lconv_v.mon_thousands_sep;(void)lconv_v.mon_grouping;(void)lconv_v.positive_sign;(void)lconv_v.negative_sign;(void)lconv_v.int_frac_digits;(void)lconv_v.frac_digits;(void)lconv_v.p_cs_precedes;(void)lconv_v.p_sep_by_space;(void)lconv_v.p_sign_posn;(void)lconv_v.n_cs_precedes;(void)lconv_v.n_sep_by_space;(void)lconv_v.n_sign_posn;(void)lconv_v.int_p_cs_precedes;(void)lconv_v.int_p_sep_by_space;(void)lconv_v.int_p_sign_posn;(void)lconv_v.int_n_cs_precedes;(void)lconv_v.int_n_sep_by_space;(void)lconv_v.int_n_sign_posn;div_t div_t_v={0};(void)div_t_v.quot;(void)div_t_v.rem;imaxdiv_t imaxdiv_t_v={0};}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "designated-members",
+    "source": "#include <time.h>\nstruct tm t={.tm_year=124,.tm_mon=0};\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "atomic-all",
+    "source": "#include <stdatomic.h>\nvoid f(void){atomic_int x=0; int expected=0; atomic_flag flag=ATOMIC_FLAG_INIT;\n(void)atomic_is_lock_free(&x); (void)kill_dependency(1);\natomic_flag_clear(&flag); (void)atomic_flag_test_and_set(&flag);\natomic_flag_clear_explicit(&flag,memory_order_release); (void)atomic_flag_test_and_set_explicit(&flag,memory_order_acquire);\natomic_thread_fence(memory_order_seq_cst); atomic_signal_fence(memory_order_consume);\n(void)atomic_load(&x);\n(void)atomic_load_explicit(&x,memory_order_relaxed);\n(void)atomic_store(&x,1);\n(void)atomic_store_explicit(&x,1,memory_order_relaxed);\n(void)atomic_exchange(&x,1);\n(void)atomic_exchange_explicit(&x,1,memory_order_relaxed);\n(void)atomic_fetch_add(&x,1);\n(void)atomic_fetch_add_explicit(&x,1,memory_order_relaxed);\n(void)atomic_fetch_sub(&x,1);\n(void)atomic_fetch_sub_explicit(&x,1,memory_order_relaxed);\n(void)atomic_fetch_or(&x,1);\n(void)atomic_fetch_or_explicit(&x,1,memory_order_relaxed);\n(void)atomic_fetch_xor(&x,1);\n(void)atomic_fetch_xor_explicit(&x,1,memory_order_relaxed);\n(void)atomic_fetch_and(&x,1);\n(void)atomic_fetch_and_explicit(&x,1,memory_order_relaxed);\n(void)atomic_compare_exchange_strong(&x,&expected,1);\n(void)atomic_compare_exchange_strong_explicit(&x,&expected,1,memory_order_acq_rel,memory_order_relaxed);\n(void)atomic_compare_exchange_weak(&x,&expected,1);\n(void)atomic_compare_exchange_weak_explicit(&x,&expected,1,memory_order_acq_rel,memory_order_relaxed);\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "catalog-enums",
+    "source": "#include <stdatomic.h>\n#include <threads.h>\nonce_flag once=ONCE_FLAG_INIT;\nvoid f(void){(void)mtx_plain;(void)mtx_recursive;(void)mtx_timed;(void)thrd_success;(void)thrd_timedout;(void)thrd_busy;(void)thrd_nomem;(void)thrd_error;(void)memory_order_relaxed;(void)memory_order_consume;(void)memory_order_acquire;(void)memory_order_release;(void)memory_order_acq_rel;(void)memory_order_seq_cst;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "math-classification",
+    "source": "#include <math.h>\nvoid f(double x,double y){(void)fpclassify(x);(void)isfinite(x);(void)isinf(x);(void)isnan(x);(void)isnormal(x);(void)signbit(x);(void)isgreater(x,y);(void)isgreaterequal(x,y);(void)isless(x,y);(void)islessequal(x,y);(void)islessgreater(x,y);(void)isunordered(x,y);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "complex-construction",
+    "source": "#include <complex.h>\nvoid f(void){\n#ifdef CMPLX\n(void)CMPLX(1,2);\n#endif\n#ifdef CMPLXF\n(void)CMPLXF(1,2);\n#endif\n#ifdef CMPLXL\n(void)CMPLXL(1,2);\n#endif\n}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "standard-fixtures",
+    "id": "legacy-atomic-sdk",
+    "source": "#include <stdatomic.h>\nint f(void){atomic_int x=0;return atomic_load(&x);}\n",
+    "args": [],
+    "legacyValid": false,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "standard",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\ndouble f(int x){return sqrt(_Generic(x,int32_t:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "shadow",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\ndouble f(int x){typedef double int32_t;return sqrt(_Generic(x,int:4.0,int32_t:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "scope",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\ndouble f(int x){double n=0;{typedef double int32_t;n+=sqrt(_Generic(x,int32_t:9.0,default:4.0));}n+=sqrt(_Generic(x,int32_t:4.0,default:9.0));return n;}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "nested",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\ndouble f(int x){return sqrt(_Generic(x,int32_t:_Generic(x,int32_t:4.0,default:9.0),default:16.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "function-type",
+    "source": "#include <tgmath.h>\n#include <stddef.h>\ndouble f(int (*p)(size_t)){return sqrt(_Generic(p,int (*)(size_t):4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "parameter-name",
+    "source": "#include <tgmath.h>\n#include <stddef.h>\ndouble f(int (*p)(int)){return sqrt(_Generic(p,int (*)(int size_t):4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "tag",
+    "source": "#include <tgmath.h>\n#include <time.h>\ndouble f(struct tm *p){return sqrt(_Generic(p,struct tm*:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "tag-shadow",
+    "source": "#include <tgmath.h>\n#include <time.h>\ndouble f(void){struct tm{int x;}s={1};return sqrt(_Generic(&s,struct tm*:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "unicode",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\ndouble f(int x){/*目盛と型*/return sqrt(_Generic(x,int32_t:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "outer-user",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\n#define WRAP(x) (x)\ndouble f(int x){return WRAP(sqrt(_Generic(x,int32_t:4.0,default:9.0)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "inner-user",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\n#define WRAP(x) (x)\ndouble f(int x){return sqrt(WRAP(_Generic(x,int32_t:4.0,default:9.0)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "disabled",
+    "source": "#define NDEBUG\n#include <assert.h>\n#include <stdint.h>\nvoid f(int x){assert(_Generic(x,int32_t:1,default:0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "inactive",
+    "source": "#include <tgmath.h>\n#include <stdint.h>\n#if 0\ndouble f(int x){return sqrt(_Generic(x,int32_t:4.0,default:9.0));}\n#else\ndouble f(int x){return sqrt(_Generic(x,int32_t:4.0,default:9.0));}\n#endif\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "type-index-fixtures",
+    "id": "user-header",
+    "source": "#include <tgmath.h>\n#include \"user.h\"\ndouble f(long x){return sqrt(_Generic(x,int32_t:4.0,default:9.0));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false,
+    "files": {
+      "input.c": "#include <tgmath.h>\n#include \"user.h\"\ndouble f(long x){return sqrt(_Generic(x,int32_t:4.0,default:9.0));}\n",
+      "user.h": "typedef long int32_t;\n"
+    },
+    "headerSource": "Existing tools/generate-type-index-fixtures.py"
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "identifier",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)(sizeof x));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "dereference",
+    "source": "#include <tgmath.h>\ndouble f(int *p){return sqrt((double)(sizeof *p));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "multiply-boundary",
+    "source": "#include <tgmath.h>\ndouble f(int *p){return sqrt((double)(sizeof *p * 2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "plus-boundary",
+    "source": "#include <tgmath.h>\ndouble f(int *p){return sqrt((double)(sizeof *p + 2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "prefix",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)(sizeof ++x));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "nested-prefix",
+    "source": "#include <tgmath.h>\ndouble f(int **p){return sqrt((double)(sizeof **p));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "unary-sign",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)(sizeof -x));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "index",
+    "source": "#include <tgmath.h>\ndouble f(int *p,int i){return sqrt((double)(sizeof p[i]));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "parenthesized-index",
+    "source": "#include <tgmath.h>\ndouble f(int *p,int i){return sqrt((double)(sizeof(p)[i]));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "postfix",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)(sizeof(x)++));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "function",
+    "source": "#include <tgmath.h>\ndouble f(int (*fp)(void)){return sqrt((double)(sizeof fp()));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "parenthesized-function",
+    "source": "#include <tgmath.h>\ndouble f(int (*fp)(void)){return sqrt((double)(sizeof(fp)()));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "compound",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)(sizeof(int){4}));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "compound-index",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)(sizeof(int[2]){1,2}[0]));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "string",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)(sizeof \"目盛\" \"計算\"));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "character",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)(sizeof 'a'));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "nested-size",
+    "source": "#include <tgmath.h>\ndouble f(int *p){return sqrt((double)(sizeof sizeof *p));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "mixed-nesting",
+    "source": "#include <tgmath.h>\ndouble f(void){return sqrt((double)(sizeof _Alignof(int)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "cast-after-star",
+    "source": "#include <tgmath.h>\ndouble f(void *p){return sqrt((double)(sizeof *(int*)p));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "cast-binary",
+    "source": "#include <tgmath.h>\ndouble f(void *p){return sqrt((double)(sizeof *(int*)p + 2));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "parenthesized",
+    "source": "#include <tgmath.h>\ndouble f(int *p){return sqrt((double)(sizeof(*p + 1)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "generic",
+    "source": "#include <tgmath.h>\ndouble f(int x){return sqrt((double)(sizeof _Generic(x,int:x,default:1)));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "member",
+    "source": "#include <tgmath.h>\nstruct S{int x;};double f(struct S *p){return sqrt((double)sizeof p->x);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "array-member",
+    "source": "#include <tgmath.h>\nstruct S{int a[3];};double f(struct S *p){return sqrt((double)sizeof p->a[1]);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "comment",
+    "source": "#include <tgmath.h>\ndouble f(int *p){return sqrt((double)sizeof /*目盛*/ *p);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "atomic",
+    "source": "#include <stdatomic.h>\nvoid f(int *p){atomic_int x=0;atomic_init(&x,(int)sizeof *p);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "assert",
+    "source": "#include <assert.h>\nvoid f(int *p){assert(sizeof *p>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "alias-nesting",
+    "source": "#include <assert.h>\n#include <stdalign.h>\nvoid f(void){assert(sizeof alignof(int)>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "user-boundary",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(int *p){return sqrt((double)sizeof *WRAP(p));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "outer-user",
+    "source": "#include <tgmath.h>\n#define WRAP(x) (x)\ndouble f(int *p){return WRAP(sqrt((double)sizeof *p));}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  },
+  {
+    "group": "unary-operand-fixtures",
+    "id": "disabled",
+    "source": "#define NDEBUG\n#include <assert.h>\nvoid f(int *p){assert(sizeof *p>0);}\n",
+    "args": [],
+    "legacyValid": true,
+    "requiresExternalHeader": false
+  }
+]

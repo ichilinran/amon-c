@@ -1,0 +1,107 @@
+[
+  {
+    "id": "abort/abort();",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;abort();}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;ｲｼﾞｮｳｼｭｳﾘｮｳ();}\n"
+  },
+  {
+    "id": "abort/(abort)();",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;(abort)();}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;(ｲｼﾞｮｳｼｭｳﾘｮｳ)();}\n"
+  },
+  {
+    "id": "abort/(abort());",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;(abort());}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;(ｲｼﾞｮｳｼｭｳﾘｮｳ()) ﾅﾘ;}\n"
+  },
+  {
+    "id": "abort/((abort()));",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;((abort()));}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;((ｲｼﾞｮｳｼｭｳﾘｮｳ())) ﾅﾘ;}\n"
+  },
+  {
+    "id": "abort/(void)abort();",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;(void)abort();}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;(ﾑﾅｼ)ｲｼﾞｮｳｼｭｳﾘｮｳ() ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/raise(s);",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;raise(s);return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;ｱｲｽﾞｦｵｸﾙ(s ｦ);ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/(raise)(s);",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;(raise)(s);return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;(ｱｲｽﾞｦｵｸﾙ)(s ｦ);ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/(raise(s));",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;(raise(s));return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;(ｱｲｽﾞｦｵｸﾙ(s ｦ)) ﾅﾘ;ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/((raise(s)));",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;((raise(s)));return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;((ｱｲｽﾞｦｵｸﾙ(s ｦ))) ﾅﾘ;ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/(void)raise(s);",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;(void)raise(s);return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;(ﾑﾅｼ)ｱｲｽﾞｦｵｸﾙ(s ｦ) ﾅﾘ;ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/int z=raise(s);",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;int z=raise(s);return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;ｾｲｽｳ z=ｱｲｽﾞｦｵｸﾙ(s ｦ) ﾅﾘ;ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/a=raise(s);",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;a=raise(s);return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;a=ｱｲｽﾞｦｵｸﾙ(s ｦ) ﾅﾘ;ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/a+=raise(s);",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;a+=raise(s);return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;a+=ｱｲｽﾞｦｵｸﾙ(s ｦ) ﾅﾘ;ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/a=x=raise(s);",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;a=x=raise(s);return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;a=x=ｱｲｽﾞｦｵｸﾙ(s ｦ) ﾅﾘ;ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/a=(raise(s));",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;a=(raise(s));return a;}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;a=(ｱｲｽﾞｦｵｸﾙ(s ｦ)) ﾅﾘ;ｶｴｽﾉﾊ a ﾅﾘ;}\n"
+  },
+  {
+    "id": "raise/return raise(s);",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nint f(int s){int a=0,x=0;return raise(s);}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nｾｲｽｳ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;ｶｴｽﾉﾊ ｱｲｽﾞｦｵｸﾙ(s ｦ) ﾅﾘ;}\n"
+  },
+  {
+    "id": "thrd_yield/thrd_yield();",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;thrd_yield();}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;ｲﾄｽｼﾞﾉ_ﾃﾞﾊﾞﾝｦ_ﾕｽﾞﾙ();}\n"
+  },
+  {
+    "id": "thrd_yield/(thrd_yield)();",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;(thrd_yield)();}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;(ｲﾄｽｼﾞﾉ_ﾃﾞﾊﾞﾝｦ_ﾕｽﾞﾙ)();}\n"
+  },
+  {
+    "id": "thrd_yield/(thrd_yield());",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;(thrd_yield());}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;(ｲﾄｽｼﾞﾉ_ﾃﾞﾊﾞﾝｦ_ﾕｽﾞﾙ()) ﾅﾘ;}\n"
+  },
+  {
+    "id": "thrd_yield/((thrd_yield()));",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;((thrd_yield()));}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;((ｲﾄｽｼﾞﾉ_ﾃﾞﾊﾞﾝｦ_ﾕｽﾞﾙ())) ﾅﾘ;}\n"
+  },
+  {
+    "id": "thrd_yield/(void)thrd_yield();",
+    "source": "#include <stdlib.h>\n#include <signal.h>\n#include <threads.h>\nvoid f(int s){int a=0,x=0;(void)thrd_yield();}\n",
+    "text": "#ﾌｸﾒﾙ <ﾋｮｳｼﾞｭﾝ_ｼｮｺ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｱｲｽﾞ.ｻｷﾖﾐ>\n#ﾌｸﾒﾙ <ｲﾄｽｼﾞ.ｻｷﾖﾐ>\nﾑﾅｼ ﾆﾃ f(ｳｹﾄﾙﾉﾊ ｾｲｽｳ s ﾅﾘ){ｾｲｽｳ a=0 ﾅﾘ; ｾｲｽｳ x=0 ﾅﾘ;(ﾑﾅｼ)ｲﾄｽｼﾞﾉ_ﾃﾞﾊﾞﾝｦ_ﾕｽﾞﾙ() ﾅﾘ;}\n"
+  }
+]

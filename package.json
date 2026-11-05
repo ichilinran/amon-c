@@ -1,0 +1,33 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/hash.test.mjs tests/import.test.mjs tests/resources.test.mjs tests/analysis-boundaries.test.mjs tests/source-index.test.mjs tests/portable-acceptance.test.mjs tests/edit-plan.test.mjs tests/reading-expectations.test.mjs tests/argument-roles.test.mjs tests/resource-budget.test.mjs tests/settings-compatibility.test.mjs tests/vocabulary-statements.test.mjs tests/declarations.test.mjs tests/analysis-integrity.test.mjs tests/translation-policy.test.mjs tests/layout-policy.test.mjs tests/publication-policy.test.mjs tests/policy-data.test.mjs tests/module-layout.test.mjs tests/compat-boundaries.test.mjs tests/line-numbers.test.mjs tests/public-source.test.mjs",
+    "test:boundaries": "node tools/check-boundaries.mjs",
+    "test:boundaries:optimized": "node tools/check-boundaries.mjs --optimized",
+    "test:catalog": "node tools/check-catalog-coverage.mjs",
+    "test:portable": "node --test --test-concurrency=1 tests/hash.test.mjs tests/import.test.mjs tests/resources.test.mjs tests/analysis-boundaries.test.mjs tests/source-index.test.mjs tests/portable-acceptance.test.mjs tests/edit-plan.test.mjs tests/reading-expectations.test.mjs tests/argument-roles.test.mjs tests/resource-budget.test.mjs",
+    "measure:limits": "node tools/measure-limits.mjs",
+    "check:distribution": "node tools/check-distribution.mjs",
+    "check:distribution:release": "node tools/check-distribution.mjs --release",
+    "plan:files": "node tools/plan-public-files.mjs",
+    "check:files": "node tools/plan-public-files.mjs --check",
+    "build:public": "node tools/build-public.mjs",
+    "check:public": "node tools/check-public-build.mjs",
+    "build:release": "node tools/build-public.mjs --release",
+    "test:consistency": "node --test tests/settings-compatibility.test.mjs",
+    "test:declarations": "node --test tests/settings-compatibility.test.mjs tests/vocabulary-statements.test.mjs tests/declarations.test.mjs",
+    "test:review": "node --test tests/analysis-integrity.test.mjs",
+    "test:lines": "node --test tests/line-numbers.test.mjs",
+    "test:translation": "node --test tests/translation-policy.test.mjs",
+    "test:layout": "node --test tests/layout-policy.test.mjs",
+    "test:publication": "node --test tests/publication-policy.test.mjs",
+    "build:main-docs": "node tools/build-main-docs.mjs",
+    "test:policies": "node --test tests/policy-data.test.mjs",
+    "test:modules": "node --test tests/module-layout.test.mjs",
+    "test:compat": "node --test tests/compat-boundaries.test.mjs",
+    "test:native": "node --test --test-concurrency=1 tests/native-projection.test.mjs tests/project.test.mjs tests/replay.test.mjs tests/surfaces.test.mjs tests/wasm.test.mjs",
+    "test:settings": "node --test tests/settings-compatibility.test.mjs",
+    "test:integrity": "node --test tests/analysis-integrity.test.mjs"
+  },
+  "license": "MIT"
+}

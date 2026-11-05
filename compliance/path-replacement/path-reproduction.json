@@ -1,0 +1,7 @@
+{
+  "objectSha256": "660c7a458e1aa2a8074f1c385190a83d8c6e03574372fd772b97b5e7e05e02e7",
+  "supportSha256": "7dd58e1cb2fb33c4475bb83690f3b2986f2228868bdbd6ba941028c1fa029b51",
+  "matchesRecordedCandidate": true,
+  "sourceModified": false,
+  "compilerVersion": "emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.64-git (a1fe3902bf73a3802eae0357d273d0e37ea79898)\nCopyright (C) 2014 the Emscripten authors (see AUTHORS.txt)\nThis is free and open source software under the MIT license.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+}

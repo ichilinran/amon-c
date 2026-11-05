@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "Every existing non-hidden file classified",
+    "All explicit selection files exist",
+    "Current runtime imports close within Pages",
+    "HTML/Worker/sample/compressed resource dependencies accounted for",
+    "All selected JS support imports close within GitHub",
+    "Old Tree-sitter vendor excluded",
+    "Test baselines excluded from Pages",
+    "Pages is a subset of GitHub"
+  ],
+  "status": "passed",
+  "scope": "Static file-selection checks only; browser behavior, legal clearance and final publication are later steps."
+}
