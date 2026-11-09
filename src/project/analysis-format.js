@@ -4,13 +4,13 @@ export function checkAnalysis(data){
  if(data?.format!=='shi-analysis'||data?.profile?.backend!=='libclang')throw new Error('支位解析JSONの形式が正しくありません。');
  return checkViewShape(data);
 }
-export function checkReadingView(data){
+export function checkReadingView(data,{wrapperLength=0}={}){
  if(data?.format!=='shi-reading-view'||data?.profile?.backend!=='clang-cpp')throw new Error('支位表示ビューの形式が正しくありません。');
- return checkViewShape(data);
+ return checkViewShape(data,wrapperLength);
 }
-function checkViewShape(data){
+function checkViewShape(data,wrapperLength=0){
  const fail=()=>{throw new Error('支位解析JSONの形式・位置情報が正しくありません。');};
- if(!data||!['shi-analysis','shi-reading-view'].includes(data.format)||data.version!==1||data.positionEncoding!=='utf-16'||typeof data.source!=='string'||data.source.length>40000||!/^([a-f0-9]{64})$/.test(data.sha256)||typeof data.valid!=='boolean')fail();
+ if(!data||!['shi-analysis','shi-reading-view'].includes(data.format)||data.version!==1||data.positionEncoding!=='utf-16'||typeof data.source!=='string'||data.source.length>40000+wrapperLength||!/^([a-f0-9]{64})$/.test(data.sha256)||typeof data.valid!=='boolean')fail();
  if(typeof data.filename!=='string'||typeof data.file!=='string'||!['libclang','clang-cpp'].includes(data.profile?.backend)||data.profile.standard!=='c17'||typeof data.profile.version!=='string'||!Array.isArray(data.profile.args)||!data.profile.args.every(x=>typeof x==='string'))fail();
  const span=x=>x&&Number.isInteger(x.start)&&Number.isInteger(x.end)&&x.start>=0&&x.end>=x.start&&x.end<=data.source.length;
  const loc=x=>x&&['spelling','expansion'].every(k=>x[k]&&(x[k].file===null||typeof x[k].file==='string')&&typeof x[k].system==='boolean'&&Number.isInteger(x[k].line)&&Number.isInteger(x[k].column)&&(x[k].offset===null||Number.isInteger(x[k].offset)&&x[k].offset>=0&&x[k].offset<=data.source.length));

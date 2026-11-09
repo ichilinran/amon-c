@@ -1,8 +1,9 @@
 import {sourceBoundaries,byteToUTF16} from './project-analysis.js';
+import {functionBodySurface} from './function-body.js';
 
 // Works on already resolved facts. Anchors identify outer physical calls; they
 // never claim an exact contributor graph for #, ##, or nested macro expansions.
-export function contextSurfaces({id,unit,facts,views,expanded,expandedIssue=null}) {
+export function contextSurfaces({id,unit,facts,views,expanded,expandedIssue=null,functionBody=null,entryInstance=null}) {
   const byInstance=new Map(views.map(v=>[v.instance,v]));
   const boundaries=new Map();
   const key=instance=>`${id}:source:${instance}`;
@@ -23,6 +24,7 @@ export function contextSurfaces({id,unit,facts,views,expanded,expandedIssue=null
   const label=`${id+1}: ${unit.source.split(/[\\/]/).at(-1)}${userFlags.length?' ['+userFlags.join(' ')+']':''}`;
   const surface=(view,viewKey,title,history)=>({key:viewKey,label:label+' ／ '+title,source:view.analysis.source,text:view.reading.text,segments:view.reading.segments,reasons:view.reading.reasons??[],issues:[...view.reading.issues,...(expandedIssue?[expandedIssue.message]:[])],valid:view.analysis.valid,macros:history});
   const result=views.map(v=>surface(v,key(v.instance),((v.file??v.analysis.file).startsWith('/shi/input/')?(v.file??v.analysis.file).slice(11):(v.file??v.analysis.file).split(/[\\/]/).at(-1))+' #'+v.instance,macros.filter(m=>m.anchor.key===key(v.instance))));
+  if(functionBody)return result.map(v=>v.key===key(entryInstance)?functionBodySurface(v,functionBody):v);
   if(!expanded)return result;
   const expandedSurface=surface(expanded,`${id}:expanded`,'マクロ展開後',macros);
   const map=sourceBoundaries(expanded.analysis.source);

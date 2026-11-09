@@ -8,11 +8,12 @@ const setStatus=text=>$('status').textContent=text;
 const option=(text,value)=>{const el=document.createElement('option');el.textContent=text;el.value=value;return el;};
 function finish(){busy=false;clearTimeout(timer);clearTimeout(idleTimer);if(worker)idleTimer=setTimeout(()=>{worker?.terminate();worker=null;},30000);$('cancel').disabled=true;$('translate').disabled=!!imported;}
 function stop(){generation++;clearTimeout(idleTimer);worker?.terminate();worker=null;finish();}
-function invalidate(){imported=null;$('reanalyse').hidden=true;$('source').readOnly=false;if(busy)stop();else finish();views=[];$('views').replaceChildren();$('views').disabled=true;$('output').textContent='';$('source-view').replaceChildren();$('links').replaceChildren();$('origins').replaceChildren();$('macros').replaceChildren();$('reasons').replaceChildren();setStatus('入力が変わりました。翻訳してください。');}
+function invalidate(){imported=null;$('reanalyse').hidden=true;$('source').readOnly=false;$('function-body').disabled=false;if(busy)stop();else finish();views=[];$('views').replaceChildren();$('views').disabled=true;$('output').textContent='';$('source-view').replaceChildren();$('links').replaceChildren();$('origins').replaceChildren();$('macros').replaceChildren();$('reasons').replaceChildren();setStatus('入力が変わりました。翻訳してください。');}
 function paintInputs(){
  $('filechoice').replaceChildren(...Object.keys(project.files).map(n=>option(n,n)));$('filechoice').value=file;$('source').value=project.files[file];paintEditor();
  $('contexts').replaceChildren(...project.translationUnits.map((u,i)=>option(`${i+1}: ${u.source} ${(u.args??[]).join(' ')}`,String(i))));$('contexts').value=String(context);
  $('entry').replaceChildren(...Object.keys(project.files).filter(n=>n.endsWith('.c')).map(n=>option(n,n)));$('entry').value=project.translationUnits[context].source;
+ $('function-body').checked=project.translationUnits[context].functionBody===true;
  $('args').value=(project.translationUnits[context].args??[]).join('\n');$('annotations').checked=project.display?.annotations!==false;
 }
 function highlight(view,ranges){
@@ -60,13 +61,14 @@ function applyImported(result){
  if(result.mode==='analysis'){
   imported=result;views=result.views;summary='保存済みの解析を表示中（再解析していません）';
   $('views').replaceChildren(...views.map(v=>option(v.label,v.key)));$('views').disabled=false;$('views').value=selection;
-  $('source').readOnly=true;$('translate').disabled=true;$('reanalyse').hidden=false;showView();
+  $('source').readOnly=true;$('function-body').disabled=true;$('translate').disabled=true;$('reanalyse').hidden=false;showView();
  }else setStatus('保存した入力を復元しました。翻訳して表示を再生成してください。');
 }
 $('source').oninput=()=>{project.files[file]=$('source').value;invalidate();};
 $('filechoice').onchange=()=>{file=$('filechoice').value;$('source').value=project.files[file];paintEditor();};
 $('contexts').onchange=()=>{context=Number($('contexts').value);paintInputs();};
 $('entry').onchange=()=>{project.translationUnits[context].source=$('entry').value;invalidate();paintInputs();};
+$('function-body').onchange=()=>{project.translationUnits[context].functionBody=$('function-body').checked;invalidate();};
 $('args').oninput=()=>{project.translationUnits[context].args=$('args').value.split('\n').map(x=>x.trim()).filter(Boolean);invalidate();};
 $('annotations').onchange=async()=>{project.display={...project.display,annotations:$('annotations').checked};if(imported){try{applyImported(await importSaved(saveImported(imported,selection,project.words,project.display)));}catch(e){setStatus(e.message);}}else invalidate();};
 $('add-context').onclick=()=>{project.translationUnits.push(structuredClone(project.translationUnits[context]));context=project.translationUnits.length-1;invalidate();paintInputs();};

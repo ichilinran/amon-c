@@ -3,14 +3,17 @@ import {createSourceIndex,rangesOverlap,insideRange} from './source-index.js';
 import {planUsageReadings} from './usage-reading.js';
 import {planPredefined} from './predefined-reader.js';
 import {STANDARD_NAMES} from '../vocabulary/standard-catalog.js';
-import {readingReason,attachReasons,reasonRangeAt} from './reading-reasons.js';
+import {readingReason,attachReasons} from './reading-reasons.js';
+import {diagnosticRecovery} from './diagnostic-recovery.js';
 import {planStandardNames} from './standard-reader.js';
 import {readPreprocessing} from './preprocessor-reader.js';
+import {createPreprocessingContext} from './preprocessing-context.js';
 import {planDeclarations} from './declaration-plan.js';
 import {alignDeclarationIndentation} from './declaration-layout.js';
 import {mainEndingPosition} from './main-ending.js';
 import {validateWords,DEFAULT_WORDS} from '../vocabulary/settings.js';
 import {originalReading} from '../project/analysis-format.js';
+const SIMPLE_KEYWORDS=new Set('int void signed unsigned short long char float double _Bool const volatile restrict static register auto extern inline _Thread_local _Atomic _Noreturn _Complex _Imaginary struct union enum typedef return break continue switch default _Generic'.split(' '));
 // Native AST supplies roles and bindings. Only physical source tokens are edited.
 export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotations=true,original=false}={}){
  if(original)return originalReading(source);
@@ -18,22 +21,38 @@ export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotati
  snapshot={...snapshot,tokens:sourceIndex.tokens};
  if(snapshot.source!==source)return attachReasons(originalReading(source,'原文が解析時から変わっています。再解析してください。'),[readingReason('source-changed',[{start:0,end:source.length}])]);
  const words=validateWords(config),pp=readPreprocessing(source,words,{keywordMacroNames:snapshot.keywordMacroNames??null,inclusions:snapshot.nodes.filter(n=>n.kind==='INCLUSION_DIRECTIVE')});
- if(!snapshot.valid){
-  const diagnostics=snapshot.diagnostics.filter(d=>d.severity>=3),reasons=diagnostics.map(d=>{
-   const code=d.category==='missing-input'||/file not found/.test(d.message)?'missing-input':/imaginary types are not supported/.test(d.message)?'sdk-unsupported':'compiler-diagnostic';
-   const pos=d.location.expansion;const ranges=pos.file===snapshot.file?reasonRangeAt(source,pos.offset,snapshot.tokens):[];
-   const file=pos.file?.split(/[\\/]/).at(-1)||snapshot.filename;
-   return readingReason(code,ranges,`${file}:${pos.line} ${d.message}`);
-  });
-  return attachReasons(composeReadingPlans(source,[pp.plan],[...pp.issues,'C解析の診断（本文は原文保持）：'+diagnostics.map(d=>`${d.location.expansion.file?.split('/').at(-1)||snapshot.filename}:${d.location.expansion.line} ${d.message}`).join(' ／ ')],pp.edits.length).reading,reasons);
- }
+ const recovery=snapshot.valid?null:diagnosticRecovery(snapshot,sourceIndex,pp.directives);
+ const recoveryRanges=recovery?.protectedRanges??[];
+ const recoveryIssues=recovery?['C解析の診断あり：'+recovery.reasons.map(r=>r.message).join(' ／ ')]:[];
+ const diagnosticsReasons=recovery?.reasons??[];
+ const preprocessingPlan=recoveryRanges.length?createEditPlan('preprocessing',pp.edits.filter(e=>
+  !recovery.uncertain(e)||pp.directives.some(d=>rangesOverlap(e,d)))):pp.plan;
+ const lexicalFallback=(extraReason=null)=>{
+  const macros=snapshot.nodes.filter(n=>n.kind==='MACRO_INSTANTIATION');
+  const preprocessing=createPreprocessingContext(snapshot,pp.directives);
+  const held=[...macros,...recoveryRanges,...diagnosticsReasons.flatMap(r=>r.ranges)];
+  const edits=[];
+  for(const t of snapshot.tokens){
+   if(t.kind!=='KEYWORD'||!SIMPLE_KEYWORDS.has(t.spelling)||!Object.hasOwn(words,t.spelling)||!sourceIndex.physical(t))continue;
+   if(preprocessing.isExcluded(t)||preprocessing.keywordProtected(t)||held.some(r=>rangesOverlap(t,r)))continue;
+   const {start,end}=t;
+   edits.push({start,end,text:words[t.spelling],kind:'translation',ranges:[{start,end}],note:'対応語'});
+  }
+  const keywords=createEditPlan('partial-keywords',edits);
+  const issue=extraReason?'表示規則の位置が競合したため、前処理指令と確認できた予約語を表示しました。':
+   '解析の影響範囲を確認できないため、前処理指令と確認できた予約語を表示しました。';
+  return attachReasons(composeReadingPlans(source,[preprocessingPlan,keywords],[...pp.issues,...recoveryIssues,issue]).reading,
+   extraReason?[...diagnosticsReasons,extraReason]:diagnosticsReasons);
+ };
+ if(recovery?.lexicalOnly)return lexicalFallback();
 
- const library=planStandardNames(source,snapshot,words,pp.directives,{sourceIndex});
- const predefined=planPredefined(source,snapshot,words,pp.directives,{preprocessing:library.preprocessing});for(const id of predefined.recognizedMacros)library.recognizedMacros.add(id);
- const initialPlans=[pp.plan,...library.plans,predefined.plan];
+ const libraryExclusions=[...pp.directives,...recoveryRanges];
+ const library=planStandardNames(source,snapshot,words,libraryExclusions,{sourceIndex});
+ const predefined=planPredefined(source,snapshot,words,libraryExclusions,{preprocessing:library.preprocessing});for(const id of predefined.recognizedMacros)library.recognizedMacros.add(id);
+ const initialPlans=[preprocessingPlan,...library.plans,predefined.plan];
  const libraryIds=new Set([...library.edits,...predefined.edits].map(e=>e.proposalId));
  let libraryEdits=[...library.edits,...predefined.edits],edits=[];
- const nodes=snapshot.nodes,tokens=snapshot.tokens,issues=[...pp.issues],reasons=[],blocked=[...snapshot.skipped],done=new Set();let order=pp.edits.length+libraryEdits.length;
+ const nodes=snapshot.nodes,tokens=snapshot.tokens,issues=[...pp.issues,...recoveryIssues],reasons=[...diagnosticsReasons],blocked=[...snapshot.skipped,...recoveryRanges],done=new Set();let order=pp.edits.length+libraryEdits.length;
  const children=new Map();for(const n of nodes){if(!children.has(n.parent))children.set(n.parent,[]);children.get(n.parent).push(n);}
  const descendants=n=>children.get(n.id)||[];
  const text=n=>source.slice(n.start,n.end);
@@ -52,7 +71,7 @@ export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotati
  const replace=(n,value,kind='translation',ranges=[{start:n.start,end:n.end}],note='対応語',operation=kind==='layout'?'layout':kind==='annotation'?'guide':'replacement')=>{if(n&&!unavailable(n))edits.push({start:n.start,end:n.end,text:value,kind,operation,ranges,note,order:order++});};
  const canInsert=at=>!blocked.some(b=>insideRange(at,b));
  const opaqueMacro=n=>library.preprocessing.opaqueOverlap(n,library.recognizedMacros);
- const insert=(at,value,kind,anchor,note='構造に合わせた追加語',priority,role)=>{if(!canInsert(at))return;edits.push({start:at,end:at,text:value,kind,operation:kind==='translation'?'move':'guide',ranges:[{start:anchor.start,end:anchor.end}],note,...(role?{role}:{}),order:priority??order++});};
+ const insert=(at,value,kind,anchor,note='構造に合わせた追加語',priority,role)=>{if(!canInsert(at)||recovery?.uncertain(anchor))return;edits.push({start:at,end:at,text:value,kind,operation:kind==='translation'?'move':'guide',ranges:[{start:anchor.start,end:anchor.end}],note,...(role?{role}:{}),order:priority??order++});};
  const guide=(at,value,anchor,note,priority,role)=>{if(annotations)insert(at,value,'annotation',anchor,note,priority,role);};
  const spaces=(start,end)=>{if(end>start&&/^[ \t]*$/.test(source.slice(start,end)))replace({start,end},'','layout',[],'表示用の空白');};
  const list=sourceIndex.within;
@@ -66,19 +85,30 @@ export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotati
   const name=e.binding?.name;if(e.kind==='removed'||!['alignas','alignof'].some(name=>isStandardMacroEdit(e,name)))continue;
   const open=next(e.end),close=open&&pairs.get(open.start);
   if(name==='alignas'&&open?.spelling==='('&&close)continue;
-  if(open?.spelling==='('&&close&&canInsert(close.end)){const value=e.text;aliasRevisions.push(reviseEdit(e,{text:'',kind:'removed'}));insert(close.end,value+gap(close.end),'translation',{start:e.start,end:e.end},'標準マクロ名 '+name);}
+  if(open?.spelling==='('&&close&&canInsert(close.end)&&!recovery?.structurallyUncertain({start:e.start,end:close.end})){const value=e.text;aliasRevisions.push(reviseEdit(e,{text:'',kind:'removed'}));insert(close.end,value+gap(close.end),'translation',{start:e.start,end:e.end},'標準マクロ名 '+name);}
   else {aliasRevisions.push(reviseEdit(e,null));reason('postfix-boundary',{start:e.start,end:e.end});}
  }
  const aliasPlan=createEditPlan('alignment-alias',edits,aliasRevisions);
  const beforeUsage=[...initialPlans,aliasPlan];
- const usage=planUsageReadings(source,snapshot,words,{heads:library.callHeads.filter(h=>!h.disabled),existingEdits:resolveEditPlans(beforeUsage).edits,annotations,sourceIndex});
+ const usage=planUsageReadings(source,snapshot,words,{heads:library.callHeads.filter(h=>!h.disabled),existingEdits:resolveEditPlans(beforeUsage).edits,annotations,sourceIndex,recovery});
  const plans=[...beforeUsage,usage.plan],knownEdits=resolveEditPlans(plans).edits;
  libraryEdits=knownEdits.filter(e=>libraryIds.has(e.proposalId));
  edits=[];
  const topLevel=sourceIndex.topLevel;
  // A later body call is not a control header when macros supplied its delimiters.
  const header=n=>{const ts=list(n),head={IF_STMT:'if',WHILE_STMT:'while',FOR_STMT:'for'}[n.kind];if(head&&ts[0]?.spelling!==head)return null;const open=ts[1],close=open?.spelling==='('&&pairs.get(open.start);return close?{ts,open,close}:null;};
- const endAt=(semi,anchor,value=words.end)=>{if(!semi||semi.spelling!==';'||done.has(semi.start)||unavailable(semi))return;done.add(semi.start);if(usage.omitEnd(anchor))return;let at=semi.start;while(at>anchor.start&&/[ \t]/.test(source[at-1]))at--;if(annotations){spaces(at,semi.start);guide(at,' '+value,anchor,'文を締める追加語');}};
+ const endAt=(semi,anchor,value=words.end)=>{
+  if(!semi||semi.spelling!==';'||done.has(semi.start)||unavailable(semi)||recovery?.structurallyUncertain(anchor))return;
+  let guideAnchor=anchor;
+  if(recovery){
+   const start=sourceIndex.indexAt(anchor.start),end=sourceIndex.indexOf(semi);
+   if(start<0||end<start||!sourceIndex.partition(start,end).balanced||recovery.uncertain(sourceIndex.significant[start]))return;
+   if(recovery.uncertain(anchor))guideAnchor=semi;
+  }
+  done.add(semi.start);if(usage.omitEnd(anchor))return;
+  let at=semi.start;while(at>anchor.start&&/[ \t]/.test(source[at-1]))at--;
+  if(annotations){spaces(at,semi.start);guide(at,' '+value,guideAnchor,'文を締める追加語');}
+ };
  const semicolon=n=>{const ts=list(n);return ts.at(-1)?.spelling===';'?ts.at(-1):next(n.end)?.spelling===';'?next(n.end):null;};
  const forHeaders=[];
  for(const n of nodes.filter(n=>n.kind==='FOR_STMT')){
@@ -86,10 +116,10 @@ export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotati
   else {const body=descendants(n).at(-1);if(body&&body.start>n.start)forHeaders.push({start:n.start,end:body.start});}
  }
  // Stable keywords only; spelling-identical user identifiers remain untouched.
- const simple=new Set('int void signed unsigned short long char float double _Bool const volatile restrict static register auto extern inline _Thread_local _Atomic _Noreturn _Complex _Imaginary struct union enum typedef return break continue switch default _Generic'.split(' '));
- for(const t of tokens)if(t.kind==='KEYWORD'&&simple.has(t.spelling)&&Object.hasOwn(words,t.spelling))replace(t,words[t.spelling]);
+ for(const t of tokens)if(t.kind==='KEYWORD'&&SIMPLE_KEYWORDS.has(t.spelling)&&Object.hasOwn(words,t.spelling))replace(t,words[t.spelling]);
  for(const t of tokens)if(t.spelling==='_Alignas'&&t.kind==='KEYWORD'&&!unavailable(t)){
-  const open=next(t.end),close=open&&pairs.get(open.start);if(open?.spelling==='('&&close&&!opaqueMacro({start:open.start,end:close.end})&&canInsert(close.end)){replace(t,'','removed',[]);spaces(t.end,open.start);insert(close.end,words._Alignas+gap(close.end),'translation',t,'_Alignasの対応語を対象の後へ移動');}
+  const open=next(t.end),close=open&&pairs.get(open.start);
+  if(open?.spelling==='('&&close&&!opaqueMacro({start:open.start,end:close.end})&&canInsert(close.end)&&!recovery?.uncertain({start:t.start,end:close.end})){replace(t,'','removed',[]);spaces(t.end,open.start);insert(close.end,words._Alignas+gap(close.end),'translation',t,'_Alignasの対応語を対象の後へ移動');}
  }
  if(nodes.some(n=>n.kind==='MACRO_INSTANTIATION'&&n.name!=='_Pragma'&&!library.recognizedMacros.has(n.id)))issues.push('マクロの呼出しは原文で保持しています。生成された名前は原文へ書き込みません。');
  if(snapshot.skipped.length)issues.push('解析条件で選ばれなかった分岐の本文は原文で保持しています。前処理指令は表示します。');
@@ -135,6 +165,7 @@ export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotati
   }
  }
  for(const group of [...plan.groups,...plan.functions]){
+  if(recovery?.structurallyUncertain(group))continue;
   const inFor=group.semi&&!group.nodes.every(n=>n.kind==='FIELD_DECL')&&forHeaders.some(h=>group.semi.start>h.start&&group.semi.end<h.end);
   if(group.semi&&!inFor)endAt(group.semi,group);
   for(const part of group.declarations){
@@ -148,7 +179,7 @@ export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotati
     if(n.name==='main')replace(id,words.main);
     if(group.definition&&n.name==='main'){
      const end=list(group.body).at(-1);
-     if(end&&['}','%>'].includes(end.spelling)){
+     if(end&&['}','%>'].includes(end.spelling)&&(!recovery||pairs.get(group.body.start)===end)){
       const at=mainEndingPosition(source,group.body,end,sourceIndex,{directives,blocked});
       guide(at,' '+words.mainEnd+gap(at),end,'mainの終わりの案内語',undefined,'main-end');
      }
@@ -181,13 +212,15 @@ export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotati
  }
  for(const n of nodes){
   const ts=list(n),first=ts[0];if(!first||lexicalHeld.has(first.start))continue;
+  if(recovery?.structurallyUncertain(n))continue;
   if(n.kind==='RETURN_STMT')endAt(semicolon(n),n,descendants(n).length?words.end:words.void+' '+words.end);
   if(n.kind==='IF_STMT'){
    const h=header(n);if(!h||first.spelling!=='if'||unavailable(first))continue;
    const prev=sourceIndex.previous(first.start);
    if(prev?.spelling==='else'&&lexicalHeld.has(prev.start))continue;
    if(prev?.spelling==='else'){replace(prev,words.elseIf,'translation',[{start:prev.start,end:prev.end},{start:first.start,end:first.end}],'else ifのまとめ訳');replace(first,'','removed',[]);spaces(prev.end,first.start);}else replace(first,words.if);
-   guide(h.close.end,' '+words.then+gap(h.close.end),{start:h.open.start,end:h.close.end},'条件の案内語');
+   const condition={start:h.open.start,end:h.close.end};
+   guide(h.close.end,' '+words.then+gap(h.close.end),recovery?.uncertain(condition)?h.close:condition,'条件の案内語');
    const bodyChildren=descendants(n),alternative=bodyChildren.at(-1);
    if(alternative&&alternative.kind!=='IF_STMT'){
     const els=ts.filter(t=>t.spelling==='else'&&t.start<alternative.start).at(-1);if(els)replace(els,words.else);
@@ -221,7 +254,7 @@ export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotati
   if(n.kind==='GOTO_STMT'&&first.spelling==='goto'){
    const target=ts[1];if(target&&!opaqueMacro(target)&&canInsert(target.end)){replace(first,'','removed',[]);spaces(first.end,target.start);guide(target.end,' '+words.destination,target,'移動先の案内語');insert(target.end,' '+words.goto,'translation',first,'gotoの対応語を移動先の後へ移動');}
   }
-  if(n.kind==='CXX_UNARY_EXPR'&&['sizeof','_Alignof'].includes(first.spelling)&&!opaqueMacro(n)&&canInsert(n.end)){
+  if(n.kind==='CXX_UNARY_EXPR'&&['sizeof','_Alignof'].includes(first.spelling)&&!opaqueMacro(n)&&canInsert(n.end)&&!recovery?.uncertain(n)){
    replace(first,'','removed',[]);spaces(first.end,ts[1]?.start??first.end);let depth=0,p=n;while(p.parent!==null){depth++;p=nodes[p.parent];}insert(n.end,words[first.spelling],'translation',first,'対象の後へ移動',-sourceIndex.indexAt(first.start)*2+1);
   }
   if(n.kind==='STATIC_ASSERT'&&!usage.calls.some(c=>c.source==='static_assert'&&c.start===first.start)){
@@ -252,6 +285,7 @@ export function translateAnalysis(source,snapshot,config=DEFAULT_WORDS,{annotati
  // Preserve complex grouping for now; no repeated type reconstruction from a name.
  const structurePlan=createEditPlan('structure',edits);
  const composed=declarationIndentation.length?alignDeclarationIndentation(source,[...plans,structurePlan],issues,declarationIndentation):composeReadingPlans(source,[...plans,structurePlan],issues);
+ if(composed.diagnostics.length&&recovery)return lexicalFallback(readingReason('edit-conflict',[{start:0,end:source.length}]));
  if(composed.diagnostics.length)reason('edit-conflict',{start:0,end:source.length});
  return attachReasons(composed.reading,reasons);
 }

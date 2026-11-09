@@ -44,9 +44,9 @@ export function normalizeProject(project) {
   if(!project||!Array.isArray(project.translationUnits)||!project.translationUnits.length||project.translationUnits.length>64)throw new Error('解析文脈は1〜64件にしてください。');
   const units=project.translationUnits.map(unit=>{
     if(!unit||typeof unit.source!=='string')throw new Error('解析するCファイルを指定してください。');
-    return normalizeInput({files:project.files,entry:unit.source,directory:unit.directory,args:unit.args});
+    return normalizeInput({files:project.files,entry:unit.source,directory:unit.directory,args:unit.args,functionBody:unit.functionBody===true});
   });
   const first=units[0];
   const files=Object.fromEntries(Object.keys(first.files).sort().map(name=>[name,first.files[name]]));
-  return {files,translationUnits:units.map(u=>({source:u.entry,directory:u.directory,args:u.args})),words:validateWords(project.words??DEFAULT_WORDS),display:{annotations:project.display?.annotations!==false,original:project.display?.original===true}};
+  return {files,translationUnits:units.map(u=>({source:u.entry,directory:u.directory,args:u.args,...(u.functionBody?{functionBody:true}:{})})),words:validateWords(project.words??DEFAULT_WORDS),display:{annotations:project.display?.annotations!==false,original:project.display?.original===true}};
 }
