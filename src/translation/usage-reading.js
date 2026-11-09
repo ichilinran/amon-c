@@ -68,7 +68,7 @@ export function argumentSpecs(profile,args,{format=null,isNull=()=>false,isVerbC
 
 // Heads have already passed the standard-name binding/SDK checks. Physical token
 // boundaries preserve every expression, comment and original delimiter exactly once.
-export function planUsageReadings(source,snapshot,words,{heads,existingEdits,annotations=true,sourceIndex=createSourceIndex(source,snapshot.tokens)}){
+export function planUsageReadings(source,snapshot,words,{heads,existingEdits,annotations=true,sourceIndex=createSourceIndex(source,snapshot.tokens),recovery=null}){
  const tokens=sourceIndex.significant,pairs=sourceIndex.pairs,edits=[],revisions=[],calls=[];
  const headPositions=new Set();
  for(const head of heads){
@@ -82,12 +82,13 @@ export function planUsageReadings(source,snapshot,words,{heads,existingEdits,ann
   const parts=split.parts.filter(p=>p.start!==p.end);
   const bad=split.crossesBoundary||(parts.length!==split.parts.length&&!(split.parts.length===1&&parts.length===0));
   const args=parts.map(p=>tokens.slice(p.start,p.end));
-  if(bad)continue;
+  if(bad||recovery?.structurallyUncertain({start:tokens[designator].start,end:tokens[end].end}))continue;
   headPositions.add(head.start);
   calls.push({...head,nameStart:head.start,profile,args,start:tokens[designator].start,end:tokens[end].end,open:tokens[open],close:tokens[end]});
  }
+ const uncertain=arg=>arg?.length&&recovery?.uncertain({start:arg[0].start,end:arg.at(-1).end});
  const staticFormat=arg=>{
-  if(!arg?.length)return null;
+  if(!arg?.length||uncertain(arg))return null;
   const literal=physical(arg)?literalFormat(arg):null;if(literal!==null)return literal;
   // Standard PRI/SCN fragments determine the conversion role even when the
   // current project AST does not carry a literal value. Binding is mandatory.
@@ -129,6 +130,7 @@ export function planUsageReadings(source,snapshot,words,{heads,existingEdits,ann
    const specs=argumentSpecs(profile,args,{format:staticFormat(fmt),isNull:i=>isNull(args[i]),isVerbCall:i=>verbCall(args[i])});
    specs.forEach((spec,i)=>{
     const arg=args[i],range={start:arg[0].start,end:arg.at(-1).end};
+    if(uncertain(arg))return;
     if(spec.prefix)edits.push({start:range.start,end:range.start,text:spec.prefix+' ',kind:'annotation',operation:'guide',ranges:[range],note:'引数の役割を示す追加語',order});
     if(spec.suffix)edits.push({start:range.end,end:range.end,text:' '+spec.suffix,kind:'annotation',operation:'guide',ranges:[range],note:'引数の役割を示す追加語',order});
    });

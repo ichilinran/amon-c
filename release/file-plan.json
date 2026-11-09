@@ -637,8 +637,8 @@
       "pages": false,
       "role": "development-support",
       "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
-      "bytes": 11435,
-      "sha256": "48147be7fbe39fbfddf9a5d5a21ebf0df1eb2fb0c7c2f6a1cb1f0ee28235d52b",
+      "bytes": 11909,
+      "sha256": "e2d23c1c992d4003b09de5f6cc006b195893655bc26a9941a4959cf395181ec8",
       "generated": false
     },
     {
@@ -1407,8 +1407,8 @@
       "pages": true,
       "role": "runtime-asset",
       "reason": "Explicit HTML, sample or resource dependency; full SDK fallback is retained.",
-      "bytes": 13344,
-      "sha256": "85caf535c2a7c4c49e5a340223592172e15f2c3851c6f3a15f0b2f848dcb6821",
+      "bytes": 13458,
+      "sha256": "44eee4465358d10e8c9cbcf22a85cf7de4de1133a83cd3ecf515aa37dba27cb2",
       "generated": false
     },
     {
@@ -2007,8 +2007,8 @@
       "pages": true,
       "role": "runtime-module",
       "reason": "Reachable relative module from the current UI or module Worker.",
-      "bytes": 6578,
-      "sha256": "25c698eb3fff346dee9145cbccc2b28aa8b7690c05c3e6cdead152cd4716241f",
+      "bytes": 6643,
+      "sha256": "04a01f7b3083e7e5789744aeaabb7c8be32f2a70fac21440bc345be452640ccb",
       "generated": false
     },
     {
@@ -2019,6 +2019,16 @@
       "reason": "Reachable relative module from the current UI or module Worker.",
       "bytes": 196,
       "sha256": "4fea8556e0f0749d54ed829fd698177016655e27bccd878e170026dae10657bb",
+      "generated": false
+    },
+    {
+      "path": "src/project/function-body.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 2325,
+      "sha256": "214a570465c184aa11ff1b27d8b9c9e4fb3973cf96bd941b3c073ccb1cc1c69c",
       "generated": false
     },
     {
@@ -2037,8 +2047,8 @@
       "pages": true,
       "role": "runtime-module",
       "reason": "Reachable relative module from the current UI or module Worker.",
-      "bytes": 3835,
-      "sha256": "723035a60352cb73365cfb8c54c84086007daccd17fc3c41c1913830b1112e44",
+      "bytes": 3916,
+      "sha256": "735f841bf80599ab76000570782aa00d6dddf36ff10cf45289385ec81b336cce",
       "generated": false
     },
     {
@@ -2077,8 +2087,8 @@
       "pages": true,
       "role": "runtime-module",
       "reason": "Reachable relative module from the current UI or module Worker.",
-      "bytes": 2959,
-      "sha256": "d7fdb4608a8a47e142adc73f3421b94b1f7a024932b6fc2cbe6ed088188cb95d",
+      "bytes": 3158,
+      "sha256": "2d48e28f5c20ae7e19275d03eeab730f6da636897d3619d5fedff6d84661d259",
       "generated": false
     },
     {
@@ -2117,8 +2127,8 @@
       "pages": true,
       "role": "runtime-module",
       "reason": "Reachable relative module from the current UI or module Worker.",
-      "bytes": 2714,
-      "sha256": "d2c6f20bffbb1f4a9895b964cf94cac74cf3c6458f5d9c83c5676bc04eca0a49",
+      "bytes": 3031,
+      "sha256": "0f9146835dcb9f703ba911f6852528e8bc8b719abad36379b6c1c8c9819a321f",
       "generated": false
     },
     {
@@ -2192,6 +2202,16 @@
       "generated": false
     },
     {
+      "path": "src/translation/diagnostic-recovery.js",
+      "github": true,
+      "pages": true,
+      "role": "runtime-module",
+      "reason": "Reachable relative module from the current UI or module Worker.",
+      "bytes": 4825,
+      "sha256": "eacfd5b51677e09d0bb48324e28e4be12c6e8821bdfb68dfc06ea35c38f09301",
+      "generated": false
+    },
+    {
       "path": "src/translation/edit-plan.js",
       "github": true,
       "pages": true,
@@ -2257,8 +2277,8 @@
       "pages": true,
       "role": "runtime-module",
       "reason": "Reachable relative module from the current UI or module Worker.",
-      "bytes": 24440,
-      "sha256": "f718eb81cf5897be40fc772ce7c33a18a53452e697ece8f17554b5f3c91811c3",
+      "bytes": 26507,
+      "sha256": "2c0dc0d45e4e11a6f67885030fa7c20277bdf85d905da53bf2da438fbcd673d7",
       "generated": false
     },
     {
@@ -2297,8 +2317,8 @@
       "pages": true,
       "role": "runtime-module",
       "reason": "Reachable relative module from the current UI or module Worker.",
-      "bytes": 6833,
-      "sha256": "911c974eb072a0f84cb9d537d507a2cc2e080b6806f744edddfae8b522bc0a58",
+      "bytes": 7097,
+      "sha256": "4119e55f6c81ec93c8c905fae885dda8ec145f68341e1eddab8fcd17a75e126d",
       "generated": false
     },
     {
@@ -2357,8 +2377,8 @@
       "pages": true,
       "role": "runtime-module",
       "reason": "Reachable relative module from the current UI or module Worker.",
-      "bytes": 10514,
-      "sha256": "c15ee441fde786764ec51438deb3796be6921994c9587fee77f89bb22f6dae51",
+      "bytes": 10758,
+      "sha256": "13a1f137a3fddd8848249fc5d2b2ff9593b9e5ef0a6729d2289e275119673d5b",
       "generated": false
     },
     {
@@ -2367,8 +2387,8 @@
       "pages": true,
       "role": "runtime-module",
       "reason": "Reachable relative module from the current UI or module Worker.",
-      "bytes": 4378,
-      "sha256": "802b2a6920ef31fcb49478da5e36d028fb955cb229a4cccd5667425e0176410f",
+      "bytes": 4973,
+      "sha256": "7b649e1a99a4e944ce96c0099cb890ab261e233865a2159b175d7fb41426593b",
       "generated": false
     },
     {
@@ -2377,8 +2397,8 @@
       "pages": true,
       "role": "runtime-module",
       "reason": "Reachable relative module from the current UI or module Worker.",
-      "bytes": 11546,
-      "sha256": "1f8998adf0dea97c1e8319d5d0eaa7c0f93f6929f408f0e8879bd0a530fa42b8",
+      "bytes": 11819,
+      "sha256": "2c20c32de75bb310c2c8828e9d71c1b3b8888caba9f673006f226c8a89ee3227",
       "generated": false
     },
     {
@@ -2637,8 +2657,8 @@
       "pages": false,
       "role": "development-support",
       "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
-      "bytes": 2988,
-      "sha256": "6cbf1aec60a4474ab4b0fe3fb4bf7b8ff8f9841ec90a185b0a27ef0e815a7f33",
+      "bytes": 4776,
+      "sha256": "4a7d2c3c8b2e0bbc448d6b348b30f4f86eab0eb3337c70c7928522b64be8460a",
       "generated": false
     },
     {
@@ -2757,8 +2777,8 @@
       "pages": false,
       "role": "development-support",
       "reason": "Source, reproducible inputs, test baseline, checker or file-selection documentation; not a Pages runtime dependency.",
-      "bytes": 2495,
-      "sha256": "0c341fc9559d2c84e19c9077b118e2061a9bdd05d89f407563b09bac8ca5bf5e",
+      "bytes": 5613,
+      "sha256": "b9fd7d524e642e2398d393ef7530248fdbec9cba3a2c22e6ac21b2b04275f125",
       "generated": false
     },
     {

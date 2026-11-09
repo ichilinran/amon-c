@@ -1,5 +1,6 @@
 import {boundedTextSink} from './resource-budget.js';
 import {normalizeInput} from '../project/project.js';
+import {functionBodyInput} from '../project/function-body.js';
 // Production-shaped adapter: only virtual files, no Node or host filesystem API.
 export const browserSdkRoots=['/usr/include','/shi/sdk/clang18-headers','/shi/sdk/compat'];
 export function createWasmAnalyzer({createModule,sdkFiles,resolveSdk=null}) {
@@ -14,10 +15,13 @@ export function createWasmAnalyzer({createModule,sdkFiles,resolveSdk=null}) {
       FS.writeFile(path,text,{encoding:'utf8'});
     };
     for(const file of files)write(file.path,file.text);
-    for(const [name,text] of Object.entries(input.files))write('/shi/input/'+name,text);
+    const body=input.functionBody===true?functionBodyInput(input.source):null;
+    for(const [name,text] of Object.entries(input.files))write('/shi/input/'+name,body&&name===input.entry?body.text:text);
     const entry='/shi/input/'+input.entry;
     FS.mkdirTree('/shi/input/'+input.directory);FS.chdir('/shi/input/'+input.directory);
-    const flags=['-x','c','-std=c17','-target','x86_64-pc-linux-gnu','-pedantic-errors','-Wno-strict-prototypes','-Wno-keyword-macro','-Wno-deprecated-pragma','-isystem/shi/sdk/compat','-isystem/shi/sdk/clang18-headers','-isystem/usr/include/x86_64-linux-gnu','-isystem/usr/include','-nobuiltininc',...input.args];
+    const flags=['-x','c','-std=c17','-target','x86_64-pc-linux-gnu','-pedantic-errors','-Wno-newline-eof','-Wno-strict-prototypes','-Wno-keyword-macro','-Wno-deprecated-pragma','-isystem/shi/sdk/compat','-isystem/shi/sdk/clang18-headers','-isystem/usr/include/x86_64-linux-gnu','-isystem/usr/include','-nobuiltininc',...input.args];
+    // The synthetic void signature says nothing about the real return type.
+    if(body)flags.push('-Wno-return-type');
     try{module.callMain([entry,...flags]);}catch(error){throw resourceError??error;}
     if(resourceError)throw resourceError;
     // Emscripten may catch an exception thrown by print inside callMain.

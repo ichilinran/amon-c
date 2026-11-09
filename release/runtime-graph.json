@@ -54,6 +54,9 @@
       "src/translation/edit-plan.js"
     ],
     "src/project/filenames.js": [],
+    "src/project/function-body.js": [
+      "src/translation/source-coordinates.js"
+    ],
     "src/project/import.js": [
       "src/project/project-view.js",
       "src/vocabulary/settings.js",
@@ -85,7 +88,8 @@
       "src/compat/project-save.js"
     ],
     "src/project/surfaces.js": [
-      "src/project/project-analysis.js"
+      "src/project/project-analysis.js",
+      "src/project/function-body.js"
     ],
     "src/runtime/limits.js": [],
     "src/runtime/resource-budget.js": [],
@@ -94,7 +98,8 @@
     ],
     "src/runtime/wasm-runtime.js": [
       "src/runtime/resource-budget.js",
-      "src/project/project.js"
+      "src/project/project.js",
+      "src/project/function-body.js"
     ],
     "src/runtime/worker.js": [
       "src/runtime/resource-budget.js",
@@ -114,6 +119,10 @@
     ],
     "src/translation/declaration-validation.js": [
       "src/translation/source-index.js"
+    ],
+    "src/translation/diagnostic-recovery.js": [
+      "src/translation/source-index.js",
+      "src/translation/reading-reasons.js"
     ],
     "src/translation/edit-plan.js": [],
     "src/translation/format-literal.js": [],
@@ -139,8 +148,10 @@
       "src/translation/predefined-reader.js",
       "src/vocabulary/standard-catalog.js",
       "src/translation/reading-reasons.js",
+      "src/translation/diagnostic-recovery.js",
       "src/translation/standard-reader.js",
       "src/translation/preprocessor-reader.js",
+      "src/translation/preprocessing-context.js",
       "src/translation/declaration-plan.js",
       "src/translation/declaration-layout.js",
       "src/translation/main-ending.js",
@@ -188,6 +199,7 @@
       "src/analysis/projection.js",
       "src/runtime/limits.js",
       "src/project/analysis-format.js",
+      "src/project/function-body.js",
       "src/translation/native-reader.js"
     ],
     "src/ui/main.js": [

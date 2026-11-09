@@ -2,22 +2,22 @@
   "schema": 1,
   "stage": 1,
   "generatedFilesHashPolicy": "Generated inventory documents and the enclosing archive manifest have null bytes/hash to avoid self-reference.",
-  "runtimeModules": 54,
+  "runtimeModules": 56,
   "baselineModules": 0,
-  "relativeRuntimeEdges": 114,
-  "selectedSupportImportEdges": 304,
+  "relativeRuntimeEdges": 122,
+  "selectedSupportImportEdges": 313,
   "github": {
-    "files": 326,
-    "existingBytes": 103508124
+    "files": 328,
+    "existingBytes": 103524873
   },
   "pages": {
-    "files": 189,
-    "existingBytes": 38925206
+    "files": 191,
+    "existingBytes": 38936575
   },
   "archiveOnly": {
     "files": 0
   },
-  "existingFiles": 322,
+  "existingFiles": 324,
   "futureRequirements": [
     {
       "path": "LICENSE",
